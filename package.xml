@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Package name="replaceme">
+<Package name="audio_apps">
     <Dependencies>
+        <Dependency name="audio" version="v3.6.0"/>	
+        <Dependency name="core" version="v3.9.0"/>
+        <Dependency name="CMSIS-FreeRTOS" version="v????"/>			
+        <Dependency name="csp" version="v3.9.0"/>		
+        <Dependency name="dev_packs" version="v3.9.0"/>			
+        <Dependency name="gfx" version="v????"/>
+        <Dependency name="usb" version="v????"/>				
     </Dependencies>
 </Package>
