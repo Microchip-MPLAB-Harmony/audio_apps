@@ -47,7 +47,6 @@ static void OSCCTRL_Initialize(void)
 
     /* Configure External Oscillator */
     OSCCTRL_REGS->OSCCTRL_XOSCCTRL[0] = OSCCTRL_XOSCCTRL_STARTUP(0) | OSCCTRL_XOSCCTRL_IMULT(4) | OSCCTRL_XOSCCTRL_IPTAT(3) | OSCCTRL_XOSCCTRL_XTALEN_Msk | OSCCTRL_XOSCCTRL_ENABLE_Msk;
-
     while((OSCCTRL_REGS->OSCCTRL_STATUS & OSCCTRL_STATUS_XOSCRDY0_Msk) != OSCCTRL_STATUS_XOSCRDY0_Msk)
     {
         /* Waiting for the XOSC Ready state */
@@ -86,23 +85,18 @@ static void DFLL_Initialize(void)
         /* Waiting for the DPLL enable synchronization */
     }
 
-    OSCCTRL_REGS->OSCCTRL_DFLLCTRLA = OSCCTRL_DFLLCTRLA_ENABLE_Msk ;
+    OSCCTRL_REGS->OSCCTRL_DFLLCTRLA = OSCCTRL_DFLLCTRLA_ENABLE_Msk | OSCCTRL_DFLLCTRLA_ONDEMAND_Msk ;
 
     while((OSCCTRL_REGS->OSCCTRL_DFLLSYNC & OSCCTRL_DFLLSYNC_ENABLE_Msk) == OSCCTRL_DFLLSYNC_ENABLE_Msk )
     {
-        /* Waiting for the DPLL enable synchronization */
-    }
-
-    while((OSCCTRL_REGS->OSCCTRL_STATUS & OSCCTRL_STATUS_DFLLRDY_Msk) != OSCCTRL_STATUS_DFLLRDY_Msk)
-    {
-        /* Waiting for the XOSC Ready state */
+        /* Waiting for the DFLL enable synchronization */
     }
 }
 
 
 static void GCLK0_Initialize(void)
 {
-    
+
     /* selection of the CPU clock Division */
     MCLK_REGS->MCLK_CPUDIV = MCLK_CPUDIV_DIV(0x01);
 

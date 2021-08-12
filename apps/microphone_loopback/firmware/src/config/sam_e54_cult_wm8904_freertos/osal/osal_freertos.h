@@ -130,7 +130,7 @@ OSAL_RESULT OSAL_MUTEX_Unlock(OSAL_MUTEX_HANDLE_TYPE* mutexID);
 void* OSAL_Malloc(size_t size);
 void OSAL_Free(void* pData);
 
-OSAL_RESULT OSAL_Initialize();
+OSAL_RESULT OSAL_Initialize(void);
 
 // *****************************************************************************
 /* Function: const char* OSAL_Name()
@@ -179,22 +179,6 @@ __STATIC_INLINE __attribute__((always_inline)) const char* OSAL_Name (void)
 /* Macro: OSAL_ASSERT
  */
 #define OSAL_ASSERT(test, message)      test
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Interface Routines
-// *****************************************************************************
-// *****************************************************************************
-/* These function declarations help map OSAL function calls into specific
-   FreeRTOS calls or OSAL translation layer functions
-   Each OSAL should fully implement the functions listed in osal.h so only
-   deviations from that interface are required here.
- */
-
-#define OSAL_Malloc(size)   pvPortMalloc(size)
-
-#define OSAL_Free(pData)    vPortFree(pData)
 
 #ifdef __cplusplus
 }

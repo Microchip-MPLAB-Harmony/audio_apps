@@ -42,6 +42,11 @@
             <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/clk/plib_clk.h</itemPath>
@@ -60,8 +65,10 @@
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/tc/plib_tc_common.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="twihs" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/twihs/plib_twihs_master.h</itemPath>
-              <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/twihs/plib_twihs0.h</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/twihs/master/plib_twihs_master_common.h</itemPath>
+                <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/twihs/master/plib_twihs0_master.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f4" displayName="xdmac" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/xdmac/plib_xdmac_common.h</itemPath>
@@ -71,6 +78,9 @@
           <logicalFolder name="f4" displayName="system" projectFiles="true">
             <logicalFolder name="f4" displayName="cache" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/system/cache/sys_cache.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="dma" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/system/dma/sys_dma.h</itemPath>
@@ -96,14 +106,12 @@
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/device.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/user.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/configuration.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME70Q21B_DFP" projectFiles="true">
@@ -145,11 +153,68 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/xdmac.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder name="f2" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/acc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/aes.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/afec0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/afec1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/chipid.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/dacc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/efc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/gmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/gpbr.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/hsmci.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/i2sc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/i2sc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/icm.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/isi.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/matrix.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/mcan0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/mcan1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/pioa.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/piob.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/pioc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/piod.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/pioe.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/pmc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/pwm0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/pwm1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/qspi.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rswdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtt.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/sdramc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/smc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/ssc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/twihs0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/twihs1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/twihs2.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/uart0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/uart1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/uart2.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/uart3.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/uart4.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/usart0.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/usart1.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/usart2.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/usbhs.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/utmi.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/xdmac.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME70Q21B_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAME70Q21B_DFP/atsame70q21b.h</itemPath>
+          <itemPath>../src/packs/ATSAME70Q21B_DFP/same70q21b.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -164,6 +229,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm7.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -175,6 +241,13 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1"
+                       displayName="sam_e70_xult_wm8904_i2sc"
+                       projectFiles="true">
+          <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/ATSAME70Q21B.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -228,7 +301,9 @@
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/tc/plib_tc0.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="twihs" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/twihs/plib_twihs0.c</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/twihs/master/plib_twihs0_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f4" displayName="xdmac" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/peripheral/xdmac/plib_xdmac.c</itemPath>
@@ -266,7 +341,29 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="sam_e70_xult_wm8904_i2sc.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/a_i2sc1.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/sam_e70_xult_wm8904_i2sc.mhc/wm8904_codec.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -280,15 +377,17 @@
         <targetDevice>ATSAME70Q21B</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.30</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.5.86"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.1.50"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -306,6 +405,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -346,7 +446,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/app_config/16_bit;../src;../src/config/sam_e70_xult_wm8904_i2sc;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm"/>
+                  value="../src;../src/app_config/16_bit;../src/config/sam_e70_xult_wm8904_i2sc;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -358,11 +458,13 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
+        <appendMe value="-Wformat=2 -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -389,6 +491,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -441,7 +544,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e70_xult_wm8904_i2sc;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -466,8 +570,10 @@
         <property key="mdtcm" value=""/>
         <property key="mitcm" value=""/>
         <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <EdbgTool>
@@ -478,7 +584,10 @@
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -492,9 +601,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0x400000-0x5fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/microchip/harmony/h3/audio/apps/audio_tone/firmware/audio_tone_sam_e70_xult_wm8904_i2sc.X/debug/sam_e70_xult_wm8904_i2sc/audio_tone_sam_e70_xult_wm8904_i2sc_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -505,6 +613,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
       </EdbgTool>
       <ICD4Tool>
@@ -1013,6 +1125,51 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0x400000-0x5fffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/audio_tone/firmware/audio_tone_sam_e70_xult_wm8904_i2sc.X/debug/sam_e70_xult_wm8904_i2sc/audio_tone_sam_e70_xult_wm8904_i2sc_ptg"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>

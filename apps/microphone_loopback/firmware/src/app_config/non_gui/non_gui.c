@@ -70,7 +70,7 @@ void KeyRepeatTask()
 // *****************************************************************************
 // *****************************************************************************
 
-void _initDelay()
+void _initDelay(void)
 {
     appData.txBufferIdx = 0;  
     appData.rxBufferIdx = delayIndices[appData.delayTableIndex];    

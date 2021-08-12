@@ -59,13 +59,14 @@
 #include "audio/peripheral/ssc/plib_ssc.h"
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
-#include "peripheral/twihs/plib_twihs0.h"
+#include "peripheral/twihs/master/plib_twihs0_master.h"
 #include "audio/driver/codec/wm8904/drv_wm8904.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
 #include "system/dma/sys_dma.h"
 #include "osal/osal.h"
+#include "system/debug/sys_debug.h"
 #include "app.h"
 
 
@@ -77,6 +78,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 300000000
 
 // *****************************************************************************
 // *****************************************************************************
@@ -128,27 +132,27 @@ void SYS_Initialize( void *data );
 // *****************************************************************************
 /* System Tasks Function
 
-  Function:
+Function:
     void SYS_Tasks ( void );
 
-  Summary:
+Summary:
     Function that performs all polled system tasks.
 
-  Description:
+Description:
     This function performs all polled system tasks by calling the state machine
     "tasks" functions for all polled modules in the system, including drivers,
     services, middleware and applications.
 
-  Precondition:
+Precondition:
     The SYS_Initialize function must have been called and completed.
 
-  Parameters:
+Parameters:
     None.
 
-  Returns:
+Returns:
     None.
 
-  Example:
+Example:
     <code>
     SYS_Initialize ( NULL );
 
@@ -158,7 +162,7 @@ void SYS_Initialize( void *data );
     }
     </code>
 
-  Remarks:
+Remarks:
     If the module is interrupt driven, the system will call this routine from
     an interrupt context.
 */
@@ -174,14 +178,14 @@ void SYS_Tasks ( void );
 // *****************************************************************************
 /* System Objects
 
-  Summary:
+Summary:
     Structure holding the system's object handles
 
-  Description:
+Description:
     This structure contains the object handles for all objects in the
     MPLAB Harmony project's system configuration.
 
-  Remarks:
+Remarks:
     These handles are returned from the "Initialize" functions for each module
     and must be passed into the "Tasks" function for each module.
 */
@@ -198,7 +202,6 @@ typedef struct
     SYS_MODULE_OBJ drvwm8904Codec0;
 
 } SYSTEM_OBJECTS;
-
 
 // *****************************************************************************
 // *****************************************************************************

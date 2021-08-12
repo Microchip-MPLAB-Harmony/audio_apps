@@ -161,7 +161,7 @@ DRV_I2S_INIT drvI2S0InitData =
     .dmaChannelReceive  = DRV_I2S_RCV_DMA_CH_IDX0,
     .i2sTransmitAddress = (void *)&(SSC_REGS->SSC_THR),
     .i2sReceiveAddress = (void *)&(SSC_REGS->SSC_RHR),
-    .interruptDMA = XDMAC_IRQn,
+        .interruptDMA = XDMAC_IRQn,
 
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
@@ -171,6 +171,8 @@ DRV_I2S_INIT drvI2S0InitData =
 /*** CODEC Driver Initialization Data ***/
 const DRV_WM8904_INIT drvwm8904Codec0InitData =
 {
+    .i2sDriverModuleIndex = DRV_WM8904_I2S_DRIVER_MODULE_INDEX_IDX0,
+    .i2cDriverModuleIndex = DRV_WM8904_I2C_DRIVER_MODULE_INDEX_IDX0,
     .masterMode = DRV_WM8904_MASTER_MODE,
     .samplingRate = DRV_WM8904_AUDIO_SAMPLING_RATE,
     .volume = DRV_WM8904_VOLUME,
@@ -224,6 +226,14 @@ const SYS_TIME_INIT sysTimeInitData =
 
 
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local initialization functions
+// *****************************************************************************
+// *****************************************************************************
+
+
+
 /*******************************************************************************
   Function:
     void SYS_Initialize ( void *data )
@@ -236,6 +246,7 @@ const SYS_TIME_INIT sysTimeInitData =
 
 void SYS_Initialize ( void* data )
 {
+
 
     EFC_Initialize();
   

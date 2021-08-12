@@ -44,32 +44,40 @@
             <itemPath>../src/config/sam_e54_cult_wm8904_freertos/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e54_cult_wm8904_freertos/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal_freertos.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f4" displayName="clock" projectFiles="true">
+            <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="cmcc" projectFiles="true">
+            <logicalFolder name="f8" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/cmcc/plib_cmcc.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f7" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f2" displayName="evsys" projectFiles="true">
+              <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/evsys/plib_evsys.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="port" projectFiles="true">
+            <logicalFolder name="f4" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="sercom" projectFiles="true">
+            <logicalFolder name="f3" displayName="sercom" projectFiles="true">
               <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/sercom/i2c_master/plib_sercom6_i2c_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="tc" projectFiles="true">
+            <logicalFolder name="f9" displayName="tc" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/tc/plib_tc_common.h</itemPath>
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/tc/plib_tc0.h</itemPath>
             </logicalFolder>
@@ -77,6 +85,9 @@
           <logicalFolder name="f5" displayName="system" projectFiles="true">
             <logicalFolder name="f3" displayName="cache" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/cache/sys_cache.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f5" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="dma" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/dma/sys_dma.h</itemPath>
@@ -98,6 +109,9 @@
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e54_cult_wm8904_freertos/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_e54_cult_wm8904_freertos/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_e54_cult_wm8904_freertos/device.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/user.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/configuration.h</itemPath>
@@ -133,11 +147,6 @@
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f5" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal.h</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal_freertos.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME54P20A_DFP" projectFiles="true">
@@ -182,11 +191,71 @@
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/wdt.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder name="f2" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/aes.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/cmcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/hmatrix.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/i2s.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/icm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/mclk.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pdec.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/qspi.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ramecc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom6.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom7.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/usb.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/wdt.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a.h</itemPath>
+          <itemPath>../src/packs/ATSAME54P20A_DFP/same54p20a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -201,6 +270,7 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -211,6 +281,13 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1"
+                       displayName="sam_e54_cult_wm8904_freertos"
+                       projectFiles="true">
+          <itemPath>../src/config/sam_e54_cult_wm8904_freertos/ATSAME54P20A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -252,31 +329,37 @@
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/driver/i2c/src/drv_i2c_local.h</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f7" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal_freertos.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f4" displayName="clock" projectFiles="true">
+            <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="cmcc" projectFiles="true">
+            <logicalFolder name="f8" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/cmcc/plib_cmcc.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f7" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f2" displayName="evsys" projectFiles="true">
+              <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/evsys/plib_evsys.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="port" projectFiles="true">
+            <logicalFolder name="f4" displayName="port" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="sercom" projectFiles="true">
+            <logicalFolder name="f3" displayName="sercom" projectFiles="true">
               <logicalFolder name="f1" displayName="i2c_master" projectFiles="true">
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/sercom/i2c_master/plib_sercom6_i2c_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="tc" projectFiles="true">
+            <logicalFolder name="f9" displayName="tc" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/peripheral/tc/plib_tc0.c</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -329,16 +412,36 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f4" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/osal/osal_freertos.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="sam_e54_cult_wm8904_freertos.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sercom6.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/tc0.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -352,15 +455,17 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.30</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.1.43"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.4.76"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -378,6 +483,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -418,7 +524,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src/app_config/non_gui/16K;../src;../src/config/sam_e54_cult_wm8904_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F;../src/third_party/rtos/FreeRTOS/Source/include"/>
+                  value="../src;../src/app_config/non_gui/16K;../src/config/sam_e54_cult_wm8904_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -430,11 +536,13 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
+        <appendMe value="-Wformat=2 -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wredundant-decls -Winline -Wlong-long -Wunreachable-code"/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -461,6 +569,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -513,7 +622,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e54_cult_wm8904_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -538,8 +648,10 @@
         <property key="mdtcm" value=""/>
         <property key="mitcm" value=""/>
         <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <EdbgTool>
@@ -550,7 +662,10 @@
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -564,9 +679,8 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/microchip/harmony/h3/audio/apps/microphone_loopback/firmware/mic_loopback_sam_e54_cult_wm8904_freertos.X/debug/sam_e54_cult_wm8904_freertos/mic_loopback_sam_e54_cult_wm8904_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -577,6 +691,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
       </EdbgTool>
       <ICD4Tool>
@@ -1085,6 +1203,51 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/microphone_loopback/firmware/mic_loopback_sam_e54_cult_wm8904_freertos.X/debug/sam_e54_cult_wm8904_freertos/mic_loopback_sam_e54_cult_wm8904_freertos_ptg"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>

@@ -33,20 +33,6 @@
 #include <stdlib.h>
 #include "configuration.h"
 #include "definitions.h"
-#include "peripheral/clk/plib_clk.h"
-#include "peripheral/nvic/plib_nvic.h"
-#include "peripheral/pio/plib_pio.h"
-#include "bsp/bsp.h"
-#include "system/int/sys_int.h"
-#include "system/ports/sys_ports.h"
-#include "osal/osal.h"
-#include "audio/driver/i2s/drv_i2s.h"
-#include "driver/i2c/drv_i2c.h"
-#include "peripheral/twihs/plib_twihs0.h"
-#include "system/time/sys_time.h"
-
-#include "audio/driver/codec/wm8904/drv_wm8904_local.h"
-#include "audio/driver/codec/wm8904/drv_wm8904.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

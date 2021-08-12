@@ -166,18 +166,18 @@ static void SYS_TIME_HwTimerCompareUpdate(void)
     {
         if (tmrActive->relativeTimePending > SYS_TIME_HW_COUNTER_HALF_PERIOD)
         {
-            nextHwCounterValue = counterObj->hwTimerCurrentValue + SYS_TIME_HW_COUNTER_HALF_PERIOD;
+            nextHwCounterValue = (uint64_t)counterObj->hwTimerCurrentValue + SYS_TIME_HW_COUNTER_HALF_PERIOD;
         }
         else
         {
             /* Use a non-volatile intermediate to prevent dual volatile access in single statement */
             uint32_t relativeTimePending = tmrActive->relativeTimePending;
-            nextHwCounterValue = counterObj->hwTimerCurrentValue + relativeTimePending;
+            nextHwCounterValue = (uint64_t)counterObj->hwTimerCurrentValue + relativeTimePending;
         }
     }
     else
     {
-        nextHwCounterValue = counterObj->hwTimerCurrentValue + SYS_TIME_HW_COUNTER_HALF_PERIOD;
+        nextHwCounterValue = (uint64_t)counterObj->hwTimerCurrentValue + SYS_TIME_HW_COUNTER_HALF_PERIOD;
     }
 
     currHwCounterValue = counterObj->timePlib->timerCounterGet();
@@ -775,22 +775,22 @@ void SYS_TIME_CounterSet ( uint32_t count )
 
 uint32_t  SYS_TIME_CountToUS ( uint32_t count )
 {
-    return (uint32_t) ((count * 1000000.0) / gSystemCounterObj.hwTimerFrequency);
+    return (uint32_t) (((uint64_t)count * 1000000) / gSystemCounterObj.hwTimerFrequency);
 }
 
 uint32_t  SYS_TIME_CountToMS ( uint32_t count )
 {
-    return (uint32_t) ((count * 1000.0) / gSystemCounterObj.hwTimerFrequency);
+    return (uint32_t) (((uint64_t)count * 1000) / gSystemCounterObj.hwTimerFrequency);
 }
 
 uint32_t SYS_TIME_USToCount ( uint32_t us )
 {
-    return (uint32_t) (((float) us * (float) gSystemCounterObj.hwTimerFrequency) / 1000000.);
+    return (uint32_t) ((us * (uint64_t) gSystemCounterObj.hwTimerFrequency) / 1000000);
 }
 
 uint32_t SYS_TIME_MSToCount ( uint32_t ms )
 {
-    return (uint32_t) (((float) ms * (float) gSystemCounterObj.hwTimerFrequency) / 1000.);
+    return (uint32_t) (( ms * (uint64_t) gSystemCounterObj.hwTimerFrequency) / 1000);
 }
 
 

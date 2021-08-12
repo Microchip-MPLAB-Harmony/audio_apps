@@ -1361,7 +1361,7 @@ bool DRV_I2S_ReadBuffer( const DRV_HANDLE handle, void * buffer, const size_t si
 bool DRV_I2S_LRCLK_Sync (const DRV_HANDLE handle, 
                          const uint32_t sample_rate);
 
-typedef void (*DRV_I2S_LL_CALLBACK)();
+typedef void (*DRV_I2S_LL_CALLBACK)(void);
 void DRV_I2S_InitWriteLinkedListTransfer(DRV_HANDLE handle, XDMAC_DESCRIPTOR_VIEW_1* pLinkedListDesc,
     uint16_t currDescrip, uint16_t nextDescrip, uint8_t* buffer, uint32_t bufferSize);
 void DRV_I2S_StartWriteLinkedListTransfer(DRV_HANDLE handle, XDMAC_DESCRIPTOR_VIEW_1* pLinkedListDesc,

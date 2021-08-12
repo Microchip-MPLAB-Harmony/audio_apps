@@ -42,6 +42,7 @@
 //DOM-IGNORE-END
 
 #include "plib_pio.h"
+#include "interrupts.h"
 
 
 
@@ -57,6 +58,7 @@
 */
 void PIO_Initialize ( void )
 {
+    MATRIX_REGS->CCFG_SYSIO = 0x0;
 
     /************************ PIO A Initialization ************************/
     /* PORTA Peripheral Function Selection */

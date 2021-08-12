@@ -1429,7 +1429,7 @@ bool DRV_I2S_ClockGenerationSet(DRV_HANDLE handle,
                                 uint8_t div2);
 /**************** End of SAM E70 specific code ********************/
 
-typedef void (*DRV_I2S_LL_CALLBACK)();
+typedef void (*DRV_I2S_LL_CALLBACK)(void);
 void DRV_I2S_InitWriteLinkedListTransfer(DRV_HANDLE handle, XDMAC_DESCRIPTOR_VIEW_1* pLinkedListDesc,
     uint16_t currDescrip, uint16_t nextDescrip, uint8_t* buffer, uint32_t bufferSize);
 void DRV_I2S_StartWriteLinkedListTransfer(DRV_HANDLE handle, XDMAC_DESCRIPTOR_VIEW_1* pLinkedListDesc,

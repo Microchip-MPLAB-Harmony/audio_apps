@@ -1,0 +1,15 @@
+configName: sam_e70_xult_wm8904_ssc_freertos
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../..
+processor: ATSAME70Q21B
+projectName: ''
+settings:
+  PackageFilter: aerospace;audio;audio,currentdecoderdev.100120;audio-previous decoder
+    work;audio-with release notes;audio.030921;audio.051121;audio.052721;audio.100920;audio.afternewswitches;audio.b4newswitches;audio.beforeregen.030921;audio.currentdevwnewswitches;audio.fromrepo.081320;audio.latestfromrepo,newswitches;audio.latestfromrepo,oldswitches;audio.newdoc;audio_apps;audio_apps-b4newswitches;audio_apps-old;audio_apps-round1regen;aws_cloud;bootloader;bsp;bt;bt-last
+    with L11 apps!!;bt.030420.withBM83stuff;bt.061620;bt.081221;bt.current;bt.newdoc;bt_apps;classb_sam_e5x_d5x;core;core_apps_sam_c20_c21;core_apps_sam_d5x_e5x;core_apps_sam_g55;crypto;cryptoauthlib;csp;diag_periph_c20_c21_src;diag_poc;gfx;gfx_apps;net;periph_diagnostic;quick_docs;reference_apps;touch;usb;wireless
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: ALL
+  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.5.86\same70b\atdf\ATSAME70Q21B.atdf
