@@ -80,20 +80,19 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* TIME System Service Configuration Options */
-#define SYS_TIME_INDEX_0                     0
-#define SYS_TIME_MAX_TIMERS                  5
-#define SYS_TIME_HW_COUNTER_WIDTH            32
-#define SYS_TIME_HW_COUNTER_PERIOD           4294967295U
-#define SYS_TIME_HW_COUNTER_HALF_PERIOD	     (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY         198000000
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES      (620)
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (32)
+#define SYS_TIME_HW_COUNTER_PERIOD                  (4294967295U)
+#define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (198000000)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (620)
 
 
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
-
-#define SYS_FS_VOLUME_NUMBER              (1)
+#define SYS_FS_VOLUME_NUMBER              1
 
 #define SYS_FS_AUTOMOUNT_ENABLE           true
 #define SYS_FS_CLIENT_NUMBER              1
@@ -101,9 +100,16 @@ extern "C" {
 #define SYS_FS_MAX_FILE_SYSTEM_TYPE       1
 #define SYS_FS_MEDIA_MAX_BLOCK_SIZE       512
 #define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  2048
+#define SYS_FS_USE_LFN                    1
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
+#define SYS_FS_ALIGNED_BUFFER_LEN         512
 
+
+#define SYS_FS_FAT_VERSION                "v0.14a"
+#define SYS_FS_FAT_READONLY               false
+#define SYS_FS_FAT_CODE_PAGE              437
+#define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
 
 
 
@@ -183,8 +189,8 @@ extern "C" {
 #define DRV_CODEC_Tasks                                     DRV_AK4954_Tasks
 #define DRV_CODEC_Open                                      DRV_AK4954_Open
 #define DRV_CODEC_Close                                     DRV_AK4954_Close
-#define DRV_CODEC_BufferEventHandlerSet                     DRV_AK4954_BufferEventHandlerSet
 #define DRV_CODEC_CommandEventHandlerSet                    DRV_AK4954_CommandEventHandlerSet
+#define DRV_CODEC_BufferEventHandlerSet                     DRV_AK4954_BufferEventHandlerSet
 #define DRV_CODEC_BufferAddWrite                            DRV_AK4954_BufferAddWrite
 #define DRV_CODEC_BufferAddRead                             DRV_AK4954_BufferAddRead
 #define DRV_CODEC_BufferAddWriteRead                        DRV_AK4954_BufferAddWriteRead
@@ -250,8 +256,10 @@ extern "C" {
 /* Reset duration in milli Seconds */ 
 #define DRV_USBHS_HOST_RESET_DURATION                     100
 
+
+
 /* Alignment for buffers that are submitted to USB Driver*/ 
-#define USB_ALIGN  CACHE_ALIGN
+#define USB_ALIGN  CACHE_ALIGN  __ALIGNED(16)
 
 // *****************************************************************************
 // *****************************************************************************
@@ -264,9 +272,6 @@ extern "C" {
 
 /* Total number of devices to be supported */
 #define USB_HOST_DEVICES_NUMBER                             1
-
-/* Size of Endpoint 0 buffer */
-#define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 /* Target peripheral list entries */
 #define  USB_HOST_TPL_ENTRIES                               1 
@@ -281,8 +286,6 @@ extern "C" {
 /* Provides Host pipes number */
 #define USB_HOST_PIPES_NUMBER                               10
 
-/* Number of Host Layer Clients */
-#define USB_HOST_CLIENTS_NUMBER                             1   
 
 
 

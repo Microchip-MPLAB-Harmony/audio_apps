@@ -50,5 +50,6 @@
 // *****************************************************************************
 #include "audio/decoder/audio_decoders/wav/wav_dec.h"
 #include "audio/decoder/audio_decoders/mp3/mp3_dec.h"
+#include "audio/decoder/audio_decoders/flac/flac_dec.h"
 #include "audio/decoder/audio_decoders/adpcm/adpcm_dec.h"
 

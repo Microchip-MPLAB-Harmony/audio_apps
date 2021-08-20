@@ -26,7 +26,7 @@
 // Section: Included Files 
 // *****************************************************************************
 // *****************************************************************************
-
+#include "system/fs/sys_fs.h"
 #include "app.h"
 #include "disk.h"
 #include <stdio.h>
@@ -34,8 +34,13 @@
 #include "gfx/libaria/libaria_init.h"
 #include "gfx/libaria/inc/libaria_widget_circular_slider.h"
 #endif
-#ifdef MP3_DECODER_ENABLED
-#include "audio/decoder/audio_decoders/mp3/fixpnt/pub/mp3dec.h"
+
+#ifndef FAT_FS_MAX_LFN
+#if defined (SYS_FS_FILE_NAME_LEN)
+#define FAT_FS_MAX_LFN (SYS_FS_FILE_NAME_LEN)
+#else
+#define FAT_FS_MAX_LFN (255)
+#endif
 #endif
 
 // *****************************************************************************
@@ -54,14 +59,20 @@ uint16_t volumeLevels[VOL_LVL_MAX] =
 };
 
 #ifdef DATA32_ENABLED
-DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[NUM_SAMPLES];
-DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[NUM_SAMPLES];
-DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_TempBuf[NUM_SAMPLES];
+DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[MAX_OUT_SAMPLES_SIZE];
+DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[MAX_OUT_SAMPLES_SIZE];
+DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_TempBuf[MAX_OUT_SAMPLES_SIZE];
+DRV_I2S_DATA32m __attribute__ ((aligned (32))) *App_Audio_Output_Pointer = NULL;
 #else
-DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[NUM_SAMPLES];
-DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[NUM_SAMPLES];
+DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[MAX_OUT_SAMPLES_SIZE];
+DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[MAX_OUT_SAMPLES_SIZE];
+DRV_I2S_DATA16 __attribute__ ((aligned (32))) *App_Audio_Output_Pointer = NULL;
 #endif
-DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Input_Buffer[NUM_SAMPLES];
+// flac: malloc(sizeof(brword) * br->capacity) => sizeof(brword) *16384u / FLAC__BITS_PER_WORD
+//                                               case 1:    4 * 16384u / 32
+//                                               case 2:    8 * 16384u / 64
+//                                               both equals 2048
+DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Input_Buffer[MAX_INPUT_SIZE];
 
 static uint16_t rd, wrtn;
 int32_t bytesRead;
@@ -96,6 +107,34 @@ int32_t MP3offset;
 #endif
 int16_t MP3outBuf[2*NUM_MP3_OUTPUT_SAMPLES];
 #endif
+
+#ifdef FLAC_DECODER_ENABLED
+// worst case of two 16 byte samples
+#if ((16384u/4)>(2*4*MAX_FLAC_BLOCK_SIZE_1_0))
+static uint8_t FLACFileReadBuff[16384u/8] = {0}; // == 2048 bytes, 
+                                   // Made equal to 
+                                   // (malloc(sizeof(brword)*(16384u / FLAC__BITS_PER_WORD))
+                                   // == malloc (8* (16384u/32))
+static size_t SizeofFLACFileReadBuff_Bytes = sizeof(FLACFileReadBuff);
+#else 
+static uint8_t *FLACFileReadBuff = (uint8_t*)App_Audio_Input_Buffer;
+static size_t SizeofFLACFileReadBuff_Bytes = sizeof(App_Audio_Input_Buffer);
+#endif
+//                      channels *   word max size * (number of samples in words + 4) / conversion factor to bytes  
+static int16_t FLACoutBuf[(2  /*two channels*/*8*  (MAX_FLAC_BLOCK_SIZE_1_0 + 4))/2/*two is size of int16_t*/]; /* made to match the malloc inside the Library */
+void FLAC_DecoderWriteEventHandler(uint32_t event, void *par1, void *pCtxt);
+void FLAC_DecoderEoFEventHandler(uint32_t event, void *par2, void *pCtxt);
+static FLAC_DEC_APPLICATIONCB_SET flac_dec_appCB_set = {NULL,
+    NULL,
+    NULL,
+    NULL,
+    FLAC_DecoderEoFEventHandler,
+    FLAC_DecoderWriteEventHandler,
+    NULL,
+    NULL
+};
+static bool waitingForWriteCB = false;
+#endif // FLAC_DECODER_ENABLED
 
 #ifdef GFX_ENABLED
 extern laCircularSliderWidget * VolumeWidget;
@@ -430,7 +469,7 @@ void APP_Set_GUI_FileNameStr( void )
     }
 }
 #else
-void APP_UpdateTrackPosition()
+void APP_UpdateTrackPosition(void)
 {
     uint32_t dur, time;
     if( appData.sampleRate && appData.numOfChnls )
@@ -454,7 +493,14 @@ void APP_UpdateTrackPosition()
                 dur = appData.playbackDuration;
                 time = ((appData.currPos-appData.mp3FirstFrame)*appData.playbackDuration)/appData.fileSize;
                 break;
-#endif                
+#endif  
+#ifdef FLAC_DECODER_ENABLED
+            case APP_STREAM_FLAC:
+                dur = appData.playbackDuration;
+                //if (0 == dur) dur = 1; // Remove this - Just Testing
+                time = ((appData.currPos-appData.flacFirstFrame)*dur)/appData.fileSize; //To-do
+                break;
+#endif
             default:
                 time = dur = 0;
                 break;
@@ -579,36 +625,69 @@ bool APP_IsSupportedAudioFile(char *name)
         return false;
     }
 
-    char lowercase[4];
-    lowercase[0] = char_tolower(name[i+1]);
-    lowercase[1] = char_tolower(name[i+2]);
-    lowercase[2] = char_tolower(name[i+3]);
-    lowercase[3] = '\0';
     
 #ifdef WAV_STREAMING_ENABLED
-    if( strcmp( lowercase, "wav" ) == 0 )
     {
-        strcpy( appData.ext, "wav" );
-        appData.currentStreamType = APP_STREAM_WAV;
-        return true;
+        char lowercase[4];
+        lowercase[0] = char_tolower(name[i+1]);
+        lowercase[1] = char_tolower(name[i+2]);
+        lowercase[2] = char_tolower(name[i+3]);
+        lowercase[3] = '\0';
+
+        if( strcmp( lowercase, "wav" ) == 0 )
+        {
+            strcpy( appData.ext, "wav" );
+            appData.currentStreamType = APP_STREAM_WAV;
+            return true;
+        }
     }
 #endif
 #ifdef ADPCM_STREAMING_ENABLED
-    if( strcmp( lowercase, "pcm" ) == 0 )
     {
-        strcpy( appData.ext, "pcm" );
-        appData.currentStreamType = APP_STREAM_ADPCM;
-        return true;
+        char lowercase[4];
+        lowercase[0] = char_tolower(name[i+1]);
+        lowercase[1] = char_tolower(name[i+2]);
+        lowercase[2] = char_tolower(name[i+3]);
+        lowercase[3] = '\0';
+        if( strcmp( lowercase, "pcm" ) == 0 )
+        {
+            strcpy( appData.ext, "pcm" );
+            appData.currentStreamType = APP_STREAM_ADPCM;
+            return true;
+        }
     }
 #endif
 #ifdef MP3_DECODER_ENABLED
-    if( strcmp( lowercase, "mp3" ) == 0 )
     {
-        strcpy( appData.ext, "mp3" );
-        appData.currentStreamType = APP_STREAM_MP3;
-        return true;
+        char lowercase[4];
+        lowercase[0] = char_tolower(name[i+1]);
+        lowercase[1] = char_tolower(name[i+2]);
+        lowercase[2] = char_tolower(name[i+3]);
+        lowercase[3] = '\0';
+        if( strcmp( lowercase, "mp3" ) == 0 )
+        {
+            strcpy( appData.ext, "mp3" );
+            appData.currentStreamType = APP_STREAM_MP3;
+            return true;
+        }
     }    
-#endif    
+#endif  
+#ifdef FLAC_DECODER_ENABLED
+    {
+        char lowercase[5];
+        lowercase[0] = char_tolower(name[i+1]);
+        lowercase[1] = char_tolower(name[i+2]);
+        lowercase[2] = char_tolower(name[i+3]);
+        lowercase[3] = char_tolower(name[i+4]);
+        lowercase[4] = '\0';
+        if( strcmp( lowercase, "flac" ) == 0 )
+        {
+            strcpy( appData.ext, "flac" );
+            appData.currentStreamType = APP_STREAM_FLAC;
+            return true;
+        }
+    }    
+#endif 
     strcpy( appData.ext, "n/a" );
     appData.currentStreamType = APP_STREAM_UNKNOWN;
     return false;
@@ -678,7 +757,7 @@ void APP_ValidateFile( void )
             // Read the mp3 file. Fill the first buffer of data from the input file.
             bytesRead = SYS_FS_FileRead(appData.fileHandle, MP3readBuf, READBUF_SIZE);                           
             // If end of file is reached then close this file
-            if ((0==bytesRead) || (-1==bytesRead) /*|| SYS_FS_FileEOF(appData.fileHandle)*/)
+            if ((0==bytesRead) || (-1==bytesRead) || SYS_FS_FileEOF(appData.fileHandle))
             {               
                 appData.state = APP_STATE_CLOSE_FILE; 
                 break;
@@ -737,7 +816,52 @@ void APP_ValidateFile( void )
             appData.state = APP_STATE_READ_FILE;
             appData.validFile = true;
             break;                       
-#endif        
+#endif 
+            
+#ifdef FLAC_DECODER_ENABLED
+        case APP_STREAM_FLAC:
+            appData.validFile = FLAC_DecoderIsFileValid();
+            if(appData.validFile)
+            {
+                appData.bitRate = FLAC_GetBitRate(); 
+                if (0==appData.bitRate)
+                {
+                    appData.validFile = false;
+                    appData.state = APP_STATE_CLOSE_FILE;
+                    break;                
+                }
+                appData.numOfChnls = FLAC_GetChannels();  
+                if (appData.numOfChnls>FLAC__MAX_CHANNELS) // Must be 2
+                {
+                    appData.validFile = false;
+                    printf("Does not support space for more than 2 Channels in the app's Output Buffer");
+                    appData.state = APP_STATE_CLOSE_FILE;
+                    break;                
+                }
+                appData.sampleRate = FLAC_GetSamplingRate();
+                appData.bitDepth = FLAC_GetBitdepth();
+                if (appData.bitDepth > 16)
+                {
+                    appData.validFile = false;
+                    printf("Max bit depth is 16");
+                    appData.state = APP_STATE_CLOSE_FILE;
+                    break;                
+                }
+                appData.playbackDuration = FLAC_GetDuration();
+                
+                printf("\r\nFLAC BitRate: %d\r\n",(int)appData.bitRate);
+                printf("FLAC Num Channels: %d\r\n",(int)appData.numOfChnls);
+                printf("FLAC Sample Rate: %d\r\n",(int)appData.sampleRate);                    
+                printf("FLAC bits/sample: %d\r\n",(int)appData.bitDepth);
+                printf("FLAC Duration: %d\r\n",(int)appData.playbackDuration);
+            }
+            else
+            {
+                appData.state = APP_STATE_CLOSE_FILE;
+            }
+            break;
+#endif
+          
         default:
             appData.bufferSize1 = 0;
             appData.bufferSize2 = 0;
@@ -794,6 +918,7 @@ void APP_Tasks ( void )
         if ((appData.state < APP_STATE_READ_FILE) ||
             (appData.state > APP_STATE_CODEC_WAIT_FOR_BUFFER_COMPLETE))
             printf("a%d ",appData.state);
+        
         oldAppState = appData.state;
     }
     
@@ -813,24 +938,24 @@ void APP_Tasks ( void )
             }
             break;
         }
+        
         case APP_STATE_CODEC_OPEN:
+        {
+            // see if codec is done initializing
+            SYS_STATUS status = DRV_CODEC_Status(sysObjdrvCodec0);
+            if (SYS_STATUS_READY == status)
             {
-                // see if codec is done initializing
-                SYS_STATUS status = DRV_CODEC_Status(sysObjdrvCodec0);
-                if (SYS_STATUS_READY == status)
+                // This means the driver can now be be opened.
+                // a client opens the driver object to get an Handle
+                appData.codecData.handle = DRV_CODEC_Open(DRV_CODEC_INDEX_0, 
+                    DRV_IO_INTENT_WRITE | DRV_IO_INTENT_EXCLUSIVE);       
+                if(appData.codecData.handle != DRV_HANDLE_INVALID)
                 {
-                    // This means the driver can now be be opened.
-                    // a client opens the driver object to get an Handle
-                    appData.codecData.handle = DRV_CODEC_Open(DRV_CODEC_INDEX_0, 
-                        DRV_IO_INTENT_WRITE | DRV_IO_INTENT_EXCLUSIVE);       
-                    if(appData.codecData.handle != DRV_HANDLE_INVALID)
-                    {
-                        appData.state = APP_STATE_CODEC_SET_BUFFER_HANDLER;
-                    }            
-                }
+                    appData.state = APP_STATE_CODEC_SET_BUFFER_HANDLER;
+                }            
+            }
             break;
         }
-        
         
         // set a handler for the audio buffer completion event
         case APP_STATE_CODEC_SET_BUFFER_HANDLER:
@@ -898,7 +1023,6 @@ void APP_Tasks ( void )
             LED_Set_Mode( 2, LED_STATE_ON, _50ms );
             
             printf("filename %s found\r\n",appData.fileName);
-            
             if( APP_IsSupportedAudioFile( appData.fileName ))
             {
                 // try opening the file for reading
@@ -932,7 +1056,24 @@ void APP_Tasks ( void )
                             MP3bytesLeft = 0;
                             MP3readPtr = MP3readBuf;
                         }
-#endif                        
+#endif
+#ifdef FLAC_DECODER_ENABLED
+                        if (APP_STREAM_FLAC==appData.currentStreamType)
+                        {
+                            appData.flacFirstFrame = 0;
+                            waitingForWriteCB = false;
+                            memset(FLACFileReadBuff, 0, SizeofFLACFileReadBuff_Bytes);
+                            if(!FLAC_Initialize(appData.fileHandle, (void *)FLACFileReadBuff))
+                            {
+                                printf("FLAC Initialization Failed!\r\n");
+                                appData.state = APP_STATE_CLOSE_FILE;
+                                break;
+                            }
+                            //else
+                            appData.flacFirstFrame = SYS_FS_FileTell(appData.fileHandle);
+                            FLAC_RegisterDecoderEventHandlerCallback(&flac_dec_appCB_set, (void *)NULL);
+                        }
+#endif
                         appData.pingPong = true;
                         firstRead = true;                          
                         appData.state = APP_STATE_INIT_READ_FILE;                                              
@@ -950,6 +1091,7 @@ void APP_Tasks ( void )
                     
             if( !appData.validFile )
             {
+                printf("File is invalid \r\n");
                 // Look for next file
                 appData.state = APP_STATE_CLOSE_FILE;
             }
@@ -961,6 +1103,15 @@ void APP_Tasks ( void )
             break;
             
         case APP_STATE_READ_FILE:
+#ifdef FLAC_DECODER_ENABLED
+            if (APP_STREAM_FLAC==appData.currentStreamType)
+            {
+                if(waitingForWriteCB)
+                {
+                   break; // off from APP_STATE_READ_FILE
+                }
+            }
+#endif   
             if (appData.pause)
             {
                 if (oldPause==false)
@@ -983,7 +1134,7 @@ void APP_Tasks ( void )
             laImageWidget_SetImage(PlayStopBtn, &pauseBtn); 
 #endif
                 
-#ifdef MP3_DECODER_ENABLED                       
+#ifdef MP3_DECODER_ENABLED
             if (APP_STREAM_MP3==appData.currentStreamType)
             {            
                 if (MP3bytesLeft < READBUF_SIZE) 
@@ -1041,7 +1192,7 @@ void APP_Tasks ( void )
                     }                    
                     appData.codecData.bufferSize1 = 4*NUM_MP3_OUTPUT_SAMPLES;   // # of bytes                    
 #else
-                    for (i=0; i < 2*NUM_MP3_OUTPUT_SAMPLES;
+                    for (i=0; i < 2*NUM_MP3_OUTPUT_SAMPLES;)
                     {
 #ifdef SWAPCHANNELS                         
                         App_Audio_Output_Buffer1[j].leftData = (int32_t)MP3outBuf[i+1]<<16;
@@ -1093,7 +1244,28 @@ void APP_Tasks ( void )
             }
             else
 #endif
-			// not MP3
+#ifdef FLAC_DECODER_ENABLED
+            // else is expected right above this line 
+            if (APP_STREAM_FLAC==appData.currentStreamType)
+            {
+                if(!waitingForWriteCB)
+                {
+                    waitingForWriteCB = true;
+                    if(!FLAC_DecodeSingleFrame((uint8_t *)FLACoutBuf, NULL))
+                    {
+                        printf("FLAC Decode cue Failed!\r\n");
+                        appData.state = APP_STATE_CLOSE_FILE;
+                        waitingForWriteCB = false;
+                        break; // off from APP_STATE_READ_FILE
+                    }
+                   //printf("Successfully Decoded a Single FLAC Audio Frame %d\r\n", (int)appData.state);
+                }
+                break;
+            }
+            else
+#endif                
+               
+			// neither MP3, nor FLAC
             {
                 bytesRead = SYS_FS_FileRead( appData.fileHandle, (uint8_t *) App_Audio_Input_Buffer, appData.bufferSize1);
                 if ((0==bytesRead) || (-1==bytesRead) || SYS_FS_FileEOF(appData.fileHandle))
@@ -1108,6 +1280,7 @@ void APP_Tasks ( void )
 #ifndef DATA32_ENABLED
                         APP_Decoder( (uint8_t *)App_Audio_Input_Buffer, (uint16_t)bytesRead, &rd,
                                 (int16_t *) App_Audio_Output_Buffer1, &wrtn);
+                        
 #ifdef SWAPCHANNELS                       
                         int i;
                         for( i = 0; i < NUM_SAMPLES; i++ )
@@ -1181,9 +1354,11 @@ void APP_Tasks ( void )
             {
                 appData.state = APP_STATE_CODEC_WAIT_FOR_BUFFER_COMPLETE;    
             }
+
             break;
             
         case APP_STATE_CODEC_ADD_BUFFER:
+            //printf("APP_STATE_CODEC_ADD_BUFFER!\r\n");
             if (appData.lrSync)            
             {
                 DRV_CODEC_LRCLK_Sync(appData.codecData.handle);
@@ -1257,6 +1432,13 @@ void APP_Tasks ( void )
 #ifdef GFX_ENABLED
             APP_Init_GUI_Strings();
 #endif            
+#ifdef FLAC_DECODER_ENABLED
+            if (APP_STREAM_FLAC==appData.currentStreamType)
+            {
+                FLAC_Cleanup();
+            }
+#endif    
+
             printf("closing the file\r\n");
             SYS_FS_FileClose( appData.fileHandle );
             DRV_I2S_WriteQueuePurge(DRV_CODEC_GetI2SDriver(appData.codecData.handle));          
@@ -1627,6 +1809,108 @@ void APP_ID3_EventHandler(int event, uint32_t data)
     }
     laString_Destroy( &laTmpStr );
 #endif
+}
+#endif
+
+#ifdef FLAC_DECODER_ENABLED
+void FLAC_DecoderWriteEventHandler(uint32_t event, void *buff, void *pCtxt)
+{
+    FLAC_DEC_APPCB_WRITE_DATA *pWRdata = (FLAC_DEC_APPCB_WRITE_DATA *)buff;
+    uint32_t no_samples = 0;
+    int32_t **buffer = NULL;
+       
+    switch(event)
+    {
+        case FLAC_DEC_WRITE_EVT_CONTINUE:
+            if((!pWRdata)||(!pWRdata->decSize)||(!pWRdata->decBuf))
+            {
+                appData.state = APP_STATE_CLOSE_FILE;
+                break;
+            }
+            buffer = (int32_t **)pWRdata->decBuf;
+            memcpy(&no_samples, pWRdata->decSize, sizeof(uint32_t));
+            if(!no_samples)
+            {
+                appData.state = APP_STATE_CLOSE_FILE;
+                break;
+            }
+#if 0            
+            // to-do: do destination buffer size check here
+            for(int i = 0; i<no_samples; i++) 
+            {
+                if(appData.pingPong) 
+                {
+                    App_Audio_Output_Buffer1[i].leftData = (int16_t)(0x0000FFFF & buffer[0][i]);
+                    App_Audio_Output_Buffer1[i].rightData = (int16_t)(0x0000FFFF & buffer[1][i]);  
+                    appData.codecData.txbufferObject1 = (uint8_t *)App_Audio_Output_Buffer1;  
+                    appData.codecData.bufferSize1 = 2/*int16*/*(no_samples*2);   // # of bytes  
+                }
+                else
+                {
+                    App_Audio_Output_Buffer2[i].leftData = (int16_t)(0x0000FFFF & buffer[0][i]);
+                    App_Audio_Output_Buffer2[i].rightData = (int16_t)(0x0000FFFF & buffer[1][i]);  
+                    appData.codecData.txbufferObject2 = (uint8_t *)App_Audio_Output_Buffer2;  
+                    appData.codecData.bufferSize2 = 2/*int16*/*(no_samples*2);   // # of bytes  
+                }
+            }
+#else
+            // Do destination buffer size check
+            if(MAX_OUT_SAMPLES_SIZE < no_samples)
+            {
+                appData.state = APP_STATE_CLOSE_FILE;
+                break;
+            }
+            // Apply Ping Pong Logic
+            if(appData.pingPong) 
+            {
+                App_Audio_Output_Pointer = &App_Audio_Output_Buffer1[0];
+                appData.codecData.txbufferObject1 = (uint8_t *)App_Audio_Output_Buffer1;  
+                appData.codecData.bufferSize1 = 2/*int16*/*(no_samples*2);   // # of bytes  
+            }
+            else
+            {
+                App_Audio_Output_Pointer = &App_Audio_Output_Buffer2[0];
+                appData.codecData.txbufferObject2 = (uint8_t *)App_Audio_Output_Buffer2;  
+                appData.codecData.bufferSize2 = 2/*int16*/*(no_samples*2);   // # of bytes  
+            }
+            // to-do: do destination buffer size check here
+            for(int i = 0; i<no_samples; i++) 
+            {
+#ifdef SWAPCHANNELS 
+                App_Audio_Output_Pointer[i].leftData = (int16_t)(0x0000FFFF & buffer[0][i]);
+                App_Audio_Output_Pointer[i].rightData =  (int16_t)(0x0000FFFF & buffer[1][i]);
+#else
+                App_Audio_Output_Pointer[i].leftData = (int16_t)(0x0000FFFF & buffer[1][i]);
+                //printf(" %2X ", (int)(0x0000FFFF & buffer[1][i]));
+                App_Audio_Output_Pointer[i].rightData =  (int16_t)(0x0000FFFF & buffer[0][i]);
+                //printf(" %2X ", (int)(0x0000FFFF & buffer[0][i]));
+                
+#endif
+            }
+#endif            
+            if (firstRead)
+            {
+                appData.state = APP_STATE_CODEC_ADD_BUFFER;
+                firstRead = false;
+            }
+            else
+            {
+                appData.state = APP_STATE_CODEC_WAIT_FOR_BUFFER_COMPLETE;    
+            }            
+            break;
+
+        case FLAC_DEC_WRITE_EVT_ERR:
+            appData.state = APP_STATE_CLOSE_FILE;
+            break;
+    }
+    waitingForWriteCB = false;
+    return;
+}
+
+void FLAC_DecoderEoFEventHandler(uint32_t event, void *param, void *pCtxt)
+{
+    printf("\r\nReached EoF\r\n");
+    return;
 }
 #endif
 

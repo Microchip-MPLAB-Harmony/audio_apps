@@ -252,6 +252,7 @@ void DISK_Tasks()
                 diskData.state = DISK_STATE_SCAN_FINISHED;
                 FilesTable[appDataPtr->currentSongIdx].trackPlayed = true;
                 SYS_FS_FileClose(appDataPtr->fileHandle);
+                printf("#F Count: %d \n\r",appDataPtr->totalAudioFiles);
             }
             if(appDataPtr->state == APP_STATE_READY_TO_SCAN)
             {
@@ -288,7 +289,7 @@ bool DISK_NextTrack(void)
     return DISK_OpenTrack(FilesTable[appDataPtr->currentSongIdx].path);
 }
 
-bool DISK_PreviousTrack()
+bool DISK_PreviousTrack(void)
 {
     appDataPtr->previousSongIdx = (appDataPtr->currentSongIdx ? (appDataPtr->currentSongIdx - 1):(appDataPtr->totalAudioFiles - 1));
     appDataPtr->currentSongIdx = appDataPtr->previousSongIdx;
@@ -481,7 +482,7 @@ int32_t DISK_GetFilePosition (SYS_FS_HANDLE fileHandle )
     return SYS_FS_FileTell(fileHandle);
 }
 
-int32_t DISK_GetCurrentFilePosition()
+int32_t DISK_GetCurrentFilePosition(void)
 {
     return SYS_FS_FileTell(appDataPtr->fileHandle);
 }
@@ -547,7 +548,7 @@ uint32_t DISK_ReadCurrentFile(uint8_t *ptr, size_t readSize)
     return ret;
 }
 
-uint32_t DISK_GetCurrentFileSize()
+uint32_t DISK_GetCurrentFileSize(void)
 {
     appDataPtr->fileSize = SYS_FS_FileSize( appDataPtr->fileHandle );
     if(appDataPtr->fileSize == -1)

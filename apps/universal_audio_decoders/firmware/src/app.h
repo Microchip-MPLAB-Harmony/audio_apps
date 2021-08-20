@@ -34,13 +34,21 @@
 #include <string.h>
 #include "configuration.h"
 #include "definitions.h"
-
 #include "disk.h"
-
-#include "audio/decoder/audio_decoders/wav/wav_dec.h"
-
 #include "user.h"
+#include "audio/decoder/audio_decoders_config.h"
+#include "audio/decoder/audio_decoders.h"
 
+#ifdef FLAC_DECODER_ENABLED
+#include "audio/decoder/audio_decoders/flac/flac_dec.h"
+#include "audio/decoder/audio_decoders/flac/flac_master/include/FLAC/format.h"
+#define MAX_FLAC_BLOCK_SIZE_1_0 (4096)
+#define MAX_OUT_SAMPLES_SIZE (2*MAX_FLAC_BLOCK_SIZE_1_0)
+#define MAX_INPUT_SIZE (2048)
+#else // FLAC_DECODER_ENABLED
+#define MAX_OUT_SAMPLES_SIZE (NUM_SAMPLES)
+#define MAX_INPUT_SIZE (NUM_SAMPLES)
+#endif // FLAC_DECODER_ENABLED
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -78,14 +86,14 @@ typedef struct
 
 } DRV_I2S_DATA32m;
 
-extern DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[NUM_SAMPLES];
-extern DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[NUM_SAMPLES];
+extern DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[MAX_OUT_SAMPLES_SIZE];
+extern DRV_I2S_DATA32m __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[MAX_OUT_SAMPLES_SIZE];
 #else
-extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[NUM_SAMPLES];
-extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[NUM_SAMPLES];
+extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer1[MAX_OUT_SAMPLES_SIZE];
+extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_Buffer2[MAX_OUT_SAMPLES_SIZE];
 #endif
-extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Input_Buffer[NUM_SAMPLES];
-extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_TempBuf[NUM_SAMPLES];
+extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Input_Buffer[MAX_INPUT_SIZE];
+extern DRV_I2S_DATA16 __attribute__ ((aligned (32))) App_Audio_Output_TempBuf[MAX_OUT_SAMPLES_SIZE];
 
 // *****************************************************************************
 /* Application States
@@ -389,7 +397,10 @@ typedef struct
 
 #ifdef MP3_DECODER_ENABLED    
     uint32_t mp3FirstFrame;
-#endif    
+#endif 
+#ifdef FLAC_DECODER_ENABLED
+    uint32_t flacFirstFrame;
+#endif 
 } APP_DATA ;
 
 typedef struct
@@ -485,7 +496,7 @@ void                APP_Tasks( void );
 void                BTN_Tasks( void );
 void                APP_LED_Tasks( void );
 void                LED_Set_Mode( uint8_t led, LED_STATES state, uint32_t prd_blinks);
-void                DISK_Tasks( void );
+//void                DISK_Tasks( void );
 //bool                APP_GetSpiAudioMode( void );
 APP_DATA *          APP_GetAppDataInstance( void );
 //int32_t             APP_GetReadBytesInAppData( void );
@@ -495,7 +506,7 @@ APP_DATA *          APP_GetAppDataInstance( void );
 //void                APP_SetReadBytesReadFlag( int32_t val, bool b );
 bool                APP_IsSupportedAudioFile( char *name );
 //bool                APP_PlayerEventHandler ( PLAYER_EVENT event, uint32_t data );
-void                APP_Initialize( void );
+//void                APP_Initialize( void );
 //bool                APP_PlayerDecode( uint8_t *ptr, int16_t* out );
 bool                APP_Decoder( uint8_t *in, uint16_t sz, uint16_t * bytesRd, int16_t* out, uint16_t * wrtn );
 //APP_DECODER_TYPE    APP_GetCurrentFileType ( char *ext );

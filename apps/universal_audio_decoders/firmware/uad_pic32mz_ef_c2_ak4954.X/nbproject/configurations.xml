@@ -1,7 +1,9 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_ef_c2_ak4954" projectFiles="true">
           <logicalFolder name="f1" displayName="audio" projectFiles="true">
@@ -9,6 +11,34 @@
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
                 <logicalFolder name="f2" displayName="adpcm" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/adpcm/adpcm_dec.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f4" displayName="flac" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_dec.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/flac_config.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/FLAC/assert.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/FLAC/export.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/FLAC/format.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/FLAC/ordinals.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/FLAC/stream_decoder.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/share/alloc.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/share/compat.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/include/share/endswap.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/bitmath.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/bitreader.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/cpu.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/crc.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/fixed.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/float.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/format.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/lpc.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/macros.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/md5.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/memory.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/ogg_decoder_aspect.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/ogg/ogg.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/ogg/ogg_config_types.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private/ogg/os_types.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/protected/stream_decoder.h</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f3" displayName="mp3" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/mp3/mp3_dec.h</itemPath>
@@ -95,7 +125,16 @@
             <itemPath>../src/config/pic32mz_ef_c2_ak4954/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_c2_ak4954/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f7" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_c2_ak4954/osal/osal.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_c2_ak4954/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_c2_ak4954/osal/osal_impl_basic.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f8" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/cache/plib_cache.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/cache/plib_cache_pic32mz.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
@@ -112,8 +151,10 @@
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/i2c/plib_i2c1.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/i2c/plib_i2c_master.h</itemPath>
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f5" displayName="uart" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/uart/plib_uart_common.h</itemPath>
@@ -121,6 +162,9 @@
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f6" displayName="system" projectFiles="true">
+            <logicalFolder name="f6" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/debug/sys_debug.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f5" displayName="dma" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/dma/sys_dma.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/dma/sys_dma_mapping.h</itemPath>
@@ -128,17 +172,18 @@
             <logicalFolder name="f2" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
                 <logicalFolder name="f1" displayName="file_system" projectFiles="true">
-                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/src/file_system/ff.h</itemPath>
-                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/src/file_system/ffconf.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system/ff.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system/ffconf.h</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="hardware_access" projectFiles="true">
-                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/src/hardware_access/diskio.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access/diskio.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/sys_fs.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/src/sys_fs_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/sys_fs_media_manager.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/src/sys_fs_media_manager_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/sys_fs_fat_interface.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/int/sys_int.h</itemPath>
@@ -177,28 +222,30 @@
             <itemPath>../src/config/pic32mz_ef_c2_ak4954/usb/usb_common.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_c2_ak4954/usb/usb_chapter_9.h</itemPath>
           </logicalFolder>
+          <itemPath>../src/config/pic32mz_ef_c2_ak4954/device_cache.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_c2_ak4954/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_c2_ak4954/definitions.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_c2_ak4954/interrupts.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_c2_ak4954/device.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_c2_ak4954/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_c2_ak4954/configuration.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_c2_ak4954/osal/osal.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_c2_ak4954/osal/osal_definitions.h</itemPath>
-        <itemPath>../src/config/pic32mz_ef_c2_ak4954/osal/osal_impl_basic.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1" displayName="PIC32MZ2048EFM144_DFP" projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFM144_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/disk.h</itemPath>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mz_ef_c2_ak4954" projectFiles="true">
+          <itemPath>../src/config/pic32mz_ef_c2_ak4954/p32MZ2048EFM144.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_ef_c2_ak4954" projectFiles="true">
           <logicalFolder name="f1" displayName="audio" projectFiles="true">
@@ -206,6 +253,20 @@
               <logicalFolder name="f1" displayName="audio_decoders" projectFiles="true">
                 <logicalFolder name="f2" displayName="adpcm" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/adpcm/adpcm_dec.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f4" displayName="flac" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_dec.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/bitmath.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/bitreader.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/cpu.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/crc.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/fixed.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/float.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/format.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/lpc.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/md5.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/memory.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/stream_decoder.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="f3" displayName="mp3" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/mp3/mp3_dec.c</itemPath>
@@ -268,25 +329,32 @@
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f3" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/cache/plib_cache_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/cache/plib_cache.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/cache/plib_cache_pic32mz.S</itemPath>
+            </logicalFolder>
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="coretimer" projectFiles="true">
+            <logicalFolder name="f7" displayName="coretimer" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/coretimer/plib_coretimer.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="dmac" projectFiles="true">
+            <logicalFolder name="f5" displayName="dmac" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="evic" projectFiles="true">
+            <logicalFolder name="f4" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/evic/plib_evic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="i2c" projectFiles="true">
-              <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/i2c/plib_i2c1.c</itemPath>
+            <logicalFolder name="f8" displayName="i2c" projectFiles="true">
+              <logicalFolder name="f1" displayName="master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="uart" projectFiles="true">
+            <logicalFolder name="f6" displayName="uart" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/peripheral/uart/plib_uart6.c</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -294,16 +362,25 @@
             <itemPath>../src/config/pic32mz_ef_c2_ak4954/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f7" displayName="system" projectFiles="true">
+            <logicalFolder name="f5" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/cache/sys_cache.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f4" displayName="dma" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/dma/sys_dma.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
-                <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/src/ff.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/src/diskio.c</itemPath>
+                <logicalFolder name="f1" displayName="file_system" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system/ff.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f2" displayName="hardware_access" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
+                </logicalFolder>
               </logicalFolder>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/src/sys_fs.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/src/sys_fs_media_manager.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/fs/src/sys_fs_fat_interface.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_c2_ak4954/system/int/src/sys_int.c</itemPath>
@@ -330,8 +407,36 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="pic32mz_ef_c2_ak4954.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/audio_codec_ak4954.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/audio_decoders.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/a_i2s2.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/core.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/i2c1.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/project.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/uart6.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/usb_host.yml</itemPath>
+        <itemPath>../src/config/pic32mz_ef_c2_ak4954/pic32mz_ef_c2_ak4954.mhc/usb_host_msd.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/pic32mz_ef_c2_ak4954/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -343,16 +448,18 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
-        <targetHeader/>
-        <targetPluginBoard/>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.30</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.1.45"/>
       </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -363,16 +470,17 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile/>
+          <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
         </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
-        <makeCustomizationPreStep/>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep/>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -385,7 +493,8 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src/app_config/16_bit;../src;../src/config/pic32mz_ef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;../src/mips"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/app_config/16_bit;../src/config/pic32mz_ef_c2_ak4954;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2048EFM144_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -402,7 +511,7 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
-      <appendMe value="-Wformat=2 -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
+        <appendMe value="-Wformat=2 -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wredundant-decls -Wnested-externs -Winline -Wno-long-long -Wunreachable-code -Wmissing-noreturn"/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -431,7 +540,7 @@
         <property key="coverage-enable" value=""/>
       </C32-CO>
       <C32-LD>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="16000"/>
         <property key="no-device-startup-code" value="true"/>
         <property key="preprocessor-macros" value=""/>
       </C32-LD>
@@ -446,7 +555,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mz_ef_c2_ak4954;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2048EFM144_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -540,8 +650,10 @@
         <property key="TIMER7" value="true"/>
         <property key="TIMER8" value="true"/>
         <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions" value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
         <property key="UART3" value="true"/>
@@ -559,7 +671,8 @@
         <property key="memories.exclude.configurationmemory" value="true"/>
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
@@ -648,7 +761,8 @@
         <property key="TIMER7" value="true"/>
         <property key="TIMER8" value="true"/>
         <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
@@ -667,7 +781,8 @@
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
         <property key="memories.instruction.ram" value="true"/>
-        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
         <property key="poweroptions.powerenable" value="false"/>
@@ -676,7 +791,8 @@
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges" value="${programoptions.preservedataflash.ranges}"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${programoptions.preservedataflash.ranges}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -692,21 +808,24 @@
       <PKOBSKDEPlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
         <property key="memories.id" value="true"/>
         <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="${memories.programmemory.ranges}"/>
+        <property key="memories.programmemory.ranges"
+                  value="${memories.programmemory.ranges}"/>
         <property key="memories.userotp" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges" value=""/>
         <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveeeprom.ranges"
+                  value="${memories.eedata.default}"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
@@ -715,6 +834,115 @@
       <RealICEPlatformTool>
         <property key="firmware.download.all" value="false"/>
       </RealICEPlatformTool>
+      <Tool>
+        <property key="ADC" value="true"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="CAN1" value="true"/>
+        <property key="CAN2" value="true"/>
+        <property key="CHANGE NOTICE A" value="true"/>
+        <property key="CHANGE NOTICE B" value="true"/>
+        <property key="CHANGE NOTICE C" value="true"/>
+        <property key="CHANGE NOTICE D" value="true"/>
+        <property key="CHANGE NOTICE E" value="true"/>
+        <property key="CHANGE NOTICE F" value="true"/>
+        <property key="CHANGE NOTICE G" value="true"/>
+        <property key="CHANGE NOTICE H" value="true"/>
+        <property key="CHANGE NOTICE J" value="true"/>
+        <property key="CHANGE NOTICE K" value="true"/>
+        <property key="COMPARATOR" value="true"/>
+        <property key="DMA" value="true"/>
+        <property key="ETHERNET CONTROLLER" value="true"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
+        <property key="I2C 1" value="true"/>
+        <property key="I2C 2" value="true"/>
+        <property key="I2C 3" value="true"/>
+        <property key="I2C 4" value="true"/>
+        <property key="I2C 5" value="true"/>
+        <property key="INPUT CAPTURE 1" value="true"/>
+        <property key="INPUT CAPTURE 2" value="true"/>
+        <property key="INPUT CAPTURE 3" value="true"/>
+        <property key="INPUT CAPTURE 4" value="true"/>
+        <property key="INPUT CAPTURE 5" value="true"/>
+        <property key="INPUT CAPTURE 6" value="true"/>
+        <property key="INPUT CAPTURE 7" value="true"/>
+        <property key="INPUT CAPTURE 8" value="true"/>
+        <property key="INPUT CAPTURE 9" value="true"/>
+        <property key="INTERRUPT CONTROL" value="true"/>
+        <property key="OUTPUT COMPARE 1" value="true"/>
+        <property key="OUTPUT COMPARE 2" value="true"/>
+        <property key="OUTPUT COMPARE 3" value="true"/>
+        <property key="OUTPUT COMPARE 4" value="true"/>
+        <property key="OUTPUT COMPARE 5" value="true"/>
+        <property key="OUTPUT COMPARE 6" value="true"/>
+        <property key="OUTPUT COMPARE 7" value="true"/>
+        <property key="OUTPUT COMPARE 8" value="true"/>
+        <property key="OUTPUT COMPARE 9" value="true"/>
+        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
+        <property key="REAL TIME CLOCK" value="true"/>
+        <property key="REFERENCE CLOCK1" value="true"/>
+        <property key="REFERENCE CLOCK2" value="true"/>
+        <property key="REFERENCE CLOCK3" value="true"/>
+        <property key="REFERENCE CLOCK4" value="true"/>
+        <property key="SPI/I2S 1" value="true"/>
+        <property key="SPI/I2S 2" value="true"/>
+        <property key="SPI/I2S 3" value="true"/>
+        <property key="SPI/I2S 4" value="true"/>
+        <property key="SPI/I2S 5" value="true"/>
+        <property key="SPI/I2S 6" value="true"/>
+        <property key="TIMER1" value="true"/>
+        <property key="TIMER2" value="true"/>
+        <property key="TIMER3" value="true"/>
+        <property key="TIMER4" value="true"/>
+        <property key="TIMER5" value="true"/>
+        <property key="TIMER6" value="true"/>
+        <property key="TIMER7" value="true"/>
+        <property key="TIMER8" value="true"/>
+        <property key="TIMER9" value="true"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="UART1" value="true"/>
+        <property key="UART2" value="true"/>
+        <property key="UART3" value="true"/>
+        <property key="UART4" value="true"/>
+        <property key="UART5" value="true"/>
+        <property key="UART6" value="true"/>
+        <property key="communication.interface" value=""/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/universal_audio_decoders/firmware/uad_pic32mz_ef_c2_ak4954.X/debug/pic32mz_ef_c2_ak4954/uad_pic32mz_ef_c2_ak4954_ptg"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value="1d000000-1d1fffff"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+      </Tool>
       <pkob4hybrid>
         <property key="ADC" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -779,8 +1007,10 @@
         <property key="TIMER7" value="true"/>
         <property key="TIMER8" value="true"/>
         <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions" value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
         <property key="UART3" value="true"/>
@@ -800,16 +1030,19 @@
         <property key="memories.exclude.configurationmemory" value="true"/>
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
-        <property key="programmerToGoFilePath" value="C:/microchip/harmony/h3/audio/apps/universal_audio_decoders/firmware/uad_pic32mz_ef_c2_ak4954.X/debug/pic32mz_ef_c2_ak4954/uad_pic32mz_ef_c2_ak4954_ptg"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/universal_audio_decoders/firmware/uad_pic32mz_ef_c2_ak4954.X/debug/pic32mz_ef_c2_ak4954/uad_pic32mz_ef_c2_ak4954_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
         <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges" value="${memories.dataflash.default}"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value="1d000000-1d1fffff"/>

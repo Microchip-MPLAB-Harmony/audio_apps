@@ -46,6 +46,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "driver/usb/usbhs/src/drv_usbhs_local.h"
 #include "usb/usb_host.h"
 #include "usb/usb_host_client_driver.h"
+#include "driver/usb/usbhs/src/drv_usbhs_variant_mapping.h"
+
 
 
 /******************************************************************************
@@ -158,15 +160,15 @@ void _DRV_USBHS_HOST_AttachDetachStateMachine
             {   
                 /* Explicitely try to delete the Timer object if it is not
                  * running */
-                SYS_TMR_ObjectDelete(hDriver->usbDrvCommonObj.timerHandle);
+                SYS_TIME_TimerDestroy(hDriver->usbDrvHostObj.timerHandle);
                 
                 hDriver->usbDrvHostObj.timerExpired = false;
                 
                 /* Start the de-bouncing timer */
-                hDriver->usbDrvCommonObj.timerHandle = SYS_TMR_CallbackSingle( DRV_USBHS_HOST_ATTACH_DEBOUNCE_DURATION,
-                        (uintptr_t ) hDriver, _DRV_USBHS_HOST_TimerCallback);
+                hDriver->usbDrvHostObj.timerHandle = SYS_TIME_CallbackRegisterMS(_DRV_USBHS_HOST_TimerCallback,
+                       (uintptr_t ) hDriver,  DRV_USBHS_HOST_ATTACH_DEBOUNCE_DURATION, SYS_TIME_SINGLE);
                 
-                if(SYS_TMR_HANDLE_INVALID != hDriver->usbDrvCommonObj.timerHandle)
+                if(SYS_TIME_HANDLE_INVALID != hDriver->usbDrvHostObj.timerHandle)
                 {
                     /* The de-bounce timer has started */
                     hDriver->usbDrvHostObj.attachState = DRV_USBHS_HOST_ATTACH_STATE_DEBOUNCING;
@@ -289,9 +291,10 @@ void _DRV_USBHS_HOST_ResetStateMachine
         case DRV_USBHS_HOST_RESET_STATE_START:
 
             /* We should start reset signaling. First try to get a timer */
-            hDriver->usbDrvCommonObj.timerHandle = SYS_TMR_CallbackSingle( DRV_USBHS_HOST_RESET_DURATION, (uintptr_t ) hDriver, _DRV_USBHS_HOST_TimerCallback);
+            hDriver->usbDrvHostObj.timerHandle = SYS_TIME_CallbackRegisterMS(_DRV_USBHS_HOST_TimerCallback, (uintptr_t ) hDriver, 
+                    DRV_USBHS_HOST_RESET_DURATION, SYS_TIME_SINGLE );
             
-            if(SYS_TMR_HANDLE_INVALID != hDriver->usbDrvCommonObj.timerHandle)
+            if(SYS_TIME_HANDLE_INVALID != hDriver->usbDrvHostObj.timerHandle)
             {
                 PLIB_USBHS_ResetEnable(hDriver->usbDrvCommonObj.usbID);
                 hDriver->usbDrvHostObj.resetState = DRV_USBHS_HOST_RESET_STATE_WAIT_FOR_COMPLETE;
@@ -336,8 +339,8 @@ void _DRV_USBHS_HOST_ResetStateMachine
 					/* Enable Suspend */
                     PLIB_USBHS_SuspendEnable(hDriver->usbDrvCommonObj.usbID);
 
-                    hDriver->usbDrvCommonObj.timerHandle = SYS_TMR_CallbackSingle( 100,(uintptr_t ) hDriver, _DRV_USBHS_HOST_TimerCallback);
-                    if(SYS_TMR_HANDLE_INVALID != hDriver->usbDrvCommonObj.timerHandle)
+                    hDriver->usbDrvHostObj.timerHandle = SYS_TIME_CallbackRegisterMS(_DRV_USBHS_HOST_TimerCallback, (uintptr_t ) hDriver, 100, SYS_TIME_SINGLE );
+                    if(SYS_TIME_HANDLE_INVALID != hDriver->usbDrvHostObj.timerHandle)
                     {
                         hDriver->usbDrvHostObj.resetState = DRV_USBHS_HOST_RESET_STATE_WAIT_FOR_SUSPEND_COMPLETE;
                     }
@@ -354,8 +357,8 @@ void _DRV_USBHS_HOST_ResetStateMachine
                 /* Enable Resume. This will clear Suspend as well */
                 PLIB_USBHS_ResumeEnable(hDriver->usbDrvCommonObj.usbID);
                 
-                hDriver->usbDrvCommonObj.timerHandle = SYS_TMR_CallbackSingle( 20, (uintptr_t ) hDriver, _DRV_USBHS_HOST_TimerCallback);
-                if(SYS_TMR_HANDLE_INVALID != hDriver->usbDrvCommonObj.timerHandle)
+                hDriver->usbDrvHostObj.timerHandle = SYS_TIME_CallbackRegisterMS(_DRV_USBHS_HOST_TimerCallback, (uintptr_t )hDriver, 20, SYS_TIME_SINGLE);
+                if(SYS_TIME_HANDLE_INVALID != hDriver->usbDrvHostObj.timerHandle)
                 {
                     hDriver->usbDrvHostObj.resetState = DRV_USBHS_HOST_RESET_STATE_WAIT_FOR_RESUME_COMPLETE;
                 }
@@ -917,30 +920,6 @@ void DRV_USBHS_HOST_IRPCancel
             interruptWasEnabled = _DRV_USBHS_InterruptSourceDisable(hDriver->usbDrvCommonObj.interruptSource);
         }
 
-        if(irp->previous == NULL)
-        {
-            /* This means this was the first irp in the queue. Update the pipe
-             * queue head directly */
-
-            pipe->irpQueueHead = irp->next;
-            if(irp->next != NULL)
-            {
-                irp->next->previous = NULL;
-            }
-        }
-        else
-        {
-            /* Remove the IRP from the linked list */
-            irp->previous->next = irp->next;
-
-            if(irp->next != NULL)
-            {
-                /* This applies if this is not the last irp in the linked list
-                 * */
-                irp->next->previous = irp->previous;
-            }
-        }
-
         if(irp->status == USB_HOST_IRP_STATUS_IN_PROGRESS)
         {
             /* If the irp is already in progress then we set the temporary
@@ -952,6 +931,30 @@ void DRV_USBHS_HOST_IRPCancel
         }
         else
         {
+            
+            if(irp->previous == NULL)
+            {
+                /* This means this was the first irp in the queue. Update the pipe
+                * queue head directly */
+
+                pipe->irpQueueHead = irp->next;
+                if(irp->next != NULL)
+                {
+                    irp->next->previous = NULL;
+                }
+            }
+            else
+            {
+                /* Remove the IRP from the linked list */
+                irp->previous->next = irp->next;
+
+                if(irp->next != NULL)
+                {
+                    /* This applies if this is not the last irp in the linked list
+                     * */
+                    irp->next->previous = irp->previous;
+                }
+            }
             irp->status = USB_HOST_IRP_STATUS_ABORTED;
             if(irp->callback != NULL)
             {
@@ -2665,7 +2668,7 @@ void DRV_USBHS_HOST_ROOT_HUB_OperationEnable
                 if(DRV_USBHS_OPMODE_DUAL_ROLE == pUSBDrvObj->usbDrvCommonObj.operationMode)
                 {
                     /* For Host the ID pin needs to be pull down */
-                    // TODO PLIB_PORTS_ChangeNoticePullDownPerPortEnable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
+                    PLIB_PORTS_ChangeNoticePullDownPerPortEnable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
                     pUSBDrvObj->usbDrvCommonObj.isDeviceRoleActive = false;
                 }
                 
@@ -2707,7 +2710,7 @@ void DRV_USBHS_HOST_ROOT_HUB_OperationEnable
                         (true == pUSBDrvObj->usbDrvCommonObj.isHostRoleActive) )
                 {
                     /* Disable CN Pull ups only if it was enabled */
-                    // TODO PLIB_PORTS_ChangeNoticePullDownPerPortDisable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
+                    PLIB_PORTS_ChangeNoticePullDownPerPortDisable( PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_3 );
                 }
 
                 _DRV_USBHS_NonPersistentInterruptSourceClear(pUSBDrvObj->usbDrvCommonObj.interruptSource);
@@ -3276,65 +3279,36 @@ USB_SPEED DRV_USBHS_HOST_ROOT_HUB_PortSpeedGet
 
 void DRV_USBHS_HOST_EndpointToggleClear
 (
-    DRV_HANDLE client,
-    USB_ENDPOINT endpointAndDirection
+    DRV_USBHS_HOST_PIPE_HANDLE pipeHandle
 )
 {
-    /* Start of local variables */
-    DRV_USBHS_OBJ * hDriver = NULL;
     USBHS_MODULE_ID usbID = USBHS_ID_0;
-    uint8_t epIter = 0;
     USB_DATA_DIRECTION  direction = USB_DATA_DIRECTION_DEVICE_TO_HOST;
-    /* End of local variables */
+    DRV_USBHS_HOST_PIPE_OBJ * pPipe = NULL;
+    DRV_USBHS_OBJ * hDriver = NULL;
 
-    if((client == DRV_HANDLE_INVALID) || (((DRV_USBHS_OBJ *)client) == NULL))
+    if ((pipeHandle != DRV_USBHS_HOST_PIPE_HANDLE_INVALID) && ((DRV_USBHS_HOST_PIPE_HANDLE)NULL != pipeHandle))
     {
-        SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "Invalid client");
-    }
-    else
-    {
-        hDriver = ((DRV_USBHS_CLIENT_OBJ *)client)->hDriver;
+        pPipe = (DRV_USBHS_HOST_PIPE_OBJ *)pipeHandle;
+        hDriver = ((DRV_USBHS_CLIENT_OBJ *)(pPipe->hClient))->hDriver;
         usbID = hDriver->usbDrvCommonObj.usbID;
+        direction = (pPipe->endpointAndDirection & 0x80) >> 7;
         
-        direction = (endpointAndDirection & 0x80) >> 7;
-        
-        /* Now map the device endpoint to host endpoint. This is required to
-         * jump to the appropriate entry in the endpoint table */
-        for(epIter = 1; epIter < DRV_USBHS_HOST_MAXIMUM_ENDPOINTS_NUMBER; epIter++)
+        if(USB_DATA_DIRECTION_HOST_TO_DEVICE == direction)
         {
-            if(true == hDriver->usbDrvHostObj.hostEndpointTable[epIter].endpoints[direction].inUse)
-            {
-                /* Please not that for a single non control endpoint there cannot
-                 * be multiple pipes. Hence there should be only 1 pipe object
-                 * that can be linked to this "endpointAndDirection". */
-                if((hDriver->usbDrvHostObj.hostEndpointTable[epIter].endpoints[direction].pipe)->endpointAndDirection
-                        == endpointAndDirection)
-                {
-                    /* Got the entry in the host endpoint table. We can exit
-                     * from this loop now for further processing */
-                    break;
-                }
-            }
-        }
-        
-        if(DRV_USBHS_HOST_MAXIMUM_ENDPOINTS_NUMBER != epIter)
-        {
-            if(USB_DATA_DIRECTION_HOST_TO_DEVICE == direction)
-            {
-                /* Clear the Data Toggle for TX Endpoint */
-                PLIB_USBHS_HostTxEndpointDataToggleClear(usbID, epIter);
-            }
-            else
-            {
-                /* Clear the Data Toggle for RX Endpoint */
-                PLIB_USBHS_HostRxEndpointDataToggleClear(usbID, epIter);
-            }
+            /* Clear the Data Toggle for TX Endpoint */
+            PLIB_USBHS_HostTxEndpointDataToggleClear(usbID, pPipe->hostEndpoint);
         }
         else
         {
-            SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "Device endpoint not found");
+            /* Clear the Data Toggle for RX Endpoint */
+            PLIB_USBHS_HostRxEndpointDataToggleClear(usbID, pPipe->hostEndpoint);
         }
-        
     }
+    else
+    {
+        SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "\r\nUSBHS HOST Driver: Invalid Pipe Handle");
+    }
+    
 } /* end of DRV_USBHS_HOST_EndpointToggleClear() */
 

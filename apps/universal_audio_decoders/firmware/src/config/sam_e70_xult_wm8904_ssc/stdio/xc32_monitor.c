@@ -1,14 +1,14 @@
 /*******************************************************************************
- Debug Console Source file 
+ Debug Console Source file
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    debug_console.c
+    xc32_monitor.c
 
   Summary:
-    RSTC Source File
+    debug console Source File
 
   Description:
     None
@@ -40,18 +40,30 @@
 
 #include "definitions.h"
 
+#ifdef __arm__
+/* Declaration of these functions are missing in stdio.h for ARM parts*/
+int _mon_getc(int canblock);
+void _mon_putc(char c);
+#endif //__arm__
+
 int _mon_getc(int canblock)
 {
-   volatile int c = 0;
-   while(USART1_Read((void*)&c, 1) != true);
+   int c = 0;
+   bool success = false;
+   (void)canblock;
+   do
+   {
+       success = USART1_Read(&c, 1);                
+   }while( !success);
    return c;
 }
 
 void _mon_putc(char c)
 {
-   uint8_t size = 0;
+   bool success = false;
    do
    {
-       size = USART1_Write((void*)&c, 1);
-   }while (size != 1);
+       success = USART1_Write(&c, 1);
+   }while (!success);
 }
+

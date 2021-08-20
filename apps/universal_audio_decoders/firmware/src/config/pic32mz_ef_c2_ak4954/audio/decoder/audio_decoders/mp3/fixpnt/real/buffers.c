@@ -193,20 +193,20 @@ MP3DecInfo *AllocateBuffers(void)
  *
  * Notes:       safe to call even if some buffers were not allocated (uses SAFE_FREE)
  **************************************************************************************/
-void FreeBuffers(MP3DecInfo *mp3DecInfo)
+void FreeBuffers(MP3DecInfo *mp3DecInfoArg)
 {
 #if !USE_STATIC
-	if (!mp3DecInfo)
+	if (!mp3DecInfoArg)
 		return;
 
-	SAFE_FREE(mp3DecInfo->FrameHeaderPS);
-	SAFE_FREE(mp3DecInfo->SideInfoPS);
-	SAFE_FREE(mp3DecInfo->ScaleFactorInfoPS);
-	SAFE_FREE(mp3DecInfo->HuffmanInfoPS);
-	SAFE_FREE(mp3DecInfo->DequantInfoPS);
-	SAFE_FREE(mp3DecInfo->IMDCTInfoPS);
-	SAFE_FREE(mp3DecInfo->SubbandInfoPS);
+	SAFE_FREE(mp3DecInfoArg->FrameHeaderPS);
+	SAFE_FREE(mp3DecInfoArg->SideInfoPS);
+	SAFE_FREE(mp3DecInfoArg->ScaleFactorInfoPS);
+	SAFE_FREE(mp3DecInfoArg->HuffmanInfoPS);
+	SAFE_FREE(mp3DecInfoArg->DequantInfoPS);
+	SAFE_FREE(mp3DecInfoArg->IMDCTInfoPS);
+	SAFE_FREE(mp3DecInfoArg->SubbandInfoPS);
 
-	SAFE_FREE(mp3DecInfo);
+	SAFE_FREE(mp3DecInfoArg);
 #endif
 }
