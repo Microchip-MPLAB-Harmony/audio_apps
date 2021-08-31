@@ -3,6 +3,7 @@
 *.map
 *.d
 *.bak
+*.swp
 **/nbproject/private
 **/nbproject/Makefile-*
 **/nbproject/Package-*
