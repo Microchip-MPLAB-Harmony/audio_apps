@@ -47,7 +47,7 @@ files:
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F7210A8A1625AD3DC23AFA736156E5EE
+  userChecksum: 9D391AC39BEC3E3631EE2C4DE33B565F
 - generatedChecksum: 8048089AA9DA0663AE185F78DF90D645
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/driver/usb/usbhs/src
   name: drv_usbhs.c
@@ -82,7 +82,7 @@ files:
   physicalPath: audio/math/libq_c/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B04346093C903E463E6878C924CEAEFC
+  userChecksum: 5DA341ED7C2DCF62B80CB8D0F99DBD27
 - generatedChecksum: C26CAD040CF7B59BC3832BB88378ACE6
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: initialization.c
@@ -292,7 +292,7 @@ files:
   physicalPath: audio/math/libq_c/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C0F5F18A6C929CB1D793AC6CC2CBE2A8
+  userChecksum: E0B39D2F69A56CCDFFE626D83F0E3DD3
 - generatedChecksum: 0AF0E0CEBB6986D8711FAC1C8DFF44CF
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/clk
   name: plib_clk.c
@@ -656,7 +656,7 @@ files:
   physicalPath: audio/math/libq_c
   security: NON_SECURE
   type: HEADER
-  userChecksum: A27A1095FB64F559F1892A45B155B9A2
+  userChecksum: 07D18BB8E63A02F9E747169D7733AEA7
 - generatedChecksum: F0AD88762263B7CB89B02AB4F5876059
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/osal
   name: osal.h

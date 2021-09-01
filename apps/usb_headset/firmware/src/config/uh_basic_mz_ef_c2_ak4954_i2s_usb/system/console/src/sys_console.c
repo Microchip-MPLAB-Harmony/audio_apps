@@ -314,7 +314,7 @@ ssize_t SYS_CONSOLE_WriteCountGet(const SYS_CONSOLE_HANDLE handle)
     }
 }
 
-void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
+void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)  
 {
     size_t len = 0;
     va_list args = {0};

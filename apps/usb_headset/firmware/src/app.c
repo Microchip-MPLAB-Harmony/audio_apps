@@ -172,7 +172,7 @@ static DRV_I2S_DATA16 CACHE_ALIGN
 void _APP_Button_Tasks(void);
 void _APP_LED_Tasks(void);
 static void _APP_TimerCallback( uintptr_t context);
-void CRLF();
+void CRLF(void);
 
 //==============================================================================
 // Application Playback Buffer Queue
@@ -185,9 +185,9 @@ static int     _APP_SetUSBWriteBufferReady(
                         uint16_t frameLengthBytes);
 //static void    _APP_SetAecBufferReady(int idx);
 static int     _APP_SetCodecWriteReadComplete(DRV_CODEC_BUFFER_HANDLE handle);
-static void    _APP_Init_RWBufferQueue();
+static void    _APP_Init_RWBufferQueue(void);
 static int16_t _APP_GetNextIdx(int16_t index);
-static bool    _APP_USBInitAllBufferReady();
+static bool    _APP_USBInitAllBufferReady(void);
 
 static void _aecSumStereoChannels(DRV_I2S_DATA16 * input, 
                                   q15 * output, 
@@ -829,7 +829,7 @@ void APP_Initialize()
     interruptStatus = __builtin_disable_interrupts(); 
     #endif
         {
-            char __attribute__((unused)) *initMessage = 
+            const char __attribute__((unused)) *initMessage = 
                 "\r\nApplication created " __DATE__ " " __TIME__ " initialized!\r\n";
             //SYS_CONSOLE_Write(SYS_CONSOLE_INDEX_0, STDOUT_FILENO, initMessage, 
             //        strlen(initMessage));
@@ -1450,7 +1450,6 @@ void APP_Tasks()
                 if (appWRQueue.usbInitialBufsReady == true)
                 {
 
-                    static bool errState = false;
                     errState = false;
                     for (i = 0;
                          i < APP_QUEUE_SIZE/QUEUE_USB_INIT_PART; 
@@ -1594,7 +1593,7 @@ void APP_Tasks()
                 tailIdx  = appWRQueue.tailIdx;  //Queue TAIL
                 currentQueueT    = &(appWRQueue.buffer[tailIdx]);
 
-                int8_t headIdx = appWRQueue.headIdx;  //Queue HEAD
+                headIdx = appWRQueue.headIdx;  //Queue HEAD
 
                 //--------------------------------------------------------------
                 // Codec WR Queueing

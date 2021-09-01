@@ -16,9 +16,9 @@ extern "C" {
 
 #define NUMSTATES 16
 //#define NUMSTATES 12
-extern char * stateStr[NUMSTATES];
-extern char * usbDevEventStr[];
-extern char * usbAudioEventStr[];
+extern const char * stateStr[NUMSTATES];
+extern const char * usbDevEventStr[];
+extern const char * usbAudioEventStr[];
 
 typedef enum _ERROR_NUM 
     {ERR_CODEC, ERR_CODEC_EVENT, ERR_CODEC_BUFFER, 
@@ -26,7 +26,7 @@ typedef enum _ERROR_NUM
 ERROR_NUM errNum;
 
 
-extern char * ERROR_STR[]; 
+extern const char * ERROR_STR[]; 
 extern bool errState;
 
 #ifdef	__cplusplus

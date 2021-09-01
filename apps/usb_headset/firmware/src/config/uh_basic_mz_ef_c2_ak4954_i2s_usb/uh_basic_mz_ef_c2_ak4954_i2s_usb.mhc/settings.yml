@@ -5,7 +5,7 @@ frameworkPath: ../../..
 processor: PIC32MZ2048EFM144
 projectName: ''
 settings:
-  PackageFilter: audio;audio_apps;bsp;bt;core;crypto;csp;gfx;usb
+  PackageFilter: audio;audio_apps;bsp;bt;core;crypto;cryptoauthlib_apps;csp;gfx;tflite;usb;xiph_flac;xiph_opus;xiph_speex
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.7.0

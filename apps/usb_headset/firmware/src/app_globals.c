@@ -1,6 +1,6 @@
 #include "app_globals.h"
 
-char * ERROR_STR[] = 
+const char * ERROR_STR[6] = 
     { "i2sc0 Not Ready",    //0 
       "i2sc0 Event Error",  //1 
       "i2sc0 Buffer Error", //2 
@@ -31,7 +31,7 @@ bool errState = false;
     APP_STATE_ERROR,
 */
 
-char * stateStr[NUMSTATES] =
+const char * stateStr[NUMSTATES] =
 {
     "_INIT\r\n",
     "_USB_OPEN\r\n",
@@ -51,7 +51,7 @@ char * stateStr[NUMSTATES] =
     "_ERROR\r\n",
 };
 
-char * usbDevEventStr[] =
+const char * usbDevEventStr[] =
 {
     "unknown 0",
     "USB_DEVICE:_ERROR",          //1
@@ -75,7 +75,7 @@ char * usbDevEventStr[] =
     "USB_DEVICE:_SYNCH_FRAME",
 };
 
-char * usbAudioEventStr[] =
+const char * usbAudioEventStr[] =
 {
     "USB_AUDIO:_WRITE_COMPLETE ",
     "USB_AUDIO:_READ_COMPLETE ",
