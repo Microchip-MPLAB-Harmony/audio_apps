@@ -1656,27 +1656,12 @@ void APP_Tasks()
                         appWRQueue.codecWRQueueCnt++;
 
                         //++TAIL  (Next Codec WR)
-                        appWRQueue.usbCompleteBufferLevel--;
                         appWRQueue.tailIdx = _APP_GetNextIdx(appWRQueue.tailIdx);
 
                         if (appWRQueue.codecWRQueueCnt % 5000 == 0)
                         {
                             SYS_PRINT("WRQC: %d",appWRQueue.codecWRQueueCnt);
                         }
-
-                        //Check for QUEUE Empty 
-                        //if (appWRQueue.usbCompleteBufferLevel == 0)
-                        //{
-                           //QUEUE is empty do not execute USB Read command;
-                        //   SYS_PRINT("APP: Codec Playback Queue EMPTY(%d)", 
-                                     //appWRQueue.
-                                     //usbCompleteBufferLevel);
-                           //queueEmpty = true;
-                        //}
-                        //else
-                        //{
-                        //   queueEmpty = false;
-                        //}
                     }
                     else
                     {
@@ -2548,7 +2533,7 @@ void APP_CODECBufferEventHandlerWriteRead(DRV_CODEC_BUFFER_EVENT event,
             if (appWRQueue.usbCompleteBufferLevel <= 0)
             {
                 //USB Read needs to complete before next Codec Write.
-                SYS_MESSAGE("[Q0]\r\n");
+                //SYS_MESSAGE("[Q0]\r\n");
                 appWRQueue.usbCompleteBufferLevel = 0;
                 queueEmpty = true;
             }

@@ -41,7 +41,7 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 37780F17759DED907A0F36E28BFB3136
-- generatedChecksum: F7210A8A1625AD3DC23AFA736156E5EE
+- generatedChecksum: 9D391AC39BEC3E3631EE2C4DE33B565F
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/i2s
   name: drv_i2s.c
   physicalPath: audio/driver/i2s/src
@@ -76,7 +76,7 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5E4D03A3F94F843D36E9676C36C0F0AD
-- generatedChecksum: B04346093C903E463E6878C924CEAEFC
+- generatedChecksum: 5DA341ED7C2DCF62B80CB8D0F99DBD27
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/math/libq_c
   name: fract.c
   physicalPath: audio/math/libq_c/src
@@ -286,7 +286,7 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: C0F5F18A6C929CB1D793AC6CC2CBE2A8
+- generatedChecksum: E0B39D2F69A56CCDFFE626D83F0E3DD3
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/math/libq_c
   name: pixel_rotation.c
   physicalPath: audio/math/libq_c/src
@@ -650,7 +650,7 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: BA9F8E0E227CEE2F8BDDC03616693F55
-- generatedChecksum: A27A1095FB64F559F1892A45B155B9A2
+- generatedChecksum: 07D18BB8E63A02F9E747169D7733AEA7
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/math/libq_c
   name: libq_c.h
   physicalPath: audio/math/libq_c
@@ -775,7 +775,7 @@ files:
   physicalPath: system/console
   security: NON_SECURE
   type: HEADER
-  userChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
+  userChecksum: 677B451383CB5F109FBDB0C11BF37FFA
 - generatedChecksum: 6972608768DDBE6E37A2D81B83DF490B
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/debug
   name: sys_debug.h
