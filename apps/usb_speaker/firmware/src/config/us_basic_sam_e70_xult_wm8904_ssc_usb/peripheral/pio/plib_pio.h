@@ -66,54 +66,54 @@
 #define TEST3_Set()               (PIOD_REGS->PIO_SODR = (1<<27))
 #define TEST3_Clear()             (PIOD_REGS->PIO_CODR = (1<<27))
 #define TEST3_Toggle()            (PIOD_REGS->PIO_ODSR ^= (1<<27))
-#define TEST3_Get()               ((PIOD_REGS->PIO_PDSR >> 27) & 0x1)
 #define TEST3_OutputEnable()      (PIOD_REGS->PIO_OER = (1<<27))
 #define TEST3_InputEnable()       (PIOD_REGS->PIO_ODR = (1<<27))
+#define TEST3_Get()               ((PIOD_REGS->PIO_PDSR >> 27) & 0x1)
 #define TEST3_PIN                  PIO_PIN_PD27
 
 /*** Macros for TEST1 pin ***/
 #define TEST1_Set()               (PIOA_REGS->PIO_SODR = (1<<2))
 #define TEST1_Clear()             (PIOA_REGS->PIO_CODR = (1<<2))
 #define TEST1_Toggle()            (PIOA_REGS->PIO_ODSR ^= (1<<2))
-#define TEST1_Get()               ((PIOA_REGS->PIO_PDSR >> 2) & 0x1)
 #define TEST1_OutputEnable()      (PIOA_REGS->PIO_OER = (1<<2))
 #define TEST1_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<2))
+#define TEST1_Get()               ((PIOA_REGS->PIO_PDSR >> 2) & 0x1)
 #define TEST1_PIN                  PIO_PIN_PA2
 
 /*** Macros for STBYRST pin ***/
 #define STBYRST_Set()               (PIOD_REGS->PIO_SODR = (1<<11))
 #define STBYRST_Clear()             (PIOD_REGS->PIO_CODR = (1<<11))
 #define STBYRST_Toggle()            (PIOD_REGS->PIO_ODSR ^= (1<<11))
-#define STBYRST_Get()               ((PIOD_REGS->PIO_PDSR >> 11) & 0x1)
 #define STBYRST_OutputEnable()      (PIOD_REGS->PIO_OER = (1<<11))
 #define STBYRST_InputEnable()       (PIOD_REGS->PIO_ODR = (1<<11))
+#define STBYRST_Get()               ((PIOD_REGS->PIO_PDSR >> 11) & 0x1)
 #define STBYRST_PIN                  PIO_PIN_PD11
 
 /*** Macros for TEST4 pin ***/
 #define TEST4_Set()               (PIOA_REGS->PIO_SODR = (1<<6))
 #define TEST4_Clear()             (PIOA_REGS->PIO_CODR = (1<<6))
 #define TEST4_Toggle()            (PIOA_REGS->PIO_ODSR ^= (1<<6))
-#define TEST4_Get()               ((PIOA_REGS->PIO_PDSR >> 6) & 0x1)
 #define TEST4_OutputEnable()      (PIOA_REGS->PIO_OER = (1<<6))
 #define TEST4_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<6))
+#define TEST4_Get()               ((PIOA_REGS->PIO_PDSR >> 6) & 0x1)
 #define TEST4_PIN                  PIO_PIN_PA6
 
 /*** Macros for TEST2 pin ***/
 #define TEST2_Set()               (PIOC_REGS->PIO_SODR = (1<<19))
 #define TEST2_Clear()             (PIOC_REGS->PIO_CODR = (1<<19))
 #define TEST2_Toggle()            (PIOC_REGS->PIO_ODSR ^= (1<<19))
-#define TEST2_Get()               ((PIOC_REGS->PIO_PDSR >> 19) & 0x1)
 #define TEST2_OutputEnable()      (PIOC_REGS->PIO_OER = (1<<19))
 #define TEST2_InputEnable()       (PIOC_REGS->PIO_ODR = (1<<19))
+#define TEST2_Get()               ((PIOC_REGS->PIO_PDSR >> 19) & 0x1)
 #define TEST2_PIN                  PIO_PIN_PC19
 
 /*** Macros for USB_VBUS_SENSE pin ***/
 #define USB_VBUS_SENSE_Set()               (PIOB_REGS->PIO_SODR = (1<<8))
 #define USB_VBUS_SENSE_Clear()             (PIOB_REGS->PIO_CODR = (1<<8))
 #define USB_VBUS_SENSE_Toggle()            (PIOB_REGS->PIO_ODSR ^= (1<<8))
-#define USB_VBUS_SENSE_Get()               ((PIOB_REGS->PIO_PDSR >> 8) & 0x1)
 #define USB_VBUS_SENSE_OutputEnable()      (PIOB_REGS->PIO_OER = (1<<8))
 #define USB_VBUS_SENSE_InputEnable()       (PIOB_REGS->PIO_ODR = (1<<8))
+#define USB_VBUS_SENSE_Get()               ((PIOB_REGS->PIO_PDSR >> 8) & 0x1)
 #define USB_VBUS_SENSE_PIN                  PIO_PIN_PB8
 
 
