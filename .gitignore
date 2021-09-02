@@ -19,3 +19,4 @@
 **/*.KEIL/Objects
 **/*.KEIL/*.uvguix.*
 Gemfile*
+**/ARCHIVE

@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: wm8904_codec}
+children:
+- type: ElementPosition
+  attributes: {x: '614', y: '87', id: wm8904_codec}
