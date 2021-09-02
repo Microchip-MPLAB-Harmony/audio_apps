@@ -45,6 +45,7 @@
 // *****************************************************************************
 // *****************************************************************************
 #include "configuration.h"
+#include "interrupts.h"
 #include "definitions.h"
 #include <stdio.h>
 
@@ -56,17 +57,17 @@
 
 /* Brief default interrupt handlers for core IRQs.*/
 
-void NonMaskableInt_Handler(void)
+void __attribute__((noreturn)) NonMaskableInt_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
 #endif
-    while (1)
+    while (true)
     {
     }
 }
 
-void HardFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
+void __attribute__((noreturn)) HardFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
 {
    uint32_t stacked_r0;
    uint32_t stacked_r1;
@@ -120,13 +121,13 @@ void HardFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
    __builtin_software_breakpoint();
   #endif
 
-   while (1)
+   while (true)
    {
        // Do Nothing
    }
 }
 
-void DebugMonitor_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
+void __attribute__((noreturn)) DebugMonitor_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
 {
    uint32_t stacked_r0;
    uint32_t stacked_r1;
@@ -173,13 +174,13 @@ void DebugMonitor_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
   #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
    __builtin_software_breakpoint();
   #endif
-   while (1)
+   while (true)
    {
        // Do Nothing
    }
 }
 
-void MemoryManagement_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
+void __attribute__((noreturn)) MemoryManagement_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
 {
    uint32_t stacked_r0;
    uint32_t stacked_r1;
@@ -232,13 +233,13 @@ void MemoryManagement_Handler_C(uint32_t * hardfault_args, unsigned int lr_value
   #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
    __builtin_software_breakpoint();
   #endif
-   while (1)
+   while (true)
    {
        // Do Nothing
    }
 }
 
-void BusFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
+void __attribute__((noreturn)) BusFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
 {
    uint32_t stacked_r0;
    uint32_t stacked_r1;
@@ -292,13 +293,13 @@ void BusFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
   #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
    __builtin_software_breakpoint();
   #endif
-   while (1)
+   while (true)
    {
        // Do Nothing
    }
 }
 
-void UsageFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
+void __attribute__((noreturn)) UsageFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
 {
    uint32_t stacked_r0;
    uint32_t stacked_r1;
@@ -348,7 +349,7 @@ void UsageFault_Handler_C(uint32_t * hardfault_args, unsigned int lr_value)
   #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
    __builtin_software_breakpoint();
   #endif
-   while (1)
+   while (true)
    {
        // Do Nothing
    }
