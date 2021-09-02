@@ -221,8 +221,9 @@ DRV_I2S_INIT drvI2S0InitData =
     .dmaChannelReceive  = DRV_I2S_RCV_DMA_CH_IDX0,
     .i2sTransmitAddress = (void *)&(SPI2BUF),
     .i2sReceiveAddress = (void *)&(SPI2BUF),
-    .interruptDMA = _DMA0_VECTOR,
 
+    .interruptTxDMA = _DMA0_VECTOR,
+    .interruptRxDMA = _DMA1_VECTOR,
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
@@ -233,13 +234,13 @@ const DRV_AK4954_INIT drvak4954Codec0InitData =
 {
     .i2sDriverModuleIndex = DRV_AK4954_I2S_DRIVER_MODULE_INDEX_IDX0,
     .i2cDriverModuleIndex = DRV_AK4954_I2C_DRIVER_MODULE_INDEX_IDX0,
-    .masterMode = DRV_AK4954_MASTER_MODE,
-    .samplingRate = DRV_AK4954_AUDIO_SAMPLING_RATE,
-    .volume = DRV_AK4954_VOLUME,
-    .audioDataFormat = DRV_AK4954_AUDIO_DATA_FORMAT_MACRO,
-    .whichMicInput = DRV_AK4954_WHICH_MIC_INPUT,
-    .enableMicBias = DRV_AK4954_ENABLE_MIC_BIAS,
-    .micGain = DRV_AK4954_MIC_GAIN,
+    .masterMode           = DRV_AK4954_I2S_MASTER_MODE,
+    .samplingRate         = DRV_AK4954_AUDIO_SAMPLING_RATE,
+    .volume               = DRV_AK4954_VOLUME,
+    .audioDataFormat      = DRV_AK4954_AUDIO_DATA_FORMAT_MACRO,
+    .whichMicInput        = DRV_AK4954_WHICH_MIC_INPUT,
+    .enableMicBias        = DRV_AK4954_ENABLE_MIC_BIAS,
+    .micGain              = DRV_AK4954_MIC_GAIN,
     .delayDriverInitialization = DRV_AK4954_DELAY_INITIALIZATION,
 };
 
@@ -320,6 +321,14 @@ const SYS_TIME_INIT sysTimeInitData =
 
 
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local initialization functions
+// *****************************************************************************
+// *****************************************************************************
+
+
+
 /*******************************************************************************
   Function:
     void SYS_Initialize ( void *data )
@@ -332,6 +341,7 @@ const SYS_TIME_INIT sysTimeInitData =
 
 void SYS_Initialize ( void* data )
 {
+
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
 
@@ -340,7 +350,7 @@ void SYS_Initialize ( void* data )
     
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
-    PRECONbits.PFMWS = 2;
+    PRECONbits.PFMWS = 3;
     CFGCONbits.ECCCON = 3;
 
 
