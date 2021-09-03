@@ -21,12 +21,6 @@
     files.
  *******************************************************************************/
 
-#include "bsp/bsp.h"
-
-
-#include "user.h"
-
-
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
 Copyright (c) 2012-2018 released Microchip Technology Inc.  All rights reserved.
@@ -58,6 +52,9 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 //*****************************************************************************
 //*****************************************************************************
 
+
+#include "bsp/bsp.h"
+#include "user.h"
 #include "app.h"
 
 #ifdef PIC32MZEFC2
@@ -879,6 +876,7 @@ arm_biquad_cascade_df1_init_q15(
 
 } //End APP_Initialize()
 
+#define sysObjdrvCodec0            sysObj.drvak4954Codec0
 
 //******************************************************************************
 // APP_Tasks()

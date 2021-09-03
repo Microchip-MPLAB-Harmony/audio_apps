@@ -71,7 +71,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "system/ports/sys_ports.h"
 #include "osal/osal.h"
 
-#include "peripheral/twihs/plib_twihs0.h"
+#include "peripheral/twihs/master/plib_twihs0_master.h"
 #include "system/time/sys_time.h"
 #include "driver/i2c/drv_i2c.h"
 

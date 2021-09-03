@@ -83,6 +83,7 @@ const USB_DEVICE_FUNCTION_REGISTRATION_TABLE funcRegistrationTable[1] =
 /*******************************************
  *  USB Device Descriptor 
  *******************************************/
+
 const USB_DEVICE_DESCRIPTOR deviceDescriptor =
 {
     0x12,                                                   // Size of this descriptor in bytes
@@ -117,7 +118,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
     2,                                                      // Number of interfaces in this configuration
     0x01,                                                   // Index value of this configuration
     0x00,                                                   // Configuration string index
-    USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED,     // Attributes
+    USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED, // Attributes
     50,
 	
 
@@ -265,7 +266,6 @@ USB_DEVICE_CONFIGURATION_DESCRIPTORS_TABLE fullSpeedConfigDescSet[1] =
 /**************************************
  *  String descriptors.
  *************************************/
-
  /*******************************************
  *  Language code string descriptor
  *******************************************/
@@ -313,6 +313,7 @@ USB_DEVICE_CONFIGURATION_DESCRIPTORS_TABLE fullSpeedConfigDescSet[1] =
         USB_DESCRIPTOR_STRING,
 		{'H','a','r','m','o','n','y',' ','U','S','B',' ','S','p','e','a','k','e','r',' ','w','/','B','a','s','s',' ','B','o','o','s','t',' ','E','x','a','m','p','l','e'}
     }; 
+
 /***************************************
  * Array of string descriptors
  ***************************************/
@@ -320,12 +321,13 @@ USB_DEVICE_STRING_DESCRIPTORS_TABLE stringDescriptors[3]=
 {
     (const uint8_t *const)&sd000,
     (const uint8_t *const)&sd001,
-    (const uint8_t *const)&sd002
+    (const uint8_t *const)&sd002,
 };
 
 /*******************************************
  * USB Device Layer Master Descriptor Table 
  *******************************************/
+ 
 const USB_DEVICE_MASTER_DESCRIPTOR usbMasterDescriptor =
 {
     &deviceDescriptor,                                      // Full speed descriptor
@@ -334,7 +336,7 @@ const USB_DEVICE_MASTER_DESCRIPTOR usbMasterDescriptor =
 	NULL, 
 	0,
 	NULL,
-    3,														// Total number of string descriptors available.
+	3,  													// Total number of string descriptors available.
     stringDescriptors,                                      // Pointer to array of string descriptors.
 	NULL, 
 	NULL
@@ -344,6 +346,7 @@ const USB_DEVICE_MASTER_DESCRIPTOR usbMasterDescriptor =
 /****************************************************
  * USB Device Layer Initialization Data
  ****************************************************/
+
 const USB_DEVICE_INIT usbDevInitData =
 {
     /* Number of function drivers registered to this instance of the

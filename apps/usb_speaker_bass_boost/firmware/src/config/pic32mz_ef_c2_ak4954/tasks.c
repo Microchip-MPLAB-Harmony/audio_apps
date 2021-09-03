@@ -51,7 +51,11 @@
 // *****************************************************************************
 
 #include "configuration.h"
-#include "definitions.h"
+//#include "definitions.h"
+//KEEP THIS - removed from definitions.h so definitions can be used in app.h
+//            to prevent having to duplication all the definitions.h definitions.
+//            in app.h
+#include "app.h"
 
 
 

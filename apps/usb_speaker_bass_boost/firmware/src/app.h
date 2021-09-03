@@ -57,12 +57,13 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stddef.h>
 #include <stdlib.h>
 
+//NOTE:  App.h should use the following, although it is not always required:
 //configuration.h contains defines that use API definitions from devices
 //and libraries in system_definitions.h.  However, system_definitions.h
 //should not be included here (it includes app.h).  So just copy the 
 //#includes required for system_config.h from system_definitions.h
-#include "configuration.h"
 #include "definitions.h"
+#include "configuration.h"
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
@@ -84,13 +85,14 @@ extern "C" {
 //      2x2=4  bytes per 16bit stereo sample
 //      4x48=192 bytes in frame buffer
 //==============================================================================
-#define APP_MAX_NO_OF_SAMPLES_IN_A_USB_FRAME 48
+//#define sysObjdrvCodec0            sysObj.drvak4954Codec0
+#define APP_MAX_NO_OF_SAMPLES_IN_A_USB_FRAME            48
 #define APP_USB_SAMPLE_SIZE_BYTES  4
 #define APP_MAX_NO_BYTES_IN_USB_BUFFER APP_MAX_NO_OF_SAMPLES_IN_A_USB_FRAME*APP_USB_SAMPLE_SIZE_BYTES
-#define APP_ID_FEATURE_UNIT    0x05
+#define APP_ID_FEATURE_UNIT                             0x05
 #define USB_DEVICE_AUDIO_CONTROL_INTERFACE_ID           0x00
-#define APP_ID_INPUT_TERMINAL  0x01
-#define APP_ID_OUTPUT_TERMINAL 0x02
+#define APP_ID_INPUT_TERMINAL                           0x01
+#define APP_ID_OUTPUT_TERMINAL                          0x02
 #define USB_DEVICE_AUDIO_STREAMING_INTERFACE_ID_1       0x01
 
 #define SAMPLING_RATE_48000   48000

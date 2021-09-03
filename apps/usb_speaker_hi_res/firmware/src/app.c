@@ -172,13 +172,11 @@ void _Unpack24to32bitBuffer(uint8_t *src, uint8_t*dst, int numUsb24BitSamples);
 inline uint32_t unpack(UInt24 x);
 inline UInt24 pack(uint32_t x);
 
-
-
 APP_PLAYBACK_BUFFER* currentPlayBuffer;
 int8_t codecWriteIdx; 
-//uint32_t *src; 
-UInt24   *src;
-uint32_t *dst;
+//uint32_t *bufSrc; 
+UInt24   *bufSrc;
+uint32_t *bufDst; //dst
 
 //Button Timer
 DRV_HANDLE tmrHandle;
@@ -755,9 +753,9 @@ void APP_Tasks()
                 SYS_PRINT("I: d= %x m= %x d2 = %x(%x)\r\n",dpl,mpl,dg,dp);
 
                 //Clock Initialize
-                const int d  = _clockAdjUp[CLOCKUP_IND][0];
-                const int m  = _clockAdjUp[CLOCKUP_IND][1];
-                const int d2 = _clockAdjUp[CLOCKUP_IND][2];
+                d  = _clockAdjUp[CLOCKUP_IND][0];
+                m  = _clockAdjUp[CLOCKUP_IND][1];
+                d2 = _clockAdjUp[CLOCKUP_IND][2];
                 DRV_I2S_ClockGenerationSet(drvObj->i2sDriverHandle, d, m, d2);
                 DRV_I2S_ProgrammableClockSet(drvObj->i2sDriverHandle, 2, d2);
 
@@ -1059,41 +1057,41 @@ void APP_Tasks()
                         int j;
                         int numUsb24BitSamples = appData.usbReadBufSize/3;
 
-                        src = (UInt24 *) currentPlayBuffer->buffer;
-                        dst = (uint32_t *) currentPlayBuffer->buffer32; 
+                        bufSrc = (UInt24 *) currentPlayBuffer->buffer;
+                        bufDst = (uint32_t *) currentPlayBuffer->buffer32; 
                         for (j=0; j<numUsb24BitSamples; j++) 
                         {
-                            dst[j] = unpack(src[j]);
+                            bufDst[j] = unpack(bufSrc[j]);
                         }
 #if 0
-                        src = (uint32_t *) currentPlayBuffer->buffer;
-                        dst = (uint32_t *) currentPlayBuffer->buffer32; 
+                        bufSrc = (uint32_t *) currentPlayBuffer->buffer;
+                        bufDst = (uint32_t *) currentPlayBuffer->buffer32; 
                         for (i=0, j=0; j<numUsb24BitSamples; i+=3, j+=4) 
                         {
                             //Every 3 32 bit words converted to 4 32 bit samples
-                            sa = src[i+0]; //LS
-                            sb = src[i+1];
-                            sc = src[i+2]; //MS
+                            sa = bufSrc[i+0]; //LS
+                            sb = bufSrc[i+1];
+                            sc = bufSrc[i+2]; //MS
 
 #define UPPER
 #ifdef UPPER
                             //Q23 --> Q31
                             //Little ENDIAN - shifted right MS bytes first
-                            dst[j+0] = sa & 0xFFFFFF00;
-                            dst[j+1] = ((sa<<24) | (sb>>8 & 0x00FFFF00);
-                            dst[j+2] = ((sb<<16) | (sc>>16 & 0xFFFFFF00);
-                            dst[j+3] = sc<<8;
+                            bufDst[j+0] = sa & 0xFFFFFF00;
+                            bufDst[j+1] = ((sa<<24) | (sb>>8 & 0x00FFFF00);
+                            bufDst[j+2] = ((sb<<16) | (sc>>16 & 0xFFFFFF00);
+                            bufDst[j+3] = sc<<8;
 #else //LOWER
                             //Q23 --> Q31
                             //Little ENDIAN - MS bytes first
-                            //dst[j+0] = sa<<8; 
-                            dst[j+0] = sa>>8 & 0x00FFFFFF; 
-                            //dst[j+1] = (sa>>16)) | ((sb<<16) & 0xFFFFFF00;
-                            dst[j+1] = (sa<<16)) | (sb<<16 & 0xFFFF00);
-                            //dst[j+2] = ((sb>>8) | (sc<<24)) & 0xFFFFFF00;
-                            dst[j+2] = ((sb>>8) | (sc<<24)) & 0xFFFFFF00;
-                            //dst[j+3] = sc & 0xFFFFFF00;
-                            dst[j+3] = sc & 0xFFFFFF00;
+                            //bufDst[j+0] = sa<<8; 
+                            bufDst[j+0] = sa>>8 & 0x00FFFFFF; 
+                            //bufDst[j+1] = (sa>>16)) | ((sb<<16) & 0xFFFFFF00;
+                            bufDst[j+1] = (sa<<16)) | (sb<<16 & 0xFFFF00);
+                            //bufDst[j+2] = ((sb>>8) | (sc<<24)) & 0xFFFFFF00;
+                            bufDst[j+2] = ((sb>>8) | (sc<<24)) & 0xFFFFFF00;
+                            //bufDst[j+3] = sc & 0xFFFFFF00;
+                            bufDst[j+3] = sc & 0xFFFFFF00;
 #endif //UPPER?LOWER
            
                         }
@@ -1310,35 +1308,35 @@ void APP_Tasks()
                         int j;
                         int numUsb24BitSamples = appData.usbReadBufSize/3;
 
-                        src = (UInt24 *) currentPlayBuffer->buffer;
-                        dst = (uint32_t *) currentPlayBuffer->buffer32; 
+                        bufSrc = (UInt24 *) currentPlayBuffer->buffer;
+                        bufDst = (uint32_t *) currentPlayBuffer->buffer32; 
                         for (j=0; j<numUsb24BitSamples; j++) 
                         {
-                            dst[j] = unpack(src[j]);
+                            bufDst[j] = unpack(bufSrc[j]);
                         }
 #if 0//
 #ifdef APP_BSUBFRAMESIZE_3
 
-                        src = (uint32_t *) currentPlayBuffer->buffer;
-                        dst = (uint32_t *) currentPlayBuffer->buffer32; 
+                        bufSrc = (uint32_t *) currentPlayBuffer->buffer;
+                        bufDst = (uint32_t *) currentPlayBuffer->buffer32; 
 
-                        //_Unpack24to32bitBuffer(*src, *dst,  numUsb24BitSamples);
+                        //_Unpack24to32bitBuffer(*bufSrc, *bufDst,  numUsb24BitSamples);
                         for (i=0, j=0; j<numUsb24BitSamples; i+=3, j+=4) 
                         {
                             //Every 3 32 bit words converted to 4 32 bit samples
-                            sa = src[i+0]; //LS
-                            sb = src[i+1];
-                            sc = src[i+2]; //MS
+                            sa = bufSrc[i+0]; //LS
+                            sb = bufSrc[i+1];
+                            sc = bufSrc[i+2]; //MS
 
                             //Little ENDIAN - MS bytes first
-                            //dst[j+0] = sa & 0xFFFFFF00;
-                            dst[j+0] = sa<<8; 
-                            //dst[j+1] = ((sa<<24) | (sb>>8)) & 0xFFFFFF00;
-                            dst[j+1] = ((sb<<16) | (sa>>16)) & 0xFFFFFF00;
-                            //dst[j+2] = ((sb<<16) | (sc>>16)) & 0xFFFFFF00;
-                            dst[j+2] = ((sb>>8) | (sc<<24)) & 0xFFFFFF00;
-                            //dst[j+3] = sc<<8;
-                            dst[j+3] = sc & 0xFFFFFF00;
+                            //bufDst[j+0] = sa & 0xFFFFFF00;
+                            bufDst[j+0] = sa<<8; 
+                            //bufDst[j+1] = ((sa<<24) | (sb>>8)) & 0xFFFFFF00;
+                            bufDst[j+1] = ((sb<<16) | (sa>>16)) & 0xFFFFFF00;
+                            //bufDst[j+2] = ((sb<<16) | (sc>>16)) & 0xFFFFFF00;
+                            bufDst[j+2] = ((sb>>8) | (sc<<24)) & 0xFFFFFF00;
+                            //bufDst[j+3] = sc<<8;
+                            bufDst[j+3] = sc & 0xFFFFFF00;
                         }
 #endif //APP_BSUBFRAMESIZE_3
 #endif //0
