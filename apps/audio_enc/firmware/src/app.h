@@ -36,6 +36,19 @@
 #include "definitions.h"
 #include "user.h"
 
+#include "audio/decoder/audio_decoders_config.h"
+#include "include/audio_encoder_config.h" 
+#include "encoder.h" // encoder needed
+#ifdef WAV_CONTAINER
+#include "include/wav_format_container.h"
+#endif
+#ifdef WAV_STREAMING_ENABLED
+#include "wav/wav_dec.h"
+#endif
+#ifdef PCM_ENCODER
+#include "pcm/pcm_enc.h"
+#endif
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

@@ -26,15 +26,18 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+#if 0
 #include "audio/decoder/audio_decoders_config.h"
 #include "include/audio_encoder_config.h"
 #include "audio_decoders.h"
-    
+#endif
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
+#if 0
 #ifdef WAV_CONTAINER
 #include "include/wav_format_container.h"
 #endif
@@ -44,7 +47,8 @@ extern "C" {
 #ifdef PCM_ENCODER
 #include "pcm/pcm_enc.h"
 #endif
-    
+#endif   
+ 
 #define NUM_SAMPLES                     256*4
 #define BUFFER_SIZE                     4*NUM_SAMPLES  
 
