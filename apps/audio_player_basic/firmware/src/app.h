@@ -39,6 +39,13 @@
 #include "user.h"
 #include "wav_dec.h"
 
+// Do not use the FAT_FS_MAX_LFN from Framework, It is deprecated and removed
+// Hence redefined here
+#ifdef (SYS_FS_FILE_NAME_LEN)
+#define FAT_FS_MAX_LFN (SYS_FS_FILE_NAME_LEN)
+#else
+#define FAT_FS_MAX_LFN (255)
+#endif
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
