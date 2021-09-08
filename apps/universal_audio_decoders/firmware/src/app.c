@@ -1251,7 +1251,7 @@ void APP_Tasks ( void )
                 if(!waitingForWriteCB)
                 {
                     waitingForWriteCB = true;
-                    if(!FLAC_DecodeSingleFrame((uint8_t *)FLACoutBuf, NULL))
+                    if(!FLAC_DecodeSingleFrame((uint8_t *)FLACoutBuf))
                     {
                         printf("FLAC Decode cue Failed!\r\n");
                         appData.state = APP_STATE_CLOSE_FILE;
