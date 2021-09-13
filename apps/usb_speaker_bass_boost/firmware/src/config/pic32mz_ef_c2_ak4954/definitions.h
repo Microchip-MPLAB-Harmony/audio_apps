@@ -73,6 +73,7 @@
 #include "system/dma/sys_dma.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
+//KEEP THIS - recursion
 //#include "app.h"
 
 
@@ -220,6 +221,8 @@ typedef struct
 // *****************************************************************************
 
 extern const USB_DEVICE_INIT usbDevInitData; 
+ 
+
 
 extern SYSTEM_OBJECTS sysObj;
 

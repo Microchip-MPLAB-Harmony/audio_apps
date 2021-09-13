@@ -62,13 +62,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5BC51EC8802DFB676B6037F56E951DBC
-- generatedChecksum: 53A85619E932E7C046E7E664DE5C6950
+- generatedChecksum: 8813D07016703B81442F7948426E46D3
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/math/dsp
   name: dsp_mips32_mz_ef_nfO3.a
   physicalPath: audio/math/dsp
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 53A85619E932E7C046E7E664DE5C6950
+  userChecksum: 8813D07016703B81442F7948426E46D3
 - generatedChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: exceptions.c
@@ -96,7 +96,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 13B683145C8FA957E97BD4F12977115B
+  userChecksum: 815D11134335D9729C6FD41927B66EFA
 - generatedChecksum: 343775AA2209F3D52FB9EAF2622079FF
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: interrupts.c
@@ -111,13 +111,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 210D92179D79DF939E57100B9AA200B2
-- generatedChecksum: DE017F101585E4721469AAC8751D68CF
+- generatedChecksum: 7D3E7AC76FE2DC8CE3D5FA145F70BE37
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/math/libq
   name: libq_mips32_mz_ef_nfO3.a
   physicalPath: audio/math/libq
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DE017F101585E4721469AAC8751D68CF
+  userChecksum: 7D3E7AC76FE2DC8CE3D5FA145F70BE37
 - generatedChecksum: A67DD273C08CA47A4760999A84BAE0BB
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/math/libq_c
   name: libq_q15_Abs_q15.c
@@ -383,7 +383,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DFBA03343C9C6A2B359AB2DA31270C36
+  userChecksum: 5D8FEC0F2F5A989A813A21026E91F119
 - generatedChecksum: BCCEF5B801FFD0CF22D0B454D2F25F1F
   logicalPath: config/pic32mz_ef_c2_ak4954/usb/src
   name: usb_device.c
@@ -474,14 +474,14 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 15E84BA43C0118CA86BD96574D305C3F
+  userChecksum: 396D5782FB1338538BA65017A00BECAF
 - generatedChecksum: 5D746CA4BC11AD073ED44D962C556CC5
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5D746CA4BC11AD073ED44D962C556CC5
+  userChecksum: 809E7AFA2373411FD06917AAB66C0D98
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: device.h
