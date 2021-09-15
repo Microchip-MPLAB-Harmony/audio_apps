@@ -699,6 +699,7 @@ void APP_ValidateFile( void )
     {
 #ifdef WAV_STREAMING_ENABLED
         case APP_STREAM_WAV:
+#if 0    
             // Read the header data
             bytesRead = SYS_FS_FileRead( appData.fileHandle, &wavHdr, sizeof(wavHdr));
             // If end of file is reached then close this file
@@ -708,6 +709,21 @@ void APP_ValidateFile( void )
                 break;
             }             
             WAV_Initialize_N( (uint8_t *)&wavHdr, appData.fileHandle );                     
+#else
+            // Read part of the header data
+            bytesRead = SYS_FS_FileRead(appData.fileHandle, &wavHdr, 8);
+            // If end of file is reached then close this file
+            if ((0==bytesRead) || (-1==bytesRead) || SYS_FS_FileEOF(appData.fileHandle))
+            {
+                appData.state = APP_STATE_CLOSE_FILE; 
+                break;
+            } 
+            if(!WAV_Initialize_SkipOpts((uint8_t *)&wavHdr, appData.fileHandle))
+            {
+                appData.state = APP_STATE_CLOSE_FILE; 
+                break; 
+            }
+#endif
             
             appData.numOfChnls = WAV_GetChannels();
             appData.bytesRemaining = WAV_GetDataLen();
@@ -1876,15 +1892,16 @@ void FLAC_DecoderWriteEventHandler(uint32_t event, void *buff, void *pCtxt)
             // to-do: do destination buffer size check here
             for(int i = 0; i<no_samples; i++) 
             {
-#ifdef SWAPCHANNELS 
+#ifndef SWAPCHANNELS 
                 App_Audio_Output_Pointer[i].leftData = (int16_t)(0x0000FFFF & buffer[0][i]);
                 App_Audio_Output_Pointer[i].rightData =  (int16_t)(0x0000FFFF & buffer[1][i]);
 #else
                 App_Audio_Output_Pointer[i].leftData = (int16_t)(0x0000FFFF & buffer[1][i]);
-                //printf(" %2X ", (int)(0x0000FFFF & buffer[1][i]));
                 App_Audio_Output_Pointer[i].rightData =  (int16_t)(0x0000FFFF & buffer[0][i]);
-                //printf(" %2X ", (int)(0x0000FFFF & buffer[0][i]));
-                
+                //if(firstRead &&(i<100))
+                //{
+                //    printf("[%2X][%2X]", (int)(0x0000FFFF & buffer[1][i]), (int)(0x0000FFFF & buffer[0][i]));
+                //}
 #endif
             }
 #endif            

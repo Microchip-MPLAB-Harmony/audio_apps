@@ -637,6 +637,46 @@ SYS_STATUS DRV_WM8904_Status(SYS_MODULE_OBJ object);
 
 // *****************************************************************************
 /* Function:
+    bool DRV_WM8904_ClientReady( iClient )
+
+  Summary:
+    Returns true if the WM8904 driver is ready for client operations
+
+  Description:
+    Returns true if the WM8904 driver is ready for client operations
+
+  Precondition:
+    Function DRV_WM8904_Initialize/DRV_WM8904_Open should have been called 
+    before calling this function.
+
+  Parameters:
+    object          - Driver object handle, returned from the
+                      DRV_WM8904_Initialize routine
+
+  Returns:
+   true - Driver is open for client operations
+   false - driver is not ready for client operations
+
+  Example:
+    <code>
+    SYS_MODULE_OBJ      object;     // Returned from DRV_WM8904_Initialize
+    SYS_STATUS          WM8904Status;
+
+    WM8904Status = DRV_WM8904_Status(object);
+    if (DRV_WM8904_ClientReady(0)==true)
+    {
+        //Ready to perform driver functions
+    }
+    </code>
+
+  Remarks:
+    Driver operation can only commence after the client interface is ready. 
+ */
+bool DRV_WM8904_ClientReady(uint32_t iClient);
+
+
+// *****************************************************************************
+/* Function:
     void  DRV_WM8904_Tasks(SYS_MODULE_OBJ object);
 
   Summary:
@@ -1044,127 +1084,6 @@ void DRV_WM8904_BufferAddWriteRead
     size_t size
 );
 
-// *****************************************************************************
-/* Function:
-    void DRV_WM8904_BufferAddWriteRead
-        (
-                const DRV_HANDLE handle,
-                DRV_WM8904_BUFFER_HANDLE *bufferHandle,
-                void *transmitBuffer, 
-                void *receiveBuffer,
-                size_t size
-        )
-
-  Summary:
-    Schedule a non-blocking driver write-read operation.
-
-  Description:
-    This function schedules a non-blocking write-read operation. The function
-    returns with a valid buffer handle in the bufferHandle argument if the
-    write-read request was scheduled successfully. The function adds the request
-    to the hardware instance queue and returns immediately. While the request is
-    in the queue, the application buffer is owned by the driver and should not
-    be modified. The function returns DRV_WM8904_BUFFER_EVENT_COMPLETE:
-    - if a buffer could not be allocated to the request
-    - if the input buffer pointer is NULL
-    - if the client opened the driver for read only or write only
-    - if the buffer size is 0
-    - if the queue is full or the queue depth is insufficient
-    If the requesting client registered an event callback with the driver,
-    the driver will issue a DRV_WM8904_BUFFER_EVENT_COMPLETE event if the buffer
-    was processed successfully of DRV_WM8904_BUFFER_EVENT_ERROR event if the
-    buffer was not processed successfully.
-
-  Precondition:
-    The DRV_WM8904_Initialize routine must have been called for the specified
-    WM8904 device instance and the DRV_WM8904_Status must have returned
-    SYS_STATUS_READY.
-
-    DRV_WM8904_Open must have been called to obtain a valid opened device handle.
-
-    DRV_IO_INTENT_READWRITE must have been specified in the DRV_WM8904_Open call.
-
-  Parameters:
-    handle         - Handle of the WM8904 instance as returned by the
-                     DRV_WM8904_Open function
-    bufferHandle   - Pointer to an argument that will contain the
-                     return buffer handle
-    transmitBuffer - The buffer where the transmit data will be stored
-    receiveBuffer  - The buffer where the received data will be stored
-    size           - Buffer size in bytes
-
-  Returns:
-    The bufferHandle parameter will contain the return buffer handle. This will be
-    DRV_WM8904_BUFFER_HANDLE_INVALID if the function was not successful.
-
-  Example:
-    <code>
-
-    MY_APP_OBJ myAppObj;
-    uint8_t mybufferTx[MY_BUFFER_SIZE];
-    uint8_t mybufferRx[MY_BUFFER_SIZE];
-    DRV_WM8904_BUFFER_HANDLE bufferHandle;
-
-    // mywm8904Handle is the handle returned
-    // by the DRV_WM8904_Open function.
-
-    // Client registers an event handler with driver
-
-    DRV_WM8904_BufferEventHandlerSet(mywm8904Handle,
-                    APP_WM8904BufferEventHandler, (uintptr_t)&myAppObj);
-
-    DRV_WM8904_BufferAddWriteRead(mywm8904handle, &bufferHandle,
-                                        mybufferTx,mybufferRx,MY_BUFFER_SIZE);
-
-    if(DRV_WM8904_BUFFER_HANDLE_INVALID == bufferHandle)
-    {
-        // Error handling here
-    }
-
-    // Event is received when
-    // the buffer is processed.
-
-    void APP_WM8904BufferEventHandler(DRV_WM8904_BUFFER_EVENT event,
-            DRV_WM8904_BUFFER_HANDLE bufferHandle, uintptr_t contextHandle)
-    {
-        // contextHandle points to myAppObj.
-
-        switch(event)
-        {
-            case DRV_WM8904_BUFFER_EVENT_COMPLETE:
-
-                // This means the data was transferred.
-                break;
-
-            case DRV_WM8904_BUFFER_EVENT_ERROR:
-
-                // Error handling here.
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    </code>
-
-  Remarks:
-    This function is thread safe in a RTOS application. It can be called from
-    within the WM8904 Driver Buffer Event Handler that is registered by this
-    client. It should not be called in the event handler associated with another
-    WM8904 driver instance. It should not otherwise be called directly in an ISR.
-
-    This function is useful when there is valid read expected for every
-    WM8904 write. The transmit and receive size must be same.
-
-*/
-void DRV_WM8904_BufferAddWriteRead
-(
-    const DRV_HANDLE handle,
-    DRV_WM8904_BUFFER_HANDLE    *bufferHandle,
-    void *transmitBuffer, void *receiveBuffer,
-    size_t size
-);
 // *****************************************************************************
 /*
 Function:

@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: audio_encoders}
+children:
+- type: ElementPosition
+  attributes: {x: '250', y: '369', id: audio_encoders}

@@ -73,7 +73,7 @@ void _USB_HOST_Tasks(  void *pvParameters  )
 {
     while(1)
     {
-				/* USB Host layer tasks routine */ 
+        /* USB Host layer tasks routine */ 
         USB_HOST_Tasks(sysObj.usbHostObject0);
         vTaskDelay(10 / portTICK_PERIOD_MS);
     }
@@ -94,19 +94,13 @@ void _SYS_FS_Tasks(  void *pvParameters  )
 TaskHandle_t xAPP_Tasks;
 
 void _APP_Tasks(  void *pvParameters  )
-{
+{   
     while(1)
     {
-/***** KEEP THIS, BEGIN *****/
-    /* Maintain Device Drivers */
-        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
-/***** KEEP THIS, END *****/
         APP_Tasks();
-/***** KEEP THIS, BEGIN *****/
-        vTaskDelay(1 / portTICK_PERIOD_MS);
-/***** KEEP THIS, END *****/
     }
 }
+
 
 
 
@@ -137,7 +131,8 @@ void SYS_Tasks ( void )
 
 
 
-// DON NOT COPY LINES FROM LEFT
+    /* Maintain Device Drivers */
+        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
 
 
 
@@ -170,6 +165,7 @@ void SYS_Tasks ( void )
                 NULL,
                 1,
                 &xAPP_Tasks);
+
 
 
 
