@@ -1,20 +1,23 @@
 /*******************************************************************************
-  NVIC PLIB Implementation
+  Debug System Service Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_nvic.c
+    sys_debug.c
 
   Summary:
-    NVIC PLIB Source File
+    Debug System Service interface implementation.
 
   Description:
-    None
-
+    The DEBUG system service provides a simple interface to manage the DEBUG
+    module on Microchip microcontrollers. This file Implements the core
+    interface routines for the DEBUG system service. While building the system
+    service from source, ALWAYS include this file in the build.
 *******************************************************************************/
 
+//DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,73 +40,73 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
-#include "device.h"
-#include "plib_nvic.h"
-
+//DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: NVIC Implementation
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-void NVIC_Initialize( void )
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdarg.h>
+#include "configuration.h"
+#include "system/system.h"
+#include "system/console/sys_console.h"
+#include "sys_debug_local.h"
+#include "system/debug/sys_debug.h"
+
+static SYS_DEBUG_INSTANCE sysDebugInstance;
+
+SYS_ERROR_LEVEL gblErrLvl;
+
+SYS_MODULE_OBJ SYS_DEBUG_Initialize(
+    const SYS_MODULE_INDEX index,
+    const SYS_MODULE_INIT* const init
+)
 {
-    /* Priority 0 to 7 and no sub-priority. 0 is the highest priority */
-    NVIC_SetPriorityGrouping( 0x00 );
+    SYS_DEBUG_INIT* initConfig = (SYS_DEBUG_INIT*)init;
 
-    /* Enable NVIC Controller */
-    __DMB();
-    __enable_irq();
+    gblErrLvl = initConfig->errorLevel;
 
-    /* Enable the interrupt sources and configure the priorities as configured
-     * from within the "Interrupt Manager" of MHC. */
-    NVIC_SetPriority(UART1_IRQn, 7);
-    NVIC_EnableIRQ(UART1_IRQn);
-    NVIC_SetPriority(TWIHS0_IRQn, 7);
-    NVIC_EnableIRQ(TWIHS0_IRQn);
-    NVIC_SetPriority(TC0_CH0_IRQn, 7);
-    NVIC_EnableIRQ(TC0_CH0_IRQn);
-    NVIC_SetPriority(USBHS_IRQn, 6);
-    NVIC_EnableIRQ(USBHS_IRQn);
-    NVIC_SetPriority(UART2_IRQn, 7);
-    NVIC_EnableIRQ(UART2_IRQn);
-    NVIC_SetPriority(XDMAC_IRQn, 7);
-    NVIC_EnableIRQ(XDMAC_IRQn);
+    sysDebugInstance.debugConsole = initConfig->consoleIndex;
+    sysDebugInstance.status = SYS_STATUS_READY;
 
-
-
+    return SYS_MODULE_OBJ_STATIC;
 }
 
-void NVIC_INT_Enable( void )
+
+SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void)
 {
-    __DMB();
-    __enable_irq();
+    return sysDebugInstance.debugConsole;
 }
 
-bool NVIC_INT_Disable( void )
+SYS_STATUS SYS_DEBUG_Status ( SYS_MODULE_OBJ object )
 {
-    bool processorStatus;
-
-    processorStatus = (bool) (__get_PRIMASK() == 0);
-
-    __disable_irq();
-    __DMB();
-
-    return processorStatus;
+    return ( sysDebugInstance.status );
 }
 
-void NVIC_INT_Restore( bool state )
+void SYS_DEBUG_ErrorLevelSet(SYS_ERROR_LEVEL level)
 {
-    if( state == true )
+    gblErrLvl = level;
+}
+
+SYS_ERROR_LEVEL SYS_DEBUG_ErrorLevelGet(void)
+{
+    return gblErrLvl;
+}
+
+bool SYS_DEBUG_Redirect(const SYS_MODULE_INDEX index)
+{
+    if (index < SYS_CONSOLE_DEVICE_MAX_INSTANCES)
     {
-        __DMB();
-        __enable_irq();
+        sysDebugInstance.debugConsole = index;
+        return true;
     }
     else
     {
-        __disable_irq();
-        __DMB();
+        return false;
     }
 }

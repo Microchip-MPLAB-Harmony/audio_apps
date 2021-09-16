@@ -1,20 +1,20 @@
 /*******************************************************************************
-  NVIC PLIB Implementation
+  Debug System Service Local Data Structures
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_nvic.c
+    sys_debug_local.h
 
   Summary:
-    NVIC PLIB Source File
+    Debug System Service local declarations and definitions.
 
   Description:
-    None
-
+    This file contains the Debug System Service local declarations and definitions.
 *******************************************************************************/
 
+//DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,73 +37,59 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+//DOM-IGNORE-END
 
-#include "device.h"
-#include "plib_nvic.h"
-
+#ifndef SYS_DEBUG_LOCAL_H
+#define SYS_DEBUG_LOCAL_H
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: NVIC Implementation
+// Section: File includes
 // *****************************************************************************
 // *****************************************************************************
 
-void NVIC_Initialize( void )
+#include "configuration.h"
+#include "driver/driver.h"
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+
+// *****************************************************************************
+/* SYS DEBUG OBJECT INSTANCE structure
+
+  Summary:
+    System Debug object instance structure.
+
+  Description:
+    This data type defines the System Debug object instance.
+
+  Remarks:
+    None.
+*/
+
+typedef struct
 {
-    /* Priority 0 to 7 and no sub-priority. 0 is the highest priority */
-    NVIC_SetPriorityGrouping( 0x00 );
+    SYS_STATUS                        status;
+    SYS_MODULE_INDEX                  debugConsole;
+} SYS_DEBUG_INSTANCE;
 
-    /* Enable NVIC Controller */
-    __DMB();
-    __enable_irq();
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
 
-    /* Enable the interrupt sources and configure the priorities as configured
-     * from within the "Interrupt Manager" of MHC. */
-    NVIC_SetPriority(UART1_IRQn, 7);
-    NVIC_EnableIRQ(UART1_IRQn);
-    NVIC_SetPriority(TWIHS0_IRQn, 7);
-    NVIC_EnableIRQ(TWIHS0_IRQn);
-    NVIC_SetPriority(TC0_CH0_IRQn, 7);
-    NVIC_EnableIRQ(TC0_CH0_IRQn);
-    NVIC_SetPriority(USBHS_IRQn, 6);
-    NVIC_EnableIRQ(USBHS_IRQn);
-    NVIC_SetPriority(UART2_IRQn, 7);
-    NVIC_EnableIRQ(UART2_IRQn);
-    NVIC_SetPriority(XDMAC_IRQn, 7);
-    NVIC_EnableIRQ(XDMAC_IRQn);
-
-
-
-}
-
-void NVIC_INT_Enable( void )
-{
-    __DMB();
-    __enable_irq();
-}
-
-bool NVIC_INT_Disable( void )
-{
-    bool processorStatus;
-
-    processorStatus = (bool) (__get_PRIMASK() == 0);
-
-    __disable_irq();
-    __DMB();
-
-    return processorStatus;
-}
-
-void NVIC_INT_Restore( bool state )
-{
-    if( state == true )
-    {
-        __DMB();
-        __enable_irq();
     }
-    else
-    {
-        __disable_irq();
-        __DMB();
-    }
-}
+
+#endif
+//DOM-IGNORE-END
+
+#endif //#ifndef SYS_DEBUG_LOCAL_H

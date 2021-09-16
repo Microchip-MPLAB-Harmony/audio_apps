@@ -347,6 +347,7 @@ void APP_USBDeviceAudioEventHandler(USB_DEVICE_AUDIO_INDEX iAudio,
                     if(_APP_USBReadAllBufferReady())
                     {
                         usbReadCompleteFlag = true;
+                        SYS_PRINT("[URQR]");
 //                        SYS_PRINT("USB INIT READ COMPLETEs:  Qlevel %d - Ridx %d - Widx %d",
 //                            appPlaybackBuffer.usbReadCompleteBufferLevel,
 //                            appPlaybackBuffer.usbReadIdx,

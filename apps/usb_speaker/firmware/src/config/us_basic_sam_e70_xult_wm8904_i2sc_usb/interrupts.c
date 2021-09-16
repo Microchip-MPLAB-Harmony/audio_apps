@@ -92,7 +92,6 @@ extern void WDT_Handler                ( void ) __attribute__((weak, alias("Dumm
 extern void PMC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EFC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void UART0_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void UART1_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PIOA_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PIOB_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PIOC_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -182,7 +181,7 @@ const H3DeviceVectors exception_table=
     .pfnPMC_Handler                = PMC_Handler,
     .pfnEFC_Handler                = EFC_Handler,
     .pfnUART0_Handler              = UART0_Handler,
-    .pfnUART1_Handler              = UART1_Handler,
+    .pfnUART1_Handler              = UART1_InterruptHandler,
     .pfnPIOA_Handler               = PIOA_Handler,
     .pfnPIOB_Handler               = PIOB_Handler,
     .pfnPIOC_Handler               = PIOC_Handler,

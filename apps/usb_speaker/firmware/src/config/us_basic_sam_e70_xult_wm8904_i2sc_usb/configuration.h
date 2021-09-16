@@ -89,6 +89,24 @@ extern "C" {
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (900)
 
 
+#define SYS_DEBUG_ENABLE
+#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
+#define SYS_DEBUG_BUFFER_DMA_READY
+#define SYS_DEBUG_USE_CONSOLE
+
+
+#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
+#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
+#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		200
+
+
+#define SYS_CONSOLE_INDEX_0                       0
+
+
+
+
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -108,8 +126,8 @@ extern "C" {
 #define DRV_I2S_QUEUE_SIZE_IDX0        128
 #define DRV_I2S_DATA_LENGTH_IDX0       16
 #define DRV_I2S_INT_SRC_IDX0           I2SC1_IRQn
-#define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_2
-#define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_0
+#define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_0
+#define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
 #define DRV_I2C_INSTANCES_NUMBER              1
