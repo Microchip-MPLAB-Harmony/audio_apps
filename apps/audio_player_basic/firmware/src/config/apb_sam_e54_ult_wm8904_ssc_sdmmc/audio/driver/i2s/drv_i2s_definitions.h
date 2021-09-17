@@ -104,7 +104,7 @@ typedef enum
 typedef    void (* DRV_BAUDSET)(const uint32_t);
 
 //PLIB Interface Member Functions 
-typedef    uint32_t (* DRV_I2S_LRCLK_GET)();
+typedef    uint32_t (* DRV_I2S_LRCLK_GET)(void);
 
 // *****************************************************************************
 /* I2S Driver Audio Data 16

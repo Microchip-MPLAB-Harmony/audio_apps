@@ -41,7 +41,7 @@
 
 // Do not use the FAT_FS_MAX_LFN from Framework, It is deprecated and removed
 // Hence redefined here
-#ifdef (SYS_FS_FILE_NAME_LEN)
+#ifdef SYS_FS_FILE_NAME_LEN
 #define FAT_FS_MAX_LFN (SYS_FS_FILE_NAME_LEN)
 #else
 #define FAT_FS_MAX_LFN (255)
@@ -475,7 +475,7 @@ void                APP_Tasks( void );
 void                BTN_Tasks( void );
 void                APP_LED_Tasks( void );
 void                LED_Set_Mode( uint8_t led, LED_STATES state, uint32_t prd_blinks);
-void                DISK_Tasks( void );
+//void                DISK_Tasks( void );
 //bool                APP_GetSpiAudioMode( void );
 APP_DATA *          APP_GetAppDataInstance( void );
 //int32_t             APP_GetReadBytesInAppData( void );
@@ -485,7 +485,7 @@ APP_DATA *          APP_GetAppDataInstance( void );
 //void                APP_SetReadBytesReadFlag( int32_t val, bool b );
 bool                APP_IsSupportedAudioFile( char *name );
 //bool                APP_PlayerEventHandler ( PLAYER_EVENT event, uint32_t data );
-void                APP_Initialize( void );
+//void                APP_Initialize( void );
 //bool                APP_PlayerDecode( uint8_t *ptr, int16_t* out );
 bool                APP_Decoder( uint8_t *in, uint16_t sz, uint16_t * bytesRd, int16_t* out, uint16_t * wrtn );
 //APP_DECODER_TYPE    APP_GetCurrentFileType ( char *ext );

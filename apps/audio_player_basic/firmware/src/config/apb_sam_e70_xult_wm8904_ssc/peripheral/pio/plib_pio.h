@@ -66,9 +66,9 @@
 #define STBYRST_Set()               (PIOD_REGS->PIO_SODR = (1<<11))
 #define STBYRST_Clear()             (PIOD_REGS->PIO_CODR = (1<<11))
 #define STBYRST_Toggle()            (PIOD_REGS->PIO_ODSR ^= (1<<11))
-#define STBYRST_Get()               ((PIOD_REGS->PIO_PDSR >> 11) & 0x1)
 #define STBYRST_OutputEnable()      (PIOD_REGS->PIO_OER = (1<<11))
 #define STBYRST_InputEnable()       (PIOD_REGS->PIO_ODR = (1<<11))
+#define STBYRST_Get()               ((PIOD_REGS->PIO_PDSR >> 11) & 0x1)
 #define STBYRST_PIN                  PIO_PIN_PD11
 
 

@@ -152,7 +152,7 @@ void APP_PlayerInitialize ( void )
     DISK_Initialize();
 }
 
-void APP_UpdateTrackPosition()
+void APP_UpdateTrackPosition(void)
 {
     uint32_t dur, time;
     if( appData.sampleRate && appData.numOfChnls )

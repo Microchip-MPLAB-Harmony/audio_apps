@@ -45,6 +45,8 @@
 // DOM-IGNORE-END
 
 #include "plib_dmac.h"
+#include "interrupts.h"
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -53,6 +55,8 @@
 // *****************************************************************************
 
 #define DMAC_CHANNELS_NUMBER        2
+
+#define DMAC_CRC_CHANNEL_OFFSET     0x20U
 
 /* DMAC channels object configuration structure */
 typedef struct
@@ -64,10 +68,10 @@ typedef struct
 } DMAC_CH_OBJECT ;
 
 /* Initial write back memory section for DMAC */
-static  dmac_descriptor_registers_t _write_back_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(16);
+static  dmac_descriptor_registers_t _write_back_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(8);
 
 /* Descriptor section for DMAC */
-static  dmac_descriptor_registers_t  descriptor_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(16);
+static  dmac_descriptor_registers_t  descriptor_section[DMAC_CHANNELS_NUMBER]    __ALIGNED(8);
 
 /* DMAC Channels object information structure */
 DMAC_CH_OBJECT dmacChannelObj[DMAC_CHANNELS_NUMBER];
@@ -142,12 +146,15 @@ bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, const void
     uint8_t beat_size = 0;
     bool returnStatus = false;
 
-    if (dmacChannelObj[channel].busyStatus == false)
+    if ((dmacChannelObj[channel].busyStatus == false) || (DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG & (DMAC_CHINTENCLR_TCMPL_Msk | DMAC_CHINTENCLR_TERR_Msk)))
     {
-        /* Get a pointer to the module hardware instance */
-        dmac_descriptor_registers_t *const dmacDescReg = &descriptor_section[channel];
+        /* Clear the transfer complete flag */
+        DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TCMPL_Msk | DMAC_CHINTENCLR_TERR_Msk;
 
         dmacChannelObj[channel].busyStatus = true;
+
+        /* Get a pointer to the module hardware instance */
+        dmac_descriptor_registers_t *const dmacDescReg = &descriptor_section[channel];
 
        /*Set source address */
         if ( dmacDescReg->DMAC_BTCTRL & DMAC_BTCTRL_SRCINC_Msk)
@@ -166,7 +173,15 @@ bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, const void
         }
         else
         {
-            dmacDescReg->DMAC_DSTADDR = (uint32_t) (destAddr);
+            if ((DMAC_REGS->DMAC_CRCCTRL & DMAC_CRCCTRL_CRCMODE_Msk) == DMAC_CRCCTRL_CRCMODE_DEFAULT)
+            {
+                dmacDescReg->DMAC_DSTADDR = (uint32_t) (destAddr);
+            }
+            else
+            {
+                /* Store the Value in the destination address as seed to the CRC engine in Memory modes */
+                dmacDescReg->DMAC_DSTADDR = *((uint32_t *)destAddr);
+            }
         }
 
         /*Calculate the beat size and then set the BTCNT value */
@@ -197,7 +212,36 @@ bool DMAC_ChannelTransfer( DMAC_CHANNEL channel, const void *srcAddr, const void
 
 bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel )
 {
-    return (bool)dmacChannelObj[channel].busyStatus;
+    if (dmacChannelObj[channel].busyStatus == true && ((DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG & (DMAC_CHINTENCLR_TCMPL_Msk | DMAC_CHINTENCLR_TERR_Msk)) == 0))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+DMAC_TRANSFER_EVENT DMAC_ChannelTransferStatusGet(DMAC_CHANNEL channel)
+{
+    uint32_t chanIntFlagStatus = 0;
+    DMAC_TRANSFER_EVENT event = DMAC_TRANSFER_EVENT_NONE;
+
+    /* Get the DMAC channel interrupt status */
+    chanIntFlagStatus = DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG;
+
+    if (chanIntFlagStatus & DMAC_CHINTENCLR_TCMPL_Msk)
+    {
+        event = DMAC_TRANSFER_EVENT_COMPLETE;
+    }
+
+    /* Verify if DMAC Channel Error flag is set */
+    if (chanIntFlagStatus & DMAC_CHINTENCLR_TERR_Msk)
+    {
+        event = DMAC_TRANSFER_EVENT_ERROR;
+    }
+
+    return event;
 }
 
 /*******************************************************************************
@@ -207,7 +251,7 @@ bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel )
 void DMAC_ChannelDisable ( DMAC_CHANNEL channel )
 {
     /* Disable the DMA channel */
-    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Pos);
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Msk);
 
     while((DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA & DMAC_CHCTRLA_ENABLE_Msk) != 0);
 
@@ -217,14 +261,15 @@ void DMAC_ChannelDisable ( DMAC_CHANNEL channel )
 
 uint16_t DMAC_ChannelGetTransferredCount( DMAC_CHANNEL channel )
 {
-    return(descriptor_section[channel].DMAC_BTCNT - _write_back_section[channel].DMAC_BTCNT);
+    uint16_t transferredCount = descriptor_section[channel].DMAC_BTCNT;
+    transferredCount -= _write_back_section[channel].DMAC_BTCNT;
+    return(transferredCount);
 }
 
 
 /*******************************************************************************
     This function function allows a DMAC PLIB client to set an event handler.
 ********************************************************************************/
-
 void DMAC_ChannelCallbackRegister( DMAC_CHANNEL channel, const DMAC_CHANNEL_CALLBACK callback, const uintptr_t context )
 {
     dmacChannelObj[channel].callback = callback;
@@ -252,9 +297,11 @@ bool DMAC_ChannelSettingsSet (DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting)
     /* Get a pointer to the module hardware instance */
     dmac_descriptor_registers_t *const dmacDescReg = &descriptor_section[0];
 
-    /* Disable the channel */
     /* Disable the DMA channel */
-    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Pos);
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA &= (~DMAC_CHCTRLA_ENABLE_Msk);
+
+    /* Wait for channel to be disabled */
+    while((DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLA & DMAC_CHCTRLA_ENABLE_Msk) != 0);
 
     /* Set the new settings */
     dmacDescReg[channel].DMAC_BTCTRL = setting;
@@ -262,131 +309,136 @@ bool DMAC_ChannelSettingsSet (DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG setting)
     return true;
 }
 
+void DMAC_ChannelSuspend ( DMAC_CHANNEL channel )
+{
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB = (DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB & ~DMAC_CHCTRLB_CMD_Msk) | DMAC_CHCTRLB_CMD_SUSPEND;
+}
+
+void DMAC_ChannelResume ( DMAC_CHANNEL channel )
+{
+    DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB = (DMAC_REGS->CHANNEL[channel].DMAC_CHCTRLB & ~DMAC_CHCTRLB_CMD_Msk) | DMAC_CHCTRLB_CMD_RESUME;
+}
+
 /*******************************************************************************
-    This function handles the DMA interrupt events.
-*/
-void DMAC_0_InterruptHandler( void )
+    This function Disables the CRC engine and clears the CRC Control register
+********************************************************************************/
+void DMAC_CRCDisable( void )
 {
-    DMAC_CH_OBJECT  *dmacChObj = NULL;
-    volatile uint32_t chanIntFlagStatus = 0;
-    DMAC_TRANSFER_EVENT event   = DMAC_TRANSFER_EVENT_ERROR;
-
-	dmacChObj = (DMAC_CH_OBJECT *)&dmacChannelObj[0];
-
-    /* Get the DMAC channel interrupt status */
-    chanIntFlagStatus = DMAC_REGS->CHANNEL[0].DMAC_CHINTFLAG;
-
-    /* Verify if DMAC Channel Transfer complete flag is set */
-    if (chanIntFlagStatus & DMAC_CHINTENCLR_TCMPL_Msk)
-    {
-        /* Clear the transfer complete flag */
-        DMAC_REGS->CHANNEL[0].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TCMPL_Msk;
-
-        event = DMAC_TRANSFER_EVENT_COMPLETE;
-        dmacChObj->busyStatus = false;
-    }
-
-    /* Verify if DMAC Channel Error flag is set */
-    if (chanIntFlagStatus & DMAC_CHINTENCLR_TERR_Msk)
-    {
-        /* Clear transfer error flag */
-        DMAC_REGS->CHANNEL[0].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TERR_Msk;
-
-        event = DMAC_TRANSFER_EVENT_ERROR;
-        dmacChObj->busyStatus = false;
-    }
-
-    /* Execute the callback function */
-    if (dmacChObj->callback != NULL)
-    {
-        dmacChObj->callback (event, dmacChObj->context);
-    }
+    DMAC_REGS->DMAC_CRCCTRL = DMAC_CRCCTRL_RESETVALUE;
 }
-void DMAC_1_InterruptHandler( void )
+
+/*******************************************************************************
+    This function sets the CRC Engine to use DMAC channel for calculating CRC.
+
+    This Function has to be called before submitting DMA transfer request for
+    the channel to calculate CRC
+********************************************************************************/
+
+void DMAC_ChannelCRCSetup(DMAC_CHANNEL channel, DMAC_CRC_SETUP CRCSetup)
 {
-    DMAC_CH_OBJECT  *dmacChObj = NULL;
-    volatile uint32_t chanIntFlagStatus = 0;
-    DMAC_TRANSFER_EVENT event   = DMAC_TRANSFER_EVENT_ERROR;
+    /* Disable CRC Engine and clear the CRC Control register before configuring */
+    DMAC_CRCDisable();
 
-	dmacChObj = (DMAC_CH_OBJECT *)&dmacChannelObj[1];
-
-    /* Get the DMAC channel interrupt status */
-    chanIntFlagStatus = DMAC_REGS->CHANNEL[1].DMAC_CHINTFLAG;
-
-    /* Verify if DMAC Channel Transfer complete flag is set */
-    if (chanIntFlagStatus & DMAC_CHINTENCLR_TCMPL_Msk)
+    /* Store Initial Seed value only in default mode */
+    if (CRCSetup.crc_mode == DMAC_CRC_MODE_DEFAULT)
     {
-        /* Clear the transfer complete flag */
-        DMAC_REGS->CHANNEL[1].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TCMPL_Msk;
-
-        event = DMAC_TRANSFER_EVENT_COMPLETE;
-        dmacChObj->busyStatus = false;
+        DMAC_REGS->DMAC_CRCCHKSUM = CRCSetup.seed;
     }
 
-    /* Verify if DMAC Channel Error flag is set */
-    if (chanIntFlagStatus & DMAC_CHINTENCLR_TERR_Msk)
-    {
-        /* Clear transfer error flag */
-        DMAC_REGS->CHANNEL[1].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TERR_Msk;
-
-        event = DMAC_TRANSFER_EVENT_ERROR;
-        dmacChObj->busyStatus = false;
-    }
-
-    /* Execute the callback function */
-    if (dmacChObj->callback != NULL)
-    {
-        dmacChObj->callback (event, dmacChObj->context);
-    }
+    /* Setup the CRC engine to use DMA Channel.
+     * CRC engine is enabled by writing the DMA channel to the DMAC_CRCCTRL_CRCSRC bits
+     */
+    DMAC_REGS->DMAC_CRCCTRL = (DMAC_CRCCTRL_CRCPOLY(CRCSetup.polynomial_type) | DMAC_CRCCTRL_CRCMODE(CRCSetup.crc_mode) | DMAC_CRCCTRL_CRCSRC((DMAC_CRC_CHANNEL_OFFSET + channel)));
 }
-void DMAC_2_InterruptHandler( void )
+
+/*******************************************************************************
+    This function returns the Caclculated CRC Value.
+********************************************************************************/
+
+uint32_t DMAC_CRCRead( void )
 {
-    DMAC_CH_OBJECT  *dmacChObj = NULL;
-    volatile uint32_t chanIntFlagStatus = 0;
-    DMAC_TRANSFER_EVENT event   = DMAC_TRANSFER_EVENT_ERROR;
-
-	dmacChObj = (DMAC_CH_OBJECT *)&dmacChannelObj[2];
-
-    /* Get the DMAC channel interrupt status */
-    chanIntFlagStatus = DMAC_REGS->CHANNEL[2].DMAC_CHINTFLAG;
-
-    /* Verify if DMAC Channel Transfer complete flag is set */
-    if (chanIntFlagStatus & DMAC_CHINTENCLR_TCMPL_Msk)
-    {
-        /* Clear the transfer complete flag */
-        DMAC_REGS->CHANNEL[2].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TCMPL_Msk;
-
-        event = DMAC_TRANSFER_EVENT_COMPLETE;
-        dmacChObj->busyStatus = false;
-    }
-
-    /* Verify if DMAC Channel Error flag is set */
-    if (chanIntFlagStatus & DMAC_CHINTENCLR_TERR_Msk)
-    {
-        /* Clear transfer error flag */
-        DMAC_REGS->CHANNEL[2].DMAC_CHINTFLAG = DMAC_CHINTENCLR_TERR_Msk;
-
-        event = DMAC_TRANSFER_EVENT_ERROR;
-        dmacChObj->busyStatus = false;
-    }
-
-    /* Execute the callback function */
-    if (dmacChObj->callback != NULL)
-    {
-        dmacChObj->callback (event, dmacChObj->context);
-    }
+    return (DMAC_REGS->DMAC_CRCCHKSUM);
 }
-void DMAC_OTHER_InterruptHandler( void )
+
+/*******************************************************************************
+    This function sets the CRC Engine in IO mode to get the data using the CPU
+    which will be written in CRCDATAIN register. It internally calculates the
+    Beat Size to be used based on the buffer length.
+
+    This function returns the final CRC value once the computation is done
+********************************************************************************/
+uint32_t DMAC_CRCCalculate(void *buffer, uint32_t length, DMAC_CRC_SETUP CRCSetup)
+{
+    uint8_t beatSize    = DMAC_CRC_BEAT_SIZE_BYTE;
+    uint32_t counter    = 0;
+    uint8_t *buffer_8   = (uint8_t *)buffer;
+    uint16_t *buffer_16 = (uint16_t *)buffer;
+    uint32_t *buffer_32 = (uint32_t *)buffer;
+
+    /* Calculate the beatsize to be used basd on buffer length */
+    if ((length & 0x3U) == 0)
+    {
+        beatSize = DMAC_CRC_BEAT_SIZE_WORD;
+        length = length >> 0x2U;
+    }
+    else if ((length & 0x1U) == 0)
+    {
+        beatSize = DMAC_CRC_BEAT_SIZE_HWORD;
+        length = length >> 0x1U;
+    }
+
+    /* Disable CRC Engine and clear the CRC Control register before configuring */
+    DMAC_CRCDisable();
+
+    DMAC_REGS->DMAC_CRCCHKSUM = CRCSetup.seed;
+
+    /* Setup the CRC engine to use IO Mode.
+     * CRC engine is enabled by writing the IO mode to the DMAC_CRCCTRL_CRCSRC bits
+     */
+    DMAC_REGS->DMAC_CRCCTRL = (DMAC_CRCCTRL_CRCPOLY(CRCSetup.polynomial_type) | DMAC_CRCCTRL_CRCBEATSIZE(beatSize) | DMAC_CRCCTRL_CRCSRC_IO );
+
+    /* Start the CRC calculation by writing the buffer into CRCDATAIN register based
+     * on the beat size configured
+     */
+    for (counter = 0; counter < length; counter++)
+    {
+        if (beatSize == DMAC_CRC_BEAT_SIZE_BYTE)
+        {
+            DMAC_REGS->DMAC_CRCDATAIN = buffer_8[counter];
+        }
+        else if (beatSize == DMAC_CRC_BEAT_SIZE_HWORD)
+        {
+            DMAC_REGS->DMAC_CRCDATAIN = buffer_16[counter];
+        }
+        else if (beatSize == DMAC_CRC_BEAT_SIZE_WORD)
+        {
+            DMAC_REGS->DMAC_CRCDATAIN = buffer_32[counter];
+        }
+
+        /* Wait until CRC Calculation is completed for the current data in CRCDATAIN */
+        while (!(DMAC_REGS->DMAC_CRCSTATUS & DMAC_CRCSTATUS_CRCBUSY_Msk))
+        {
+            ;
+        }
+
+        /* Clear the busy bit */
+        DMAC_REGS->DMAC_CRCSTATUS = DMAC_CRCSTATUS_CRCBUSY_Msk;
+    }
+
+    /* Return the final CRC calculated for the entire buffer */
+    return (DMAC_REGS->DMAC_CRCCHKSUM);
+}
+
+//*******************************************************************************
+//    Functions to handle DMA interrupt events.
+//*******************************************************************************
+void _DMAC_interruptHandler(uint8_t channel)
 {
     DMAC_CH_OBJECT  *dmacChObj = NULL;
-    uint8_t channel = 0;
     volatile uint32_t chanIntFlagStatus = 0;
     DMAC_TRANSFER_EVENT event   = DMAC_TRANSFER_EVENT_ERROR;
 
-    /* Get active channel number */
-    channel =  DMAC_REGS->DMAC_INTPEND & DMAC_INTPEND_ID_Msk;
-
-	dmacChObj = (DMAC_CH_OBJECT *)&dmacChannelObj[channel];
+    dmacChObj = (DMAC_CH_OBJECT *)&dmacChannelObj[channel];
 
     /* Get the DMAC channel interrupt status */
     chanIntFlagStatus = DMAC_REGS->CHANNEL[channel].DMAC_CHINTFLAG;
@@ -417,3 +469,14 @@ void DMAC_OTHER_InterruptHandler( void )
         dmacChObj->callback (event, dmacChObj->context);
     }
 }
+
+void DMAC_0_InterruptHandler( void )
+{
+   _DMAC_interruptHandler(0);
+}
+
+void DMAC_1_InterruptHandler( void )
+{
+   _DMAC_interruptHandler(1);
+}
+

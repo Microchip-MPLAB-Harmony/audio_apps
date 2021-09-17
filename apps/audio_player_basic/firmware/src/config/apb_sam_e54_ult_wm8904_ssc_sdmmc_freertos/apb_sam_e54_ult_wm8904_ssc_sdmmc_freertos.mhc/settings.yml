@@ -1,0 +1,13 @@
+configName: apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../..
+processor: ATSAME54P20A
+projectName: ''
+settings:
+  PackageFilter: audio;audio_apps;audio_withfix;bsp;core;csp;gfx;quick_docs;touch;usb;xiph_flac_expected
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: OVERWRITE
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.5.87\atdf\ATSAME54P20A.atdf

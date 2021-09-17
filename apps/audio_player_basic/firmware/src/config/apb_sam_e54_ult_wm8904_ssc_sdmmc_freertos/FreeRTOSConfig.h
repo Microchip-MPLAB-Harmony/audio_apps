@@ -1,6 +1,6 @@
 /*
- * FreeRTOS Kernel V10.0.1
- * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ * FreeRTOS Kernel V10.2.0
+ * Copyright (C) 2019 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -93,10 +93,11 @@
 
 /* Interrupt nesting behaviour configuration. */
 /* The priority at which the tick interrupt runs.  This should probably be kept at lowest priority. */
-#define configKERNEL_INTERRUPT_PRIORITY         (7<<5)
+#define configKERNEL_INTERRUPT_PRIORITY         (7 << (8 - 3))
 /* The maximum interrupt priority from which FreeRTOS.org API functions can be called.
  * Only API functions that end in ...FromISR() can be used within interrupts. */
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY    (1<<5)
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY    (1 << (8 - 3))
+
 
 /* Optional functions - most linkers will remove unused functions anyway. */
 #define INCLUDE_vTaskPrioritySet                1
@@ -110,10 +111,13 @@
 #define INCLUDE_uxTaskGetStackHighWaterMark     0
 #define INCLUDE_xTaskGetIdleTaskHandle          0
 #define INCLUDE_eTaskGetState                   0
-#define INCLUDE_xEventGroupSetBitFromISR        0
 #define INCLUDE_xTimerPendFunctionCall          0
 #define INCLUDE_xTaskAbortDelay                 0
 #define INCLUDE_xTaskGetHandle                  0
+#define INCLUDE_xQueueGetMutexHolder            0
+#define INCLUDE_xSemaphoreGetMutexHolder        0
+#define INCLUDE_uxTaskGetStackHighWaterMark2    0
+#define INCLUDE_xTaskResumeFromISR              0
 
 
 #endif /* FREERTOS_H */

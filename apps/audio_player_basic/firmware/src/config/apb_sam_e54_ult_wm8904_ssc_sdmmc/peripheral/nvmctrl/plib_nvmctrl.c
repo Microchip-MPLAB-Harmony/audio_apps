@@ -49,6 +49,7 @@
 
 #include <string.h>
 #include "plib_nvmctrl.h"
+#include "interrupts.h"
 
 static volatile uint16_t nvm_error;
 static uint16_t nvm_status;
@@ -64,7 +65,7 @@ static uint32_t smart_eep_status;
 
 void NVMCTRL_Initialize(void)
 {
-   NVMCTRL_REGS->NVMCTRL_CTRLA = NVMCTRL_CTRLA_RWS(6) | NVMCTRL_CTRLA_AUTOWS_Msk;    
+   NVMCTRL_REGS->NVMCTRL_CTRLA = NVMCTRL_CTRLA_RWS(1) | NVMCTRL_CTRLA_AUTOWS_Msk;    
 }
 
 bool NVMCTRL_Read( uint32_t *data, uint32_t length, const uint32_t address )
@@ -79,7 +80,7 @@ void NVMCTRL_SetWriteMode(NVMCTRL_WRITEMODE mode)
     NVMCTRL_REGS->NVMCTRL_CTRLA = (NVMCTRL_REGS->NVMCTRL_CTRLA & (~NVMCTRL_CTRLA_WMODE_Msk)) | mode;
 }
 
-bool NVMCTRL_QuadWordWrite(uint32_t *data, const uint32_t address)
+bool NVMCTRL_QuadWordWrite(const uint32_t *data, const uint32_t address)
 {
     uint8_t i = 0;
     bool wr_status = false;
@@ -90,14 +91,14 @@ bool NVMCTRL_QuadWordWrite(uint32_t *data, const uint32_t address)
     nvm_error = 0;
 
     /* If the address is not a quad word address, return error */
-    if((address & 0x03) != 0)
+    if((address & 0x0f) != 0)
     {
         wr_status = false;
     }
     else
     {
         /* Configure Quad Word Write */
-        NVMCTRL_SetWriteMode(NVMCTRL_CTRLA_WMODE_AQW);
+        NVMCTRL_SetWriteMode(NVMCTRL_WMODE_AQW);
 
         /* Writing 32-bit data into the given address.  Writes to the page buffer must be 32 bits. */
         for (i = 0; i <= 3; i++)
@@ -105,13 +106,13 @@ bool NVMCTRL_QuadWordWrite(uint32_t *data, const uint32_t address)
             *paddress++ = data[i];
         }
         /* Restore the write mode */
-        NVMCTRL_SetWriteMode(wr_mode);
+        NVMCTRL_SetWriteMode((NVMCTRL_WRITEMODE)wr_mode);
         wr_status = true;
     }
     return wr_status;
 }
 
-bool NVMCTRL_DoubleWordWrite(uint32_t *data, const uint32_t address)
+bool NVMCTRL_DoubleWordWrite(const uint32_t *data, const uint32_t address)
 {
     uint8_t i = 0;
     bool wr_status = false;
@@ -122,14 +123,14 @@ bool NVMCTRL_DoubleWordWrite(uint32_t *data, const uint32_t address)
     nvm_error = 0;
 
     /* If the address is not a double word address, return error */
-    if((address & 0x01) != 0)
+    if((address & 0x07) != 0)
     {
         wr_status = false;
     }
     else
     {
         /* Configure Double Word Write */
-        NVMCTRL_SetWriteMode(NVMCTRL_CTRLA_WMODE_ADW);
+        NVMCTRL_SetWriteMode(NVMCTRL_WMODE_ADW);
 
         /* Writing 32-bit data into the given address.  Writes to the page buffer must be 32 bits. */
         for (i = 0; i <= 1; i++)
@@ -137,16 +138,56 @@ bool NVMCTRL_DoubleWordWrite(uint32_t *data, const uint32_t address)
             *paddress++ = data[i];
         }
         /* Restore the write mode */
-        NVMCTRL_SetWriteMode(wr_mode);
+        NVMCTRL_SetWriteMode((NVMCTRL_WRITEMODE)wr_mode);
         wr_status = true;
     }
     return wr_status;
 }
 
+/* This function only loads the internal NVM page buffer. This function must be used when multiple updates
+ * to the same page are expected. Once all the updates are done, call the NVMCTRL_PageBufferCommit API
+ * to write the contents of the page buffer to the NVM memory. This functionality only works in manual write mode.
+ */
+bool NVMCTRL_PageBufferWrite( uint32_t *data, const uint32_t address)
+{
+    uint32_t i = 0;
+    uint32_t * paddress = (uint32_t *)address;
+
+    /* Clear global error flag */
+    nvm_error = 0;
+
+    /* writing 32-bit data into the given address.  Writes to the page buffer must be 32 bits */
+    for (i = 0; i < (NVMCTRL_FLASH_PAGESIZE/4); i++)
+    {
+        *paddress++ = data[i];
+    }    
+    
+    return true;
+}
+
+/* This API must be used to write the contents of the page buffer to the NVM memory when the manual write mode is enabled */
+bool NVMCTRL_PageBufferCommit(  const uint32_t address )
+{
+	/* Clear global error flag */
+    nvm_error = 0;
+	
+	/* Set address and command */
+    NVMCTRL_REGS->NVMCTRL_ADDR = address;
+	
+    /* If write mode is manual, */
+    if ((NVMCTRL_REGS->NVMCTRL_CTRLA & NVMCTRL_CTRLA_WMODE_Msk) == NVMCTRL_CTRLA_WMODE_MAN)
+    {
+        /* Set address and command */
+        NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_CMD_WP | NVMCTRL_CTRLB_CMDEX_KEY;
+    }
+
+    return true;
+}
+
 /* This function assumes that the page written is fresh or it is erased by
  * calling NVMCTRL_BlockErase
  */
-bool NVMCTRL_PageWrite( uint32_t *data, const uint32_t address )
+bool NVMCTRL_PageWrite( const uint32_t *data, const uint32_t address )
 {
     uint32_t i = 0;
     uint32_t * paddress = (uint32_t *)address;
@@ -161,7 +202,7 @@ bool NVMCTRL_PageWrite( uint32_t *data, const uint32_t address )
     }
 
     /* If write mode is manual, */
-    if ((NVMCTRL_REGS->NVMCTRL_CTRLA & NVMCTRL_CTRLA_WMODE_MAN) == NVMCTRL_CTRLA_WMODE_MAN)
+    if ((NVMCTRL_REGS->NVMCTRL_CTRLA & NVMCTRL_CTRLA_WMODE_Msk) == NVMCTRL_CTRLA_WMODE_MAN)
     {
         /* Set address and command */
         NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_CMD_WP | NVMCTRL_CTRLB_CMDEX_KEY;
@@ -184,7 +225,14 @@ bool NVMCTRL_BlockErase( uint32_t address )
 
 uint16_t NVMCTRL_ErrorGet( void )
 {
-    nvm_error |= NVMCTRL_REGS->NVMCTRL_INTFLAG;
+    uint16_t temp;
+    /* Store previous and current error flags */
+    temp = NVMCTRL_REGS->NVMCTRL_INTFLAG;
+
+    nvm_error |= temp;
+
+    /* Clear NVMCTRL INTFLAG register */
+    NVMCTRL_REGS->NVMCTRL_INTFLAG = nvm_error;
 
     return nvm_error;
 }
