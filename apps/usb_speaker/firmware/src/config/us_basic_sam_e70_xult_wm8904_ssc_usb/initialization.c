@@ -162,6 +162,9 @@ DRV_I2S_INIT drvI2S0InitData =
     .i2sTransmitAddress = (void *)&(SSC_REGS->SSC_THR),
     .i2sReceiveAddress = (void *)&(SSC_REGS->SSC_RHR),
 
+    /************ code specific to SAM E70 ********************/
+    .interruptDMA = XDMAC_IRQn,
+    /************ code specific to SAM E70 ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
@@ -172,7 +175,7 @@ const DRV_WM8904_INIT drvwm8904Codec0InitData =
 {
     .i2sDriverModuleIndex = DRV_WM8904_I2S_DRIVER_MODULE_INDEX_IDX0,
     .i2cDriverModuleIndex = DRV_WM8904_I2C_DRIVER_MODULE_INDEX_IDX0,
-    .masterMode = DRV_WM8904_MASTER_MODE,
+    .masterMode = DRV_WM8904_I2S_MASTER_MODE,
     .samplingRate = DRV_WM8904_AUDIO_SAMPLING_RATE,
     .volume = DRV_WM8904_VOLUME,
     .audioDataFormat = DRV_WM8904_AUDIO_DATA_FORMAT_MACRO,

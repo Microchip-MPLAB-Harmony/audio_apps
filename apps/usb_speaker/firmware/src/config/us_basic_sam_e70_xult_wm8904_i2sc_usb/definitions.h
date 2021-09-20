@@ -208,9 +208,9 @@ typedef struct
     /* I2S0 Driver Object */
     SYS_MODULE_OBJ drvI2S0;
 
-    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysDebug;
 
+    SYS_MODULE_OBJ  sysTime;
 	SYS_MODULE_OBJ  drvUSBHSV1Object;
 
     SYS_MODULE_OBJ  sysConsole0;

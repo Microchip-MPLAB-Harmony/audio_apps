@@ -168,6 +168,9 @@ DRV_I2S_INIT drvI2S0InitData =
     .i2sTransmitAddress = (void *)&(I2SC1_REGS->I2SC_THR),
     .i2sReceiveAddress = (void *)&(I2SC1_REGS->I2SC_RHR),
 
+    /************ code specific to SAM E70 ********************/
+    .interruptDMA = XDMAC_IRQn,
+    /************ code specific to SAM E70 ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
@@ -268,6 +271,15 @@ const DRV_USBHSV1_INIT drvUSBInit =
 // Section: System Initialization
 // *****************************************************************************
 // *****************************************************************************
+
+const SYS_DEBUG_INIT debugInit =
+{
+    .moduleInit = {0},
+    .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
+    .consoleIndex = 0,
+};
+
+
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
 const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
@@ -287,15 +299,6 @@ const SYS_TIME_INIT sysTimeInitData =
 };
 
 // </editor-fold>
-
-const SYS_DEBUG_INIT debugInit =
-{
-    .moduleInit = {0},
-    .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
-    .consoleIndex = 0,
-};
-
-
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
@@ -387,10 +390,10 @@ void SYS_Initialize ( void* data )
     sysObj.drvwm8904Codec0 = DRV_WM8904_Initialize(DRV_WM8904_INDEX_0, (SYS_MODULE_INIT *)&drvwm8904Codec0InitData);
 
 
-    sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
 
 
+    sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
 
 
