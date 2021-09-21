@@ -40,7 +40,14 @@ extern "C" {
 
 #undef ONE_BUTTON_VERSION
 
-#define SYS_PRINT(fmt, ...)    _SYS_DEBUG_PRINT(0, fmt, ##__VA_ARGS__)
+#undef NOPRINT
+#ifdef NOPRINT
+#define SYS_PRINT(fmt, ...)    
+#define SYS_MESSAGE(fmt)      
+#else
+#define SYS_PRINT(fmt, ...)    SYS_DEBUG_PRINT(0, fmt, ##__VA_ARGS__)
+#define SYS_MESSAGE(fmt)       SYS_DEBUG_PRINT(0, fmt)
+#endif
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
