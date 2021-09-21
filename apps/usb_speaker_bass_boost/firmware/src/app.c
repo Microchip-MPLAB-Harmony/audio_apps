@@ -876,7 +876,6 @@ arm_biquad_cascade_df1_init_q15(
 
 } //End APP_Initialize()
 
-#define sysObjdrvCodec0            sysObj.drvak4954Codec0
 
 //******************************************************************************
 // APP_Tasks()

@@ -136,8 +136,7 @@ extern "C" {
 /* CODEC Driver Abstraction definition */
 
 #define DRV_CODEC_INDEX_0                                   DRV_AK4954_INDEX_0
-//KEEP THIS
-//#define sysObjdrvCodec0                                     sysObj.drvak4954Codec0
+#define sysObjdrvCodec0                                     sysObj.drvak4954Codec0
 #define DRV_CODEC_I2S_MASTER_MODE                           DRV_AK4954_I2S_MASTER_MODE
 
 #define DRV_CODEC_BUFFER_HANDLE                             DRV_AK4954_BUFFER_HANDLE

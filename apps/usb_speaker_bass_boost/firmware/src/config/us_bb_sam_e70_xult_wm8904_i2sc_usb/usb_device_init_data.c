@@ -231,6 +231,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
     /*  USB Speaker Standard Endpoint Descriptor */
     0x09,                            // Size of the descriptor, in bytes (bLength)
     USB_DESCRIPTOR_ENDPOINT,         // ENDPOINT descriptor (bDescriptorType)
+//KEEP THIS - app uses 0x01
     0x01,                            // OUT Endpoint 1. (bEndpointAddress)
     0x09,                            /* ?(bmAttributes) Isochronous,
                                       * Adaptive, data endpoint */
