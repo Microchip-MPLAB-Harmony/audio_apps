@@ -41,13 +41,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 37780F17759DED907A0F36E28BFB3136
-- generatedChecksum: 9D391AC39BEC3E3631EE2C4DE33B565F
+- generatedChecksum: 0F1542175BCAE0B6A2B4178F88DB9CDF
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/i2s
   name: drv_i2s.c
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9D391AC39BEC3E3631EE2C4DE33B565F
+  userChecksum: 0F1542175BCAE0B6A2B4178F88DB9CDF
 - generatedChecksum: 8048089AA9DA0663AE185F78DF90D645
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/driver/usb/usbhs/src
   name: drv_usbhs.c
@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5DA341ED7C2DCF62B80CB8D0F99DBD27
-- generatedChecksum: C26CAD040CF7B59BC3832BB88378ACE6
+- generatedChecksum: 6A4CFAB715E1F361227C9C73E5A82F3D
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C26CAD040CF7B59BC3832BB88378ACE6
+  userChecksum: 6A4CFAB715E1F361227C9C73E5A82F3D
 - generatedChecksum: CB8FFC4F7FDBF449C714356BE0DD6B24
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: interrupts.c
@@ -566,27 +566,27 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5FA3FDC136CCB667D6952682F7664DE1
-- generatedChecksum: 615917A948348DA122E1C51E9C2CD63A
+- generatedChecksum: B8FEE49EDD67CB6F40EABF13A6CBBD3C
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/i2s
   name: drv_i2s.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 615917A948348DA122E1C51E9C2CD63A
-- generatedChecksum: B9F577D86557503AD87223429663A243
+  userChecksum: B8FEE49EDD67CB6F40EABF13A6CBBD3C
+- generatedChecksum: F5B0969A8808C5D4BC4BBAAC876CCAC0
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/i2s
   name: drv_i2s_definitions.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: B9F577D86557503AD87223429663A243
-- generatedChecksum: 4C9F17D8F06501E0FEEE1F6C0C122DF0
+  userChecksum: F5B0969A8808C5D4BC4BBAAC876CCAC0
+- generatedChecksum: E1E336312285ED9B1FD81CD9935B7CD5
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/i2s
   name: drv_i2s_local.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4C9F17D8F06501E0FEEE1F6C0C122DF0
+  userChecksum: E1E336312285ED9B1FD81CD9935B7CD5
 - generatedChecksum: DF147276AE56CA76E3E9BEB8447620AB
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/driver/usb
   name: drv_usb.h

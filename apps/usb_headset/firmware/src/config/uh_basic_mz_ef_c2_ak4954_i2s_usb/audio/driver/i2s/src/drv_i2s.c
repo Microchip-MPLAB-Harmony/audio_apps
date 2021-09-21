@@ -105,6 +105,7 @@ static bool _DRV_I2S_ResourceLock(DRV_I2S_OBJ * object)
 
     /* We will disable I2S and/or DMA interrupt so that the driver resource
      * is not updated asynchronously. */
+    /************ code specific to PIC32M ********************/
     if (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel)
     {
         SYS_INT_SourceDisable(dObj->interruptTxDMA);
@@ -113,6 +114,7 @@ static bool _DRV_I2S_ResourceLock(DRV_I2S_OBJ * object)
     {
         SYS_INT_SourceDisable(dObj->interruptRxDMA);
     }
+    /************ end of PIC32M specific code ********************/
     return true;
 }
 
@@ -121,6 +123,7 @@ static bool _DRV_I2S_ResourceUnlock(DRV_I2S_OBJ * object)
     dObj = object;
 
     /* Restore the interrupt and release mutex. */
+    /************ code specific to PIC32M ********************/
     if (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel)
     {
         SYS_INT_SourceEnable(dObj->interruptTxDMA);
@@ -129,6 +132,7 @@ static bool _DRV_I2S_ResourceUnlock(DRV_I2S_OBJ * object)
     {
         SYS_INT_SourceEnable(dObj->interruptRxDMA);
     }
+    /************ end of PIC32M. specific code ********************/
 
     OSAL_MUTEX_Unlock(&(dObj->mutexDriverInstance));
 
@@ -271,7 +275,7 @@ static void _DRV_I2S_BufferQueueTask(DRV_I2S_OBJ *object,
         //NOTE:  queueWrite may also be Write/Read
         currentQueue = dObj->queueWrite;
     }
-    
+
     if(currentQueue != NULL)
     {
         currentQueue->status = event;
@@ -518,8 +522,10 @@ SYS_MODULE_OBJ DRV_I2S_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     dObj->rxDMAChannel          = i2sInit->dmaChannelReceive;
     dObj->txAddress             = i2sInit->i2sTransmitAddress;
     dObj->rxAddress             = i2sInit->i2sReceiveAddress;
+    /************ code specific to PIC32M. ********************/
     dObj->interruptTxDMA        = i2sInit->interruptTxDMA;
     dObj->interruptRxDMA        = i2sInit->interruptRxDMA;
+    /************ end of PIC32M. specific code ********************/
     dObj->dmaDataLength         = i2sInit->dmaDataLength;
     dObj->process               = DRV_I2S_TASK_PROCESS_NONE;
 
@@ -876,7 +882,7 @@ void DRV_I2S_WriteReadBufferAdd(const DRV_HANDLE handle,
     {
         /* Couldn't able to get the buffer object */
         _DRV_I2S_ResourceUnlock(dObj);
-        return;
+    return;
     }
 
     /* Configure the buffer object */
