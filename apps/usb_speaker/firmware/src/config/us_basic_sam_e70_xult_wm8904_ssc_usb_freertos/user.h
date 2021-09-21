@@ -36,6 +36,15 @@ extern "C" {
 #define BUTTON_DEBOUNCE 50
 #define LONG_BUTTON_PRESS 1000
 
+#undef NOPRINT
+#ifdef NOPRINT
+#define SYS_PRINT(fmt, ...)    
+#define SYS_MESSAGE(fmt)      
+#else
+#define SYS_PRINT(fmt, ...)    SYS_DEBUG_PRINT(0, fmt, ##__VA_ARGS__)
+#define SYS_MESSAGE(fmt)       SYS_DEBUG_PRINT(0, fmt)
+#endif
+
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

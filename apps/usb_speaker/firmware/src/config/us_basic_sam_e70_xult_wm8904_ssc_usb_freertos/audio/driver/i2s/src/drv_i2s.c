@@ -105,10 +105,12 @@ static bool _DRV_I2S_ResourceLock(DRV_I2S_OBJ * object)
 
     /* We will disable I2S and/or DMA interrupt so that the driver resource
      * is not updated asynchronously. */
+    /************ code specific to SAM E70 ********************/
     if ((SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel) || (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
     {
         SYS_INT_SourceDisable(dObj->interruptDMA);
     }
+    /************ end of E70 specific code ********************/
     return true;
 }
 
@@ -117,10 +119,12 @@ static bool _DRV_I2S_ResourceUnlock(DRV_I2S_OBJ * object)
     dObj = object;
 
     /* Restore the interrupt and release mutex. */
+    /************ code specific to SAM E70 ********************/
     if( (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel) || (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
     {
         SYS_INT_SourceEnable(dObj->interruptDMA);
     }
+    /************ end of E70 specific code ********************/
 
     OSAL_MUTEX_Unlock(&(dObj->mutexDriverInstance));
 

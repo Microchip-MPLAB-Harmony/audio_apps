@@ -5,7 +5,7 @@ frameworkPath: ../../..
 processor: ATSAME70Q21B
 projectName: ''
 settings:
-  PackageFilter: audio;audio_apps;bsp;bt;core;crypto;cryptoauthlib_apps;csp;gfx;tflite;usb;xiph_flac;xiph_opus;xiph_speex
+  PackageFilter: audio;audio_apps;audio_apps - Copy;bsp;bt;core;crypto;cryptoauthlib_apps;csp;gfx;tflite;usb;xiph_flac;xiph_opus;xiph_speex
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
