@@ -168,6 +168,9 @@ DRV_I2S_INIT drvI2S0InitData =
     .i2sTransmitAddress = (void *)&(I2SC1_REGS->I2SC_THR),
     .i2sReceiveAddress = (void *)&(I2SC1_REGS->I2SC_RHR),
 
+    /************ code specific to SAM E70 ********************/
+    .interruptDMA = XDMAC_IRQn,
+    /************ code specific to SAM E70 ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 

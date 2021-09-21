@@ -27,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 37780F17759DED907A0F36E28BFB3136
-- generatedChecksum: 980876C98C01310EEECB6E6499298C4B
+- generatedChecksum: 899FE7BD1DF51901DB40BB708D162906
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/audio/driver/i2s
   name: drv_i2s.c
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 980876C98C01310EEECB6E6499298C4B
+  userChecksum: 899FE7BD1DF51901DB40BB708D162906
 - generatedChecksum: 680300EC1B71F449C4265A35B9ECA1BF
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/driver/usb/usbhsv1/src
   name: drv_usbhsv1.c
@@ -76,20 +76,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 77BADEFD8CC09389C3519149BA83A4FB
-- generatedChecksum: A94171F320778CBBE8BCAB2E1A83BBEB
+- generatedChecksum: 07A3C0F83A3EB2E92A690EE9CFF87CA1
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A94171F320778CBBE8BCAB2E1A83BBEB
+  userChecksum: 07A3C0F83A3EB2E92A690EE9CFF87CA1
 - generatedChecksum: ED19CE3DD0E6A4E30ABC863EE1A83F32
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: ED19CE3DD0E6A4E30ABC863EE1A83F32
+  userChecksum: 6719412B5B714305939F06F9E9C5F7FF
 - generatedChecksum: 6513F2461B8F476B68CA73906086047F
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: libc_syscalls.c
@@ -454,27 +454,27 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 260EF469FECCFEF9418D6268909EE2F8
-- generatedChecksum: 753062A8399699E7D83CA3CE20C41B08
+- generatedChecksum: EA2647BCE1F050FF009ABC87854A8C23
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/audio/driver/i2s
   name: drv_i2s.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 753062A8399699E7D83CA3CE20C41B08
-- generatedChecksum: 31FF4C9C05E74D4B50D8509195504723
+  userChecksum: EA2647BCE1F050FF009ABC87854A8C23
+- generatedChecksum: 58956B3648447DB8167CECC633C43E5B
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/audio/driver/i2s
   name: drv_i2s_definitions.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 31FF4C9C05E74D4B50D8509195504723
-- generatedChecksum: 25FBAE6C041690DC9E4BAD7DDFE12D06
+  userChecksum: 58956B3648447DB8167CECC633C43E5B
+- generatedChecksum: EC8C2E0CE26788EAC03D8A83CEB7FA80
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/audio/driver/i2s
   name: drv_i2s_local.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 25FBAE6C041690DC9E4BAD7DDFE12D06
+  userChecksum: EC8C2E0CE26788EAC03D8A83CEB7FA80
 - generatedChecksum: DF147276AE56CA76E3E9BEB8447620AB
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/driver/usb
   name: drv_usb.h
@@ -614,7 +614,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: F627A442A0851ED753559E9E639915AE
+  userChecksum: 127FEFBEE52ADDA23A7B71BD45A66594
 - generatedChecksum: E8CBE32A33E6C8451FFD9A4924F7BF21
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: isi.h

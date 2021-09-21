@@ -99,6 +99,7 @@ void _APP_Tasks(  void *pvParameters  )
 
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: System "Tasks" Routine
@@ -118,8 +119,7 @@ void SYS_Tasks ( void )
     
 
     /* Maintain Device Drivers */
-    //KEEP THIS
-    //DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
+        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
 
 
 
