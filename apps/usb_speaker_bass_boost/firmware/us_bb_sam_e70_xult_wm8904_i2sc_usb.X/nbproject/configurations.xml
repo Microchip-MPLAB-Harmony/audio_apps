@@ -178,6 +178,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/acc.h</itemPath>
@@ -236,6 +237,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
@@ -260,12 +262,52 @@
             </logicalFolder>
             <logicalFolder name="f2" displayName="DSP" projectFiles="true">
               <logicalFolder name="f1" displayName="Include" projectFiles="true">
+                <logicalFolder name="f1" displayName="dsp" projectFiles="true">
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/basic_math_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/basic_math_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/bayes_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/bayes_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/complex_math_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/complex_math_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/controller_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/controller_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/distance_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/distance_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/fast_math_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/filtering_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/filtering_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/interpolation_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/interpolation_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/matrix_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/matrix_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/none.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/quaternion_math_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/statistics_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/statistics_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/support_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/support_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/svm_defines.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/svm_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/svm_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/transform_functions.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/transform_functions_f16.h</itemPath>
+                  <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/dsp/utils.h</itemPath>
+                </logicalFolder>
                 <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_common_tables.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_const_structs.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_helium_utils.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_math.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_mve_tables.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_vec_math.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_common_tables_f16.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_const_structs_f16.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_math_f16.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_math_memory.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_math_types.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_math_types_f16.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_mve_tables_f16.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/DSP/Include/arm_vec_math_f16.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
