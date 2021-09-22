@@ -1,8 +1,8 @@
-#usb_microphone
+# usb_microphone
 
 This topic provides instructions and information about the MPLAB Harmony 3 USB Microphone demonstration application, which is included in the MPLAB Harmony Library distribution.
 
-##Description
+## Description
 
 This demonstration application configures the development board to implement a USB Microphone device configured to run at 16 Khz sampling rate at 16 bit per sample.
 
@@ -25,9 +25,7 @@ A USB device is connected to the micro-mini USB device connector. The applicatio
 
 The following figure shows the basic architecture for the demonstration.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_block_diagram.jpg)
-   </div>
+![](graphics/usb_mic_block_diagram.jpg)
 
 _USB Microphone Application Block Diagram_
 
@@ -44,9 +42,7 @@ _USB Microphone Application Block Diagram_
 
 The MPLAB-X Harmony Configurator (MHC) Project Graph for usb_microphone_basic is shown below.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_project_graph.jpg)
-   </div>
+![](graphics/usb_mic_project_graph.jpg)
 
 _USB Microphone Application MPLAB-X Harmony Configurator Project Graph_
 
@@ -65,12 +61,12 @@ app.c and app.h files are initially generated as stub files in this folder. The 
 
 The usb_microphone application utilizes a state machine with the following functions:
 
-1\. Setup the drivers and USB Library interface as used by the application
+1. Setup the drivers and USB Library interface as used by the application
 
 1.  WM8904 Codec Driver
 2.  Timer
 3.  USB Audio
-4.  Respond to USB Host control commands (‚ÄúAttach‚Äù, ‚ÄúDetach‚Äù, ‚ÄúSuspend‚Äù, etc.)
+4.  Respond to USB Host control commands (ìAttachî, ìDetachî, ìSuspendî, etc.)
 5.  Initiate and maintains the audio data streaming for the "USB Record" function as data is received from the microphone codec.
 
 All Harmony applications use the function SYS_Initialize function located in the MHC generated file initialization.c. This is executed from main to initialize various subsystems such as the clock, ports, BSP (board support package), codec, usb, timers, and interrupts. The application APP_Initialize function in app.c is also executed at the end of this routine to setup the application code state machine.
@@ -83,29 +79,23 @@ For the FreeRTOS configuration 4 tasks are configured within 3 processes of a ro
 
 _USB Configuration_
 
-The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is selected to by ‚ÄúFull Speed‚Äù (not ‚ÄúHigh Speed‚Äù):
+The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is selected to by ìFull Speedî (not ìHigh Speedî):
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_high_speed.jpg)
-   </div>
+![](graphics/usb_mic_high_speed.jpg)
 
 _USB High Speed Driver Configuration_
 
-The USB Device Layer is configured by selecting the ‚Äúusb_microphone_demo‚Äù with an endpoint buffer size of 64 (bytes). The
+The USB Device Layer is configured by selecting the ìusb_microphone_demoî with an endpoint buffer size of 64 (bytes). The
 
 Audio Function Driver is configured for 5 USB endpoints with a single function having 3 interfaces. All of these are defined for a USB Microphone device in the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder). This structure defines the connection to the host at 48 Khz with 16 bit stereo channel data. A packet queue of length APP_QUEUE_SIZE (set to 2) is used for playback data. The maximum USB packets size is set to 16 samples * 2 channels per sample * 2 bytes per channel= 64 bytes, which gives a 1ms stereo sample packet size at 16Khz (the standard data frame length at this rate), thus the buffer size needs to be of the same size.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_device_config.jpg)
-   </div>
+![](graphics/usb_mic_device_config.jpg)
 
 _USB Device Layer Configuration_
 
 The Audio Function Driver is configured with a Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Microphone interface.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_audio_func.jpg)
-   </div>
+![](graphics/usb_mic_audio_func.jpg)
 
 _USB Audio Function Configuration_
 
@@ -115,27 +105,21 @@ The WM8904 codec uses a TWIHS0 (I2C) interface for module configuration and cont
 
 The default values are used for the TWIHS and I2C drivers.
 
-The E70 I2SC1 driver is set to be the master with a data length of 16, 2 channels (stereo) and a MCLK divider value of of 256\. These a default values, as shown below:
+The E70 I2SC1 driver is set to be the master with a data length of 16, 2 channels (stereo) and a MCLK divider value of of 256. These a default values, as shown below:
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_i2sc1_config.jpg)
-   </div>
+![](graphics/usb_mic_i2sc1_config.jpg)
 
 _I2SC1 Peripheral Configuration_
 
 The I2S driver is configured with transfer queue size of 8 (default value) that matches that of the USB Read Queue, as shown below:
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_i2s_config.jpg)
-   </div>
+![](graphics/usb_mic_i2s_config.jpg)
 
 _USB Microphone I2S Configuration_
 
 The WM8904 Codec is configured with an I2S slave interface operating at 16000 Hz sampling rate, as shown below:
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_wm8904_config.jpg)
-   </div>
+![](graphics/usb_mic_wm8904_config.jpg)
 
 _USB Microphone I2S Configuration_ Also, the microphone input is enabled with bias for an electret microphone.
 
@@ -186,45 +170,37 @@ The generated MCLK should be set as close as possible to the calculated values a
 
 The E70 XULT board only provides PCK2 as the source of the MCLK to the X32 WM8904 Codec Daughter Board connector. It must be generated the same as I2SC1_GCLK.
 
-The actual generated value utilizes the PLLA clock as the source for both the I2SC1_GCLK and the PCK2\. These values generate the following clocks These I2S clocks are generated from the I2SC1 GCLK peripheral acting as I2S master.
+The actual generated value utilizes the PLLA clock as the source for both the I2SC1_GCLK and the PCK2. These values generate the following clocks These I2S clocks are generated from the I2SC1 GCLK peripheral acting as I2S master.
 
 _MPLAB Harmony Configurator: Clock Diagram Configuration_
 
 The MHC Clock Diagram to generate the processor (HCK), PCK2 (I2S MCLK), and the I2SC1 MCLK (I2SC1_GCLK) is given below.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_clocks.png)
-   </div>
+![](graphics/usb_mic_clocks.png)
 
 _USB Microphone MHC Clock Diagram_
 
-Uncheck the Main RC Oscillator and check the ‚ÄúBypass‚Äù for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
+Uncheck the Main RC Oscillator and check the ìBypassî for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_crystal.jpg)
-   </div>
+![](graphics/usb_mic_crystal.jpg)
 
 _USB Microphone Main Clock_
 
 The PLLA clock is generated from 12 Mhz Main Clock using the selected DIVA and MULA values, as shown below:
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_plla.jpg)
-   </div>
+![](graphics/usb_mic_plla.jpg)
 
 _USB Microphone PLLA Clock_
 
 The I2S MCLK is generated using both the PCK2 output and the I2SC1_GCLK. These are both enabled and generated using the PLLA clock source to give the same value of 4,095,238 Hz (to approximate the 4096000 Hz sampling rate), as shown below:
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_pck2.jpg)
-   </div>
+![](graphics/usb_mic_pck2.jpg)
 
 _USB Microphone I2S1 GCLK and PCK2 Configuration_
 
 _Timer Driver_
 
-The Timer driver configuration, Timer driver instance 0, is used by a system for button processing (debounce and long press) and LED blink delay. It needs to be set to ‚ÄúEnable Period Interrupt‚Äù. It is also required by the WM8904 Codec Driver. The default configuration values are used.
+The Timer driver configuration, Timer driver instance 0, is used by a system for button processing (debounce and long press) and LED blink delay. It needs to be set to ìEnable Period Interruptî. It is also required by the WM8904 Codec Driver. The default configuration values are used.
 
 ### Building the Application
 
@@ -259,9 +235,7 @@ Jumper J204, which is next to the SAM E70 Xplained Ultra logo, should be jumpere
 
 To connect to the I2SC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_wm8904_jumpers.jpg)
-   </div>
+![](graphics/usb_mic_wm8904_jumpers.jpg)
 
 ![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
@@ -275,11 +249,9 @@ This section demonstrates how to run the demonstration.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project. Refer to Building the Application for details.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_e70_setup.jpg)
-   </div>
+![](graphics/usb_mic_e70_setup.jpg)
 
-_Figure 1\. WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green. Microphone In Jack is pink._
+_Figure 1. WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green. Microphone In Jack is pink._
 
 _Note: the brown wire is a jumper wire which is not relevant for this app._
 
@@ -290,11 +262,9 @@ Do the following to run the demonstration:
 3.  Connect to the USB Host via the micro-mini connector (Refer to Figure 1) located above the push-button switches on the right side of the board using a standard USB cable. The LED1 should turn to a solid amber color as the host enumerates and then initiates the audio stream.
 4.  After the Host computer acknowledges the connection, it will install drivers (if needed), No special software is necessary on the Host side.
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_sound.jpg)
-   </div>
+![](graphics/usb_mic_sound.jpg)
 
-_Figure 2\. Windows 7 Sound Dialog showing USB Microphone with Sound Level Meter_
+_Figure 2. Windows 7 Sound Dialog showing USB Microphone with Sound Level Meter_
 
 1.  If needed, configure the Host computer to use the usb_microphone as the selected audio recording device. For Windows, this is done in the "Recording" tab in the "Sound" dialog (as shown in Figure 2) accessed by right clicking the loudspeaker icon on the taskbar.
 
@@ -303,13 +273,11 @@ _Figure 2\. Windows 7 Sound Dialog showing USB Microphone with Sound Level Meter
 1.  The Microphone audio should be heard through the monitor headphones
 2.  Open a recording application (such as Audacity) and initiate a recording sessiont through the USB Microphone.
 
-_Figure 3\. Audacity Recording Session using USB Microphone_
+_Figure 3. Audacity Recording Session using USB Microphone_
 
-   <div style="text-align:center">
-   ![](graphics/usb_mic_audacity.png)
-   </div>
+![](graphics/usb_mic_audacity.png)
 
-7\. Playback of recording session audio is being heard in the USB Microphone headphones.
+7. Playback of recording session audio is being heard in the USB Microphone headphones.
 
 ## Control Description
 

@@ -1,8 +1,8 @@
-#microphone_loopback
+# microphone_loopback
 
 This readme file provides instructions and information about the MPLAB Harmony 3 Microphone Loopback demonstration application, which is included in the MPLAB Harmony Library distribution.
 
-##Description
+## Description
 
 In this demonstration application, the AK4954 or WM8904 Codec Driver sets up the codec so it can receive audio data through the microphone input on the daughter board and sends this same audio data back out through the on-board headphones, after a delay. The volume and delay are configurable using the on-board pushbutton. The audio by default is sampled at 48,000 samples/second, which is modifiable in the MHC as described below.
 
@@ -22,13 +22,11 @@ Two projects run on the SAM E54 Curiosity Ultra Board, which contains a ATSAME54
 
 The SAM E54 Curiosity Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
-The non-RTOS version of the program takes up to approximately 2% (23 KB) of the ATSAME54P20A microcontrollerâ€™s program space. The 16-bit configuration uses 45% (115 KB) of the RAM. No heap is used. For the FreeRTOS project, the program takes up to approximately 3% (31 KB) of the ATSAME54P20A microcontrollerâ€™s program space, and the 16-bit configuration uses 60% (155 KB) of the RAM. No heap is used.
+The non-RTOS version of the program takes up to approximately 2% (23 KB) of the ATSAME54P20A microcontroller’s program space. The 16-bit configuration uses 45% (115 KB) of the RAM. No heap is used. For the FreeRTOS project, the program takes up to approximately 3% (31 KB) of the ATSAME54P20A microcontroller’s program space, and the 16-bit configuration uses 60% (155 KB) of the RAM. No heap is used.
 
 The following figure illustrates the application architecture for the two SAM E54 Xplained Ultra configurations (RTOS not shown):
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_block_diagram2.jpg)
-   </div>
+![](graphics/mic_loopback_block_diagram2.jpg)
 
 The I2S (Inter-IC Sound Controller) is used with the WM8904 codec. The WM8904 is configured in master mode, meaning it generates the I<sup>2</sup>S clocks (LRCLK and BCLK), and the I2S peripheral is configured as a slave.
 
@@ -42,13 +40,11 @@ Three projects run on the SAM E70 Xplained Ultra Board without a display, which 
 
 The SAM E70 Xplained Ultra board does not include the AK4954 or WM8904 Audio Codec daughterboards, which are sold separately on microchipDIRECT as part numbers AC324954 and AC328904, respectively.
 
-The two non-RTOS versions of the program take up to approximately 1% (18 KB) of the ATSAME70Q21B microcontrollerâ€™s program space. The 16-bit configuration uses 30% (115 KB) of the RAM. No heap is used. For the FreeRTOS project, the program takes up to approximately 1% (22 KB) of the ATSAME70Q21B microcontrollerâ€™s program space, and the 16-bit configuration uses 41% (155 KB) of the RAM. No heap is used.
+The two non-RTOS versions of the program take up to approximately 1% (18 KB) of the ATSAME70Q21B microcontroller’s program space. The 16-bit configuration uses 30% (115 KB) of the RAM. No heap is used. For the FreeRTOS project, the program takes up to approximately 1% (22 KB) of the ATSAME70Q21B microcontroller’s program space, and the 16-bit configuration uses 41% (155 KB) of the RAM. No heap is used.
 
 The following figure illustrates the application architecture for the three SAM E70 Xplained Ultra configurations using the WM8904 (RTOS not shown). The AK4954 version is the same with the substitution of the AK4954 Driver and Codec blocks.
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_block_diagram3.jpg)
-   </div>
+![](graphics/mic_loopback_block_diagram3.jpg)
 
 The I2SC (Inter-IC Sound Controller) is used with the WM8904 codec, selected by a strapping option on the WM8904 daughterboard. The WM8904 is configured in slave mode and the I2SC peripheral is a master and generates the I2SC (LRCLK and BCLK) clocks. Other possible configurations are possible but not discussed.
 
@@ -60,7 +56,7 @@ This project runs on the SAM V71 Xplained Ultra Board, which contains a ATSAMV71
 *   Two LEDs (LED0 and 1, only LED0 used)
 *   WM8904 codec (on board)
 
-The program takes up to approximately 1% (13 KB) of the ATSAME70Q21B microcontrollerâ€™s program space. The 16-bit configuration uses 74% (284 KB) of the RAM. No heap is used.
+The program takes up to approximately 1% (13 KB) of the ATSAME70Q21B microcontroller’s program space. The 16-bit configuration uses 74% (284 KB) of the RAM. No heap is used.
 
 The architecture is the same as for the first bare-metal SAM E70 Ultra board configuration; however only it uses the SSC peripheral instead of the I2SC. The WM8904 is configured in master mode and generates the I2SC (LRCLK and BCLK) clocks, and the I2SC peripheral is configured as a slave.
 
@@ -76,7 +72,7 @@ As with any MPLAB Harmony application, the SYS_Initialize function, which is loc
 
 The codec driver and the application state machines are all updated through calls located in the SYS_Tasks function in the tasks.c file.
 
-When the applicationâ€™s state machine (APP_Tasks), contained in app.c, is given control it first gets a handle to a timer driver instance and sets up a periodic (alarm) callback. In the next state it gets a handle to the codec driver by calling the
+When the application’s state machine (APP_Tasks), contained in app.c, is given control it first gets a handle to a timer driver instance and sets up a periodic (alarm) callback. In the next state it gets a handle to the codec driver by calling the
 
 DRV_CODEC_Open function with a mode of DRV_IO_INTENT_WRITE and sets up the volume. The application state machine then registers an event handler APP_CODEC_BufferEventHandler as a callback with the codec driver (which in turn is called by the DMA driver).
 
@@ -109,9 +105,7 @@ In the MHC, under Available Components select the BSP SAM E54 Curiosity Ultra. U
 
 You should end up with a project graph that looks like this, after rearranging the boxes:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_project_graph2.jpg)
-   </div>
+![](graphics/mic_loopback_project_graph2.jpg)
 
 Click on the WM8904 Driver. In the Configurations Options, under Audio Data Format, change it to 32-bit I2S. Set the desired Sample Rate if different from the default (48,000) under Sampling Rate.
 
@@ -125,9 +119,7 @@ In the Clock Diagram:
 
 You should end up with a clock diagram like this:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_clocks2.jpg)
-   </div>
+![](graphics/mic_loopback_clocks2.jpg)
 
 For projects using the E70, the SSC interface and the AK4954 as a Slave (the SAM E70 generates the I<sup>2</sup>S clocks):
 
@@ -139,29 +131,21 @@ AK4954 Codec. Answer Yes to all questions. Click on the AK4954 Codec component (
 
 You should end up with a project graph that looks like this, after rearranging the boxes:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_project_graph3.jpg)
-   </div>
+![](graphics/mic_loopback_project_graph3.jpg)
 
 Click on the AK4954 Driver. In the Configurations Options, under Usage Mode, change Master to Slave. Set the desired Sample Rate if different from the default (48,000) under Sampling Rate.
 
 In the Clock Diagram, set MOSCEL to Main Crystal, check the Bypass checkbox, and uncheck the RC Crystal Oscillator and Main Crystal Oscillator boxes, to make use of the 12 MHz external oscillator:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_clocks.jpg)
-   </div>
+![](graphics/mic_loopback_clocks.jpg)
 
 Still in the Clock Diagram, enable the PLLA Clock. Leave the divider at 1 (12 MHz) and change the multiplier to 41 for an output of 492 MHz.
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_plla.jpg)
-   </div>
+![](graphics/mic_loopback_plla.jpg)
 
 In the Master Clock Controller, select the source (CSS) as PLLACK (492 MHz), all all three dividers as divide by 2 to generate a Processor Clock of 246 MHz and a Master Clock of 123 MHz. In the Programmable Clock Controller section, select the PCK2 tab, select the source (CSS) as PLLACK (492 MHz), the divider of 40 for a PCK2 output of 12,300,000 Hz
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_pck2.jpg)
-   </div>
+![](graphics/mic_loopback_pck2.jpg)
 
 Then check the SSC checkbox in the **Peripheral Clock Controller** section..
 
@@ -175,25 +159,19 @@ WM8904 Codec. Answer Yes to all questions. Click on the WM8904 Codec component (
 
 You should end up with a project graph that looks like this, after rearranging the boxes, assuming a non-FreeRTOS project:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_project_graph4.jpg)
-   </div>
+![](graphics/mic_loopback_project_graph4.jpg)
 
 Click on the WM8904 Driver. In the Configurations Options, under Usage Mode, change Master to Slave. Set the desired Sample Rate if different from the default (48,000) under Sampling Rate. Select Enable Microphone Input, and Enable Microphone Bias for elecret microphones if appropriate.
 
 If using the SAM E70 Xplained Ultra board, in the Clock Diagram, set MOSCEL to Main Crystal, check the Bypass checkbox, and uncheck the RC Crystal Oscillator and Main Crystal Oscillator boxes, to make use of the 12 MHz external oscillator:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_crystal.jpg)
-   </div>
+![](graphics/mic_loopback_crystal.jpg)
 
 In the Clock Diagram, in the PCK2 tab of the **Programmable Clock Controller** section, check the **On** checkbox, and set CSS to MAINCLK (12 MHz).
 
 The following tables show suggested settings for various sample rates in the Clock Diagram when using the I2SC Peripheral in Master mode. Make sure **PLLA Clock** checkbox is checked, and fill in the values for the PLLA Multiplier and Divider boxes. Select the I2S1 tab under **Generic Clock Controller**, set GCLKCSS to PLLACK, fill in the Divider value as shown, and check the checkbox next to it.
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_plla2.jpg)
-   </div>
+![](graphics/mic_loopback_plla2.jpg)
 
 The values in the first table give the lowest error rate, but have varying PLLACK values so it is best to use the UPPCLKDIV selection for CSS under **Master Clock Controller**, for a Processor Clock of 240 MHz.
 
@@ -227,9 +205,7 @@ In the MHC, under Available Components select the appropriate BSP (e.g. SAM V71 
 
 You should end up with a project graph that looks like this, after rearranging the boxes, assuming a non-FreeRTOS project:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_project_graph5.jpg)
-   </div>
+![](graphics/mic_loopback_project_graph5.jpg)
 
 If building an application that is going to use the 480x272 display, then do the following instead. In the MHC, under Available Components select the BSP (SAM E70 Xplained Ultra). Under _Graphics>Templates_, double-click on Aria Graphics w/ PDA TM4301B Display. Answer Yes to all questions except for the one regarding FreeRTOS; answer No to that one.
 
@@ -237,9 +213,7 @@ Then under _Audio>Templates_, double-click on WM8904 Codec. Answer Yes to all qu
 
 You should end up with a project graph that looks like this, after rearranging the boxes:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_project_graph6.jpg)
-   </div>
+![](graphics/mic_loopback_project_graph6.jpg)
 
 In either case, click on the WM8904 Driver. In the Configurations Options, set the desired Sample Rate if different from the default
 
@@ -247,9 +221,7 @@ In either case, click on the WM8904 Driver. In the Configurations Options, set t
 
 If using the SAM E70 Xplained Ultra board, in the Clock Diagram, in the Clock Diagram, set MOSCEL to Main Crystal, check the Bypass checkbox, and uncheck the RC Crystal Oscillator and Main Crystal Oscillator boxes, to make use of the 12 MHz external oscillator:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_crystal.jpg)
-   </div>
+![](graphics/mic_loopback_crystal.jpg)
 
 If using the ATSAMV71Q21B, in the Clock Diagram set MOSCEL to Main Crystal, uncheck the Bypass checkbox and RC Crystal Oscillator checkbox, and check the Main Crystal Oscillator box.
 
@@ -288,15 +260,11 @@ This section describes how to configure the supported hardware. SAM V71 Xplained
 
 Using the SAM E54 Curiosity Ultra board and the WM8904 Audio Codec Daughter Board, and the I2S PLIB. All jumpers on the WM8904 should be toward the **front:**
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_wm8904_jumpers.jpg)
-   </div>
+![](graphics/mic_loopback_wm8904_jumpers.jpg)
 
 In addition, make sure the J401 jumper (CLK SELECT) is set for the PA17 pin:
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_clk_select.jpg)
-   </div>
+![](graphics/mic_loopback_clk_select.jpg)
 
 ![](graphics/note.jpg) **Note:** The SAM E54 Curiosity Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
@@ -306,9 +274,7 @@ Using the SAM E70 Xplained Ultra board and the AK4954 Audio Codec Daughter Board
 
 Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, and the I2SC PLIB. All jumpers on the WM8904 should be toward the **back:**
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_wm8904_jumpers_back.jpg)
-   </div>
+![](graphics/mic_loopback_wm8904_jumpers_back.jpg)
 
 ![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
@@ -318,16 +284,12 @@ Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board
 *   Add a jumper from connector EXT1 pin 13 to J601 (CAMERA INTERFACE) pin 14 as shown:
 
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_e70_setup.jpg)
-   </div>
+![](graphics/mic_loopback_e70_setup.jpg)
 
 The WM8904 Audio Codec Daughter Board will be using the SSC PLIB; all jumpers on the WM8904 should be toward the **front:**
 
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_wm8904_jumpers.jpg)
-   </div>
+![](graphics/mic_loopback_wm8904_jumpers.jpg)
 
 ![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the PDA TM4301B 480x272 (WQVGA) display, which is sold separately on microchipDIRECT as part number AC320005-4, or the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
@@ -353,9 +315,7 @@ Four different delays can be generated. **Tables 1-2** provides a summary of the
 
 ## Control Descriptions
 
-   <div style="text-align:center">
-   ![](graphics/mic_loopback_e70_setup2.jpg)
-   </div>
+![](graphics/mic_loopback_e70_setup2.jpg)
 
 ### Table 1: Button Controls for SAM E54 Curiosity Ultra board and SAM E70 Xplained Ultra board
 
@@ -363,13 +323,13 @@ Four different delays can be generated. **Tables 1-2** provides a summary of the
 
 | **Control** | **Description** |
 | --- | --- |
-| SW1 short press | If LED1 if off, SW1 cycles through four volume levels (one muted). If LED1 is on, SW1 cycles through four delays: Â¼ second, Â½ second, 1 second and 1Â½ seconds. |
+| SW1 short press | If LED1 if off, SW1 cycles through four volume levels (one muted). If LED1 is on, SW1 cycles through four delays: ¼ second, ½ second, 1 second and 1½ seconds. |
 | SW1 long press (> 1 second) | Alternates between modes (LED1 on or off). |
 
 ### Table 2: Button Controls for SAM V71 Xplained Ultra board
 
 | **Control** | **Description** |
 | --- | --- |
-| SW0 short press | If LED0 if off, SW0 cycles through four volume levels (one muted). If LED0 is on, SW0 cycles through four delays: Â¼ second, Â½ second, 1 second and 1Â½ seconds. |
+| SW0 short press | If LED0 if off, SW0 cycles through four volume levels (one muted). If LED0 is on, SW0 cycles through four delays: ¼ second, ½ second, 1 second and 1½ seconds. |
 | SW0 long press (> 1 second) | Alternates between modes (LED0 on or off). |
 

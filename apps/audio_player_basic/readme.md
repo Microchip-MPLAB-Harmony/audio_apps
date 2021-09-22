@@ -1,8 +1,8 @@
-#audio_player_basic
+# audio_player_basic
 
 This topic provides instructions and information about the MPLAB Harmony 3 Audio Player Basic demonstration application, which is included in the MPLAB Harmony Library distribution.
 
-##Description
+## Description
 
 The audio player (audio_player_basic) application configures the development board to use a microSD card or be in USB Host Mass Storage Device (MSD) mode. The application supports the FAT file system. When a mass storage device is connected to the development board via its Target USB port, the device is mounted, and the application begins to scan for files starting at the root directory. It will search for .wav files up to 10 directory levels deep. A list of files found, and their paths, will be created and stored.
 
@@ -38,9 +38,7 @@ The following figure shows the architecture for the demonstration (USB Host vers
 
 ### Architecture Block Diagram
 
-   <div style="text-align:center">
-   ![](graphics/apb_block_diagram.jpg)
-   </div>
+![](graphics/apb_block_diagram.jpg)
 
 ## Demonstration Features
 
@@ -62,7 +60,7 @@ The following figure shows the architecture for the demonstration (USB Host vers
 
 a. Yes to all popups.
 
-4\. Add Libraries->USB->Host Stack->MSD Client Driver
+4. Add Libraries->USB->Host Stack->MSD Client Driver
 
 a. Yes to all popups.
 
@@ -75,33 +73,23 @@ a. Yes to all popups.
 
 After reorganization, your graph would look similar to one of the following project graphs. They specify the drivers, services, and libraries being brought into the project to further extend the applications abilities.
 
-   <div style="text-align:center">
-   ![](graphics/apb_project_graph.jpg)
-   </div>
+![](graphics/apb_project_graph.jpg)
 
 Fig 5 (Project graph of the default E70 bare metal configuration using the SSC)
 
-   <div style="text-align:center">
-   ![](graphics/apb_project_graph2.jpg)
-   </div>
+![](graphics/apb_project_graph2.jpg)
 
 Fig 6 (Project graph of the E70 FreeRTOS configuration using the SSC)
 
-   <div style="text-align:center">
-   ![](graphics/apb_project_graph3.jpg)
-   </div>
+![](graphics/apb_project_graph3.jpg)
 
 Fig 7 (Project graph of the E70 bare metal configuration using the SSC with the TM4301B graphics display)
 
-   <div style="text-align:center">
-   ![](graphics/apb_project_graph4.jpg)
-   </div>
+![](graphics/apb_project_graph4.jpg)
 
 Fig 8 (Project graph of the E54 bare metal configuration using the I2S)
 
-   <div style="text-align:center">
-   ![](graphics/apb_project_graph5.jpg)
-   </div>
+![](graphics/apb_project_graph5.jpg)
 
 Fig 9 (Project graph of the E54 FreeRTOS configuration using the I2C)
 
@@ -119,9 +107,7 @@ In the MPLAB Harmony Configurator: _Tools>Clock_ _Configuration_ dialog:
 *   In the CLK Generator 1 box, change the input to XOSC0 with a divider of 1 for an output of 12 MHz.
 *   In the GCLK Generator, uncheck the selection for GCLK 2, and then select the GCLK 3 tab. Choose the DFLL as the input, with a divide by 4 for an output of 12 MHz. You should end up with a clock diagram like this:
 
-   <div style="text-align:center">
-   ![](graphics/apb_clocks.jpg)
-   </div>
+![](graphics/apb_clocks.jpg)
 
 For projects using the E70 Xplained Ultra, the SSC interface and the WM8904 as a Master (the WM8904 codec generates the I2S clocks):
 
@@ -129,37 +115,27 @@ In the MPLAB Harmony Configurator: _Tools>Clock_ _Configuration_ dialog:
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become unchecked.
 
-   <div style="text-align:center">
-   ![](graphics/apb_crystal.jpg)
-   </div>
+![](graphics/apb_crystal.jpg)
 
 Enable the PCK2 output to enable the WM8904 master clock:
 
-   <div style="text-align:center">
-   ![](graphics/apb_pck2.jpg)
-   </div>
+![](graphics/apb_pck2.jpg)
 
 _Clock Diagram>Peripheral Clock Enable_ Enable clocking for the SSC.
 
-   <div style="text-align:center">
-   ![](graphics/apb_ssc_enable.jpg)
-   </div>
+![](graphics/apb_ssc_enable.jpg)
 
 In the MPLAB Harmony Configurator: _File System_ dialog_:_
 
 The Auto Mount feature must be selected in order to expose the media type selection. The media type that is being used in this application is Mass Storage Device. This must be correctly configured, or the storage device will not mount.
 
-   <div style="text-align:center">
-   ![](graphics/apb_filesys.jpg)
-   </div>
+![](graphics/apb_filesys.jpg)
 
 In the MPLAB Harmony Configurator: _System_ dialog:
 
 Set the heap size in Harmony if it is not already set for the linker. Certain projects may set the heap to a larger size automatically.
 
-   <div style="text-align:center">
-   ![](graphics/apb_heap.jpg)
-   </div>
+![](graphics/apb_heap.jpg)
 
 ### Building the Application
 
@@ -190,15 +166,11 @@ Using the SAM E54 Curiosity Ultra board and the WM8904 Audio Codec Daughter Boar
 
 To connect to the I2S, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented away from the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-   <div style="text-align:center">
-   ![](graphics/apb_wm8904_jumpers.jpg)
-   </div>
+![](graphics/apb_wm8904_jumpers.jpg)
 
 In addition, make sure the J401 jumper (CLK SELECT) is set for the PA17 pin:
 
-   <div style="text-align:center">
-   ![](graphics/apb_clk_select.jpg)
-   </div>
+![](graphics/apb_clk_select.jpg)
 
 ![](graphics/note.jpg) **Note:** The SAM E54 Curiosity Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
@@ -208,9 +180,7 @@ Jumper J204, which is next to the SAM E70 Xplained Ultra logo, should be jumpere
 
 To connect to the SSC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented away from the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-   <div style="text-align:center">
-   ![](graphics/apb_wm8904_jumpers.jpg)
-   </div>
+![](graphics/apb_wm8904_jumpers.jpg)
 
 ![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
@@ -228,23 +198,19 @@ Compile and program the target device. While compiling, select the appropriate M
 2.  Connect power to the board. The system will be in a wait state for USB to be connected (amber LED1 blinking).
 3.  For the E54 board:
 
-• Insert a micro SD card into the slot on the bottom side of the board as shown in Figure 1\. The contacts of the micro SD card should be facing the bottom side of the board.
+• Insert a micro SD card into the slot on the bottom side of the board as shown in Figure 1. The contacts of the micro SD card should be facing the bottom side of the board.
 
-   <div style="text-align:center">
-   ![](graphics/apb_sd_card.jpg)
-   </div>
+![](graphics/apb_sd_card.jpg)
 
 #### Figure 1: SD Card slot on bottom of SAM E54 Curiosity Ultra Board
 
-3\. For the E70 board:
+3. For the E70 board:
 
 • Connect a USB mass storage device (thumb drive) that contains songs of supported audio format to the USB TARGET connector of the SAM E70 Xplained Ultra board. You will probably need a USB-A Female to Micro-B Male adapter cable to do so. The application currently can only stream WAVE (.wav) format audio files.
 
-4\. When the device is connected the system will scan for audio files. Once the scanning is complete and at least one file is found (green LED2 on steady), listen to the audio output on headphones connected to the board. Use Switch SW1 as described under Control Description to change the volume or advance to the next track.
+4. When the device is connected the system will scan for audio files. Once the scanning is complete and at least one file is found (green LED2 on steady), listen to the audio output on headphones connected to the board. Use Switch SW1 as described under Control Description to change the volume or advance to the next track.
 
-   <div style="text-align:center">
-   ![](graphics/apb_e70_controls.jpg)
-   </div>
+![](graphics/apb_e70_controls.jpg)
 
 #### Figure 2: WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board Control Description
 

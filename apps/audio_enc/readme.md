@@ -1,8 +1,8 @@
-#audio_enc
+# audio_enc
 
 This readme file provides instructions and information about the MPLAB Harmony 3 Audio Encoder demonstration application, which is included in the MPLAB Harmony Library distribution.
 
-##Description
+## Description
 
 The audio encoder (audio_enc) application configures the SAM E70 Xplained Ultra development board to be in USB Host Mass Storage Device (MSD) mode. The application supports read/write from/to the FAT file system. When a mass storage device is connected to the development board via its target USB port, the device is mounted. After the MSD is mounted, the application waits for a short button press (< 1 sec) to start recording data from the mic input on the WM8904 Audio Codec Module. This recording will continue until another short press is detected signaling to stop recording. The recorded data is then PCM encoded and packed into a .wav container file and saved on the MSD. The app then waits to playback the last recorded file or encode another file.
 
@@ -24,9 +24,7 @@ The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to
 
 ### Architecture Block Diagram
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_block_diagram.jpg)
-   </div>
+![](graphics/audio_enc_block_diagram.jpg)
 
 ## Demonstration Features
 
@@ -54,15 +52,11 @@ The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to
 7.  Remove FreeRTOS if Bare Metal version
 8.  Connect MSD Client Driver: DRV_MEDIA to FILE SYSTEM: DRV_MEDIA After reorganization, your graph should look similar to the following:
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_project_graph.jpg)
-   </div>
+![](graphics/audio_enc_project_graph.jpg)
 
 If using FreeRTOS, your diagram will be slightly different. You will see an additional block for FreeRTOS as shown below.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_project_graph2.jpg)
-   </div>
+![](graphics/audio_enc_project_graph2.jpg)
 
 ## Tools Setup Differences
 
@@ -72,67 +66,49 @@ MPLAB Harmony Configurator: Tools->Clock Configuration
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is check, it will cause the Main Crystal Oscillator to become unchecked.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_crystal.jpg)
-   </div>
+![](graphics/audio_enc_crystal.jpg)
 
 Enable the PLLA Clock output.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_plla.jpg)
-   </div>
+![](graphics/audio_enc_plla.jpg)
 
 Enable clocking for the I2S1.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_i2s1_clk.jpg)
-   </div>
+![](graphics/audio_enc_i2s1_clk.jpg)
 
-To set the sample rate to a fixed 16KHz, set the PLLA divisor to 2 and the multiplier to 43\. Also, set the I2S1 divisor to 63\. Please see the two images above.
+To set the sample rate to a fixed 16KHz, set the PLLA divisor to 2 and the multiplier to 43. Also, set the I2S1 divisor to 63. Please see the two images above.
 
 MPLAB Harmony Configurator: WM8904
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_wm8904.jpg)
-   </div>
+![](graphics/audio_enc_wm8904.jpg)
 
 MPLAB Harmony Configurator: File System
 
 The Auto Mount feature must be selected in order to expose the media type selection. The media type that is being used in this application is Mass Storage Device. This must be correctly configured, or the storage device will not mount.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_filesys.jpg)
-   </div>
+![](graphics/audio_enc_filesys.jpg)
 
 MPLAB Harmony Configurator: I2C Driver
 
 If your are using FreeRTOS, set the driver mode back to Asynchronous.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_i2c_sync.jpg)
-   </div>
+![](graphics/audio_enc_i2c_sync.jpg)
 
 MPLAB Harmony Configurator: System
 
 Set the heap size in Harmony if it is not already set for the linker.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_heap.jpg)
-   </div>
+![](graphics/audio_enc_heap.jpg)
 
 MPLAB Harmony Configurator: EFC
 
 Set the memory wait states to 6, if not already set.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_efc.jpg)
-   </div>
+![](graphics/audio_enc_efc.jpg)
 
 MPLAB Harmony Configurator: Audio Decoder Libraries Disable the ADPCM Decoder for this particular app.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_dis_adpcm.jpg)
-   </div>
+![](graphics/audio_enc_dis_adpcm.jpg)
 
 Save and generate code for the framework.
 
@@ -161,11 +137,9 @@ This section describes how to configure the supported hardware.
 
 This application uses the I2SC PLIB to transfer data to the WM8904 Audio Codec Daughter Board. To connect to the I2SC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughter Board must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-   <div style="text-align:center">
-   ![](graphics/audio_enc_wm8904_jumpers.jpg)
-   </div>
+![](graphics/audio_enc_wm8904_jumpers.jpg)
 
- ![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 ### Running the Demonstration
 
@@ -173,7 +147,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
- ![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project based. Refer to Building the Application for details.
 
