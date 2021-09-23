@@ -56,7 +56,7 @@
 */
 
 #include "user.h"
-#include "toolchain_specifics.h"
+#include "device.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -123,7 +123,7 @@ extern "C" {
 #define DRV_WM8904_CLIENTS_NUMBER                           1
 #define DRV_WM8904_INSTANCES_NUMBER                         1
 
-#define DRV_WM8904_I2S_MASTER_MODE                              true
+#define DRV_WM8904_I2S_MASTER_MODE                          true
 #define DRV_WM8904_AUDIO_SAMPLING_RATE                      48000
 #define DRV_WM8904_VOLUME	                      	        200
 #define DRV_WM8904_AUDIO_DATA_FORMAT_MACRO             	    DATA_16_BIT_I2S

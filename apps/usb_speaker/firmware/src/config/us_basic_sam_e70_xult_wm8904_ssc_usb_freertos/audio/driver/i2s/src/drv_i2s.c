@@ -504,7 +504,9 @@ SYS_MODULE_OBJ DRV_I2S_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     dObj->rxDMAChannel          = i2sInit->dmaChannelReceive;
     dObj->txAddress             = i2sInit->i2sTransmitAddress;
     dObj->rxAddress             = i2sInit->i2sReceiveAddress;
+    /************ code specific to SAM E70 ********************/
     dObj->interruptDMA          = i2sInit->interruptDMA;
+    /************ end of E70 specific code ********************/
     dObj->dmaDataLength         = i2sInit->dmaDataLength;
     dObj->process               = DRV_I2S_TASK_PROCESS_NONE;
 
