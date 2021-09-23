@@ -259,7 +259,6 @@ typedef struct
     /* I2S receive register address used for DMA operation. */
     void                        *i2sReceiveAddress;
 
-    //-->
     /************ code specific to SAM E70 ********************/
     /* Interrupt source ID for DMA interrupt. */
     INT_SOURCE                  interruptDMA;
