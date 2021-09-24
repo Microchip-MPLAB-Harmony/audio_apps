@@ -22,7 +22,7 @@ The application runs on two target boards, as follows:
 *   WM8904 Codec Daughter Board mounted on a X32 socket (configured as I2SC1 slave)
 *   USB Device interface
 
-![](graphics/note.jpg)  **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png)  **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 2. PIC32 MZ EF Curiosity 2
 
@@ -32,7 +32,7 @@ The application runs on two target boards, as follows:
 *   AK4954 Codec Daughter Board mounted on X32 socket
 *   USB Device interface
 
-![](graphics/note.jpg)  **Note:** The PIC32 MZ EF Curiosity 2 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
+![](graphics/note.png)  **Note:** The PIC32 MZ EF Curiosity 2 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
 
 The usb_speaker_bass_boost application uses the MPLAB Harmony Configurator to setup the USB Audio Device, codec, and other items in order to play back the USB audio through the Codec Module.
 
@@ -44,7 +44,7 @@ A USB Host system is connected to the micro-mini USB device connector. The appli
 
 The “Bass Boost” audio enhancement is the 16 bit fixed-point implementation of a "Peak Shelving Filter", described by:
 
-![](graphics/usb_speaker_bb_equation.jpg)
+![](graphics/usb_speaker_bb_equation.png)
 
 NOTES:
 
@@ -52,11 +52,11 @@ NOTES:
 2.  The parameter "V0" sets the boost or cut value in dB
 3.  The parameter “root2” adjusts the slope of the transition (replaces square root of 2) Giving the coefficients of 2nd-order difference equation:
 
-![](graphics/usb_speaker_bb_equation2.jpg)
+![](graphics/usb_speaker_bb_equation2.png)
 
 The Direct-Form 1 implementation (without scaling) is shown below:
 
-![](graphics/usb_speaker_bb_equation3.jpg)
+![](graphics/usb_speaker_bb_equation3.png)
 
 _Figure 1. Biquad Filter - Direct Form 1_
 
@@ -64,7 +64,7 @@ The a0 scaling parameter can assumed to be 1, but for fixed point coefficient mu
 
 The response of the filter for a bass boost of 6dB and a cutoff of 200Hz is shown below
 
-![](graphics/usb_speaker_bb_response.jpg)
+![](graphics/usb_speaker_bb_response.png)
 
 _Figure 2. Peak Shelving Filter Frequency Response, Fc=200 Hz, Gboost = 6 dB_
 
@@ -95,7 +95,7 @@ The usb_speaker_bass_boost demonstration uses multiples projects for multiple ha
 
 Start MHC for the project in order to add the application code components. Both projects of the usb_speaker_bass_boost application use the USB Audio stack components. These can be added by selecting the Libraries/USB/Device Stack/Audio Function Driver component template under the MHC Available Components list, as shown below.
 
-![](graphics/usb_speaker_bb_audio_function_driver.jpg)
+![](graphics/usb_speaker_bb_audio_function_driver.png)
 
 Answer yes to all questions. This loads the USB High Speed Driver, the USB Device Layer and Audio Function Driver components.
 
@@ -107,15 +107,15 @@ The MHC Project Graph for usb_speaker_bass_boost is shown below.
 
 In the MHC, under Available Components select the BSP PIC32 MZ EF Curiosity 2.0. Under Audio>Templates, double-click on AK4954 Codec Template (shown below). Answer Yes to all questions except for the one regarding FreeRTOS; answer No to that one. This loads the AK4954 Codec component along with associated I2C, I2S and timer driver components.
 
-![](graphics/usb_speaker_bb_ak4954_template.jpg)
+![](graphics/usb_speaker_bb_ak4954_template.png)
 
 Select the Audio/Math/Math Libraries component to load the libq_c, libq/dsp libraries, as shown below
 
-![](graphics/usb_speaker_bb_math_libraries.jpg)
+![](graphics/usb_speaker_bb_math_libraries.png)
 
 The project configuration should now look something like this:
 
-![](graphics/usb_speaker_bb_project_graph.jpg)
+![](graphics/usb_speaker_bb_project_graph.png)
 
 _Figure 4. USB Speaker w/Bass Boost MHC Project Graph showing the PIC32 Math Libraries Component Block._
 
@@ -127,7 +127,7 @@ In the MHC, under Available Components select the appropriate BSP (SAM E70 Xplai
 
 Select the Libraries/USB/Device Stack/Audio Function Driver component template, as shown below. Answer yes to all questions. This loads the USB High Speed Driver, the USB Device Layer and Audio Function Driver components.
 
-![](graphics/usb_speaker_bb_audio_function_driver2.jpg)
+![](graphics/usb_speaker_bb_audio_function_driver2.png)
 
 To add the CMSIS-DSP Library to the project, select the CMSIS packs component.
 
@@ -145,17 +145,17 @@ Each block in the MHC Project Graph may need to be configured through parameters
 
 The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is set to “Full Speed”, V1.0 interface (not “High Speed”, V2.0 Interface):
 
-![](graphics/usb_speaker_bb_full_speed.jpg)
+![](graphics/usb_speaker_bb_full_speed.png)
 
 The USB Device Layer is configured by selecting Product ID Selection as “usb_speaker_demo” with an endpoint buffer size of 64 (bytes). The Product String Selection is changed to “Harmony USB Speaker w/Bass Boost Example”. This information will be used to generate the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder) that defines the enumeration of device functions with the USB Host. This structure defines the connection to the host at 48 Khz with 16 bit stereo channel data.
 
-![](graphics/usb_speaker_bb_device_config.jpg)
+![](graphics/usb_speaker_bb_device_config.png)
 
 The Audio Function Driver is configured with an Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Speaker interface.
 
 A playback packet queue of length 64 is set with the Audio Read Queue Size configuration, which should match the Audio Write Queue Size of the WM8904/I2S. The Audio Write Queue Size is unimportant. The The maximum USB packets size is set to 48 * 2 channels/sample * 2 bytes/channel= 192 bytes, which gives a 1ms stereo sample packet size at 48Khz (the standard data frame length at this rate), thus the buffer size needs to be of the same size.
 
-![](graphics/usb_speaker_bb_audio_function_driver3.jpg)
+![](graphics/usb_speaker_bb_audio_function_driver3.png)
 
 ### The WM8904 Codec
 
@@ -163,13 +163,13 @@ _Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Boar
 
 The WM8904 codec uses a TWIHS (I2C) interface for configuration and control register setting and the I2SC1 peripheral interface. This application uses the I2SC1 I2S peripheral interface in Master mode, as shown below:
 
-![](graphics/usb_speaker_bb_wm8904_config.jpg)
+![](graphics/usb_speaker_bb_wm8904_config.png)
 
 When the I2SC1 driver is used for DRV_I2S_0 the usage mode changes to “Slave”
 
 The I2S configuration uses a Transfer queue Size of 64 and I2S Data Length of 16, matching that that of the USB Read Queue. Bidirectional DMA is set (using 2 channels) for data transfer.
 
-![](graphics/usb_speaker_bb_i2s_config.jpg)
+![](graphics/usb_speaker_bb_i2s_config.png)
 
 ## Pin Manager
 
@@ -214,17 +214,17 @@ The I2S clocks are setup for 48Khz sampling rate, with stereo 16 bit samples, gi
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
-![](graphics/usb_speaker_bb_crystal.jpg)
+![](graphics/usb_speaker_bb_crystal.png)
 
 ### I2SC1 Clock Configuration
 
 The I2SC1 master requires the I2SC1_GCLK generate an MCLK to approximate 12.288Mhz. This is sourced using the PLLA Clock (PLLACK), as shown below.
 
-![](graphics/usb_speaker_bb_plla.jpg)
+![](graphics/usb_speaker_bb_plla.png)
 
 _USB Speaker PLLA Clock_
 
-![](graphics/usb_speaker_bb_gclk.jpg)
+![](graphics/usb_speaker_bb_gclk.png)
 
 USB Speaker I2S1 Bit Clock for 48Mhz operation
 
@@ -241,7 +241,7 @@ Click on the I2S2 Peripheral. Set the Frame Select Pin to C2. This is used to se
 
 Select the I2S driver and change the Transfer Queue Size to 64, as shown below
 
-![](graphics/usb_speaker_bb_i2s_config.jpg)
+![](graphics/usb_speaker_bb_i2s_config.png)
 
 Select the I2C1 component and select the “Include Force Write I2C …”, This is required for the case where the AK4954 is in reset and does not respond with NACK when the I2C operation completes.
 
@@ -251,7 +251,7 @@ _Using the PIC32 MZ EF Curiosity 2 with the AK4965 Daughter Board:_
 
 The LIBQ/DSP are used with MIPS MCU with microAptiv core require The default configuration of the audio/math/math libraries component is used, as shown below:
 
-![](graphics/usb_speaker_bb_math_config.jpg)
+![](graphics/usb_speaker_bb_math_config.png)
 
 The DSP Library requires the LIBQ library to be selected.
 
@@ -259,7 +259,7 @@ _Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Boar
 
 The CMSIS-DSP Library is optimized for use with the ARM M0-M7 MCU cores. It is selected using the CMSIS-Pack component (which is loaded automatically with the processor core component), as shown below:
 
-![](graphics/usb_speaker_bb_dsp_config.jpg)
+![](graphics/usb_speaker_bb_dsp_config.png)
 
 ### Harmony Code Generation
 
@@ -306,15 +306,15 @@ Jumper J203, which is next to the SAM E70 Xplained Ultra logo, should be jumpere
 
 To connect to the I2SC1, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented toward the pink, mic in, connector.
 
-![](graphics/usb_speaker_bb_wm8904_jumpers.jpg)
+![](graphics/usb_speaker_bb_wm8904_jumpers.png)
 
 Attach the WM8904 Daughter Board to the X32 connector and connect headphones to the green HP OUT jack, as shown in the figure below.
 
-![](graphics/usb_speaker_bb_e70_setup.jpg)
+![](graphics/usb_speaker_bb_e70_setup.png)
 
 _WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green. Microphone In Jack is pink. Note: the brown wire is a jumper between EXT1-13 to J601(Camera)-14 and is not used for this demo._
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 As shown, the SAM E70 will be programmed via MPLAB-X through the USB cable connected to the EDBG micro-mini connector. Program debug can also be performed over USB this connection, if required.
 
@@ -322,11 +322,11 @@ Using the PIC32 MZ EF Curiosity 2 and the AK4965 Daughter Board:
 
 The PIC32 MZ EF Curiosity board and the AK4954 Audio Codec Daughter Board only requires the AK4954 Codec Daughterboard to be connected to X32 Header 2 as shown below. No jumper settings are required.
 
-![](graphics/usb_speaker_bb_pic32mz_20_setup.jpg)
+![](graphics/usb_speaker_bb_pic32mz_20_setup.png)
 
 _AK4954 Audio Codec Daughter Board on PIC32 MZ EF Curiosity 2 board. Headphone Out Jack is green. Microphone In Jack is pink._
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
 
 Connect headphones to the green HP OUT jack of the Codec Daughter Board (as shown in the Figure above).
 
@@ -338,7 +338,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Configure the board as described in the previous section. Attach either the EDBG or PKOB4 USB cable from the PC Host to the board, as described in the prior section.
 
@@ -354,11 +354,11 @@ LED1 will turn on as the USB function is enumerated (it may blink if audio is no
 
 If needed, configure the Host computer to use the usb_speaker as the selected audio recording device. For Windows 7, this is done in the "Playback" tab in the "Sound" dialog accessed by right clicking the loudspeaker icon on the taskbar. For Windows 10, this is accessed by right clicking the loudspeaker icon on the taskbar and clicking “Open Sound Settings”. Select the “Speaker( Harmony USB Speaker w/Bass Boost Example)” as the default device. Now all sounds should be heard through the headphones
 
-![](graphics/usb_speaker_bb_sound.jpg)
+![](graphics/usb_speaker_bb_sound.png)
 
 _Windows 10 Sound Setting showing USB Speaker w/Bass Boost Example selection._
 
-![](graphics/note.jpg) **Note:** The "Harmony USB Speaker w/Bass Boost Example" should be available along with a sound level meter, indicating audio when playing. If no sound level is registering when audio is playing, uninstall the driver, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony USB Audio Demos.
+![](graphics/note.png) **Note:** The "Harmony USB Speaker w/Bass Boost Example" should be available along with a sound level meter, indicating audio when playing. If no sound level is registering when audio is playing, uninstall the driver, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony USB Audio Demos.
 
 1.  Open a playback application (such as Window Media Player) and initiate playback, which should be heard throught the headphones.
 2.  Four volume levels are available, when pressing SWITCH 1. Initially, it is set to the lowest playback level. Pressing 2 more times will change the volume from the lowest to the highest playback level. Pressing 1 more time will mute audio and LED 1 will blink slowly. Pressing the button again will go back to the initial setting, from which the volume sequence began.

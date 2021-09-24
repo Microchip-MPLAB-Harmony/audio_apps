@@ -24,7 +24,7 @@ The program takes up to approximately 1% (17 KB) of the ATSAME70Q21B microcontro
 
 The following figure illustrates the application architecture for the two SAM E70 Xplained Ultra configurations:
 
-![](graphics/audio_tone_ld_block_diagram.jpg)
+![](graphics/audio_tone_ld_block_diagram.png)
 
 Depending on the project, either the SSC (Synchronous Serial Controller) or I2SC (Inter-IC Sound Controller) is used with the WM8904 codec, selected by a strapping option on the WM8904 daughterboard. When using the SSC interface, the WM8904 is configured in master mode, meaning it generates the I<sup>2</sup>S clocks (LRCLK and BCLK), and the SSC peripheral is configured as a slave. When using the I2SC interface, the WM8904 is configured in slave mode and the SSC peripheral is a master and generates the I2SC clocks. The other two possibilities (SSC as master and WM8904 as slave, or I2SC as slave and WM8904 as master) are possible, but not discussed.
 
@@ -84,13 +84,13 @@ In the MHC, under Available Components select the appropriate BSP (SAM E70 Xplai
 
 You should end up with a project graph that looks like this, after rearranging the boxes, assuming a non-FreeRTOS project:
 
-![](graphics/audio_tone_ld_project_graph.jpg)
+![](graphics/audio_tone_ld_project_graph.png)
 
 Click on the WM8904 Driver. In the Configurations Options, set the desired Sample Rate if different from the default (48,000) under Sampling Rate.
 
 If using the SAM E70 Xplained Ultra board, in the Clock Diagram, set MOSCEL to Main Crystal, check the Bypass checkbox, and uncheck the RC Crystal Oscillator and Main Crystal Oscillator boxes, to make use of the 12 MHz external oscillator:
 
-![](graphics/audio_tone_ld_crystal.jpg)
+![](graphics/audio_tone_ld_crystal.png)
 
 If using the ATSAMV71Q21B, in the Clock Diagram set MOSCEL to Main Crystal, uncheck the Bypass checkbox and RC Crystal Oscillator checkbox, and check the Main Crystal Oscillator box.
 
@@ -110,19 +110,19 @@ WM8904 Codec. Answer Yes to all questions. Click on the WM8904 Codec component (
 
 You should end up with a project graph that looks like this, after rearranging the boxes, assuming a non-FreeRTOS project:
 
-![](graphics/audio_tone_ld_project_graph2.jpg)
+![](graphics/audio_tone_ld_project_graph2.png)
 
 Click on the WM8904 Driver. In the Configurations Options, under Usage Mode, change Master to Slave. Set the desired Sample Rate if different from the default (48,000) under Sampling Rate.
 
 If using the SAM E70 Xplained Ultra board, in the Clock Diagram, set MOSCEL to Main Crystal, check the Bypass checkbox, and uncheck the RC Crystal Oscillator and Main Crystal Oscillator boxes, to make use of the 12 MHz external oscillator:
 
-![](graphics/audio_tone_ld_crystal.jpg)
+![](graphics/audio_tone_ld_crystal.png)
 
 Also in the Clock Diagram, in the PCK2 tab of the **Programmable Clock Controller** section, check the On checkbox, and set CSS to MAINCLK (12 MHz).
 
 The following tables show suggested settings for various sample rates in the Clock Diagram when using the I2SC Peripheral in Master mode. Make sure **PLLA Clock** checkbox is checked, and fill in the values for the PLLA Multiplier and Divider boxes. Select the I2S1 tab under **Generic Clock Controller**, set GCLKCSS to PLLACK, fill in the Divider value as shown, and check the checkbox next to it.
 
-![](graphics/audio_tone_ld_plla.jpg)
+![](graphics/audio_tone_ld_plla.png)
 
 The values in the first table give the lowest error rate, but have varying PLLACK values so it is best to use the UPPCLKDIV selection for CSS under **Master Clock Controller**, for a Processor Clock of 240 MHz.
 
@@ -175,15 +175,15 @@ Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board
 
 All jumpers on the WM8904 should be toward the **front**.
 
-![](graphics/audio_tone_ld_wm8904_jumpers.jpg)
+![](graphics/audio_tone_ld_wm8904_jumpers.png)
 
 Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, with the I2SC PLIB:
 
 All jumpers on the WM8904 should be toward the **back**.
 
-![](graphics/audio_tone_ld_wm8904_jumpers_back.jpg)
+![](graphics/audio_tone_ld_wm8904_jumpers_back.png)
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 ### Running the Demonstration
 
@@ -191,7 +191,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 All configurations:
 
@@ -205,7 +205,7 @@ Compile and program the target device. While compiling, select the appropriate M
 4.  Pressing SW1 longer than one second will change to frequency-setting mode (LED1 on). Pressing SW1 with LED1 on will cycle through four frequency settings -- 250 Hz, 500 Hz, 1 kHz, and 2 kHz.
 5.  Pressing SW1 longer than one second again will switch back to volume-setting mode again (LED1 off).
 
-![](graphics/audio_tone_e70_setup.jpg)
+![](graphics/audio_tone_e70_setup.png)
 
 **Figure 1: WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board**
 

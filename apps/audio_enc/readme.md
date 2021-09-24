@@ -24,7 +24,7 @@ The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to
 
 ### Architecture Block Diagram
 
-![](graphics/audio_enc_block_diagram.jpg)
+![](graphics/audio_enc_block_diagram.png)
 
 ## Demonstration Features
 
@@ -52,11 +52,11 @@ The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to
 7.  Remove FreeRTOS if Bare Metal version
 8.  Connect MSD Client Driver: DRV_MEDIA to FILE SYSTEM: DRV_MEDIA After reorganization, your graph should look similar to the following:
 
-![](graphics/audio_enc_project_graph.jpg)
+![](graphics/audio_enc_project_graph.png)
 
 If using FreeRTOS, your diagram will be slightly different. You will see an additional block for FreeRTOS as shown below.
 
-![](graphics/audio_enc_project_graph2.jpg)
+![](graphics/audio_enc_project_graph2.png)
 
 ## Tools Setup Differences
 
@@ -66,49 +66,49 @@ MPLAB Harmony Configurator: Tools->Clock Configuration
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is check, it will cause the Main Crystal Oscillator to become unchecked.
 
-![](graphics/audio_enc_crystal.jpg)
+![](graphics/audio_enc_crystal.png)
 
 Enable the PLLA Clock output.
 
-![](graphics/audio_enc_plla.jpg)
+![](graphics/audio_enc_plla.png)
 
 Enable clocking for the I2S1.
 
-![](graphics/audio_enc_i2s1_clk.jpg)
+![](graphics/audio_enc_i2s1_clk.png)
 
 To set the sample rate to a fixed 16KHz, set the PLLA divisor to 2 and the multiplier to 43. Also, set the I2S1 divisor to 63. Please see the two images above.
 
 MPLAB Harmony Configurator: WM8904
 
-![](graphics/audio_enc_wm8904.jpg)
+![](graphics/audio_enc_wm8904.png)
 
 MPLAB Harmony Configurator: File System
 
 The Auto Mount feature must be selected in order to expose the media type selection. The media type that is being used in this application is Mass Storage Device. This must be correctly configured, or the storage device will not mount.
 
-![](graphics/audio_enc_filesys.jpg)
+![](graphics/audio_enc_filesys.png)
 
 MPLAB Harmony Configurator: I2C Driver
 
 If your are using FreeRTOS, set the driver mode back to Asynchronous.
 
-![](graphics/audio_enc_i2c_sync.jpg)
+![](graphics/audio_enc_i2c_sync.png)
 
 MPLAB Harmony Configurator: System
 
 Set the heap size in Harmony if it is not already set for the linker.
 
-![](graphics/audio_enc_heap.jpg)
+![](graphics/audio_enc_heap.png)
 
 MPLAB Harmony Configurator: EFC
 
 Set the memory wait states to 6, if not already set.
 
-![](graphics/audio_enc_efc.jpg)
+![](graphics/audio_enc_efc.png)
 
 MPLAB Harmony Configurator: Audio Decoder Libraries Disable the ADPCM Decoder for this particular app.
 
-![](graphics/audio_enc_dis_adpcm.jpg)
+![](graphics/audio_enc_dis_adpcm.png)
 
 Save and generate code for the framework.
 
@@ -137,9 +137,9 @@ This section describes how to configure the supported hardware.
 
 This application uses the I2SC PLIB to transfer data to the WM8904 Audio Codec Daughter Board. To connect to the I2SC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughter Board must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-![](graphics/audio_enc_wm8904_jumpers.jpg)
+![](graphics/audio_enc_wm8904_jumpers.png)
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 ### Running the Demonstration
 
@@ -147,7 +147,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project based. Refer to Building the Application for details.
 

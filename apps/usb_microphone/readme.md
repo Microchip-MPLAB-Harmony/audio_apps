@@ -17,7 +17,7 @@ The application runs on the SAM E70 Xplained Ultra Board (E70XULT), which contai
 *   WM8904 Codec Daughter Board mounted on a X32 socket
 *   USB Device interface
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 The usb_microphone application uses the MPLAB Harmony Configurator to setup the USB Audio Device, codec, and other items in order to play back the USB audio through the WM8904 Codec Module.
 
@@ -25,7 +25,7 @@ A USB device is connected to the micro-mini USB device connector. The applicatio
 
 The following figure shows the basic architecture for the demonstration.
 
-![](graphics/usb_mic_block_diagram.jpg)
+![](graphics/usb_mic_block_diagram.png)
 
 _USB Microphone Application Block Diagram_
 
@@ -42,7 +42,7 @@ _USB Microphone Application Block Diagram_
 
 The MPLAB-X Harmony Configurator (MHC) Project Graph for usb_microphone_basic is shown below.
 
-![](graphics/usb_mic_project_graph.jpg)
+![](graphics/usb_mic_project_graph.png)
 
 _USB Microphone Application MPLAB-X Harmony Configurator Project Graph_
 
@@ -81,7 +81,7 @@ _USB Configuration_
 
 The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is selected to by “Full Speed” (not “High Speed”):
 
-![](graphics/usb_mic_high_speed.jpg)
+![](graphics/usb_mic_high_speed.png)
 
 _USB High Speed Driver Configuration_
 
@@ -89,13 +89,13 @@ The USB Device Layer is configured by selecting the “usb_microphone_demo” with a
 
 Audio Function Driver is configured for 5 USB endpoints with a single function having 3 interfaces. All of these are defined for a USB Microphone device in the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder). This structure defines the connection to the host at 48 Khz with 16 bit stereo channel data. A packet queue of length APP_QUEUE_SIZE (set to 2) is used for playback data. The maximum USB packets size is set to 16 samples * 2 channels per sample * 2 bytes per channel= 64 bytes, which gives a 1ms stereo sample packet size at 16Khz (the standard data frame length at this rate), thus the buffer size needs to be of the same size.
 
-![](graphics/usb_mic_device_config.jpg)
+![](graphics/usb_mic_device_config.png)
 
 _USB Device Layer Configuration_
 
 The Audio Function Driver is configured with a Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Microphone interface.
 
-![](graphics/usb_mic_audio_func.jpg)
+![](graphics/usb_mic_audio_func.png)
 
 _USB Audio Function Configuration_
 
@@ -107,19 +107,19 @@ The default values are used for the TWIHS and I2C drivers.
 
 The E70 I2SC1 driver is set to be the master with a data length of 16, 2 channels (stereo) and a MCLK divider value of of 256. These a default values, as shown below:
 
-![](graphics/usb_mic_i2sc1_config.jpg)
+![](graphics/usb_mic_i2sc1_config.png)
 
 _I2SC1 Peripheral Configuration_
 
 The I2S driver is configured with transfer queue size of 8 (default value) that matches that of the USB Read Queue, as shown below:
 
-![](graphics/usb_mic_i2s_config.jpg)
+![](graphics/usb_mic_i2s_config.png)
 
 _USB Microphone I2S Configuration_
 
 The WM8904 Codec is configured with an I2S slave interface operating at 16000 Hz sampling rate, as shown below:
 
-![](graphics/usb_mic_wm8904_config.jpg)
+![](graphics/usb_mic_wm8904_config.png)
 
 _USB Microphone I2S Configuration_ Also, the microphone input is enabled with bias for an electret microphone.
 
@@ -182,19 +182,19 @@ _USB Microphone MHC Clock Diagram_
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
-![](graphics/usb_mic_crystal.jpg)
+![](graphics/usb_mic_crystal.png)
 
 _USB Microphone Main Clock_
 
 The PLLA clock is generated from 12 Mhz Main Clock using the selected DIVA and MULA values, as shown below:
 
-![](graphics/usb_mic_plla.jpg)
+![](graphics/usb_mic_plla.png)
 
 _USB Microphone PLLA Clock_
 
 The I2S MCLK is generated using both the PCK2 output and the I2SC1_GCLK. These are both enabled and generated using the PLLA clock source to give the same value of 4,095,238 Hz (to approximate the 4096000 Hz sampling rate), as shown below:
 
-![](graphics/usb_mic_pck2.jpg)
+![](graphics/usb_mic_pck2.png)
 
 _USB Microphone I2S1 GCLK and PCK2 Configuration_
 
@@ -235,9 +235,9 @@ Jumper J204, which is next to the SAM E70 Xplained Ultra logo, should be jumpere
 
 To connect to the I2SC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-![](graphics/usb_mic_wm8904_jumpers.jpg)
+![](graphics/usb_mic_wm8904_jumpers.png)
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 ### Running the Demonstration
 
@@ -245,11 +245,11 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project. Refer to Building the Application for details.
 
-![](graphics/usb_mic_e70_setup.jpg)
+![](graphics/usb_mic_e70_setup.png)
 
 _Figure 1. WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green. Microphone In Jack is pink._
 
@@ -262,13 +262,13 @@ Do the following to run the demonstration:
 3.  Connect to the USB Host via the micro-mini connector (Refer to Figure 1) located above the push-button switches on the right side of the board using a standard USB cable. The LED1 should turn to a solid amber color as the host enumerates and then initiates the audio stream.
 4.  After the Host computer acknowledges the connection, it will install drivers (if needed), No special software is necessary on the Host side.
 
-![](graphics/usb_mic_sound.jpg)
+![](graphics/usb_mic_sound.png)
 
 _Figure 2. Windows 7 Sound Dialog showing USB Microphone with Sound Level Meter_
 
 1.  If needed, configure the Host computer to use the usb_microphone as the selected audio recording device. For Windows, this is done in the "Recording" tab in the "Sound" dialog (as shown in Figure 2) accessed by right clicking the loudspeaker icon on the taskbar.
 
-![](graphics/note.jpg) **Note:** The device "Harmony USB Microphone Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering, uninstall the driver and reboot the host computer, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos.
+![](graphics/note.png) **Note:** The device "Harmony USB Microphone Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering, uninstall the driver and reboot the host computer, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos.
 
 1.  The Microphone audio should be heard through the monitor headphones
 2.  Open a recording application (such as Audacity) and initiate a recording sessiont through the USB Microphone.

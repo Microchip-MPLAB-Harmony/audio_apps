@@ -20,7 +20,7 @@ The application runs on two target boards, as follows:
 *   WM8904 Codec Daughter Board mounted on a X32 socket (configured as I2SC1 slave)
 *   USB Device interface
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 2. PIC32 MZ EF Curiosity 2
 
@@ -30,7 +30,7 @@ The application runs on two target boards, as follows:
 *   AK4954 Codec Daughter Board mounted on X32 socket
 *   USB Device interface
 
-![](graphics/note.jpg) **Note:** The PIC32 MZ EF Curiosity 2 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
+![](graphics/note.png) **Note:** The PIC32 MZ EF Curiosity 2 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
 
 The usb_speaker_basic application uses the MPLAB Harmony Configurator to setup the USB Audio Device, codec, and other items in order to play back the USB audio through the WM8904 Codec Module.
 
@@ -38,7 +38,7 @@ A USB Host system is connected to the micro-mini USB device connector. The appli
 
 The following figure shows the basic architecture for the demonstration.
 
-![](graphics/usb_speaker_block_diagram.jpg)
+![](graphics/usb_speaker_block_diagram.png)
 
 _Figure 1. Architecture Block Diagram_
 
@@ -62,7 +62,7 @@ The usb_speaker demonstration uses multiples projects for multiple hardware conf
 
 Start MHC for the project in order to add the application code components. Both projects of the usb_speaker application use the USB Audio stack components. These can be added by selecting the Libraries/USB/Device Stack/Audio Function Driver component template under the MHC Available Components list, as shown below.
 
-![](graphics/usb_speaker_audio_function_driver.jpg)
+![](graphics/usb_speaker_audio_function_driver.png)
 
 Answer yes to all questions. This loads the USB High Speed Driver, the USB Device Layer and Audio Function Driver components.
 
@@ -84,11 +84,11 @@ The MZEFC2 board configuration in similar to the prior E70XULT board configurati
 
 In the MHC, under Available Components select the BSP PIC32 MZ EF Curiosity 2.0. Under Audio>Templates, double-click on AK4954 Codec Template (shown below). Answer Yes to all questions except for the one regarding FreeRTOS; answer No to that one. This loads the AK4954 Codec component along with associated I2C, I2S and timer driver components.
 
-![](graphics/usb_speaker_ak4954_sel.jpg)
+![](graphics/usb_speaker_ak4954_sel.png)
 
 The project configuration should now look something like this:
 
-![](graphics/usb_speaker_project_graph.jpg)
+![](graphics/usb_speaker_project_graph.png)
 
 _Figure 3. USB Speaker Project Graph for the PIC32 MZ EF Curiosity 2 Board_
 
@@ -100,17 +100,17 @@ USB Configuration
 
 The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is set to “Full Speed”, V1.0 interface (not “High Speed”, V2.0 Interface):
 
-![](graphics/usb_speaker_full_speed.jpg)
+![](graphics/usb_speaker_full_speed.png)
 
 The USB Device Layer is configured by selecting Product ID Selection as “usb_speaker_demo” with an endpoint buffer size of 64 (bytes). The Product String Selection is changed to “Harmony USB Speaker w/Bass Boost Example”. This information will be used to generate the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder) that defines the enumeration of device functions with the USB Host. This structure defines the connection to the host at 48 kHz with 16 bit stereo channel data.
 
-![](graphics/usb_speaker_device_config.jpg)
+![](graphics/usb_speaker_device_config.png)
 
 The Audio Function Driver is configured with an Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Speaker interface.
 
 A playback packet queue of length 64 is set with the Audio Read Queue Size configuration, which should match the Audio Write Queue Size of the WM8904/I2S. The Audio Write Queue Size is unimportant. The The maximum USB packets size is set to 48 * 2 channels/sample * 2 bytes/channel= 192 bytes, which gives a 1ms stereo sample packet size at 48Khz (the standard data frame length at this rate), thus the buffer size needs to be of the same size.
 
-![](graphics/usb_speaker_audio_function_driver.jpg)
+![](graphics/usb_speaker_audio_function_driver.png)
 
 ## The WM8904 Codec
 
@@ -118,13 +118,13 @@ Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board
 
 The WM8904 codec uses a TWIHS (I2C) interface for configuration and control register setting and either a SSC for audio data or I2SC I2S interface. The default settings are used as shown below for SSC:
 
-![](graphics/usb_speaker_wm8904_config.jpg)
+![](graphics/usb_speaker_wm8904_config.png)
 
 When the I2SC1 driver is used for DRV_I2S_0 the usage mode changes to “Slave”
 
 The I2S configuration uses a Transfer queue size of 64, matching that that of the USB Read Queue:
 
-![](graphics/usb_speaker_i2s_config.jpg)
+![](graphics/usb_speaker_i2s_config.png)
 
 The I2SC1 automatically replaces the “PLIB Used” when it is connected to the I2S block in place of the SSC.
 
@@ -186,19 +186,19 @@ The I2S clocks are setup for 48KHz sampling rate, with stereo 16 bit samples, gi
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
-![](graphics/usb_speaker_crystal.jpg)
+![](graphics/usb_speaker_crystal.png)
 
 _Figure 4. Main Clock Configuration_
 
 Enable the PCK2 output to enable the WM8904 master clock generation, to enable clocking for the SSC operating as a slave I2S:
 
-![](graphics/usb_speaker_pck2.jpg)
+![](graphics/usb_speaker_pck2.png)
 
 _Figure 5. Clock Diagram>Peripheral Clock Enable_
 
 Enable the peripheral clock to the SSC using the Peripheral Clock Enable of the Peripheral Clock Controller:
 
-![](graphics/usb_speaker_ssc_enab.jpg)
+![](graphics/usb_speaker_ssc_enab.png)
 
 _Figure 6. Enable SSC Clock_
 
@@ -206,11 +206,11 @@ _Figure 6. Enable SSC Clock_
 
 The I2SC1 master requires the I2SC1_GCLK generate an MCLK to approximate 12.288Mhz. This is sourced using the PLLA Clock (PLLACK), as shown below.
 
-![](graphics/usb_speaker_plla.jpg)
+![](graphics/usb_speaker_plla.png)
 
 _Figure 7. PLLA Clock Generation for I2SC Peripheral_
 
-![](graphics/usb_speaker_gclk.jpg)
+![](graphics/usb_speaker_gclk.png)
 
 _Figure 8. Generic Clock (GCLK) Generation for the I2SC1_
 
@@ -266,15 +266,15 @@ Jumper J203, which is next to the SAM E70 Xplained Ultra logo, should be jumpere
 
 To connect to the I2SC1, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented toward the pink, mic in, connector.
 
-![](graphics/usb_speaker_wm8904_jumpers.jpg)
+![](graphics/usb_speaker_wm8904_jumpers.png)
 
 Attach the WM8904 Daughter Board to the X32 connector and connect headphones to the green HP OUT jack, as shown in the figure below.
 
-![](graphics/usb_speaker_e70_setup.jpg)
+![](graphics/usb_speaker_e70_setup.png)
 
 _WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green. Microphone In Jack is pink. Note: the brown wire is a jumper between EXT1-13 to J601(Camera)-14 and is not used for this demo._
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 As shown, the SAM E70 will be programmed via MPLAB-X through the USB cable connected to the EDBG micro-mini connector. Program debug can also be performed over USB this connection, if required.
 
@@ -282,11 +282,11 @@ Using the PIC32 MZ EF Curiosity 2 and the AK4965 Daughter Board:
 
 The PIC32 MZ EF Curiosity board and the AK4954 Audio Codec Daughter Board only requires the AK4954 Codec Daughterboard to be connected to X32 Header 2 as shown below. No jumper settings are required.
 
-![](graphics/usb_speaker_pic32mz_20_setup.jpg)
+![](graphics/usb_speaker_pic32mz_20_setup.png)
 
 _AK4954 Audio Codec Daughter Board on PIC32 MZ EF Curiosity 2 board. Headphone Out Jack is green. Microphone In Jack is pink._
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
 
 Connect headphones to the green HP OUT jack of the Codec Daughter Board (as shown in the Figure above).
 
@@ -298,7 +298,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project. Refer to Building the Application for details
 
@@ -315,11 +315,11 @@ Do the following to run the demonstration:
 
 selection for Both Windows 10 and Windows 7 sound dialog is accessed by right clicking the loudspeaker icon in the taskbar, which will bring up a menu for the selection. This is shown in the Figure below for Windows 10. Windows 7 works in a similar fashion.
 
-![](graphics/usb_speaker_sound.jpg)
+![](graphics/usb_speaker_sound.png)
 
 _Figure 12. Windows 10 - Sound Dialog Showing Harmony USB Speaker Selection._
 
-![](graphics/note.jpg) **Note:** The device "Harmony USB Speaker Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering or the name of the Harmony speaker is incorrect, uninstall the driver using the Windows Device Manager, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos.
+![](graphics/note.png) **Note:** The device "Harmony USB Speaker Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering or the name of the Harmony speaker is incorrect, uninstall the driver using the Windows Device Manager, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos.
 
 1.  Open a playback application (such as Window Media Player) and initiate playback through the USB Speaker. LED 1 should be a solid color.
 

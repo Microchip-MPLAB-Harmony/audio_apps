@@ -16,7 +16,7 @@ The application runs on the SAM E70 Xplained Ultra Board, with the following fea
 *   Two LEDs (amber LED1 and green LED2). Only LED 1 can be used for a USB Device requiring VBUS sense.
 *   WM8904 Codec Daughter Board mounted on a X32 socket
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 The hi-res application uses the MPLAB Harmony Configurator to setup the USB Audio Device, codec, and other items in order to play back the USB audio through the WM8904 Codec Module.
 
@@ -24,7 +24,7 @@ A USB Host system is connected to the micro-mini USB device connector. The appli
 
 The following figure shows the basic architecture for the demonstration.
 
-![](graphics/usb_speaker_hr_block_diagram.jpg)
+![](graphics/usb_speaker_hr_block_diagram.png)
 
 ## Demonstration Features
 
@@ -60,7 +60,7 @@ The application code is contained in the standard source file app.c. The applica
 
 The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is selected to by “Full Speed” (not “High Speed”):
 
-![](graphics/usb_speaker_hr_fullspeed.jpg)
+![](graphics/usb_speaker_hr_fullspeed.png)
 
 The USB Device Layer is configured by selecting the “usb_speaker_demo” with an endpoint buffer size of 64 (bytes). The Audio
 
@@ -72,11 +72,11 @@ APP_QUEUE_SIZE (set to 32) is used for playback data. The maximum USB packets si
 
 The Audio Function Driver is configured with a Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Speaker interface.
 
-![](graphics/usb_speaker_hr_device_config.jpg)
+![](graphics/usb_speaker_hr_device_config.png)
 
 The Audio Function Driver is configured with a Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Speaker interface.
 
-![](graphics/usb_speaker_hr_audio_function_driver.jpg)
+![](graphics/usb_speaker_hr_audio_function_driver.png)
 
 **Note:** The USB Speaker selection generates a USB Full Speed Descriptor with an isochronous audio stream at 48 Khz/2 Channel/16 bits per channel. This code is modified manually to enumerate a 96Khz/ 2 Channel/ 24 bits per channel isochronous audio data stream.
 
@@ -84,17 +84,17 @@ The Audio Function Driver is configured with a Audio Read Queue that matches tha
 
 The WM8904 codec uses a TWIHS (I2C) interface for configuration and control register setting and either a SSC for audio data or I2SC I2S interface. The default settings are used as shown below:
 
-![](graphics/usb_speaker_hr_wm8904_config.jpg)
+![](graphics/usb_speaker_hr_wm8904_config.png)
 
 The I2SC1 driver is in “Slave” mode, thus the codec usage mode changes to “Slave”
 
 The I2S configuration uses a Transfer queue size of 128, matching that that of the USB Read Queue:
 
-![](graphics/usb_speaker_hr_i2s_config.jpg)
+![](graphics/usb_speaker_hr_i2s_config.png)
 
 The I2S data channel is 32 bit long, although only 24 bits is used. The DMA should be selected to match what is configured in the system block.
 
-![](graphics/usb_speaker_hr_i2sc1_config.jpg)
+![](graphics/usb_speaker_hr_i2sc1_config.png)
 
 The I2SC1 driver is configured for 24 bit data, although a 32 bit channel frame is used. This implies that the 24 bit 3 byte packed data buffer received from the USB audio data stream must be unpacked to 32 bit words (4 byte), since a 24 bit frame is not available for the WM8904.
 
@@ -141,7 +141,7 @@ The I2S clocks are setup for 48Khz sampling rate, with stereo 32 bit samples, gi
 
 Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
-![](graphics/usb_speaker_hr_crystal.jpg)
+![](graphics/usb_speaker_hr_crystal.png)
 
 _Clock Diagram>Peripheral Clock Enable_
 
@@ -149,7 +149,7 @@ The I2SC1 master requires the I2SC1_GCLK generate an MCLK to approximate 24.576 
 
 ![](graphics/usb_speaker_hr_gclk.png)
 
-![](graphics/usb_speaker_hr_plla.jpg)
+![](graphics/usb_speaker_hr_plla.png)
 
 _I2SC1 Configuration of PLLA Clock (PLLACK)_
 
@@ -159,7 +159,7 @@ _I2SC1 GCLK Configuration_
 
 The Timer driver configuration, Timer driver instance 0, is used by a system for button processing (debounce and long press) and LED blink delay. It needs to be set to “Enable Period Interrupt”.
 
-![](graphics/usb_speaker_hr_tc0.jpg)
+![](graphics/usb_speaker_hr_tc0.png)
 
 ### Building the Application
 
@@ -193,9 +193,9 @@ Jumper J204, which is next to the SAM E70 Xplained Ultra logo, should be jumpere
 
 To connect to the SSC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
-![](graphics/usb_speaker_hr_wm8904_jumpers.jpg)
+![](graphics/usb_speaker_hr_wm8904_jumpers.png)
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 ### Running the Application
 
@@ -203,7 +203,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png) **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project. Refer to Building the Application for details.
 
@@ -213,7 +213,7 @@ Do the following to run the demonstration:
 
 **Important:** The I2SC/SSC jumpers must be in the correct position for the configuration being run.
 
-![](graphics/usb_speaker_hr_e70_setup.jpg)
+![](graphics/usb_speaker_hr_e70_setup.png)
 
 _Figure 1. WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green._
 
@@ -223,13 +223,13 @@ _Note: the brown wire is a jumper which is not relevant for this app._
 2.  Connect to the USB Host via the micro-mini connector located above the push-button switches on the right side of the board using a standard USB cable.
 3.  Allow the Host computer to acknowledge, install drivers (if needed), and enumerate the device. No special software is necessary on the Host side.
 
-![](graphics/usb_speaker_hr_sound.jpg)
+![](graphics/usb_speaker_hr_sound.png)
 
 _Figure 2. Windows 7 Sound Dialog showing USB Microphone with Sound Level Meter_
 
 1.  If needed, configure the Host computer to use the usb_speaker as the selected audio playback device. For Windows, this is done in the "Playback" tab in the "Sound" dialog (as shown in Figure 2) accessed by right clicking the loudspeaker icon in the taskbar.
 
-![](graphics/note.jpg) **Note:** The device "Harmony USB Hi Res Speaker Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering, uninstall the driver, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos. Disconnect and reconnect the usb cable to the PC. The reconfigured driver will then be installed for the correct USB device.
+![](graphics/note.png) **Note:** The device "Harmony USB Hi Res Speaker Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering, uninstall the driver, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos. Disconnect and reconnect the usb cable to the PC. The reconfigured driver will then be installed for the correct USB device.
 
 1.  Open a playback application (such as Window Media Player) and initiate playback through the USB Speaker
 2.  Playback will demonstrate that the audio is being heard in the USB Speaker headphones. Use the pushbutton switch to mute and change volume levels to the headphone.

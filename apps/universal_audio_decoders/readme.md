@@ -34,7 +34,7 @@ The PIC32 MZ EF Curiosity 2.0 board does not include the AK4954 Audio Codec daug
 
 The following figure illustrates the application architecture for the PIC32 MZ EF Curiosity 2.0 project. The program takes up to approximately 9% (188 KB) of the PIC32MZ2048EFM144 microcontroller’s program space, and 14% (71 KB) of the RAM. No heap is used.
 
-![](graphics/uad_block_diagram.jpg)
+![](graphics/uad_block_diagram.png)
 
 The I2S (Inter-IC Sound Controller) is used with the AK4954 codec. The AK4954 is configured in slave mode, meaning it receives I<sup>2</sup>S clocks (LRCLK and BCLK) from the PIC32, and the I2S peripheral is configured as a master.
 
@@ -50,7 +50,7 @@ The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughte
 
 The following figure illustrates the application architecture for the SAM E70 Xplained Ultra project. The program takes up to approximately 5% (110 KB) of the ATSAME70Q21B microcontroller’s program space, and 19% (71 KB) of the RAM. No heap is used.
 
-![](graphics/uad_block_diagram3.jpg)
+![](graphics/uad_block_diagram3.png)
 
 ## Demonstration Features
 
@@ -77,17 +77,17 @@ SYSTEM.
 
 You should end up with a project graph that looks like this, after rearranging the boxes:
 
-![](graphics/uad_project_graph.jpg)
+![](graphics/uad_project_graph.png)
 
 Connect the MSD Client Driver block to the FILE SYSTEM block. Click on the FILE SYSTEM block.
 
 Under File System Settings, check the checkbox for Use File System Auto Mount Feature. Under Media0>Media Configuration0, change the Media Type to SYS_FS_MEDIA_TYPE_MSD.
 
-![](graphics/uad_filesys.jpg)
+![](graphics/uad_filesys.png)
 
 Click on the I2S Peripheral. In the Configurations Options, under 32/16-Bit Communication Select bits, select (AUDEN=1) 16-bit data, 16-bit FIFO, 32-bit Channel/64-bit Frame. Change Master Clock the Baud Rate to 44,100. Set the Frame Select Pin to C2. The configuration should look like this:
 
-![](graphics/uad_i2s2_config.jpg)
+![](graphics/uad_i2s2_config.png)
 
 Under Tools, click on Clock Configuration. In the Clock Diagram:
 
@@ -95,9 +95,9 @@ Under Tools, click on Clock Configuration. In the Clock Diagram:
 *   Change FPLLICLK to POSC, FPLLIDIV to DIV_2, and FPLLMULT to MUL_66 for an SPLL value of 198 MHz. Change the UPLLFSEL to FREQ_12MHZ.
 *   In the Reference Clock #1 section, check the ON and OE checkboxes,, and set ROTRIM1 to 393 and RODIV1 to 8. This should give a REFCLKO1 output of 11,291,601 Hz, which is 256 times the 44,100 Hz sample rate.
 
-![](graphics/uad_clocks.jpg)
+![](graphics/uad_clocks.png)
 
-![](graphics/uad_project_graph2.jpg)
+![](graphics/uad_project_graph2.png)
 
 For the project using the E70, the SSC interface and the WM8904 as a Master (the WM8904 codec generates the I<sup>2</sup>S clocks), with or without a display:
 
@@ -107,19 +107,19 @@ In the MHC, under Available Components select the appropriate BSP (SAM E70 Xplai
 
 You should end up with a project graph that looks like this, after rearranging the boxes:
 
-![](graphics/uad_project_graph3.jpg)
+![](graphics/uad_project_graph3.png)
 
 Connect the MSD Client Driver block to the FILE SYSTEM block. Click on the FILE SYSTEM block.
 
 Under File System Settings, check the checkbox for Use File System Auto Mount Feature. Under Media0>Media Configuration0, change the Media Type to SYS_FS_MEDIA_TYPE_MSD.
 
-![](graphics/uad_filesys.jpg)
+![](graphics/uad_filesys.png)
 
 Click on the WM8904 Driver. In the Configurations Options, set the Sample Rate to 44,100.
 
 In the Clock Diagram, set MOSCEL to Main Crystal, check the Bypass checkbox, and uncheck the RC Crystal Oscillator and Main Crystal Oscillator boxes, to make use of the 12 MHz external oscillator:
 
-![](graphics/uad_crystal.jpg)
+![](graphics/uad_crystal.png)
 
 Also in the Clock Diagram, in the PCK2 tab of the **Programmable Clock Controller** section, check the On checkbox, and set CSS to MAINCLK (12 MHz). Then check the SSC checkbox in the **Peripheral Clock Controller** section.
 ### Building the Application
@@ -149,13 +149,13 @@ For all configurations, a pair of headphones should be connected to the HP Out j
 
 Using the PIC32 MZ EF Curiosity 2.0 board and the AK4954 Audio Codec Daughter Board and I2S PLIB. The AK4954 daughter board is plugged into the set of X32 connectors on the right side of the board (X32 HEADER 2).
 
-![](graphics/note.jpg) **Note:** The PIC32 MZ EF Curiosity 2.0 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
+![](graphics/note.png) **Note:** The PIC32 MZ EF Curiosity 2.0 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
 
 Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board and SSC PLIB. All jumpers on the WM8904 should be toward the **front:**
 
-![](graphics/uad_wm8904_jumpers.jpg)
+![](graphics/uad_wm8904_jumpers.png)
 
-![](graphics/note.jpg) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
+![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 ### Running the Demonstration
 
@@ -163,7 +163,7 @@ This section demonstrates how to run the demonstration.
 
 **Description**
 
-![](graphics/important.jpg)  **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
+![](graphics/important.png)  **Important!** Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.
 
 Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project based. Refer to Building the Application for details.
 
