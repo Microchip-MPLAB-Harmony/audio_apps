@@ -455,7 +455,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/app_config/16_bit;../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/app_config/16_bit;../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -554,7 +554,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
