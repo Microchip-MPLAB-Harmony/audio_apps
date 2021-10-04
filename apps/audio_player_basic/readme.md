@@ -6,7 +6,7 @@ This topic provides instructions and information about the MPLAB Harmony 3 Audio
 
 The audio player (audio_player_basic) application configures the development board to use a microSD card or be in USB Host Mass Storage Device (MSD) mode. The application supports the FAT file system. When a mass storage device is connected to the development board via its Target USB port, the device is mounted, and the application begins to scan for files starting at the root directory. It will search for .wav files up to 10 directory levels deep. A list of files found, and their paths, will be created and stored.
 
-Once the scan is complete, the first track in the list will be opened, validated and played. The application will read the .wav file header to validate. Configuration of the number of channels, sample size, and sample rate stated in the file will be handled by the application for proper playback. If a file that can’t be played is found, it will be skipped, and the next sequential file will be tried. If the file can be played, it will then go on and read the .wav file data and write it to the codec for playback.
+Once the scan is complete, the first track in the list will be opened, validated and played. The application will read the .wav file header to validate. Configuration of the number of channels, sample size, and sample rate stated in the file will be handled by the application for proper playback. If a file that can't be played is found, it will be skipped, and the next sequential file will be tried. If the file can be played, it will then go on and read the .wav file data and write it to the codec for playback.
 
 Command and control of the codec is done through an I2C driver. Data to the codec driver is sent through SSC via I2S Driver and the output will be audible through the headphone output jack of the WM8904 Audio Codec Module connected to the SAM E70 Xplained Ultra board.
 
@@ -32,7 +32,7 @@ The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughte
 
 The application currently only supports WAVE (.wav) format files and ADPCM (.pcm) files.
 
-The audio_player_basic application uses the MPLAB Harmony Configurator to setup the USB MSD Host, file system, codec, and other items in order to read the music files on a USB mass storage device and play it back through the WM8904 Codec Module. It scans WAV (PCM) format files from a mounted FAT drive and streams audio through a WM8904 Audio Codec to a pair of headphones. In the application, the number of audio output buffers can always set to be more than two to enhance the audio quality. The size of input buffer in this application is be chosen to be able to handle the data supported.
+The audio_player_basic application uses the MPLAB Harmony Configurator to setup the USB MSD Host, file system, codec, and other items in order to read the music files on a USB mass storage device and play it back through the WM8904 Codec Module. It scans WAV (PCM) format files from a mounted FAT drive and streams audio through a WM8904 Audio Codec to a pair of headphones. In the application, the number of audio output buffers can always be set to more than two to enhance the audio quality. The size of input buffer in this application is chosen to be able to handle the data supported.
 
 The following figure shows the architecture for the demonstration (USB Host version shown):
 
@@ -55,43 +55,33 @@ The following figure shows the architecture for the demonstration (USB Host vers
 ### Harmony Configuration
 
 1.  Add BSP->SAM E70 Xplained Ultra BSP
-2.  If creating Graphics version, add Graphics->Templates->Aria Graphics w/ PDA TM4301B Displaya. Yes to all popups.
-3.  Add Audio->Templates->WM8904 Codec
-
-a. Yes to all popups.
-
-4. Add Libraries->USB->Host Stack->MSD Client Driver
-
-a. Yes to all popups.
-
-1.  Add Harmony->System Services->FILE SYSTEM
-2.  Remove FreeRTOS if Bare Metal or Graphics versions.
-3.  Add Harmony->Audio->Decoder->Audio Decoder Libraries
-4.  Connect MSD Client Driver: DRV_MEDIA to FILE SYSTEM: DRV_MEDIA
-5.  Connect WM8904 Driver:DRV_I2S to I2S Driver:DRV_I2S
-6.  If creating Graphics version, connect MaxTouch Controller:DRV_I2C to I2C Driver:DRV_I2C
+2.  Add Audio->Templates->WM8904 Codec
+a.  Yes to all popups.
+3.  Add Libraries->USB->Host Stack->MSD Client Driver
+a.  Yes to all popups.
+4.  Add Harmony->System Services->FILE SYSTEM
+5.  Remove FreeRTOS if Bare Metal or Graphics versions.
+6.  Add Harmony->Audio->Decoder->Audio Decoder Libraries
+7.  Connect MSD Client Driver: DRV_MEDIA to FILE SYSTEM: DRV_MEDIA
+8.  Connect WM8904 Driver:DRV_I2S to I2S Driver:DRV_I2S
 
 After reorganization, your graph would look similar to one of the following project graphs. They specify the drivers, services, and libraries being brought into the project to further extend the applications abilities.
 
 ![](graphics/apb_project_graph.png)
 
-Fig 5 (Project graph of the default E70 bare metal configuration using the SSC)
+Fig 2 (Project graph of the default E70 bare metal configuration using the SSC)
 
 ![](graphics/apb_project_graph2.png)
 
-Fig 6 (Project graph of the E70 FreeRTOS configuration using the SSC)
+Fig 3 (Project graph of the E70 FreeRTOS configuration using the SSC)
 
 ![](graphics/apb_project_graph3.png)
 
-Fig 7 (Project graph of the E70 bare metal configuration using the SSC with the TM4301B graphics display)
-
-![](graphics/apb_project_graph4.png)
-
-Fig 8 (Project graph of the E54 bare metal configuration using the I2S)
+Fig 4 (Project graph of the E54 bare metal configuration using the I2S)
 
 ![](graphics/apb_project_graph5.png)
 
-Fig 9 (Project graph of the E54 FreeRTOS configuration using the I2C)
+Fig 5 (Project graph of the E54 FreeRTOS configuration using the I2S)
 
 ## Tools Setup Differences
 
@@ -113,7 +103,7 @@ For projects using the E70 Xplained Ultra, the SSC interface and the WM8904 as a
 
 In the MPLAB Harmony Configurator: _Tools>Clock_ _Configuration_ dialog:
 
-Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become unchecked.
+Uncheck the Main RC Oscillator and check the "Bypass" for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become unchecked.
 
 ![](graphics/apb_crystal.png)
 
@@ -176,7 +166,7 @@ In addition, make sure the J401 jumper (CLK SELECT) is set for the PA17 pin:
 
 Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, using the SSC PLIB:
 
-Jumper J204, which is next to the SAM E70 Xplained Ultra logo, should be jumpered for LED2.
+Jumper J203, which is next to the SAM E70 Xplained Ultra logo, should be jumpered for LED2.
 
 To connect to the SSC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented away from the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 
@@ -198,7 +188,7 @@ Compile and program the target device. While compiling, select the appropriate M
 2.  Connect power to the board. The system will be in a wait state for USB to be connected (amber LED1 blinking).
 3.  For the E54 board:
 
-• Insert a micro SD card into the slot on the bottom side of the board as shown in Figure 1. The contacts of the micro SD card should be facing the bottom side of the board.
+Insert a micro SD card into the slot on the bottom side of the board as shown in Figure 1. The contacts of the micro SD card should be facing the bottom side of the board.
 
 ![](graphics/apb_sd_card.png)
 
@@ -206,7 +196,7 @@ Compile and program the target device. While compiling, select the appropriate M
 
 3. For the E70 board:
 
-• Connect a USB mass storage device (thumb drive) that contains songs of supported audio format to the USB TARGET connector of the SAM E70 Xplained Ultra board. You will probably need a USB-A Female to Micro-B Male adapter cable to do so. The application currently can only stream WAVE (.wav) format audio files.
+Connect a USB mass storage device (thumb drive) that contains songs of supported audio format to the USB TARGET connector of the SAM E70 Xplained Ultra board. You will probably need a USB-A Female to Micro-B Male adapter cable to do so. The application currently can only stream WAVE (.wav) format audio files.
 
 4. When the device is connected the system will scan for audio files. Once the scanning is complete and at least one file is found (green LED2 on steady), listen to the audio output on headphones connected to the board. Use Switch SW1 as described under Control Description to change the volume or advance to the next track.
 

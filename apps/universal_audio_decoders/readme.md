@@ -10,13 +10,14 @@ The application configures the development board to be in USB Host mode, and sup
 
 Button or touch controls provide typical VCR-like control over the playback, such as play/pause, rewind, and next track.
 
-The application currently supports ADPCM, WAV and MP3 files:
+The application currently supports ADPCM, WAV, MP3 and FLAC files. 
 
 | **Audio Format** | **Decoder Location** | **Sampling Rates (kHz)** | **Description** |
 | --- | --- | --- | --- |
 | ADPCM | audio/decoder | 8, 16 | Adaptive Delta Pulse Code Modulation (ADPCM) is a sub-class of the Microsoft waveform (.wav) file format. In this demonstration, it only decodes ADPCM audio which has a WAV header. The extension name for this format is pcm. |
 | WAVE | audio/decoder | 8 through 96 | The WAVE file format is the native file format used by Microsoft Windows for storing digital audio data. |
 | MP3 | helix_mp3 | 8 through 48 | The MPEG 2.5 Layer 3 is a lossy digital compression formats for audio data. The current version of the MP3 Library is an open-source based on the Helix MP3 decoder used in RealPlayer. The version in MPLAB Harmony is v1.0. |
+| FLAC | xiph_flac | 8 through 48 | FLAC stands for Free Lossless Audio Codec, here lossless, means that audio is compressed in FLAC without any loss in quality. The current version of the FLAC Library is an open-source version based on the Xiph FLAC decoder. The version in MPLAB Harmony is based on version 1.3.3 of the open source XIPH FLAC source. |
 
 ## Architecture
 
@@ -24,7 +25,7 @@ There are two different projects packaged in this application.
 
 PIC32 MZ EF Curiosity 2.0 Project:
 
-One project runs on the PIC32 MZ EF Curiosity 2.0 board, using the PIC32MZ2048EFM144 microcontroller with 2 MB of Flash memory and 512 KB of RAM running at 198 MHz. The PIC32 MZ EF Curiosity 2.0 board includes the following features:
+One project runs on the PIC32 MZ EF Curiosity 2.0 board, using the PIC32MZ2048EFM144 microcontroller with 2 MB of Flash memory and 512 KB of RAM running at 198 MHz. Around 16K of heap is reserved for FLAC enabled projects. The PIC32 MZ EF Curiosity 2.0 board includes the following features:
 
 *   Four push buttons (SW1-SW4, only SW1 is used)
 *   Four LEDs (LED1-LED4, only LED1 is used)
@@ -32,8 +33,8 @@ One project runs on the PIC32 MZ EF Curiosity 2.0 board, using the PIC32MZ2048EF
 
 The PIC32 MZ EF Curiosity 2.0 board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.
 
-The following figure illustrates the application architecture for the PIC32 MZ EF Curiosity 2.0 project. The program takes up to approximately 9% (188 KB) of the PIC32MZ2048EFM144 microcontroller’s program space, and 14% (71 KB) of the RAM. No heap is used.
-
+The following figure illustrates the application architecture for the PIC32 MZ EF Curiosity 2.0 project without a display. The program takes up to approximately 14% (287 KB) of the PIC32MZ2048EFM144 microcontroller's program space, and 52% (273 KB) of the RAM. Around 16 KB of heap is reserved for FLAC based projects.
+ 
 ![](graphics/uad_block_diagram.png)
 
 The I2S (Inter-IC Sound Controller) is used with the AK4954 codec. The AK4954 is configured in slave mode, meaning it receives I<sup>2</sup>S clocks (LRCLK and BCLK) from the PIC32, and the I2S peripheral is configured as a master.
@@ -48,9 +49,11 @@ One project runs on the SAM E70 Xplained Ultra Board, which contains a ATSAME70Q
 
 The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part numbers AC324954.
 
-The following figure illustrates the application architecture for the SAM E70 Xplained Ultra project. The program takes up to approximately 5% (110 KB) of the ATSAME70Q21B microcontroller’s program space, and 19% (71 KB) of the RAM. No heap is used.
+The following figure illustrates the application architecture for the SAM E70 Xplained Ultra project. The program takes up to approximately 5% (110 KB) of the ATSAME70Q21B microcontroller's program space, and 19% (71 KB) of the RAM. Around 16 KB of heap is reserved for FLAC based projects.
 
 ![](graphics/uad_block_diagram3.png)
+
+The SSC (Synchronous Serial Controller) is used with the WM8904 codec, selected by a strapping option on the WM8904 daughterboard. The WM8904 is configured in master mode, meaning it generates the I<sup>2</sup>S clocks (LRCLK and BCLK), and the SSC peripheral is configured as a slave.
 
 ## Demonstration Features
 

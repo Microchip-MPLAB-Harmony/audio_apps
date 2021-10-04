@@ -6,7 +6,7 @@ This readme file provides instructions and information about the MPLAB Harmony 3
 
 The audio encoder (audio_enc) application configures the SAM E70 Xplained Ultra development board to be in USB Host Mass Storage Device (MSD) mode. The application supports read/write from/to the FAT file system. When a mass storage device is connected to the development board via its target USB port, the device is mounted. After the MSD is mounted, the application waits for a short button press (< 1 sec) to start recording data from the mic input on the WM8904 Audio Codec Module. This recording will continue until another short press is detected signaling to stop recording. The recorded data is then PCM encoded and packed into a .wav container file and saved on the MSD. The app then waits to playback the last recorded file or encode another file.
 
-All encodings are at 16K sample rate, stereo, and 16 bit depth. The name of the encoded file will be created in according to the following (enc16K16b<000-999>.wav). A file will not be written over if it already exists. If a file is found to be already on the MSD, the numeric part of the file name will increment once until an unused file name is found. If trying to playback the last encoded file but there has been no file encoded yet, both LEDs will flash and the app will go back to waiting to start encoding a file. If there is a file available to be played, the app will read the .wav file data and write it to the codec for playback.
+All encodings are at 16K sample rate, stereo, and 16 bit depth. The name of the encoded file will be created according to the following (enc16K16b<000-999>.wav). A file will not be written over if it already exists. If a file is found to be already on the MSD, the numeric part of the file name will be incremented once until an unused file name is found. If trying to playback the last encoded file but there has been no file encoded yet, both LEDs will flash and the app will go back to waiting to start encoding a file. If there is a file available to be played, the app will read the .wav file data and write it to the codec for playback.
 
 Command and control to the codec is done through an I2C driver. Data to the codec driver is sent through I2SC via I2S Driver and the output will be audible through the headphone output jack of the WM8904 Audio Codec Module connected to the SAM E70 Xplained Ultra board. The below architecture diagram depicts a representation of the application.
 
@@ -20,7 +20,7 @@ Supported audio files are as represented in the table below.
 
 ## Architecture
 
-The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to setup the USB Host, FS, Codec, and other items in order to read the music files on a USB MSD drive and play it back on the WM8904 Codec Module. It scans WAV (PCM) format files on mounted FAT USB thumb drive and streams audio through a WM8904 Audio Codec to a speaker. In the application, the number of audio output buffers can always set to be more than two to enhance the audio quality. And, the size of input buffer in this application is be chosen to be able to handle all data supported. The following figure shows the architecture for the demonstration.
+The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to setup the USB Host, FS, Codec, and other items in order to read the music files on a USB MSD drive and play it back on the WM8904 Codec Module. It scans WAV (PCM) format files on mounted FAT USB thumb drive and streams audio through a WM8904 Audio Codec to a speaker. In the application, the number of audio output buffers can always set to be more than two to enhance the audio quality. And, the size of input buffer in this application is chosen to be able to handle all data supported. The following figure shows the architecture for the demonstration.
 
 ### Architecture Block Diagram
 
@@ -60,11 +60,11 @@ If using FreeRTOS, your diagram will be slightly different. You will see an addi
 
 ## Tools Setup Differences
 
-The default configuration should be correct for the majority of the app. There following configurations will need to be changed in order for proper operations.
+The default configuration should be correct for the majority of the app. The following configurations will need to be changed for proper operations.
 
 MPLAB Harmony Configurator: Tools->Clock Configuration
 
-Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is check, it will cause the Main Crystal Oscillator to become unchecked.
+Uncheck the Main RC Oscillator and check the "Bypass" for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become unchecked.
 
 ![](graphics/audio_enc_crystal.png)
 
@@ -90,7 +90,7 @@ The Auto Mount feature must be selected in order to expose the media type select
 
 MPLAB Harmony Configurator: I2C Driver
 
-If your are using FreeRTOS, set the driver mode back to Asynchronous.
+If you are using FreeRTOS, set the driver mode back to Asynchronous.
 
 ![](graphics/audio_enc_i2c_sync.png)
 
@@ -182,8 +182,8 @@ LED status indication is shown in the table below.
 | **Operation** | **LED 1 Status** | **LED 2 Status** |
 | --- | --- | --- |
 | No Storage Device Connected | Toggling | Off |
-| Storage Device Connected | Off | Don’t Care |
-| Ready to Encode/Playback | Off | Don’t Care |
+| Storage Device Connected | Off | Don't Care |
+| Ready to Encode/Playback | Off | Don't Care |
 | Not Ready to Encode/Playback | Off | Off |
 | Encoding | Off | Toggling |
 | Playback before Encoded File Created | Toggling | Toggling |
