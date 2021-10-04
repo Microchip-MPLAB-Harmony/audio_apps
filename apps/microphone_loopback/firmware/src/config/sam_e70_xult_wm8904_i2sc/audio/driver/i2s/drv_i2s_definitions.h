@@ -1,5 +1,5 @@
 /*******************************************************************************
-  SPI Driver Definitions Header File
+  I2S Driver Definitions Header File
 
   Company:
     Microchip Technology Inc.
@@ -259,11 +259,10 @@ typedef struct
     /* I2S receive register address used for DMA operation. */
     void                        *i2sReceiveAddress;
 
-    /* Interrupt source ID for DMA RX interrupt. */
-    INT_SOURCE                  interruptRxDMA;
-
+    /************ code specific to SAM E70 ********************/
     /* Interrupt source ID for DMA interrupt. */
     INT_SOURCE                  interruptDMA;
+    /************ code specific to SAM E70 ********************/
 
     /* DMA data length from I2S or SSC PLIB */
     uint8_t                     dmaDataLength;

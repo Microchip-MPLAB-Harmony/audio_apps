@@ -25,6 +25,7 @@
               <logicalFolder name="f1" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s.h</itemPath>
                 <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s_definitions.h</itemPath>
+                <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s_local.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
@@ -154,6 +155,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/acc.h</itemPath>
@@ -212,6 +214,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
@@ -272,7 +275,6 @@
               </logicalFolder>
               <logicalFolder name="f1" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/audio/driver/i2s/src/drv_i2s.c</itemPath>
-                <itemPath>../src/config/sam_e70_xult_wm8904_i2sc/audio/driver/i2s/src/drv_i2s_local.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
@@ -389,8 +391,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
         <pack name="SAME70_DFP" vendor="Microchip" version="4.5.86"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

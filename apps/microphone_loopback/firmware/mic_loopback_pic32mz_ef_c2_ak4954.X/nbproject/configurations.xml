@@ -305,7 +305,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/app_config/non_gui/48K;../src/config/pic32mz_ef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/app_config/non_gui/48K;../src/config/pic32mz_ef_c2_ak4954"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -403,7 +403,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/config/pic32mz_ef_c2_ak4954"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

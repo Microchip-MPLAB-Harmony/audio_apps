@@ -6,10 +6,11 @@ processor: ATSAMV71Q21B
 projectName: ''
 settings:
   PackageFilter: aerospace;audio;audio,currentdecoderdev.100120;audio-previous decoder
-    work;audio-with release notes;audio.030921;audio.051121;audio.052721;audio.100920;audio.afternewswitches;audio.b4newswitches;audio.beforeregen.030921;audio.currentdevwnewswitches;audio.fromrepo.081320;audio.latestfromrepo,newswitches;audio.latestfromrepo,oldswitches;audio.newdoc;audio_apps;audio_apps
-    - Copy;audio_apps-old;aws_cloud;bootloader;bsp;bt;bt-last with L11 apps!!;bt.030420.withBM83stuff;bt.061620;bt.081221;bt.current;bt.newdoc;bt_apps;classb_sam_e5x_d5x;core;core_apps_sam_c20_c21;core_apps_sam_d5x_e5x;core_apps_sam_g55;crypto;cryptoauthlib;csp;csp_apps_sam_c20_c21;csp_apps_sam_d5x_e5x;csp_apps_sam_g55;diag_periph_c20_c21_src;diag_poc;gfx;gfx_apps;net;periph_diagnostic;quick_docs;reference_apps;touch;usb;wireless
+    work;audio-with release notes;audio.030921;audio.051121;audio.052721;audio.080921;audio.100920;audio.afternewswitches;audio.b4newswitches;audio.beforeregen.030921;audio.currentdevwnewswitches;audio.fromrepo.081320;audio.latestfromrepo,newswitches;audio.latestfromrepo,oldswitches;audio.newdoc;audio.newdoc
+    - Copy;audio_apps;audio_apps-b4newswitches;audio_apps.081721;audio_apps.091721;audio_apps.b4gfxchgs.081821;audio_apps.b4legato-WITHEXPORTS;audio_apps.badgfx;aws_cloud;bootloader;bsp;bt;bt-last
+    with L11 apps!!;bt.030420.withBM83stuff;bt.061620;bt.081221;bt.current;bt.newdoc;bt_apps;classb_sam_e5x_d5x;core;core_apps_sam_c20_c21;core_apps_sam_d5x_e5x;core_apps_sam_g55;crypto;cryptoauthlib;csp;csp_apps_sam_c20_c21;csp_apps_sam_d5x_e5x;csp_apps_sam_g55;dev_packs;diag_periph_c20_c21_src;diag_periph_c20_c21_src.081221;diag_periph_c20_c21_src.082021;diag_periph_c20_c21_src.090821;diag_poc;gfx;gfx_apps;gfx_apps_pic32mz_ef;gfx_apps_sam_e70_s70_v70_v71;gfx_aria;net;periph_diagnostic;quick_docs;reference_apps;touch;usb;wireless;xiph_flac-bb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
-  MERGE_STRATEGY: ALL
-  DFPPath: .\dev_packs\Microchip\SAMV71_DFP\4.5.82\samv71b\atdf\ATSAMV71Q21B.atdf
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMV71_DFP\4.6.90\samv71b\atdf\ATSAMV71Q21B.atdf

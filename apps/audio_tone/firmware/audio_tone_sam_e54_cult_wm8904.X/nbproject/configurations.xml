@@ -21,6 +21,7 @@
               <logicalFolder name="f1" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/sam_e54_cult_wm8904/audio/driver/i2s/drv_i2s.h</itemPath>
                 <itemPath>../src/config/sam_e54_cult_wm8904/audio/driver/i2s/drv_i2s_definitions.h</itemPath>
+                <itemPath>../src/config/sam_e54_cult_wm8904/audio/driver/i2s/drv_i2s_local.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
@@ -154,6 +155,7 @@
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ac.h</itemPath>
@@ -215,6 +217,7 @@
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/trng.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/usb.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
@@ -267,7 +270,6 @@
               </logicalFolder>
               <logicalFolder name="f1" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/sam_e54_cult_wm8904/audio/driver/i2s/src/drv_i2s.c</itemPath>
-                <itemPath>../src/config/sam_e54_cult_wm8904/audio/driver/i2s/src/drv_i2s_local.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
@@ -390,8 +392,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
         <pack name="SAME54_DFP" vendor="Microchip" version="3.5.87"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

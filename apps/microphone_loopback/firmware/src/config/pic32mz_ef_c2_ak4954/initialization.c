@@ -222,8 +222,10 @@ DRV_I2S_INIT drvI2S0InitData =
     .i2sTransmitAddress = (void *)&(SPI2BUF),
     .i2sReceiveAddress = (void *)&(SPI2BUF),
 
+    /************ code specific to PIC32M. ********************/
     .interruptTxDMA = _DMA0_VECTOR,
     .interruptRxDMA = _DMA1_VECTOR,
+    /************ end of PIC32M. specific code ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
@@ -337,7 +339,6 @@ void SYS_Initialize ( void* data )
 
   
     CLK_Initialize();
-    
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 3;

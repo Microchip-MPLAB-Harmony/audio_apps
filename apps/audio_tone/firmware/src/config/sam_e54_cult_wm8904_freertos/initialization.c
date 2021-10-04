@@ -176,9 +176,11 @@ DRV_I2S_INIT drvI2S0InitData =
     .dmaChannelReceive  = DRV_I2S_RCV_DMA_CH_IDX0,
     .i2sTransmitAddress = (void *)&(I2S_REGS->I2S_TXDATA),
     .i2sReceiveAddress = (void *)&(I2S_REGS->I2S_RXDATA),
-        .interruptDMA = DMAC_0_IRQn,
-        .interruptRxDMA = DMAC_1_IRQn,
 
+    /************ code specific to SAM E54 ********************/
+    .interruptTxDMA = DMAC_0_IRQn,
+    .interruptTxDMA = DMAC_1_IRQn,
+    /************ end of E54 specific code ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
@@ -189,7 +191,7 @@ const DRV_WM8904_INIT drvwm8904Codec0InitData =
 {
     .i2sDriverModuleIndex = DRV_WM8904_I2S_DRIVER_MODULE_INDEX_IDX0,
     .i2cDriverModuleIndex = DRV_WM8904_I2C_DRIVER_MODULE_INDEX_IDX0,
-    .masterMode = DRV_WM8904_MASTER_MODE,
+    .masterMode = DRV_WM8904_I2S_MASTER_MODE,
     .samplingRate = DRV_WM8904_AUDIO_SAMPLING_RATE,
     .volume = DRV_WM8904_VOLUME,
     .audioDataFormat = DRV_WM8904_AUDIO_DATA_FORMAT_MACRO,

@@ -326,7 +326,7 @@ typedef void ( *DRV_I2S_BUFFER_EVENT_HANDLER )( DRV_I2S_BUFFER_EVENT event, DRV_
 
     SYS_MODULE_OBJ              objectHandle;
 
-    I2S_PLIB_API drvUsart0PlibAPI = {
+    I2S_PLIB_API drvXXXX0PlibAPI = {
         {
             .readCallbackRegister = I2S1_ReadCallbackRegister,
             .read = I2S1_Read,
@@ -340,7 +340,7 @@ typedef void ( *DRV_I2S_BUFFER_EVENT_HANDLER )( DRV_I2S_BUFFER_EVENT event, DRV_
         }
     };
 
-    DRV_I2S_INIT drvUsart0InitData =
+    DRV_I2S_INIT drvXXXX0InitData =
     {
         .i2sPlib = &drvUsart0PlibAPI,
         .interruptI2S = I2S1_IRQn,
@@ -350,7 +350,8 @@ typedef void ( *DRV_I2S_BUFFER_EVENT_HANDLER )( DRV_I2S_BUFFER_EVENT event, DRV_
         .dmaChannelReceive = SYS_DMA_CHANNEL_NONE,
         .i2sTransmitAddress = I2S1_TRANSMIT_ADDRESS,
         .i2sReceiveAddress = I2S1_RECEIVE_ADDRESS,
-        .interruptDMA = XDMAC_IRQn
+        .interruptTxDMA = DMAC_0_IRQn
+        .interruptRxDMA = DMAC_1_IRQn
     };
 
     objectHandle = DRV_I2S_Initialize(DRV_I2S_INDEX_1,
@@ -1361,6 +1362,7 @@ bool DRV_I2S_ReadBuffer( const DRV_HANDLE handle, void * buffer, const size_t si
 bool DRV_I2S_LRCLK_Sync (const DRV_HANDLE handle, 
                          const uint32_t sample_rate);
 
+
 /************************ Start of code specific to SAME70 ********************/
 /* Function:
     bool DRV_I2S_ProgrammableClockSet(DRV_HANDLE handle, uint8_t pClkNum, uint8_t div2);
@@ -1442,6 +1444,7 @@ void DRV_I2S_StartReadLinkedListTransfer(DRV_HANDLE handle, XDMAC_DESCRIPTOR_VIE
     DRV_I2S_LL_CALLBACK callBack, bool blockInt);
 void DRV_I2S_ReadNextLinkedListTransfer(DRV_HANDLE handle, XDMAC_DESCRIPTOR_VIEW_1* pLinkedListDesc,
     uint16_t currDescrip, uint16_t nextDescrip, uint16_t nextNextDescrip, uint8_t* buffer, uint32_t bufferSize);
+/******************* End of PIC32M* specific code ***********************/
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
