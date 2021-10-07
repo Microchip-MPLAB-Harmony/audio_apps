@@ -295,9 +295,9 @@ typedef struct
     /* This is the I2S receive register address. Used for DMA operation. */
     void * rxAddress;
     
-/************************ Start of code specific to ATSAM ********************/
+    /************ code specific to SAM E70 ********************/
     INT_SOURCE interruptDMA;
-/**************** End of SAM E70 specific code ********************/
+    /************ end of E70 specific code ********************/
 
     /* Size of DMA channel in I2S or SSC PLIB */
     uint8_t dmaDataLength;

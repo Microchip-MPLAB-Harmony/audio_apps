@@ -5,9 +5,9 @@ frameworkPath: ../../..
 processor: ATSAME54P20A
 projectName: ''
 settings:
-  PackageFilter: audio;audio_apps;audio_withfix;bsp;core;csp;gfx;quick_docs;touch;usb;xiph_flac_expected
+  PackageFilter: audio;audio_apps;audio_original;bsp;core;csp;dev_packs;gfx;quick_docs;touch;usb;usb_older
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
-  MERGE_STRATEGY: OVERWRITE
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.5.87\atdf\ATSAME54P20A.atdf
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf

@@ -105,10 +105,12 @@ static bool _DRV_I2S_ResourceLock(DRV_I2S_OBJ * object)
 
     /* We will disable I2S and/or DMA interrupt so that the driver resource
      * is not updated asynchronously. */
+    /************ code specific to SAM E70 ********************/
     if ((SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel) || (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
     {
         SYS_INT_SourceDisable(dObj->interruptDMA);
     }
+    /************ end of E70 specific code ********************/
     return true;
 }
 
@@ -117,10 +119,12 @@ static bool _DRV_I2S_ResourceUnlock(DRV_I2S_OBJ * object)
     dObj = object;
 
     /* Restore the interrupt and release mutex. */
+    /************ code specific to SAM E70 ********************/
     if( (SYS_DMA_CHANNEL_NONE != dObj->txDMAChannel) || (SYS_DMA_CHANNEL_NONE != dObj->rxDMAChannel))
     {
         SYS_INT_SourceEnable(dObj->interruptDMA);
     }
+    /************ end of E70 specific code ********************/
 
     OSAL_MUTEX_Unlock(&(dObj->mutexDriverInstance));
 
@@ -500,7 +504,9 @@ SYS_MODULE_OBJ DRV_I2S_Initialize( const SYS_MODULE_INDEX drvIndex, const SYS_MO
     dObj->rxDMAChannel          = i2sInit->dmaChannelReceive;
     dObj->txAddress             = i2sInit->i2sTransmitAddress;
     dObj->rxAddress             = i2sInit->i2sReceiveAddress;
+    /************ code specific to SAM E70 ********************/
     dObj->interruptDMA          = i2sInit->interruptDMA;
+    /************ end of E70 specific code ********************/
     dObj->dmaDataLength         = i2sInit->dmaDataLength;
     dObj->process               = DRV_I2S_TASK_PROCESS_NONE;
 

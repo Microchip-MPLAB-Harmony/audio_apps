@@ -76,13 +76,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5FF09D137B03049C8AF87D7159F1BBB1
-- generatedChecksum: A3E17273BDAD8A51FDF695EBF9AD9A77
+- generatedChecksum: 65F5B99DAB8ECAC3CB0624E73CA6E0A0
   logicalPath: config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access
   name: diskio.c
   physicalPath: system/fs/fat_fs/hardware_access
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A3E17273BDAD8A51FDF695EBF9AD9A77
+  userChecksum: 65F5B99DAB8ECAC3CB0624E73CA6E0A0
 - generatedChecksum: 41B2A093BA970794FC2DF25AD9693F35
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/mp3
   name: dqchan.c
@@ -90,13 +90,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 41B2A093BA970794FC2DF25AD9693F35
-- generatedChecksum: 8A4CDDAC2BC85DFA1471AA06A9EB2D03
+- generatedChecksum: 67D4726276C0BD7112B79CD9049F6113
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954.c
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8A4CDDAC2BC85DFA1471AA06A9EB2D03
+  userChecksum: 67D4726276C0BD7112B79CD9049F6113
 - generatedChecksum: D7CB7F305208715624357B71229B20B4
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954_local.h
@@ -118,20 +118,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 37780F17759DED907A0F36E28BFB3136
-- generatedChecksum: AF0B16E0482BD623C201B23916653971
+- generatedChecksum: 0F1542175BCAE0B6A2B4178F88DB9CDF
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/i2s
   name: drv_i2s.c
   physicalPath: audio/driver/i2s/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AF0B16E0482BD623C201B23916653971
-- generatedChecksum: B4725BD9958F563F4B5B26712B1E69CE
-  logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/i2s
-  name: drv_i2s_local.h
-  physicalPath: audio/driver/i2s/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: B4725BD9958F563F4B5B26712B1E69CE
+  userChecksum: 0F1542175BCAE0B6A2B4178F88DB9CDF
 - generatedChecksum: 8048089AA9DA0663AE185F78DF90D645
   logicalPath: config/pic32mz_ef_c2_ak4954/driver/usb/usbhs/src
   name: drv_usbhs.c
@@ -174,13 +167,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D5743B7EA24C94CB211F602932EC14B7
-- generatedChecksum: 162E4B3D94429F4F5B3F7BB50F80D6F6
+- generatedChecksum: 2F0906929B5B29633AD13220915DD4E1
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: flac_dec.c
   physicalPath: audio/decoder/audio_decoders/flac
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 162E4B3D94429F4F5B3F7BB50F80D6F6
+  userChecksum: 2F0906929B5B29633AD13220915DD4E1
 - generatedChecksum: 61206EA16DEF0796956C5A809A1A0ADC
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: float.c
@@ -223,13 +216,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C63762531FCEB956E9AF25F7075340BA
-- generatedChecksum: 1BD281EFDD19D2C7CEB9D04EC3C55225
+- generatedChecksum: 5F06AFE050CDE6EFC81F58203D6FD1C2
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1BD281EFDD19D2C7CEB9D04EC3C55225
+  userChecksum: 5F06AFE050CDE6EFC81F58203D6FD1C2
 - generatedChecksum: 343775AA2209F3D52FB9EAF2622079FF
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: interrupts.c
@@ -307,13 +300,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-- generatedChecksum: 2C3DC1F531979548291A203580C23D4F
+- generatedChecksum: D232B4D67A33D833560D6E69B5B940DE
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2C3DC1F531979548291A203580C23D4F
+  userChecksum: D232B4D67A33D833560D6E69B5B940DE
 - generatedChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/coretimer
   name: plib_coretimer.c
@@ -321,13 +314,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
-- generatedChecksum: 706CF9D9EFA2BCAE46AA1E83688FE018
+- generatedChecksum: 64A4444EE249CBAD5824153361D7BBEB
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/dmac
   name: plib_dmac.c
   physicalPath: peripheral/dmac
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 706CF9D9EFA2BCAE46AA1E83688FE018
+  userChecksum: 64A4444EE249CBAD5824153361D7BBEB
 - generatedChecksum: E405F8414F4F36A01CF73AEAAB7BAD0D
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/evic
   name: plib_evic.c
@@ -405,20 +398,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2E02308556447B0510575953A9E9DF6E
-- generatedChecksum: 080787C129FAB1FAECC1C54746696717
+- generatedChecksum: 9C4B71FF77DB16BC8FF11B79F8FB7EB1
   logicalPath: config/pic32mz_ef_c2_ak4954/system/fs
   name: sys_fs.c
   physicalPath: system/fs/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 080787C129FAB1FAECC1C54746696717
-- generatedChecksum: 960D10B91B76FD2F25499454166A3C9A
+  userChecksum: 9C4B71FF77DB16BC8FF11B79F8FB7EB1
+- generatedChecksum: 1F79CD9E378D98E657FCEB0552B2B659
   logicalPath: config/pic32mz_ef_c2_ak4954/system/fs
   name: sys_fs_fat_interface.c
   physicalPath: system/fs/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 960D10B91B76FD2F25499454166A3C9A
+  userChecksum: 1F79CD9E378D98E657FCEB0552B2B659
 - generatedChecksum: 8A001811B92463BDE7B3A13B4A9E4BCE
   logicalPath: config/pic32mz_ef_c2_ak4954/system/fs
   name: sys_fs_media_manager.c
@@ -489,13 +482,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: EBB30168B5E2BD8B62E175514E856C9B
-- generatedChecksum: CEFDD97DC8260B2663481E2687F06ADC
+- generatedChecksum: 8AD813A5BFA202A445D66C815A8FDA5F
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/wav
   name: wav_dec.c
   physicalPath: audio/decoder/audio_decoders/wav
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CEFDD97DC8260B2663481E2687F06ADC
+  userChecksum: 8AD813A5BFA202A445D66C815A8FDA5F
 - generatedChecksum: AEAD678D52A900BF13F45EFDA811BC10
   logicalPath: config/pic32mz_ef_c2_ak4954/stdio
   name: xc32_monitor.c
@@ -587,13 +580,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: DB7210313EFD90C58D7EA20C757E5890
-- generatedChecksum: 20B17BDD273783FD1946B186A51DCCB3
+- generatedChecksum: 6F3DE5E7F6966B8B448F198BD598E04B
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 20B17BDD273783FD1946B186A51DCCB3
+  userChecksum: 6F3DE5E7F6966B8B448F198BD598E04B
 - generatedChecksum: 4A48DEA406B912ECC13B3E38576F42A2
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: cpu.h
@@ -650,13 +643,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CC7DFCC51CD25171A3E400E18969354F
-- generatedChecksum: EAD815C10EEA424B3FB22EA1BE3EB29D
+- generatedChecksum: C9E105A6A746DB1FCBFAC0F99F47897F
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: HEADER
-  userChecksum: EAD815C10EEA424B3FB22EA1BE3EB29D
+  userChecksum: C9E105A6A746DB1FCBFAC0F99F47897F
 - generatedChecksum: 3C6689B8800C6234028EC2FBE82E25CF
   logicalPath: config/pic32mz_ef_c2_ak4954/driver/i2c
   name: drv_i2c.h
@@ -671,20 +664,27 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5FA3FDC136CCB667D6952682F7664DE1
-- generatedChecksum: 286480D625E01930A6754127AA6F0360
+- generatedChecksum: B8FEE49EDD67CB6F40EABF13A6CBBD3C
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/i2s
   name: drv_i2s.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: 286480D625E01930A6754127AA6F0360
-- generatedChecksum: AE82E3B652F0386ADFA939DDC3B8F3FA
+  userChecksum: B8FEE49EDD67CB6F40EABF13A6CBBD3C
+- generatedChecksum: F5B0969A8808C5D4BC4BBAAC876CCAC0
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/i2s
   name: drv_i2s_definitions.h
   physicalPath: audio/driver/i2s
   security: NON_SECURE
   type: HEADER
-  userChecksum: AE82E3B652F0386ADFA939DDC3B8F3FA
+  userChecksum: F5B0969A8808C5D4BC4BBAAC876CCAC0
+- generatedChecksum: E1E336312285ED9B1FD81CD9935B7CD5
+  logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/i2s
+  name: drv_i2s_local.h
+  physicalPath: audio/driver/i2s
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: E1E336312285ED9B1FD81CD9935B7CD5
 - generatedChecksum: DF147276AE56CA76E3E9BEB8447620AB
   logicalPath: config/pic32mz_ef_c2_ak4954/driver/usb
   name: drv_usb.h
@@ -762,13 +762,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 91CF26DDBE0CE901C0AE2A12C1FAFC84
-- generatedChecksum: 3619B315443BBFAC8F517B2EFA4F3F55
+- generatedChecksum: 2FDAA605D9A5B47048DF5CF4439860F6
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: flac_dec.h
   physicalPath: audio/decoder/audio_decoders/flac
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3619B315443BBFAC8F517B2EFA4F3F55
+  userChecksum: 2FDAA605D9A5B47048DF5CF4439860F6
 - generatedChecksum: E196A30D8C15BD93B692995F47E30CD1
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: float.h
@@ -944,13 +944,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 21233A0A53C6AC48E24C8A7C17A33D00
-- generatedChecksum: D4A1E2329C517DB8AB49B9143079554F
+- generatedChecksum: AC36F429D7162D7D1A68B9955ED194A3
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/dmac
   name: plib_dmac.h
   physicalPath: peripheral/dmac
   security: NON_SECURE
   type: HEADER
-  userChecksum: D4A1E2329C517DB8AB49B9143079554F
+  userChecksum: AC36F429D7162D7D1A68B9955ED194A3
 - generatedChecksum: 815CCB981B6CB758464D89480121DC08
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/evic
   name: plib_evic.h
@@ -958,13 +958,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 815CCB981B6CB758464D89480121DC08
-- generatedChecksum: 1DF8635F0AD4A07FF9771F47FE19C1E0
+- generatedChecksum: E629AD60860C82302F3E12AB428259E4
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/gpio
   name: plib_gpio.h
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1DF8635F0AD4A07FF9771F47FE19C1E0
+  userChecksum: E629AD60860C82302F3E12AB428259E4
 - generatedChecksum: D6ECFE797E49453D076C8DF185763EB9
   logicalPath: config/pic32mz_ef_c2_ak4954/peripheral/i2c/master
   name: plib_i2c1_master.h
@@ -1049,13 +1049,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6972608768DDBE6E37A2D81B83DF490B
-- generatedChecksum: 4A7FFAD7ACF8378CEC16FBF2BC2368BE
+- generatedChecksum: 45C173FBC598D95FA76B147486A15177
   logicalPath: config/pic32mz_ef_c2_ak4954/system/dma
   name: sys_dma.h
   physicalPath: system/dma
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4A7FFAD7ACF8378CEC16FBF2BC2368BE
+  userChecksum: 45C173FBC598D95FA76B147486A15177
 - generatedChecksum: FF2FADFBBFB94FF4B4A57085D719E7C8
   logicalPath: config/pic32mz_ef_c2_ak4954/system/dma
   name: sys_dma_mapping.h
@@ -1063,13 +1063,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: FF2FADFBBFB94FF4B4A57085D719E7C8
-- generatedChecksum: DDC1AA937FC332670372DC2E7B5CA1F2
+- generatedChecksum: 4A8DA7BC60B438CE161462CB299CCC9D
   logicalPath: config/pic32mz_ef_c2_ak4954/system/fs
   name: sys_fs.h
   physicalPath: system/fs
   security: NON_SECURE
   type: HEADER
-  userChecksum: DDC1AA937FC332670372DC2E7B5CA1F2
+  userChecksum: 4A8DA7BC60B438CE161462CB299CCC9D
 - generatedChecksum: 0D9FE9035E3AA8082C5657240106F2DC
   logicalPath: config/pic32mz_ef_c2_ak4954/system/fs
   name: sys_fs_fat_interface.h
@@ -1175,13 +1175,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 1C75A8A6B60598A2FD0D533F57839B72
-- generatedChecksum: FA212DEAE39D4E86EF4E6CB440610FE9
+- generatedChecksum: CAC44960D20AEC03CF4B325A1CD2877C
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: FA212DEAE39D4E86EF4E6CB440610FE9
+  userChecksum: CAC44960D20AEC03CF4B325A1CD2877C
 - generatedChecksum: 39659CDE2CC726544BD68544FB7EF4B2
   logicalPath: config/pic32mz_ef_c2_ak4954/usb
   name: usb_chapter_9.h
@@ -1462,13 +1462,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 82D1D77C61F1A6EFF3AC53FFD9696B3B
-- generatedChecksum: 93C297AB74B9FD0E7A2CE9F6307E1FD1
+- generatedChecksum: D6F46014D69D09FDB8DCE0307E99162F
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/wav
   name: wav_dec.h
   physicalPath: audio/decoder/audio_decoders/wav
   security: NON_SECURE
   type: HEADER
-  userChecksum: 93C297AB74B9FD0E7A2CE9F6307E1FD1
+  userChecksum: D6F46014D69D09FDB8DCE0307E99162F
 - generatedChecksum: 07A482DAB7473FC475EA656561967B15
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: p32MZ2048EFM144.ld
@@ -1484,7 +1484,7 @@ settings:
   delimiter: ;
   key: extra-include-directories
   security: NON_SECURE
-  value: ../src;../src/config/pic32mz_ef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;
+  value: ../src;../src/config/pic32mz_ef_c2_ak4954;
 - append: true
   category: C32
   delimiter: ;
@@ -1520,7 +1520,7 @@ settings:
   delimiter: ;
   key: extra-include-directories
   security: NON_SECURE
-  value: ../src;../src/config/pic32mz_ef_c2_ak4954;../src/packs/PIC32MZ2048EFM144_DFP;
+  value: ../src;../src/config/pic32mz_ef_c2_ak4954;
 - append: true
   category: C32CPP
   delimiter: ;

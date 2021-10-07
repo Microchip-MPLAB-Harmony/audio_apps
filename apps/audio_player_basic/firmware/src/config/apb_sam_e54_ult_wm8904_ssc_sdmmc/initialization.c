@@ -177,7 +177,10 @@ DRV_I2S_INIT drvI2S0InitData =
     .i2sTransmitAddress = (void *)&(I2S_REGS->I2S_TXDATA),
     .i2sReceiveAddress = (void *)&(I2S_REGS->I2S_RXDATA),
 
-    //    .interruptDMA = DMAC_IRQn, /* Need Fix from https://jira.microchip.com/browse/MH3-59740 */
+    /************ code specific to SAM E54 ********************/
+    .interruptTxDMA = DMAC_0_IRQn,
+    .interruptTxDMA = DMAC_1_IRQn,
+    /************ end of E54 specific code ********************/
     .dmaDataLength = DRV_I2S_DATA_LENGTH_IDX0,
 };
 
