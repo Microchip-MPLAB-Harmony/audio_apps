@@ -97,6 +97,8 @@ void _APP_Tasks(  void *pvParameters  )
 {   
     while(1)
     {
+	    // KEEP the below line
+        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
         APP_Tasks();
     }
 }
@@ -132,7 +134,8 @@ void SYS_Tasks ( void )
 
 
     /* Maintain Device Drivers */
-        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
+	// Keep the below line commented out
+    //    DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
 
 
 
@@ -161,7 +164,7 @@ void SYS_Tasks ( void )
         /* Create OS Thread for APP_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_Tasks,
                 "APP_Tasks",
-                1024,
+                1024*3,
                 NULL,
                 1,
                 &xAPP_Tasks);
