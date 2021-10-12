@@ -98,15 +98,15 @@ extern "C"
 
 #if !defined(ARM_MATH_AUTOVECTORIZE)
 
-//KEEP THIS - doesn't seem to be defined. 
-#define __ARM_FEATURE_MVE 0
-#if __ARM_FEATURE_MVE
+//KEEP THIS - Core Problem with Helium Instructions
+#if defined(__ARM_FEATURE_MVE)
   #if !defined(ARM_MATH_MVEI)
     #define ARM_MATH_MVEI
   #endif
 #endif
 
-#if (__ARM_FEATURE_MVE & 2)
+//KEEP THIS - Core Problem with Helium Instructions
+#if defined(__ARM_FEATURE_MVE) && (__ARM_FEATURE_MVE == 2)
   #if !defined(ARM_MATH_MVEF)
     #define ARM_MATH_MVEF
   #endif
@@ -247,7 +247,8 @@ extern "C"
 }
 #endif
 
-#if __ARM_FEATURE_MVE
+//KEEP THIS - problems with Helium instructions set feature
+#if defined(__ARM_FEATURE_MVE)
 #include <arm_mve.h>
 #endif
 

@@ -117,9 +117,9 @@ void SYS_Tasks ( void )
 {
     /* Maintain system services */
     
-
+    //KEEP THIS- Maintain in _APP_Tasks process
     /* Maintain Device Drivers */
-        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
+        //DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
 
 
 

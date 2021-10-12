@@ -594,13 +594,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: C4178322D785B8C1C9E846016261B93A
-- generatedChecksum: AFFBDA9694EE8BC59280187BB4E41DFD
+- generatedChecksum: 3D0B792C440307BCFAE995B411C13726
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/math/libq_c
   name: fract_fixedpoint.h
   physicalPath: audio/math/libq_c/include
   security: NON_SECURE
   type: HEADER
-  userChecksum: AFFBDA9694EE8BC59280187BB4E41DFD
+  userChecksum: 3D0B792C440307BCFAE995B411C13726
 - generatedChecksum: 4CF4A86296482D5331331BA301C20BB2
   logicalPath: config/pic32mz_ef_c2_ak4954
   name: interrupts.h

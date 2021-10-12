@@ -4,7 +4,7 @@
 
 
 project: usb_speaker
-creation_date: 2021-09-23T11:55:03.480-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-10-11T19:00:08.748-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.8.0
@@ -16,8 +16,8 @@ modules:
     - {name: "core", version: "v3.10.0"}
     - {name: "csp", version: "v3.10.0"}
     - {name: "dev_packs", version: "v3.10.0"}
-    - {name: "usb", version: "v3.8.0"}
+    - {name: "usb", version: "v3.8.1"}
     - {name: "audio", version: "unknown"}
-    - {name: "bsp", version: "unknown"}
+    - {name: "bsp", version: "v3.10.0"}
     - {name: "CMSIS-FreeRTOS", version: "unknown"}
 

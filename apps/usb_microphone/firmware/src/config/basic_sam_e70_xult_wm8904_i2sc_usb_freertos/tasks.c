@@ -96,6 +96,7 @@ void _APP_Tasks(  void *pvParameters  )
 
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: System "Tasks" Routine
@@ -113,8 +114,9 @@ void SYS_Tasks ( void )
 {
     /* Maintain system services */
     
-
-    //DO NOT COPY DRV_WM8904_Tasks function here
+//KEEP THIS -- Moved to TaskHandle_t
+    /* Maintain Device Drivers */
+    //DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
 
 
 
@@ -150,6 +152,7 @@ void SYS_Tasks ( void )
 
 
 
+
     /* Start RTOS Scheduler. */
     
      /**********************************************************************
@@ -158,7 +161,6 @@ void SYS_Tasks ( void )
     vTaskStartScheduler(); /* This function never returns. */
 
 }
-
 
 /*******************************************************************************
  End of File

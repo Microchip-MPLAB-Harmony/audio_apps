@@ -118,8 +118,9 @@ void SYS_Tasks ( void )
     /* Maintain system services */
     
 
+//KEEP THIS - maintain in APP_Tasks process
     /* Maintain Device Drivers */
-        DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
+    //DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);
 
 
 
@@ -155,6 +156,7 @@ void SYS_Tasks ( void )
 
 
 
+
     /* Start RTOS Scheduler. */
     
      /**********************************************************************
@@ -163,7 +165,6 @@ void SYS_Tasks ( void )
     vTaskStartScheduler(); /* This function never returns. */
 
 }
-
 
 /*******************************************************************************
  End of File
