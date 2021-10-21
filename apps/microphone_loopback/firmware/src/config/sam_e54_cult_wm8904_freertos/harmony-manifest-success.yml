@@ -4,7 +4,7 @@
 
 
 project: microphone_loopback
-creation_date: 2021-10-03T15:45:00.835-07:00[GMT-07:00]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-10-20T11:36:39.821-07:00[GMT-07:00]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.8.1
@@ -16,7 +16,7 @@ modules:
     - {name: "csp", version: "v3.10.0"}
     - {name: "core", version: "v3.10.0"}
     - {name: "dev_packs", version: "v3.10.0"}
-    - {name: "audio", version: "unknown"}
+    - {name: "audio", version: "v3.6.0-rc.1"}
     - {name: "bsp", version: "v3.10.0"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.1"}
 

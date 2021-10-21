@@ -865,6 +865,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
         <property key="memories.rww" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/audio_tone/firmware/audio_tone_pic32mz_ef_c2_ak4954.X/debug/pic32mz_ef_c2_ak4954/audio_tone_pic32mz_ef_c2_ak4954_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

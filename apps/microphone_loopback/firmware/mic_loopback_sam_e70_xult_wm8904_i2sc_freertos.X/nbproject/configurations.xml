@@ -451,8 +451,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.5.86"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -671,8 +671,6 @@
         <property key="memories.programmemory.ranges" value="0x400000-0x5fffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/microchip/harmony/h3/audio_apps/apps/microphone_loopback/firmware/mic_loopback_sam_e70_xult_wm8904_i2sc_freertos.X/debug/sam_e70_xult_wm8904_i2sc_freertos/mic_loopback_sam_e70_xult_wm8904_i2sc_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
