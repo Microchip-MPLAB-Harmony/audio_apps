@@ -44,11 +44,11 @@
 // *****************************************************************************
 // *****************************************************************************
 #include "configuration.h"
-//#include "definitions.h"
-#include "device.h"
 //KEEP THIS - removed from definitions.h so definitions can be used in app.h
 //            without having to duplicate all the definitions.h definitions in 
 //            app.h .
+//#include "definitions.h"
+#include "device.h"
 #include "app.h"
 
 
@@ -353,7 +353,6 @@ void SYS_Initialize ( void* data )
 
   
     CLK_Initialize();
-    
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 3;

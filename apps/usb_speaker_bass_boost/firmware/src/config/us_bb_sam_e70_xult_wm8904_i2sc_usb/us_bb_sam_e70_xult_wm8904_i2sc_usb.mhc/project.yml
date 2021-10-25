@@ -355,7 +355,7 @@ files:
   physicalPath: ../../packs/CMSIS/CMSIS/DSP/Include
   security: NON_SECURE
   type: HEADER
-  userChecksum: 322B4AC4D18E6D11627B37770874CC0A
+  userChecksum: 3DBB78DBEFE5F0617EDD7AD1ED166163
 - generatedChecksum: ACA6F94C091CCE530218E71E10BB3F58
   logicalPath: packs/CMSIS/CMSIS/DSP/Include
   name: arm_math_types_f16.h
