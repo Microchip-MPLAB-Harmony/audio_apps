@@ -201,7 +201,7 @@ static bool mpInterfaceChanged = false;
 
 uint16_t volumeLevels[VOLUME_STEPS] =
 {
-    0 /* off */, 64, 128, 255
+    0 /* off */, 128, 200 ,240
 };
 
 //NOTE:  Mute/Max gain levels
@@ -946,7 +946,7 @@ void APP_Tasks()
     }
     appData.lastState = appData.state;
 
-    //_APP_Button_Tasks();
+    _APP_Button_Tasks();
     _APP_LED_Tasks();
 
     switch ( appData.state )
@@ -1449,6 +1449,9 @@ void APP_Tasks()
             {
                 if (appWRQueue.usbInitialBufsReady == true)
                 {
+#ifndef ONE_LED_VERSION
+                    appData.led2State = LED_ON;
+#endif
 
                     errState = false;
                     for (i = 0;
@@ -2423,14 +2426,22 @@ void _APP_Button_Tasks()
                 
                 if (0==appData.volume)
                 {
+#ifdef ONE_LED_VERSION
                     appData.ledState = LED_MUTE_BLINK;
+#else           
+                    appData.led2State = LED_MUTE_BLINK;
+#endif
                     appData.muteEn = true;
                     SYS_MESSAGE("[MOn]\r\n");
                     DRV_CODEC_MuteOn(appData.codecClientWriteRead.handle);
                 }
                 else
                 {
+#ifdef ONE_LED_VERSION
                     appData.ledState = LED_ON;
+#else           
+                    appData.led2State = LED_ON;
+#endif
                     appData.muteEn = false;
                     SYS_MESSAGE("[MOff]\r\n");
                     DRV_CODEC_MuteOff(appData.codecClientWriteRead.handle);

@@ -335,13 +335,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9FA8E6F7097DF374E74B96F1039F51A4
-- generatedChecksum: CDF2DC6741D441B7E73A29D707F8AD3A
+- generatedChecksum: 5465065A3F465FF8864451B9156304D7
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/peripheral/i2s
   name: plib_i2s2.c
   physicalPath: audio/peripheral/i2s
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CDF2DC6741D441B7E73A29D707F8AD3A
+  userChecksum: 5465065A3F465FF8864451B9156304D7
 - generatedChecksum: 5511D286C6C444CF050E71E50284AA58
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/uart
   name: plib_uart6.c
