@@ -104,7 +104,7 @@ extern "C" {
 /* I2S Driver Instance 0 Configuration Options */
 #define DRV_I2S_INDEX_0                0
 #define DRV_I2S_CLIENTS_NUMBER_IDX0    1
-#define DRV_I2S_QUEUE_DEPTH_COMBINED                 (2*128)
+#define DRV_I2S_QUEUE_DEPTH_COMBINED                 (1*128)
 #define DRV_I2S_QUEUE_SIZE_IDX0        128
 #define DRV_I2S_DATA_LENGTH_IDX0       32
 #define DRV_I2S_INT_SRC_IDX0           I2SC1_IRQn

@@ -19,6 +19,8 @@
 #ifndef USER_H
 #define USER_H
 
+#include <stdio.h>
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -40,12 +42,15 @@ extern "C" {
 #endif
 //DOM-IGNORE-END
 
-#ifndef SYS_PRINT 
-#define SYS_DEBUG_PRINT(level, format, ...) 
-#define SYS_DEBUG_MESSAGE(a,b, ...)
-#define SYS_DEBUG(a,b)
-#define SYS_PRINT(...)
+#undef NOPRINT
+#ifdef NOPRINT
+#define SYS_PRINT(fmt, ...)    
+#define SYS_MESSAGE(fmt)      
+#else
+#define SYS_PRINT(fmt, ...)    printf(fmt, ##__VA_ARGS__)
+#define SYS_MESSAGE(fmt)       printf(fmt)
 #endif
+
 
 #undef APP_CODEC_MASTER
 

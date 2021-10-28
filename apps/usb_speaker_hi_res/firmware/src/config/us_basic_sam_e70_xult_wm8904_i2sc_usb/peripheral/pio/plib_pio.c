@@ -69,12 +69,10 @@ void PIO_Initialize ( void )
     /* PORTA PIO Disable and Peripheral Enable*/
     ((pio_registers_t*)PIO_PORT_A)->PIO_PDR = 0x3c0018;
     ((pio_registers_t*)PIO_PORT_A)->PIO_PER = ~0x3c0018;
-    /* PORTA Multi Drive or Open Drain Enable */
-    ((pio_registers_t*)PIO_PORT_A)->PIO_MDER = 0x20;
-    ((pio_registers_t*)PIO_PORT_A)->PIO_MDDR = ~0x20;
+    ((pio_registers_t*)PIO_PORT_A)->PIO_MDDR = 0xFFFFFFFF;
     /* PORTA Pull Up Enable/Disable as per MHC selection */
-    ((pio_registers_t*)PIO_PORT_A)->PIO_PUDR = ~0x844;
-    ((pio_registers_t*)PIO_PORT_A)->PIO_PUER = 0x844;
+    ((pio_registers_t*)PIO_PORT_A)->PIO_PUDR = ~0x44;
+    ((pio_registers_t*)PIO_PORT_A)->PIO_PUER = 0x44;
     /* PORTA Pull Down Enable/Disable as per MHC selection */
     ((pio_registers_t*)PIO_PORT_A)->PIO_PPDDR = 0xFFFFFFFF;
     /* PORTA Output Write Enable */

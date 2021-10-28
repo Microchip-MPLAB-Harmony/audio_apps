@@ -1,14 +1,14 @@
 /*******************************************************************************
-  USART1 PLIB
+  UART1 PLIB
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_usart1.h
+    plib_uart1.h
 
   Summary:
-    USART1 PLIB Header File
+    UART1 PLIB Header File
 
   Description:
     None
@@ -38,10 +38,10 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-#ifndef PLIB_USART1_H
-#define PLIB_USART1_H
+#ifndef PLIB_UART1_H
+#define PLIB_UART1_H
 
-#include "plib_usart_common.h"
+#include "plib_uart_common.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -57,29 +57,29 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#define USART1_FrequencyGet()    (uint32_t)(120000000UL)
+#define UART1_FrequencyGet()    (uint32_t)(150000000UL)
 
-/****************************** USART1 API *********************************/
+/****************************** UART1 API *********************************/
 
-void USART1_Initialize( void );
+void UART1_Initialize( void );
 
-USART_ERROR USART1_ErrorGet( void );
+UART_ERROR UART1_ErrorGet( void );
 
-bool USART1_SerialSetup( USART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
+bool UART1_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
 
-bool USART1_Write( void *buffer, const size_t size );
+bool UART1_Write( void *buffer, const size_t size );
 
-bool USART1_Read( void *buffer, const size_t size );
+bool UART1_Read( void *buffer, const size_t size );
 
-int USART1_ReadByte( void );
+int UART1_ReadByte( void );
 
-void USART1_WriteByte( int data );
+void UART1_WriteByte( int data );
 
-bool USART1_TransmitterIsReady( void );
+bool UART1_TransmitterIsReady( void );
 
-bool USART1_TransmitComplete( void );
+bool UART1_TransmitComplete( void );
 
-bool USART1_ReceiverIsReady( void );
+bool UART1_ReceiverIsReady( void );
 
 
 // DOM-IGNORE-BEGIN
@@ -90,4 +90,4 @@ bool USART1_ReceiverIsReady( void );
 #endif
 
 // DOM-IGNORE-END
-#endif // PLIB_USART1_H
+#endif // PLIB_UART1_H

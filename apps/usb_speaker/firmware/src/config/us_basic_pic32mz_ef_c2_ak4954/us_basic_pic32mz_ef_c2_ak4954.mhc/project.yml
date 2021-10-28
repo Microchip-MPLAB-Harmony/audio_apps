@@ -132,13 +132,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9FA8E6F7097DF374E74B96F1039F51A4
-- generatedChecksum: CDF2DC6741D441B7E73A29D707F8AD3A
+- generatedChecksum: 5465065A3F465FF8864451B9156304D7
   logicalPath: config/us_basic_pic32mz_ef_c2_ak4954/audio/peripheral/i2s
   name: plib_i2s2.c
   physicalPath: audio/peripheral/i2s
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CDF2DC6741D441B7E73A29D707F8AD3A
+  userChecksum: 5465065A3F465FF8864451B9156304D7
 - generatedChecksum: 2E02308556447B0510575953A9E9DF6E
   logicalPath: config/us_basic_pic32mz_ef_c2_ak4954/system/dma
   name: sys_dma.c

@@ -69,7 +69,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 //=============================================================================
 static uint32_t __attribute__((unused)) dpl, mpl, dg, dp;
 
-#define CLOCK_MISMATCH_COMPENSATION
+#undef CLOCK_MISMATCH_COMPENSATION
 #ifdef CLOCK_MISMATCH_COMPENSATION
 #define CKUPDATERED 2   //Clock Update Delay 
 static int ckUpdateCnt = CKUPDATERED; 
@@ -290,7 +290,7 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event,
     switch( event )
     {
         case USB_DEVICE_EVENT_RESET:
-            SYS_PRINT("USB: Device RESET\r\n");
+            SYS_PRINT("USBRESET\r\n");
             break;
 
         case USB_DEVICE_EVENT_DECONFIGURED:
@@ -301,7 +301,7 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event,
 
             // Also turn ON LEDs to indicate reset/de-configured state.
             /* Switch on red and orange, switch off green */
-            SYS_PRINT("USB: DeConfigured\r\n");
+            SYS_PRINT("USBDeConfigured\r\n");
 
             break;
 
@@ -321,27 +321,27 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event,
                 /* mark that set configuration is complete */
                 appData.isConfigured = true;
                 appData.ledState = CONNECTED_BLINK;
-                SYS_PRINT("USB:CONFIGURED\r\n");
+                SYS_PRINT("USBCONFIGURED\r\n");
             }
             break;
 
         case USB_DEVICE_EVENT_SUSPENDED:
             /* Switch on green and orange, switch off red */
             appData.ledState = LED_OFF;
-            SYS_PRINT("USB: Suspended\r\n");
+            SYS_PRINT("USBSuspended\r\n");
             break;
 
         case USB_DEVICE_EVENT_RESUMED:
         case USB_DEVICE_EVENT_POWER_DETECTED:
             /* VBUS was detected. Notify USB stack about the event */
             USB_DEVICE_Attach (appData.usbDevHandle);
-            SYS_PRINT("USB: ATTACHED\r\n");
+            SYS_PRINT("USBATTACHED\r\n");
             break;
 
         case USB_DEVICE_EVENT_POWER_REMOVED:
             /* VBUS was removed. Notify USB stack about the event*/
             USB_DEVICE_Detach (appData.usbDevHandle);
-            SYS_PRINT("USB: DETACH\r\n");
+            SYS_PRINT("USBDETACH\r\n");
             appData.ledState = LED_OFF;
         case USB_DEVICE_EVENT_ERROR:
         default:
@@ -382,7 +382,7 @@ void APP_USBDeviceAudioEventHandler(USB_DEVICE_AUDIO_INDEX iAudio,
                 //{
                 //    if(appData.activeInterfaceAlternateSetting != interfaceInfo->interfaceAlternateSetting){
                         hpInterfaceChanged = true;
-                        SYS_PRINT("USB: HP Changed to %d(%d)\r\n",
+                        SYS_PRINT("[AS%d(%d)]\r\n",
                                 interfaceInfo->interfaceAlternateSetting,
                                 interfaceInfo->interfaceNumber);
                         appData.activeInterfaceAlternateSetting = 
@@ -423,11 +423,8 @@ void APP_USBDeviceAudioEventHandler(USB_DEVICE_AUDIO_INDEX iAudio,
                         usbInitialReadsComplete = true;
                         appBufferQueue.previousBufferLevel = 
                                 appBufferQueue.usbReadCompleteBufferLevel;
-                        SYS_PRINT(
-                            "USB: INIT READS:  Qlevel %d - Ridx %d - Widx %d\r\n",
-                            appBufferQueue.usbReadCompleteBufferLevel,
-                            appBufferQueue.usbReadIdx,
-                            appBufferQueue.codecWriteIdx);
+                        SYS_PRINT("URR[%d]",
+                            appBufferQueue.usbReadCompleteBufferLevel);
 //                        SYS_PRINT("USB INIT READ COMPLETEs: Qlevel %d RQCnt %d WQCnt %d\r\n",
 //                            appBufferQueue.usbReadCompleteBufferLevel,
 //                            appBufferQueue.usbReadQueueCnt,
@@ -688,12 +685,11 @@ void APP_Tasks()
                                         DRV_CODEC_CHANNEL_LEFT_RIGHT, 
                                         appData.volume);
                     appData.state = APP_STATE_CODEC_SET_BUFFER_HANDLER;
-                    SYS_PRINT("APP: CODEC Open - volume %d\r\n",
-                            appData.volume);
+                    SYS_PRINT("COpen(%d}\r\n", appData.volume);
                 }
                 else
                 {
-                    SYS_PRINT(0, "Find out whats wrong \r\n");
+                    SYS_PRINT( "Codec Open Error....\r\n");
                     appData.state = APP_STATE_ERROR;
                 }
             }
@@ -723,8 +719,7 @@ void APP_Tasks()
                 //CODEC is Master
                 DRV_CODEC_SamplingRateSet(appData.codecClientWrite.handle, 
                                           appData.sampleFreq);
-                SYS_PRINT("APP: CODEC Master Buffer Handler Fs = %d Hz",
-                        appData.sampleFreq);
+                SYS_PRINT("CMaster(fs=%ld Hz)\r\n", appData.sampleFreq);
 #else
 #ifdef CLOCK_MISMATCH_COMPENSATION
                 //CODEC is Slave
@@ -747,10 +742,10 @@ void APP_Tasks()
                 mpl = (plla>>16 & 0x3ff) + 1; 
                 dg  = (gclk>>20 & 0xff) + 1; 
                 dp  = (pck2>>4 & 0xff) + 1; 
-                SYS_PRINT("I: PLLA %08x\r\n",plla);
-                SYS_PRINT("I: GCLK %08x\r\n",gclk);
-                SYS_PRINT("I: PCK  %08x\r\n",pck2);
-                SYS_PRINT("I: d= %x m= %x d2 = %x(%x)\r\n",dpl,mpl,dg,dp);
+                SYS_PRINT("I: PLLA %08lx\r\n",plla);
+                SYS_PRINT("I: GCLK %08lx\r\n",gclk);
+                SYS_PRINT("I: PCK  %08lx\r\n",pck2);
+                SYS_PRINT("I: d= %lx m= %lx d2 = %lx(%lx)\r\n",dpl,mpl,dg,dp);
 
                 //Clock Initialize
                 d  = _clockAdjUp[CLOCKUP_IND][0];
@@ -772,18 +767,18 @@ void APP_Tasks()
                 mpl = (plla>>16 & 0x3ff) + 1; 
                 dg  = (gclk>>20 & 0xff) + 1; 
                 dp  = (pck2>>4 & 0xff) + 1; 
-                SYS_PRINT("PLLA %08x\r\n",plla);
-                SYS_PRINT("GCLK %08x\r\n",gclk);
-                SYS_PRINT("PCK  %08x\r\n",pck2);
-                SYS_PRINT("d= %x m= %x d2 = %x(%x)\r\n",dpl,mpl,dg,dp);
-                SYS_PRINT("APP: Codec Slave Buffer Handler Fs = %d Hz",
+                SYS_PRINT("PLLA %08lx\r\n",plla);
+                SYS_PRINT("GCLK %08lx\r\n",gclk);
+                SYS_PRINT("PCK  %08lx\r\n",pck2);
+                SYS_PRINT("d= %ld m= %lx d2 = %lx(%lx)\r\n",dpl,mpl,dg,dp);
+                SYS_PRINT("APP: Codec Slave Buffer Handler Fs = %ld Hz",
                           appData.sampleFreq);
 #endif //CLOCK_MISMATCH_COMPENSATION
 #endif //APP_CODEC_MASTER
             }
             else
             {
-                SYS_PRINT("APP: Codec Slave Buffer Handler Fs = ?? Hz");
+                SYS_PRINT("CSlave(fs=%ld Hz)\r\n", appData.sampleFreq);
                 //TODO:  Change I2SC1 slave sample rate
             }
 
@@ -941,9 +936,6 @@ void APP_Tasks()
 
                         if(audioErr1 == USB_DEVICE_AUDIO_RESULT_OK)
                         {
-                            //SYS_PRINT("***INIT USB READ: RQCnt %d", 
-                            //    appBufferQueue.usbReadQueueCnt);
-                            //Next Codec Write Index (HEAD Index)
                             appBufferQueue.usbReadIdx = _APP_GetNextIdx(appBufferQueue.usbReadIdx);
                             appBufferQueue.usbReadQueueCnt++;
                             
@@ -960,8 +952,7 @@ void APP_Tasks()
                     }
                 } //End USB Audio Read Queue loop
 
-                SYS_PRINT("***INIT USB READ Finished: RQCnt %d\r\n", 
-                         appBufferQueue.usbReadQueueCnt);
+                SYS_PRINT("CQRR(%ld)", appBufferQueue.usbReadQueueCnt);
                 appData.state = APP_STATE_INITIAL_CODEC_WRITE_REQUEST;
 
             } //activeInterfaceAlternatedSetting 
@@ -1240,6 +1231,8 @@ void APP_Tasks()
                     APP_QUEUING_DEPTH)
                 {
                       queueFull = true;
+                      SYS_PRINT("UQOver(%d)\r\n",
+                                  appBufferQueue.usbReadCompleteBufferLevel);
 //                      SYS_PRINT("****QUEUE Full****: RBLevel %d Ridx %d - Widx %d\r\n",
 //                                  appBufferQueue.usbReadCompleteBufferLevel,
 //                                  appBufferQueue.usbReadIdx,
@@ -1439,7 +1432,7 @@ void APP_Tasks()
             if (appData.activeInterfaceAlternateSetting == 
                     APP_USB_SPEAKER_PLAYBACK_NONE)
             {
-                SYS_PRINT("APP: AS 0 - Mute\r\n");
+                SYS_PRINT("AS0-Mute\r\n");
                 _APP_Init_PlaybackBufferQueue();
                 queueFull = false;
                 queueEmpty = true;
@@ -1457,7 +1450,7 @@ void APP_Tasks()
             else if (appData.activeInterfaceAlternateSetting == 
                      APP_USB_SPEAKER_PLAYBACK_STEREO)
             {
-                SYS_PRINT("APP: AS 1 - PLAYBACK\r\n");
+                SYS_PRINT("AS1\r\n");
                 codecStatus = DRV_CODEC_Status(sysObjdrvCodec0);
                 if (SYS_STATUS_READY == codecStatus)
                 {
@@ -1550,6 +1543,8 @@ APP_CODECBufferEventHandler(DRV_CODEC_BUFFER_EVENT event,
             {
                 //USB Read needs to complete before next Codec Write.
                 queueEmpty = true;
+                SYS_PRINT("UQUnder(%d)\r\n",
+                        appBufferQueue.usbReadCompleteBufferLevel);
 //                SYS_PRINT("*** UNDERFLOW ***: QLevel %d - Ridx %d - Widx %d\r\n",
 //                        appBufferQueue.usbReadCompleteBufferLevel,
 //                        appBufferQueue.usbReadIdx,
