@@ -120,8 +120,6 @@
                 <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
                 <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
               </logicalFolder>
-              <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/plib_i2c1.h</itemPath>
-              <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/plib_i2c_master.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="uart" projectFiles="true">
               <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/uart/plib_uart_common.h</itemPath>
@@ -219,7 +217,6 @@
               <logicalFolder name="f2" displayName="codec" projectFiles="true">
                 <logicalFolder name="f1" displayName="ak4954" projectFiles="true">
                   <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/codec/ak4954/drv_ak4954.c</itemPath>
-                  <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/driver/codec/ak4954/drv_ak4954_local.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
               <logicalFolder name="f1" displayName="i2s" projectFiles="true">

@@ -76,13 +76,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 77BADEFD8CC09389C3519149BA83A4FB
-- generatedChecksum: 99A97954652F20F91AC4E113638AE196
+- generatedChecksum: 07A3C0F83A3EB2E92A690EE9CFF87CA1
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 99A97954652F20F91AC4E113638AE196
+  userChecksum: 07A3C0F83A3EB2E92A690EE9CFF87CA1
 - generatedChecksum: ED19CE3DD0E6A4E30ABC863EE1A83F32
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: interrupts.c
@@ -104,13 +104,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 8954AE571E7932930E36CFAD24548261
+- generatedChecksum: A1699435EE54F632493DEB89368077CB
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8954AE571E7932930E36CFAD24548261
+  userChecksum: A1699435EE54F632493DEB89368077CB
 - generatedChecksum: D23DF612DB8267EDD9F5F3A463A02DB2
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/efc
   name: plib_efc.c
@@ -153,13 +153,6 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C481DAD5750CCCFCF418BDDCA3C5DF07
-- generatedChecksum: 537DEE3930CD15195465483163074577
-  logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/usart
-  name: plib_usart1.c
-  physicalPath: peripheral/usart
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 537DEE3930CD15195465483163074577
 - generatedChecksum: 7A54E436B1D56571EF7B586418B17BBF
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/xdmac
   name: plib_xdmac.c
@@ -237,13 +230,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: FB774DFB636EB40F12C500C9EBCD535B
-- generatedChecksum: A9148A612F837BC6C6DD7F5A62D3A104
+- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A9148A612F837BC6C6DD7F5A62D3A104
+  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
 - generatedChecksum: F84224329F99EC1748147F73B258A857
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: acc.h
@@ -383,7 +376,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 57DFA8116428501B603592FC26A5BD62
+  userChecksum: 283AFADFF5F7278085744B0A087AEC25
 - generatedChecksum: 948CEA542F04017255B040816F368DF8
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm7.h
@@ -405,13 +398,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 7BC1BE794D03E10C6F8174EAA2D16110
-- generatedChecksum: 0EA8A95EB9BE0A6DE98FAB82DCA6537A
+- generatedChecksum: 9B98AC7F952CC685F951E2084F031230
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0EA8A95EB9BE0A6DE98FAB82DCA6537A
+  userChecksum: 9B98AC7F952CC685F951E2084F031230
 - generatedChecksum: C679A77E2A1338BE090B760AD405B86C
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: device.h
@@ -818,20 +811,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5132029297BC9554EFA0EC40D3C0BC74
-- generatedChecksum: B14BD05010D6570651A6F01E25AF30CB
-  logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/usart
-  name: plib_usart1.h
-  physicalPath: peripheral/usart
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: B14BD05010D6570651A6F01E25AF30CB
-- generatedChecksum: 2B0D6DB62F6E6E43DA189A8FA1DB7B5C
-  logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/usart
-  name: plib_usart_common.h
-  physicalPath: peripheral/usart
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 2B0D6DB62F6E6E43DA189A8FA1DB7B5C
 - generatedChecksum: D71E8756F3C734B2B990997ADCD4E6C0
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/xdmac
   name: plib_xdmac.h

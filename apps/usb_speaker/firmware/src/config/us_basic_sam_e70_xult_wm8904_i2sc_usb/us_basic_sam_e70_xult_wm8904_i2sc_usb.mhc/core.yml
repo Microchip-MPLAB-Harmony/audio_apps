@@ -508,21 +508,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: NVIC_8_0_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: UART1_InterruptHandler}
+        attributes: {id: core, value: UART1_Handler}
   - type: Boolean
     attributes: {id: NVIC_8_0_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: PCK0_CLOCK_FREQUENCY}
     children:
@@ -3461,7 +3461,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '13311232'}
+        attributes: {id: core, value: '13310976'}
   - type: Hex
     attributes: {id: PMC_PCER1}
     children:
@@ -3905,13 +3905,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
-  - type: Boolean
-    attributes: {id: UART1_CLOCK_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: 'true'}
   - type: Integer
     attributes: {id: UART1_CLOCK_FREQUENCY}
     children:
@@ -3920,33 +3913,12 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '120000000'}
   - type: Boolean
-    attributes: {id: UART1_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: 'true'}
-  - type: Boolean
     attributes: {id: UART1_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: UART1_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: UART1_InterruptHandler}
-  - type: Boolean
-    attributes: {id: UART1_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: uart1, value: 'true'}
+        attributes: {id: core, value: 'true'}
   - type: Integer
     attributes: {id: UART2_CLOCK_FREQUENCY}
     children:

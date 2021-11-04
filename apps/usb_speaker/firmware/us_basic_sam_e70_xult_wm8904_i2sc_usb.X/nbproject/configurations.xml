@@ -77,10 +77,6 @@
                 <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/twihs/master/plib_twihs0_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/uart/plib_uart_common.h</itemPath>
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/uart/plib_uart1.h</itemPath>
-            </logicalFolder>
             <logicalFolder name="f4" displayName="xdmac" projectFiles="true">
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/xdmac/plib_xdmac_common.h</itemPath>
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/xdmac/plib_xdmac.h</itemPath>
@@ -89,9 +85,6 @@
           <logicalFolder name="f5" displayName="system" projectFiles="true">
             <logicalFolder name="f4" displayName="cache" projectFiles="true">
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/cache/sys_cache.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f7" displayName="console" projectFiles="true">
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/console/sys_console.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f6" displayName="debug" projectFiles="true">
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/debug/sys_debug.h</itemPath>
@@ -345,9 +338,6 @@
                 <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/twihs/master/plib_twihs0_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/uart/plib_uart1.c</itemPath>
-            </logicalFolder>
             <logicalFolder name="f4" displayName="xdmac" projectFiles="true">
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/xdmac/plib_xdmac.c</itemPath>
             </logicalFolder>
@@ -358,17 +348,6 @@
           <logicalFolder name="f6" displayName="system" projectFiles="true">
             <logicalFolder name="f3" displayName="cache" projectFiles="true">
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/cache/sys_cache.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f6" displayName="console" projectFiles="true">
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/console/src/sys_console.c</itemPath>
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/console/src/sys_console_local.h</itemPath>
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/console/src/sys_console_uart.h</itemPath>
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/console/src/sys_console_uart_definitions.h</itemPath>
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/console/src/sys_console_uart.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f5" displayName="debug" projectFiles="true">
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/debug/src/sys_debug_local.h</itemPath>
-              <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/debug/src/sys_debug.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="dma" projectFiles="true">
               <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/system/dma/sys_dma.c</itemPath>
@@ -420,12 +399,9 @@
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/HarmonyCore.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/project.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/sys_debug.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/sys_time.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/tc0.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/uart1.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/usb_device.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/usb_device_audio.yml</itemPath>
         <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/wm8904_codec.yml</itemPath>
@@ -739,6 +715,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Microchip/harmony/h3_V360R/audio_apps/apps/usb_speaker/firmware/us_basic_sam_e70_xult_wm8904_i2sc_usb.X/debug/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>

@@ -4,7 +4,7 @@
 
 
 project: usb_speaker
-creation_date: 2021-10-25T12:04:04.887-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-11-03T14:58:43.396-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.8.0
@@ -15,8 +15,8 @@ compiler: XC32 (3.01)
 modules:
     - {name: "core", version: "v3.10.0"}
     - {name: "csp", version: "v3.10.0"}
-    - {name: "dev_packs", version: "unknown"}
+    - {name: "dev_packs", version: "v3.10.0"}
     - {name: "usb", version: "v3.8.1"}
-    - {name: "audio", version: "v3.6.0-rc.2"}
+    - {name: "audio", version: "unknown"}
     - {name: "bsp", version: "v3.10.0"}
 

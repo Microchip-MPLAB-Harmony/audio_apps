@@ -50,6 +50,7 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
@@ -59,7 +60,6 @@
 void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
-void UART1_InterruptHandler (void);
 void TWIHS0_InterruptHandler (void);
 void TC0_CH0_InterruptHandler (void);
 void DRV_USBHSV1_USBHS_Handler (void);
