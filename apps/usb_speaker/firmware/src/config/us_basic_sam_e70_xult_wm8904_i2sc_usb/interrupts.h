@@ -63,8 +63,6 @@ void HardFault_Handler (void);
 void TWIHS0_InterruptHandler (void);
 void TC0_CH0_InterruptHandler (void);
 void DRV_USBHSV1_USBHS_Handler (void);
-//KEEP THIS - No UART2
-//void UART2_Handler (void);
 void XDMAC_InterruptHandler (void);
 
 

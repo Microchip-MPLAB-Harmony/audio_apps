@@ -42,7 +42,7 @@ extern "C" {
 #undef ONE_SWITCH_VERSION
 
 #undef NOPRINT
-#ifdef NOPRINT
+#if defined(NOPRINT) || !defined(_SYS_DEBUG_PRINT)
 #define SYS_PRINT(fmt, ...)    
 #define SYS_MESSAGE(fmt)      
 #else

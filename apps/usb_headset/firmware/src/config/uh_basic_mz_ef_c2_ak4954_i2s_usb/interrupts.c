@@ -68,8 +68,6 @@ void DRV_USBHS_InterruptHandler( void );
 void DRV_USBHS_DMAInterruptHandler( void );
 void DMA0_InterruptHandler( void );
 void DMA1_InterruptHandler( void );
-void UART6_RX_InterruptHandler( void );
-void UART6_TX_InterruptHandler( void );
 
 
 
@@ -107,16 +105,6 @@ void __ISR(_DMA0_VECTOR, ipl2SRS) DMA0_Handler (void)
 void __ISR(_DMA1_VECTOR, ipl2SRS) DMA1_Handler (void)
 {
     DMA1_InterruptHandler();
-}
-
-void __ISR(_UART6_RX_VECTOR, ipl1SRS) UART6_RX_Handler (void)
-{
-    UART6_RX_InterruptHandler();
-}
-
-void __ISR(_UART6_TX_VECTOR, ipl1SRS) UART6_TX_Handler (void)
-{
-    UART6_TX_InterruptHandler();
 }
 
 

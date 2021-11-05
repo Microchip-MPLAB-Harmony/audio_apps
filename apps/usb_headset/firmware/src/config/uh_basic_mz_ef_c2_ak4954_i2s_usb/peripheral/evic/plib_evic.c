@@ -62,8 +62,6 @@ void EVIC_Initialize( void )
     IPC33SET = 0x800 | 0x0;  /* USB_DMA:  Priority 2 / Subpriority 0 */
     IPC33SET = 0x80000 | 0x0;  /* DMA0:  Priority 2 / Subpriority 0 */
     IPC33SET = 0x8000000 | 0x0;  /* DMA1:  Priority 2 / Subpriority 0 */
-    IPC47SET = 0x400 | 0x0;  /* UART6_RX:  Priority 1 / Subpriority 0 */
-    IPC47SET = 0x40000 | 0x0;  /* UART6_TX:  Priority 1 / Subpriority 0 */
 
 
 

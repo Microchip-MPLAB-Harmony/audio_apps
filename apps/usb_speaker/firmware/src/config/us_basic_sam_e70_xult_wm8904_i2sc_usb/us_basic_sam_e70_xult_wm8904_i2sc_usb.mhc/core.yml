@@ -402,8 +402,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'false'}
-      - type: User
-        attributes: {value: 'true'}
   - type: String
     attributes: {id: NVIC_44_0_HANDLER}
     children:
@@ -3932,7 +3930,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
+        attributes: {id: core, value: 'true'}
   - type: Integer
     attributes: {id: UART3_CLOCK_FREQUENCY}
     children:

@@ -301,15 +301,6 @@ const DRV_USBHS_INIT drvUSBInit =
 // Section: System Initialization
 // *****************************************************************************
 // *****************************************************************************
-
-const SYS_DEBUG_INIT debugInit =
-{
-    .moduleInit = {0},
-    .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
-    .consoleIndex = 0,
-};
-
-
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
 const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
@@ -329,38 +320,6 @@ const SYS_TIME_INIT sysTimeInitData =
 };
 
 // </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
-
-
-/* Declared in console device implementation (sys_console_uart.c) */
-extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
-
-const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
-{
-    .read = (SYS_CONSOLE_UART_PLIB_READ)UART6_Read,
-	.readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)UART6_ReadCountGet,
-	.readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)UART6_ReadFreeBufferCountGet,
-    .write = (SYS_CONSOLE_UART_PLIB_WRITE)UART6_Write,
-	.writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)UART6_WriteCountGet,
-	.writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)UART6_WriteFreeBufferCountGet,
-};
-
-const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
-{
-    .uartPLIB = &sysConsole0UARTPlibAPI,
-};
-
-const SYS_CONSOLE_INIT sysConsole0Init =
-{
-    .deviceInitData = (const void*)&sysConsole0UARTInitData,
-    .consDevDesc = &sysConsoleUARTDevDesc,
-    .deviceIndex = 0,
-};
-
-
-
-// </editor-fold>
-
 
 
 
@@ -390,7 +349,6 @@ void SYS_Initialize ( void* data )
 
   
     CLK_Initialize();
-    
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 1;
     PRECONbits.PFMWS = 3;
@@ -403,8 +361,6 @@ void SYS_Initialize ( void* data )
     DMAC_Initialize();
 
 	BSP_Initialize();
-	UART6_Initialize();
-
     CORETIMER_Initialize();
     I2C1_Initialize();
 
@@ -419,12 +375,7 @@ void SYS_Initialize ( void* data )
     sysObj.drvak4954Codec0 = DRV_AK4954_Initialize(DRV_AK4954_INDEX_0, (SYS_MODULE_INIT *)&drvak4954Codec0InitData);
 
 
-    sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
-
-
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
-    sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-
 
 
 	 /* Initialize the USB device layer */

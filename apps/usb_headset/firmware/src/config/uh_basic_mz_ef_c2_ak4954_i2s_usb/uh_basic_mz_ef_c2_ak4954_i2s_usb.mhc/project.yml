@@ -83,20 +83,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5DA341ED7C2DCF62B80CB8D0F99DBD27
-- generatedChecksum: 6A4CFAB715E1F361227C9C73E5A82F3D
+- generatedChecksum: 977C20CEE28D66BBD5EED5CD2C5BF92C
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6A4CFAB715E1F361227C9C73E5A82F3D
-- generatedChecksum: CB8FFC4F7FDBF449C714356BE0DD6B24
+  userChecksum: 977C20CEE28D66BBD5EED5CD2C5BF92C
+- generatedChecksum: F8EC4BA655721D5B44465286DA8220CB
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CB8FFC4F7FDBF449C714356BE0DD6B24
+  userChecksum: F8EC4BA655721D5B44465286DA8220CB
 - generatedChecksum: 210D92179D79DF939E57100B9AA200B2
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/audio/math/libq_c
   name: libq_FxNorm.c
@@ -293,13 +293,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E0B39D2F69A56CCDFFE626D83F0E3DD3
-- generatedChecksum: 2D6A072B4122E2949329673FA620723B
+- generatedChecksum: 66EA6C7372CB93AEF38FE9B89BC78E74
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2D6A072B4122E2949329673FA620723B
+  userChecksum: 66EA6C7372CB93AEF38FE9B89BC78E74
 - generatedChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/coretimer
   name: plib_coretimer.c
@@ -314,13 +314,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 64A4444EE249CBAD5824153361D7BBEB
-- generatedChecksum: C08E2BBB52CA605BA383EE9BCFF1FC1D
+- generatedChecksum: 054036BB2222FAC3F90A8E2DFA2E953C
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/evic
   name: plib_evic.c
   physicalPath: peripheral/evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C08E2BBB52CA605BA383EE9BCFF1FC1D
+  userChecksum: 054036BB2222FAC3F90A8E2DFA2E953C
 - generatedChecksum: 33E029C4EC1035CBA2DA0B2A3A7C85AF
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/gpio
   name: plib_gpio.c
@@ -342,62 +342,6 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5465065A3F465FF8864451B9156304D7
-- generatedChecksum: 5511D286C6C444CF050E71E50284AA58
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/uart
-  name: plib_uart6.c
-  physicalPath: peripheral/uart
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 5511D286C6C444CF050E71E50284AA58
-- generatedChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/console
-  name: sys_console.c
-  physicalPath: system/console/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
-- generatedChecksum: 5BA0902794A8669B3FE37E8A8BEE9D65
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/console
-  name: sys_console_local.h
-  physicalPath: system/console/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 5BA0902794A8669B3FE37E8A8BEE9D65
-- generatedChecksum: CA5E9B63704372DE5FBC0BDC006B16C3
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/console
-  name: sys_console_uart.c
-  physicalPath: system/console/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: CA5E9B63704372DE5FBC0BDC006B16C3
-- generatedChecksum: 767495C6A39617A915D8107093DC1A72
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/console
-  name: sys_console_uart.h
-  physicalPath: system/console/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 767495C6A39617A915D8107093DC1A72
-- generatedChecksum: 5D10B9438117B64220180660AB022150
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/console
-  name: sys_console_uart_definitions.h
-  physicalPath: system/console/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 5D10B9438117B64220180660AB022150
-- generatedChecksum: 68C0D499B9EDAA3BFD7E131A48514212
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/debug
-  name: sys_debug.c
-  physicalPath: system/debug/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 68C0D499B9EDAA3BFD7E131A48514212
-- generatedChecksum: B8C6C7356AC7841AECC7C779040F745C
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/debug
-  name: sys_debug_local.h
-  physicalPath: system/debug/src
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: B8C6C7356AC7841AECC7C779040F745C
 - generatedChecksum: 2E02308556447B0510575953A9E9DF6E
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/dma
   name: sys_dma.c
@@ -510,20 +454,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5FB617BE61782FBB4894E08E1711345F
-- generatedChecksum: 8E07A252EB488C01C7A2FCCF52B3DEEB
+- generatedChecksum: 71C73050C4AD0223B55D159A6E6AD98C
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8E07A252EB488C01C7A2FCCF52B3DEEB
-- generatedChecksum: 0FD52F318049E3CDE1BC185EEC0DA050
+  userChecksum: 71C73050C4AD0223B55D159A6E6AD98C
+- generatedChecksum: D2F6B91AF71C16E28E4FBE3A51D16492
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 0FD52F318049E3CDE1BC185EEC0DA050
+  userChecksum: D2F6B91AF71C16E28E4FBE3A51D16492
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: device.h
@@ -741,20 +685,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: BE06AA80269C9CC117532D9FB369F739
-- generatedChecksum: 9D17B93296BA45D9DFDB00F37F1A6931
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/uart
-  name: plib_uart6.h
-  physicalPath: peripheral/uart
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 9D17B93296BA45D9DFDB00F37F1A6931
-- generatedChecksum: 91611515A95D92B82B7F4064C16D122B
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/uart
-  name: plib_uart_common.h
-  physicalPath: peripheral/uart
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 91611515A95D92B82B7F4064C16D122B
 - generatedChecksum: F7512D94687ACDF1178ABC3B80CEFFC0
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/driver/usb/usbhs/src
   name: plib_usbhs.h
@@ -769,20 +699,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: A43EF80856E989F22BE33D4591A11A55
-- generatedChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/console
-  name: sys_console.h
-  physicalPath: system/console
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 677B451383CB5F109FBDB0C11BF37FFA
-- generatedChecksum: 6972608768DDBE6E37A2D81B83DF490B
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/debug
-  name: sys_debug.h
-  physicalPath: system/debug
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 6972608768DDBE6E37A2D81B83DF490B
 - generatedChecksum: 45C173FBC598D95FA76B147486A15177
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system/dma
   name: sys_dma.h
@@ -846,27 +762,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 62F39464265EC34979649F761FB4FE57
-- generatedChecksum: BE95B4F134C5C929787B9DA6FDBF3501
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system
-  name: system.h
-  physicalPath: system
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: BE95B4F134C5C929787B9DA6FDBF3501
-- generatedChecksum: C3F5136D520DAC4416512EBFCCA023C3
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system
-  name: system_common.h
-  physicalPath: system
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: C3F5136D520DAC4416512EBFCCA023C3
-- generatedChecksum: 1C75A8A6B60598A2FD0D533F57839B72
-  logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb/system
-  name: system_module.h
-  physicalPath: system
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 1C75A8A6B60598A2FD0D533F57839B72
 - generatedChecksum: CAC44960D20AEC03CF4B325A1CD2877C
   logicalPath: config/uh_basic_mz_ef_c2_ak4954_i2s_usb
   name: toolchain_specifics.h
