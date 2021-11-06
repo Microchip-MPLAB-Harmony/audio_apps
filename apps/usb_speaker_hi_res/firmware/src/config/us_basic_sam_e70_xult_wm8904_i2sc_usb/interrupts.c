@@ -124,7 +124,6 @@ extern void AFEC1_Handler              ( void ) __attribute__((weak, alias("Dumm
 extern void TWIHS2_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SPI1_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void QSPI_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-//KEEP THIS - UART2 not in configuration
 extern void UART2_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void UART3_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void UART4_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));

@@ -50,6 +50,7 @@
 #include <stdint.h>
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Handler Routines
@@ -63,8 +64,6 @@ void xPortSysTickHandler (void);
 void TWIHS0_InterruptHandler (void);
 void TC0_CH0_InterruptHandler (void);
 void DRV_USBHSV1_USBHS_Handler (void);
-//KEEP THIS - UART2 not in configuration
-//void UART2_Handler (void);
 void XDMAC_InterruptHandler (void);
 
 

@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 07A3C0F83A3EB2E92A690EE9CFF87CA1
-- generatedChecksum: ED19CE3DD0E6A4E30ABC863EE1A83F32
+- generatedChecksum: D69E928A6851ACBDDF5F2DDA3197719F
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6719412B5B714305939F06F9E9C5F7FF
+  userChecksum: D69E928A6851ACBDDF5F2DDA3197719F
 - generatedChecksum: 6513F2461B8F476B68CA73906086047F
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: libc_syscalls.c
@@ -125,13 +125,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 97CCAB217A88F1189CF0ED7CBA9926FB
-- generatedChecksum: 94AED79489F2F91213B5783B13A8B5D0
+- generatedChecksum: CE8D7147BE4513F51A4A94A03968A6B8
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/nvic
   name: plib_nvic.c
   physicalPath: peripheral/nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 94AED79489F2F91213B5783B13A8B5D0
+  userChecksum: CE8D7147BE4513F51A4A94A03968A6B8
 - generatedChecksum: 89BC011C04DF881163D90F69D762DE8C
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/pio
   name: plib_pio.c
@@ -622,13 +622,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 51D27DB82EA605E8FAC08221C914D9B2
-- generatedChecksum: F627A442A0851ED753559E9E639915AE
+- generatedChecksum: F90F0BFED35BCFD31A1ACE8663FE6D78
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb
   name: interrupts.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 127FEFBEE52ADDA23A7B71BD45A66594
+  userChecksum: F90F0BFED35BCFD31A1ACE8663FE6D78
 - generatedChecksum: 4BA7D5E47ACBE501EC7133397E66CA79
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: isi.h
