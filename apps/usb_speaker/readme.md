@@ -341,11 +341,19 @@ Button control uses the push button function sequence given in the table below:
 
 **Note:** Mute will transition to Volume Control Level 1 on the next button push.
 
-USB operational status is given by LED, as shown below:
+USB operational status is given by LED1, as with the other USB Audio Demos, as shown below:
 
-| **LED Status** | **Status** |
-| --- | --- |
+| **LED1** | **Status** |
+| -------------- | ---------- |
 | OFF | USB cable detached |
 | ON | USB cable attached |
-| Blinking | Playback muted |
+| Blinking | Playback muted or USB waiting to be configured|
 
+The PIC32MZ EF Curiosity 2 has a second LED (LED2), which indicates if the audio
+is streaming or not.
+
+| **LED1** | **Status** |
+| -------------- | ---------- |
+| OFF | USB Audio not configured|
+| ON | USB Audio is streaming|
+| Blinking | Playback muted or USB Audio not streaming |
