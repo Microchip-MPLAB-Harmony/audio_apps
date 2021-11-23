@@ -407,7 +407,7 @@ USB operational status is given by LED1, as shown below:
 The PIC32MZ EF Curiosity 2 has a second LED (LED2), which indicates if the audio
 is streaming or not.
 
-| **LED1** | **Status** |
+| **LED2** | **Status** |
 | -------------- | ---------- |
 | OFF | USB Audio not configured|
 | ON | USB Audio is streaming|

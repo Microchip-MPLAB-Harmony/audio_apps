@@ -10,7 +10,7 @@ The USB Device driver in Full Speed mode will interface to a USB Host (such as a
 
 ## Architecture
 
-The application runs on the SAM E70 Xplained Ultra Board (E70XULT), which contains can operate at 300 MHz using the following features:
+The application runs on the SAM E70 Xplained Ultra Board (E70XULT), which can operate at 300 MHz using the following features:
 
 *   One push button (SW1)
 *   Two LEDs (amber LED1 and green LED2). Only LED 1 can be used for a USB Device, that requires VBUS sense.
@@ -66,7 +66,7 @@ The usb_microphone application utilizes a state machine with the following funct
 1.  WM8904 Codec Driver
 2.  Timer
 3.  USB Audio
-4.  Respond to USB Host control commands (“Attach”, “Detach”, “Suspend”, etc.)
+4.  Respond to USB Host control commands (ï¿½Attachï¿½, ï¿½Detachï¿½, ï¿½Suspendï¿½, etc.)
 5.  Initiate and maintains the audio data streaming for the "USB Record" function as data is received from the microphone codec.
 
 All Harmony applications use the function SYS_Initialize function located in the MHC generated file initialization.c. This is executed from main to initialize various subsystems such as the clock, ports, BSP (board support package), codec, usb, timers, and interrupts. The application APP_Initialize function in app.c is also executed at the end of this routine to setup the application code state machine.
@@ -79,13 +79,13 @@ For the FreeRTOS configuration 4 tasks are configured within 3 processes of a ro
 
 _USB Configuration_
 
-The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is selected to by “Full Speed” (not “High Speed”):
+The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is selected to by ï¿½Full Speedï¿½ (not ï¿½High Speedï¿½):
 
 ![](graphics/usb_mic_high_speed.png)
 
 _USB High Speed Driver Configuration_
 
-The USB Device Layer is configured by selecting the “usb_microphone_demo” with an endpoint buffer size of 64 (bytes). The
+The USB Device Layer is configured by selecting the ï¿½usb_microphone_demoï¿½ with an endpoint buffer size of 64 (bytes). The
 
 Audio Function Driver is configured for 5 USB endpoints with a single function having 3 interfaces. All of these are defined for a USB Microphone device in the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder). This structure defines the connection to the host at 48 Khz with 16 bit stereo channel data. A packet queue of length APP_QUEUE_SIZE (set to 2) is used for playback data. The maximum USB packets size is set to 16 samples * 2 channels per sample * 2 bytes per channel= 64 bytes, which gives a 1ms stereo sample packet size at 16Khz (the standard data frame length at this rate), thus the buffer size needs to be of the same size.
 
@@ -142,7 +142,7 @@ When the I2SC1 is used the following pins are used:
 | TWIHS0_TWCK0 | PA04 | 77 | I2C |
 | TWIHS0_TWD0 | PA03 | 91 | I2C |
 | STDBY | PD11 | 98 | - |
-| LED2/VBUS DETECT(J204) | PB08 | 141 | J204 set to VBUS DETECT for USB Device |
+| LED2/VBUS DETECT(J203) | PB08 | 141 | J203 set to VBUS DETECT for USB Device |
 
 _Clock Manager_
 
@@ -180,7 +180,7 @@ The MHC Clock Diagram to generate the processor (HCK), PCK2 (I2S MCLK), and the 
 
 _USB Microphone MHC Clock Diagram_
 
-Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
+Uncheck the Main RC Oscillator and check the ï¿½Bypassï¿½ for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
 ![](graphics/usb_mic_crystal.png)
 
@@ -200,7 +200,7 @@ _USB Microphone I2S1 GCLK and PCK2 Configuration_
 
 _Timer Driver_
 
-The Timer driver configuration, Timer driver instance 0, is used by a system for button processing (debounce and long press) and LED blink delay. It needs to be set to “Enable Period Interrupt”. It is also required by the WM8904 Codec Driver. The default configuration values are used.
+The Timer driver configuration, Timer driver instance 0, is used by a system for button processing (debounce and long press) and LED blink delay. It needs to be set to ï¿½Enable Period Interruptï¿½. It is also required by the WM8904 Codec Driver. The default configuration values are used.
 
 ### Building the Application
 
@@ -231,7 +231,7 @@ This section describes how to configure the supported hardware.
 
 Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, using the I2SC PLIB:
 
-Jumper J204, which is next to the SAM E70 Xplained Ultra logo, should be jumpered for VBUS Detect.
+Jumper J203, which is next to the SAM E70 Xplained Ultra logo, should be jumpered for VBUS Detect.
 
 To connect to the I2SC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.
 

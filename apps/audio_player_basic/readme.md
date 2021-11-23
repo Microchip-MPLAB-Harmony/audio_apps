@@ -208,7 +208,7 @@ Long presses of the push button cycle between volume control and the linear trac
 
 When in volume control mode, short presses of the push button cycle between Low, Medium, High, and Mute volume outputs. While in the Mute mode, a pause of the playback will also take place.
 
-When in the linear track change mode, short presses of the push button will seek to the end of the currently playing track and start the next track that was found in sequence. After all tracks have been played, the first track will start again in the same sequential order.
+When in the linear track change mode, short presses of the push button will seek to the end of the currently playing track and willstart the next track that was found in sequence. After all tracks have been played, the first track will start again in the same sequential order.
 
 Button control is shown in the table below.
 
@@ -218,10 +218,11 @@ Button control is shown in the table below.
 | --- | --- |
 | Volume Control | Low (-66 dB) |
 | - | Medium (-48 dB) |
-
 | - | High (0 dB) |
-| --- | --- |
 | - | Mute/Pause |
+
+|  |  |
+| --- | --- |
 | Linear Track Change | Next sequential track |
 
 #### Status Indicator Description
