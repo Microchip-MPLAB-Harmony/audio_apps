@@ -1,4 +1,4 @@
-# usb\_headset
+# usb_headset
 
 This topic provides instructions and information about the MPLAB Harmony 
 3 USB Speaker Basic demonstration application, which is included in the MPLAB 
@@ -33,7 +33,7 @@ The application runs on the PIC32 MZ EF Curiosity 2 (MZEFC2) demo board, as foll
 AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as
 part number AC324954.
 
-The usb\_headset application uses the MPLAB Harmony Configurator to setup the USB
+The usb_headset application uses the MPLAB Harmony Configurator to setup the USB
 Audio Device, codec, and other items in order to play back the USB audio through
 the Codec Module.
 
@@ -47,7 +47,7 @@ record channel from the on-board microphone
 
 The following figure shows the basic architecture for the demonstration.
 
-![](graphics/usb\_headset\_block\_diagram.png)    
+![](graphics/usb_headset_block_diagram.png)    
 _Figure 1. Architecture Block Diagram_
 
 ## Demonstration Features
@@ -60,7 +60,7 @@ _Figure 1. Architecture Block Diagram_
 *   Utilization of the PIC32 I2S peripheral (as master) on the MZEFC2 board
 
 Note that all the calls to the AK4954 codec driver uses the form
-DRV\_CODEC\_xxx rather than DRV\_AK4954\_xxx. This is to make the
+DRV_CODEC_xxx rather than DRV_AK4954_xxx. This is to make the
 code more generic, such that another codec could be substituted for another
 without having to make changes to the application code except for the location of
 the driver's public header file.
@@ -103,7 +103,7 @@ The MHC USB Audio Stack component blocks can
 added by selecting the Libraries/USB/Device Stack/Audio Function Driver
 component template under the MHC Available Components list, as shown below. 
 
-![](graphics/usb\_headset\_mzefc2\_audio\_function\_driver.png)    
+![](graphics/usb_headset_mzefc2_audio_function_driver.png)    
 _Figure 2. USB Headset USB Audio Function Driver Selection_
 
 Answer yes to all questions. This allows the generation of the 
@@ -146,14 +146,14 @@ The application uses USB Library as a "Device" stack, which will connect to a
 _Figure 5. USB Headset USB High Speed Driver Peripheral Configuration_
 
 The USB Device Layer is configured by selecting Product ID Selection as
-“usb\_headset\_multiple\_sampling\_demo” with an endpoint buffer size of 64 (bytes). The Product String
+“usb_headset_multiple_sampling_demo” with an endpoint buffer size of 64 (bytes). The Product String
 Selection is changed to “Harmony USB Speaker w/Bass Boost Example”. This
 information will be used to generate the fullSpeedConfigurationDescriptor array
 variable structure (located in initialization.c under the config folder) that
 defines the enumeration of device functions with the USB Host. This structure
 defines the connection to the host at 48 kHz with 16 bit stereo channel data.
 
-![](graphics/usb\_headset\_mzefc2\_device\_config.png)    
+![](graphics/usb_headset_mzefc2_device_config.png)    
 _Figure 6. USB Headset USB Device Layer Configuration_
 
 The Audio Function Driver is configured with an Audio Read Queue that matches
@@ -170,7 +170,7 @@ The write buffer size should be half of this (96 bytes), since the 1ms
 write buffer only contain single channel (mono) audio data at the
 48Khz rate at the same bit resolution (16 bit).
 
-![](graphics/usb\_headset\_audio\_function\_driver\_config.png)    
+![](graphics/usb_headset_audio_function_driver_config.png)    
 _Figure 7. USB Headset USB Audio Configuration_
 
 #### The AK4954 Codec
@@ -181,19 +181,19 @@ The AK4954 codec uses a I2C interface for configuration and control
 register setting and SPI interface configured as I2S. The settings are shown 
 below.
 
-![](graphics/usb\_headset\_ak4954\_config.png)    
+![](graphics/usb_headset_ak4954_config.png)    
 _Figure 8. USB Headset AK4954 Codec Configuration_
 
 The I2S Driver uses a transfer queue size of 8, which applies to both read and
 write channels, and matches that that of the USB Read/Write Queue length:
 
-![](graphics/usb\_headset\_mzefc2\_i2s\_driver\_config.png)    
+![](graphics/usb_headset_mzefc2_i2s_driver_config.png)    
 _Figure 9. USB Headset I2S Driver Configuration_
 
-When the I2S2 driver is used for DRV\_I2S\_0 the codec usage mode automatically 
+When the I2S2 driver is used for DRV_I2S_0 the codec usage mode automatically 
 changes to “Slave”
 
-![](graphics/usb\_headset\_mzefc2_i2s_plib\_config.png)    
+![](graphics/usb_headset_mzefc2_i2s_plib_config.png)    
 _Figure 8. USB Headset I2S Peripheral Driver Configuration_
 
 The I2C blocks can be used without changes to the configuration
@@ -219,7 +219,7 @@ The clock configuration diagram is shown using Tools/Clock Configuration menu
 selection.  The system clock is 198Mhz, generated from the System PLL, as
 configured below.
 
-![](graphics/usb\_headset\_mzefc2\_pll\_clock.png)
+![](graphics/usb_headset_mzefc2_pll_clock.png)
 
 _Figure 7. 198Mhz PLL Clock Generation for I2SC Peripheral_
 
@@ -228,11 +228,11 @@ _Figure 7. 198Mhz PLL Clock Generation for I2SC Peripheral_
 The I2S master the MCLK to approximate 12.288Mhz. 
 This is sourced the Reference Clock #1 as shown below.
 
-![](graphics/usb\_headset\_mzefc2\_i2s\_mclk.png)
+![](graphics/usb_headset_mzefc2_i2s_mclk.png)
 _Figure 7. Reference Clock Generation for I2S Master Peripheral Configuration_
 
 
-![](graphics/usb\_headset\_mzefc2\_peripheral\_clock.png)
+![](graphics/usb_headset_mzefc2_peripheral_clock.png)
 _Figure 8. Peripheral Clock Generation_ 
 
 ### Harmony Code Generation
@@ -247,22 +247,22 @@ application code is located in the firmware/src directory app.c and app.h files,
 which utilize the framework drivers, middleware and library APIs located in
 definitions.h located in the config directory.
 
-All Harmony applications first execute the SYS\_Initialize function, located in
+All Harmony applications first execute the SYS_Initialize function, located in
 initialization.c. This is executed from the main function to initialize various
 subsystems such as the clock, ports, BSP (board support package), codec, usb,
-timers, and interrupts. The application APP\_Initialize function in app.c is
-executed last in the generated SYS\_Initialize routine after the system
+timers, and interrupts. The application APP_Initialize function in app.c is
+executed last in the generated SYS_Initialize routine after the system
 initializations have completed.
 
-The SYS\_Tasks function (located in tasks.c) is used to update the USB subsystems,
-WM8904 driver, timers etc., as well as the application state machine (APP\_tasks
+The SYS_Tasks function (located in tasks.c) is used to update the USB subsystems,
+WM8904 driver, timers etc., as well as the application state machine (APP_tasks
 routine in app.c). This function is executed from the main polling loop. The
-polling loop either execute SYS\_Tasks repeatably in the infinite loop to perform
+polling loop either execute SYS_Tasks repeatably in the infinite loop to perform
 the updates, or it the updates occur as separate processes executed at fixed time
 intervals using an RTOS schedular.
 
-The application utilizes a simple state machine (APP\_Tasks executed from
-SYS\_Tasks) with the following functions
+The application utilizes a simple state machine (APP_Tasks executed from
+SYS_Tasks) with the following functions
 
 1.  Setup the drivers and USB Library interface
 2.  Respond to USB Host control commands (“Attach”, “Detach”, “Suspend”)
@@ -277,8 +277,8 @@ describes the available configurations for the demonstration.
 
 **Description**
 
-The parent folder for these files is audio/apps/usb\_headset. To build this
-project, you must open the audio/apps/usb\_headset/firmware/*.X project file in
+The parent folder for these files is audio/apps/usb_headset. To build this
+project, you must open the audio/apps/usb_headset/firmware/*.X project file in
 MPLAB X IDE that corresponds to your hardware configuration.
 
 ** MPLAB X IDE Project **    
@@ -293,7 +293,7 @@ which are located within ./firmware/src/config.
 
 | **Project Name**             | **BSP Used**      | **Description** |
 | ---------------------------- | ----------------- | ----------------------------------------------------------------------------------- |
-| uh\_pic32mz\_ef\_c2\_ ak4954 | pic32\_mz\_ef\_c2 | This demonstration runs on the PIC32 MZ EF Curiosity 2 board with the AK4954 Codec. |    
+| uh_pic32mz_ef_c2_ ak4954 | pic32_mz_ef_c2 | This demonstration runs on the PIC32 MZ EF Curiosity 2 board with the AK4954 Codec. |    
 
 
 ### Configuring the Hardware    
@@ -306,7 +306,7 @@ The PIC32 MZ EF Curiosity board and the AK4954 Audio Codec Daughter Board only
 requires the AK4954 Codec Daughterboard to be connected to X32 Header 2 as shown
 below. No jumper settings are required.    
     
-![](graphics/usb\_headset\_mzefc2\_board\_setup.png)    
+![](graphics/usb_headset_mzefc2_board_setup.png)    
 
 _Figure 9. PIC32 MZ EF Curiosity 2 Board Setup_    
 
@@ -348,7 +348,7 @@ device. Run the device. The system will be in a waiting for USB to be connected
     will blink after enumeration. It will continue to blink until the Harmony USB
     Speaker is selected as the speaker device, and the audio stream is started.
     It will then turn a solid color.
-4.  If needed, configure the Host computer to use the usb\_headset as the selected
+4.  If needed, configure the Host computer to use the usb_headset as the selected
     audio recording device. For Windows, this is done in the "Recording" tab in
     and the "Playback" tab of the "Sound" dialog"
 
@@ -357,7 +357,7 @@ clicking the loudspeaker icon in the taskbar, which will bring up a menu for the
 selection. This is shown in the Figure below for selecting the playback device.
 The record device selected from the "Recording" tab in the same way.
 
-![](graphics/usb\_headset\_mzefc2\_playback\_sound.png)
+![](graphics/usb_headset_mzefc2_playback_sound.png)
 
 _Figure 12. Windows 10 - Sound Dialog Showing Harmony USB Headset Selection._
 
