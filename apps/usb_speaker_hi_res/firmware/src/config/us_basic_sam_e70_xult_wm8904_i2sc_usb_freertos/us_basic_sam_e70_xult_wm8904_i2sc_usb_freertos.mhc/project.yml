@@ -181,13 +181,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 178131F3BE68D4B3AF941EBB1245B0C1
-- generatedChecksum: EB36A2495F81AB7FBA14E9AC55A5AFB3
+- generatedChecksum: F34905552D60244621109860D0E44CAB
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb_freertos/peripheral/pio
   name: plib_pio.c
   physicalPath: peripheral/pio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: EB36A2495F81AB7FBA14E9AC55A5AFB3
+  userChecksum: F34905552D60244621109860D0E44CAB
 - generatedChecksum: A059BC4E8C3601B5DC29D46E6DD71880
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb_freertos/peripheral/tc
   name: plib_tc0.c
