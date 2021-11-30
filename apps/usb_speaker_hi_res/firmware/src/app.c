@@ -264,6 +264,9 @@ APP_DATA __attribute__((aligned(32))) __attribute__((tcm)) appData =
 
     .lrSync = true,
 
+    .buttonDelay = 0,
+    .buttonState = BUTTON_STATE_IDLE,
+
 #ifdef CLOCK_MISMATCH_COMPENSATION
     .clockStableDelayFlag = true,
 #else
@@ -612,6 +615,7 @@ void APP_Initialize()
     appData.volume = volumeLevels[appData.volumeIndex];    
     
     appData.buttonDelay = 0;
+    appData.buttonState = BUTTON_STATE_IDLE;
     appData.ledState= LED_OFF;
     appData.blinkDelay = 0;
 
@@ -1767,19 +1771,24 @@ static void _APP_TimerCallback( uintptr_t context)
     }
 } 
 
+volatile bool isPressed;
+
 //******************************************************************************
 // APP_Button_Tasks()
 //******************************************************************************
 void _APP_Button_Tasks()
 {
+    if (SWITCH_Get() == SWITCH_STATE_PRESSED) isPressed = true;
+    else isPressed = false;
+    
+
    //BUTTON PROCESSING
     /* Check the buttons' currentPlayBuffer state. */      
     switch ( appData.buttonState )
     {
         case BUTTON_STATE_IDLE:
         {
-            if ( (appData.buttonDelay==0)&&
-                 (SWITCH_Get()==SWITCH_STATE_PRESSED))                
+            if ( (appData.buttonDelay==0)&& isPressed)                
             {
                 appData.buttonDelay=BUTTON_DEBOUNCE;       
                 appData.buttonState=BUTTON_STATE_PRESSED;               
@@ -1806,8 +1815,7 @@ void _APP_Button_Tasks()
         //Long Press - volume/mute mode
         case BUTTON_STATE_BUTTON0_PRESSED:
         {
-            if ((appData.buttonDelay>0)&&
-                (SWITCH_Get()!=SWITCH_STATE_PRESSED))     // SW01 pressed and released < 1 sec
+            if ((appData.buttonDelay>0) && !isPressed) // SW01 pressed and released < 1 sec
             {
                 //New volume
                 appData.volumeIndex++;
@@ -1837,8 +1845,7 @@ void _APP_Button_Tasks()
                 appData.buttonDelay=BUTTON_DEBOUNCE;                
                 appData.buttonState=BUTTON_STATE_IDLE;              
             }
-            else if ((appData.buttonDelay==0)&&
-                     (SWITCH_Get()==SWITCH_STATE_PRESSED))  
+            else if ((appData.buttonDelay==0) && isPressed)  
             {
 
                 //if (appData.muteEn == true)
@@ -1853,6 +1860,7 @@ void _APP_Button_Tasks()
                 //    appData.muteEn   =true;
                 //    DRV_CODEC_MuteOn(appData.codecClientWrite.handle);
                 //}
+                appData.buttonState=BUTTON_STATE_WAIT_FOR_RELEASE;                
             }                          
         } 
         break;

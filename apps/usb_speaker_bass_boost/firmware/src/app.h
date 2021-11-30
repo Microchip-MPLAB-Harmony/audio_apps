@@ -350,7 +350,8 @@ typedef struct
 {
     //uint8_t __attribute__((aligned(32))) buffer[192];
 #ifdef PIC32MZEFC2
-    uint8_t __attribute__((aligned(32))) __attribute__((coherent)) 
+    //NOTE:  aligned(16) should work also, but I don't need to reduce the padding
+    uint8_t __attribute__((aligned(32),coherent))   
             buffer[APP_MAX_NO_BYTES_IN_USB_BUFFER];
 #else //E70
     uint8_t __attribute__((aligned(32))) 

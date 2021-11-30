@@ -2367,7 +2367,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: ''}
+        attributes: {value: 'True'}
   - type: String
     attributes: {id: PIN_65_PIO_CHANNEL}
     children:
@@ -3173,7 +3173,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '68'}
+        attributes: {id: core, value: '2116'}
   - type: Hex
     attributes: {id: PIOA_SODR_VALUE}
     children:

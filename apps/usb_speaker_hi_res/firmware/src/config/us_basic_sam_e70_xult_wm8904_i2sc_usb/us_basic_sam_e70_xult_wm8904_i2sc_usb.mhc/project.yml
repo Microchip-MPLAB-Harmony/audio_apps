@@ -132,13 +132,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: CE8D7147BE4513F51A4A94A03968A6B8
-- generatedChecksum: 89BC011C04DF881163D90F69D762DE8C
+- generatedChecksum: FD537506AB1E4B14A24420F7E551A486
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/pio
   name: plib_pio.c
   physicalPath: peripheral/pio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 89BC011C04DF881163D90F69D762DE8C
+  userChecksum: FD537506AB1E4B14A24420F7E551A486
 - generatedChecksum: A059BC4E8C3601B5DC29D46E6DD71880
   logicalPath: config/us_basic_sam_e70_xult_wm8904_i2sc_usb/peripheral/tc
   name: plib_tc0.c
