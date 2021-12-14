@@ -494,7 +494,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/app_config/16_bit;../src/config/pic32mz_ef_c2_ak4954;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access"/>
+                  value="../src;../src/app_config/16_bit;../src/config/pic32mz_ef_c2_ak4954;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_c2_ak4954/system/fs/fat_fs/hardware_access;../src/config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

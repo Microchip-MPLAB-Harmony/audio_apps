@@ -34,10 +34,10 @@
 #define FLAC__PRIVATE__FLOAT_H
 
 
-#include "../../../../include/flac_config.h"
+#include "flac_master/include/flac_config.h"
 
 
-#include "../../../../include/FLAC/ordinals.h"
+#include "flac_master/include/FLAC/ordinals.h"
 
 /*
  * All the code in libFLAC that uses float and double

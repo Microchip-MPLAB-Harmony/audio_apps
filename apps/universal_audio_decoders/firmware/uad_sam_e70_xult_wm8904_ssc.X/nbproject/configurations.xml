@@ -629,7 +629,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e70_xult_wm8904_ssc;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac/flac_master/include/FLAC;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private;../src/config/sam_e70_xult_wm8904_ssc/system/fs/fat_fs/file_system;../src/config/sam_e70_xult_wm8904_ssc/system/fs/fat_fs/hardware_access;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/sam_e70_xult_wm8904_ssc;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder;../src/config/sam_e70_xult_wm8904_ssc/system/fs/fat_fs/file_system;../src/config/sam_e70_xult_wm8904_ssc/system/fs/fat_fs/hardware_access;../src/packs/ATSAME70Q21B_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

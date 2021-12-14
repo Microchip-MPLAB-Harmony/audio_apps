@@ -26,7 +26,7 @@
  * Still in the public domain, with no warranty.
  */
 
-#include "../../../../include/FLAC/ordinals.h"
+#include "flac_master/include/FLAC/ordinals.h"
 
 typedef union {
 	FLAC__byte *p8;

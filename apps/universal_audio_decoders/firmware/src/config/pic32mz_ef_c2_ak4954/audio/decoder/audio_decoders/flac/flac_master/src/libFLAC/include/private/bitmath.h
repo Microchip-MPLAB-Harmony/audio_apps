@@ -33,8 +33,8 @@
 #ifndef FLAC__PRIVATE__BITMATH_H
 #define FLAC__PRIVATE__BITMATH_H
 
-#include "../../../../include/FLAC/ordinals.h"
-#include "../../../../include/FLAC/assert.h"
+#include "flac_master/include/FLAC/ordinals.h"
+#include "flac_master/include/FLAC/assert.h"
 //#include "../../../../include/share/compat.h"
 
 #if defined(_MSC_VER)

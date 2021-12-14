@@ -4,7 +4,7 @@
 
 
 project: universal_audio_decoders
-creation_date: 2021-10-07T13:54:09.764+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-12-14T14:43:37.072-07:00[GMT-07:00]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.8.1
@@ -19,6 +19,6 @@ modules:
     - {name: "usb", version: "v3.8.1"}
     - {name: "dev_packs", version: "v3.10.0"}
     - {name: "helix_mp3", version: "unknown"}
-    - {name: "audio", version: "unknown"}
+    - {name: "audio", version: "v3.6.0-rc.3"}
     - {name: "bsp", version: "v3.10.0"}
 

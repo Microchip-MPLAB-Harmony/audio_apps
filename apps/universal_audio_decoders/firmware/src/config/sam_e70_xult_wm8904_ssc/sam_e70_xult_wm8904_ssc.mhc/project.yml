@@ -601,20 +601,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 97908855388E6C7128E8B8EEC6A8D1D5
-- generatedChecksum: E911635B7979875EDC7C1C2DAD95DADC
+- generatedChecksum: 2D43F4E11CB36F55FFBF08D6CDC0BCBD
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: bitmath.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: E911635B7979875EDC7C1C2DAD95DADC
-- generatedChecksum: 342D6F4EFFD07FEE20488A15B0A33017
+  userChecksum: 2D43F4E11CB36F55FFBF08D6CDC0BCBD
+- generatedChecksum: 35E883E3C12C9AE199A4106C6F6B98A2
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: bitreader.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 342D6F4EFFD07FEE20488A15B0A33017
+  userChecksum: 35E883E3C12C9AE199A4106C6F6B98A2
 - generatedChecksum: ADC9119756741CEFC83E625FDBEE735B
   logicalPath: config/sam_e70_xult_wm8904_ssc/bsp
   name: bsp.h
@@ -720,20 +720,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 948CEA542F04017255B040816F368DF8
-- generatedChecksum: 4A48DEA406B912ECC13B3E38576F42A2
+- generatedChecksum: 0E660F0761527D9276AC4362DAB9E998
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: cpu.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4A48DEA406B912ECC13B3E38576F42A2
-- generatedChecksum: 052B10B4F1EDE78BE5DDBB04F38DF9AE
+  userChecksum: 0E660F0761527D9276AC4362DAB9E998
+- generatedChecksum: C8D318E2F2DC6A8083CA48B640C2321E
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: crc.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 052B10B4F1EDE78BE5DDBB04F38DF9AE
+  userChecksum: C8D318E2F2DC6A8083CA48B640C2321E
 - generatedChecksum: 0AC0C788FC1B6BEA90EB087605B4111F
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: dacc.h
@@ -888,13 +888,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: E2D1DB72B96CBA9922493C142073ABE1
-- generatedChecksum: BB8ACC732DA35C2757C124A1192AE018
+- generatedChecksum: 530D295164EFEC14B991AFDF6017BB81
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: endswap.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/include/share
   security: NON_SECURE
   type: HEADER
-  userChecksum: BB8ACC732DA35C2757C124A1192AE018
+  userChecksum: 530D295164EFEC14B991AFDF6017BB81
 - generatedChecksum: 97AF0131B4627E124D9B6E82A08FCA9D
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: export.h
@@ -916,13 +916,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 4E1DC558E64EF7706189FC3224899E86
-- generatedChecksum: 3FE512C42C500B8E6AD282DC2082D5A2
+- generatedChecksum: C514F07EB6073DE09DA6605D92A767CE
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: fixed.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3FE512C42C500B8E6AD282DC2082D5A2
+  userChecksum: C514F07EB6073DE09DA6605D92A767CE
 - generatedChecksum: 91CF26DDBE0CE901C0AE2A12C1FAFC84
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: flac_config.h
@@ -937,13 +937,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2FDAA605D9A5B47048DF5CF4439860F6
-- generatedChecksum: E196A30D8C15BD93B692995F47E30CD1
+- generatedChecksum: 6CB60320A30F49ACBEC847B0CDCF6FAA
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: float.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: E196A30D8C15BD93B692995F47E30CD1
+  userChecksum: 6CB60320A30F49ACBEC847B0CDCF6FAA
 - generatedChecksum: 9DF0A3109A4103F0B4C46205FDC27D25
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: format.h
@@ -951,13 +951,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 9DF0A3109A4103F0B4C46205FDC27D25
-- generatedChecksum: 33E2176EC71DA55D670E86BBE062F7F8
+- generatedChecksum: 21B2FC403875DA7B2B6BF4FFD169E988
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: format.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 33E2176EC71DA55D670E86BBE062F7F8
+  userChecksum: 21B2FC403875DA7B2B6BF4FFD169E988
 - generatedChecksum: 63283F78AF4A20CDDB368906174DDC49
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: fuses.h
@@ -1077,13 +1077,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 06D53F2F3E09C981AAF0BD55D143A5FB
-- generatedChecksum: 19E95689DDFF8B49E4B7D996AB8AFB8E
+- generatedChecksum: 4E7181CE159AE49CBE999643F4119E3D
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: lpc.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 19E95689DDFF8B49E4B7D996AB8AFB8E
+  userChecksum: 4E7181CE159AE49CBE999643F4119E3D
 - generatedChecksum: 3F978E7869DCA3932893471DCDF33AB1
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: macros.h
@@ -1126,20 +1126,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: F95CCB031E3CE5435CA82E5429544120
-- generatedChecksum: DD9B30F4D2BB3C4A66DA6F6B57A5A90A
+- generatedChecksum: 74034E1AE1D39C02F89405FE8DE2F56D
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: md5.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: DD9B30F4D2BB3C4A66DA6F6B57A5A90A
-- generatedChecksum: 3513A2811A5201535D5189DBDA8854E2
+  userChecksum: 74034E1AE1D39C02F89405FE8DE2F56D
+- generatedChecksum: 426FFBA00C9A2D6CF3F11348114C2F9E
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: memory.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/private
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3513A2811A5201535D5189DBDA8854E2
+  userChecksum: 426FFBA00C9A2D6CF3F11348114C2F9E
 - generatedChecksum: 1726F1B24AA9FFF73F2AA74A86B10645
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/mp3
   name: mp3_dec.h
@@ -1567,13 +1567,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: D311CCE6FD857B3035A73D0F14DC61B9
-- generatedChecksum: 744DCFB488E7BC2EFF21E3E84C46E042
+- generatedChecksum: 4BA781938141C920547954BD9C6263E7
   logicalPath: config/sam_e70_xult_wm8904_ssc/audio/decoder/audio_decoders/flac
   name: stream_decoder.h
   physicalPath: audio/decoder/audio_decoders/flac/flac_master/src/libFLAC/include/protected
   security: NON_SECURE
   type: HEADER
-  userChecksum: 744DCFB488E7BC2EFF21E3E84C46E042
+  userChecksum: 4BA781938141C920547954BD9C6263E7
 - generatedChecksum: 54616DA3FC4BA836A77218146C93BF57
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: supc.h

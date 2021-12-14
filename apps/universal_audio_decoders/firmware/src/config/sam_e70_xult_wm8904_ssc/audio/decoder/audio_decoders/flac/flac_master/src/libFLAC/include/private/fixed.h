@@ -34,12 +34,12 @@
 #define FLAC__PRIVATE__FIXED_H
 
 
-#include "../../../../include/flac_config.h"
+#include "flac_master/include/flac_config.h"
 
 
 #include "./cpu.h"
 #include "./float.h"
-#include "../../../../include/FLAC/format.h"
+#include "flac_master/include/FLAC/format.h"
 
 /*
  *	FLAC__fixed_compute_best_predictor()

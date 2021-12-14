@@ -30,7 +30,7 @@
  */
 
 /* It is assumed that this header will be included after "config.h". */
-#include "../../include/flac_config.h"
+#include "../flac_config.h"
 #if HAVE_BSWAP32			/* GCC and Clang */
 
 /* GCC prior to 4.8 didn't provide bswap16 on x86_64 */
