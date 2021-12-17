@@ -2,11 +2,13 @@
 <Package name="audio_apps">
     <Dependencies>
         <Dependency name="audio" version="v3.6.0"/>	
-        <Dependency name="core" version="v3.9.0"/>
-        <Dependency name="CMSIS-FreeRTOS" version="v????"/>			
-        <Dependency name="csp" version="v3.9.0"/>		
-        <Dependency name="dev_packs" version="v3.9.0"/>			
-        <Dependency name="gfx" version="v????"/>
-        <Dependency name="usb" version="v????"/>				
+        <Dependency name="bsp" version="v3.10.0"/>
+        <Dependency name="core" version="v3.10.0"/>
+        <Dependency name="csp" version="v3.10.0"/>
+        <Dependency name="CMSIS-FreeRTOS" version="v10.3.1"/>			
+        <Dependency name="dev_packs" version="v3.10.0"/>			
+        <Dependency name="usb" version="v3.8.1"/>				
+        <Dependency name="helix_mp3" version="v1.1.0"/>
+        <Dependency name="xiph_flac" version="v1.0.0"/>
     </Dependencies>
 </Package>

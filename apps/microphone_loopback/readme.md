@@ -92,13 +92,13 @@ When the application’s state machine (APP_Tasks), contained in app.c, is given
 
 DRV_CODEC_Open function with a mode of DRV_IO_INTENT_WRITE and sets up the volume. The application state machine then registers an event handler APP_CODEC_BufferEventHandler as a callback with the codec driver (which in turn is called by the DMA driver).
 
-For the non-graphical version of the app, a total of MAX_BUFFERS (#defined as 150) buffers are allocated, each able to hold 10 ms of audio (480 samples at 48,000 samples/second), which is enough for a 1.5 second delay.). For the graphical version, which has less memory available available due to the frame buffer, MAX_BUFFERS is set at 101, each able to hold 10 ms of audio based on 160 samples at 16,000 samples/second, therefore enough for one second of delay.
+A total of MAX_BUFFERS (#defined as 150) buffers are allocated, each able to hold 10 ms of audio (480 samples at 48,000 samples/second), which is enough for a 1.5 second delay.).
 
 Two indicies, appData.rxBufferIdx and appData.txBufferIdx are used to track the current buffers for both input and output. Initially all buffers are zeroed out. A call to DRV_CODEC_BufferAddWriteRead is made, which writes out the data from the buffer pointed to by appData.txBufferIdx (initially zero), while at the same time data is read from the codec into the buffer pointed to by appData.rxBufferIdx.
 
 On each callback from the DMA, the buffer pointers are advanced, wrapping around at the ends. After the prescribed delay, the audio from the first buffer filled in will be output.
 
-In the non-graphical version, if the button is held down for more than one second, the mode changes, and there is no delay while the volume is being adjusted. Instead of a circular array of buffers, the first two buffers are just toggled back and forth in a ping-pong fashion. In the graphical version, this mode change is handled through the Enable Delay button on the GUI.
+If the button is held down for more than one second, the mode changes, and there is no delay while the volume is being adjusted. Instead of a circular array of buffers, the first two buffers are just toggled back and forth in a ping-pong fashion.
 
 ## Demonstration Features
 
@@ -307,21 +307,6 @@ Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board
 ![](graphics/mic_loopback_wm8904_jumpers_back.png)
 
 ![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
-
-Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, and the SSC PLIB and the 480x272 display.
-
-*   Attach the flat cable of the PDA TM4301B 480x272 (WQVGA) display to the 565 daughterboard connected to the SAM E70 Xplained Ultra board GFX CONNECTOR.
-*   Add a jumper from connector EXT1 pin 13 to J601 (CAMERA INTERFACE) pin 14 as shown:
-
-
-![](graphics/mic_loopback_e70_setup.png)
-
-The WM8904 Audio Codec Daughter Board will be using the SSC PLIB; all jumpers on the WM8904 should be toward the **front:**
-
-
-![](graphics/mic_loopback_wm8904_jumpers.png)
-
-![](graphics/note.png) **Note:** The SAM E70 Xplained Ultra board does not include the PDA TM4301B 480x272 (WQVGA) display, which is sold separately on microchipDIRECT as part number AC320005-4, or the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
 
 Using the SAM V71 Xplained Ultra board with on-board WM8904, with the SSC PLIB. No special configuration needed.
 
