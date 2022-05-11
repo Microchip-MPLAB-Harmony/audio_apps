@@ -1304,7 +1304,7 @@ typedef struct
 
 typedef struct
 {
-    /* Number of logical output channels in the Mixer’s output audio channel
+    /* Number of logical output channels in the Mixer?s output audio channel
        cluster */
     uint8_t bNrChannels;
 

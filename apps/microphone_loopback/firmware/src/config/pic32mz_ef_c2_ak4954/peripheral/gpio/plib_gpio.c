@@ -57,59 +57,51 @@
 */
 void GPIO_Initialize ( void )
 {
+
     /* PORTA Initialization */
     ODCASET = 0xc2f0; /* Open Drain Enable */
     LATA = 0x2f0; /* Initial Latch Value */
     TRISACLR = 0x2f0; /* Direction Control */
     ANSELACLR = 0x600; /* Digital Mode Enable */
-
     /* PORTB Initialization */
     ODCBSET = 0x6380; /* Open Drain Enable */
     LATB = 0x6380; /* Initial Latch Value */
     TRISBCLR = 0x6380; /* Direction Control */
     ANSELBCLR = 0x7f80; /* Digital Mode Enable */
-
     /* PORTC Initialization */
     ANSELCCLR = 0xf016; /* Digital Mode Enable */
-
     /* PORTD Initialization */
     ANSELDCLR = 0xc000; /* Digital Mode Enable */
-
     /* PORTE Initialization */
-
     /* PORTF Initialization */
     ODCFSET = 0x4; /* Open Drain Enable */
     LATF = 0x24; /* Initial Latch Value */
     TRISFCLR = 0x14; /* Direction Control */
     ANSELFCLR = 0x1000; /* Digital Mode Enable */
-
     /* PORTG Initialization */
     LATG = 0x0; /* Initial Latch Value */
     TRISGCLR = 0x3; /* Direction Control */
     ANSELGCLR = 0x1c0; /* Digital Mode Enable */
-
     /* PORTH Initialization */
     ODCHSET = 0x1000; /* Open Drain Enable */
     LATH = 0x1000; /* Initial Latch Value */
     TRISHCLR = 0x1000; /* Direction Control */
     ANSELHCLR = 0x63; /* Digital Mode Enable */
-
     /* PORTJ Initialization */
     ODCJSET = 0x2088; /* Open Drain Enable */
     LATJ = 0x2488; /* Initial Latch Value */
     TRISJCLR = 0x2488; /* Direction Control */
     ANSELJCLR = 0x300; /* Digital Mode Enable */
-
     /* PORTK Initialization */
     ODCKSET = 0x90; /* Open Drain Enable */
     LATK = 0x90; /* Initial Latch Value */
     TRISKCLR = 0xb0; /* Direction Control */
 
-
     /* Unlock system for PPS configuration */
     SYSKEY = 0x00000000;
     SYSKEY = 0xAA996655;
     SYSKEY = 0x556699AA;
+
     CFGCONbits.IOLOCK = 0;
 
     /* PPS Input Remapping */
@@ -131,6 +123,7 @@ void GPIO_Initialize ( void )
 
     /* Lock back the system after PPS configuration */
     CFGCONbits.IOLOCK = 1;
+
     SYSKEY = 0x00000000;
 
 }

@@ -19,8 +19,6 @@
 #ifndef USER_H
 #define USER_H
 
-#include <stdio.h>
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

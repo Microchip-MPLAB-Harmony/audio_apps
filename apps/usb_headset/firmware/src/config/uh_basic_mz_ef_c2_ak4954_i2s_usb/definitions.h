@@ -61,8 +61,8 @@
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
 #include "peripheral/coretimer/plib_coretimer.h"
-#include "driver/usb/usbhs/drv_usbhs.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
+#include "driver/usb/usbhs/drv_usbhs.h"
 #include "audio/math/libq_c/libq_c.h"
 #include "audio/driver/codec/ak4954/drv_ak4954.h"
 #include "audio/peripheral/i2s/plib_i2s2.h"
@@ -70,6 +70,7 @@
 #include "system/ports/sys_ports.h"
 #include "system/dma/sys_dma.h"
 #include "osal/osal.h"
+#include "system/debug/sys_debug.h"
 #include "app.h"
 
 

@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="usb_speaker" />
+<meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="usb-speaker" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>usb_speaker</title>
+<meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-usb-speaker" />
+<meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB® Harmony Audio Apps Help Reference A 04/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-2D173E29-3A9D-4A1E-A3CB-B2FC0CF4A3E3"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="usb-speaker">
+<h1 class="title topictitle1" id="ariaid-title1">usb_speaker</h1><div class="body"><p class="p">This topic provides instructions and information about the MPLAB Harmony 3 USB Speaker Basic demonstration application, which is included in the MPLAB Harmony Library distribution.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html">Harmony 3 audio application examples</a></div>
+</div>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2">Description</h2><div class="body"><p class="p">This demonstration application configures the development board to implement a USB Speaker device configured to run at 48 kHz sampling rate at 16 bit per sample.</p>
+<p class="p">The USB Device driver in Full Speed mode will interface to a USB Host (such as a personal computer) via the USB Device Stack using the V1.0 Audio Function Driver. The embedded system will enumerate with a USB audio device endpoint and enable the host system to input audio from the USB port using a standard USB Full-Speed implementation. The embedded system will stream USB playback audio to the Codec. The Codec Driver sets up the audio interface, timing, DMA channels and buffer queue to enable a continuous audio stream. The digital audio is transmitted to the codec through an I2S data module for playback through a headphone jack.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="architecture"><h2 class="title topictitle2" id="ariaid-title3">Architecture</h2><div class="body"><p class="p">The application runs on two target boards, as follows:</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">SAM E70 Xplained Ultra Board</p>
+</li>
+</ol>
+<ul class="ul"><li class="li"><p class="p">Processor runs @ 300 MHz</p>
+</li>
+<li class="li"><p class="p">One push button (SW)</p>
+</li>
+<li class="li"><p class="p">Two LEDs (amber LED1 and green LED2). Only LED 1 can be used for a USB Device application, due to requiring VBUS sense to be selected rather than LED2.</p>
+</li>
+<li class="li"><p class="p">WM8904 Codec Daughter Board mounted on a X32 socket (configured as I2SC1 slave)</p>
+</li>
+<li class="li"><p class="p">USB Device interface</p>
+</li>
+</ul>
+<p class="p"><img class="image" src="GUID-5763B4BD-5EB0-4C4C-8B3F-073AAA0A567E-low.png" /><br /> <strong class="ph b">Note:</strong> The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">PIC32 MZ EF Curiosity 2</p>
+</li>
+</ol>
+<ul class="ul"><li class="li"><p class="p">Processor runs @ 200 MHz</p>
+</li>
+<li class="li"><p class="p">4 push buttons (SW1-SW4)</p>
+</li>
+<li class="li"><p class="p">3 LEDs (all red LED1-LED3) and RGB LED (LED4).</p>
+</li>
+<li class="li"><p class="p">AK4954 Codec Daughter Board mounted on X32 socket</p>
+</li>
+<li class="li"><p class="p">USB Device interface</p>
+</li>
+</ul>
+<p class="p"><img class="image" src="GUID-5763B4BD-5EB0-4C4C-8B3F-073AAA0A567E-low.png" /><br /> <strong class="ph b">Note:</strong> The PIC32 MZ EF Curiosity 2 does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.</p>
+<p class="p">The usb_speaker_basic application uses the MPLAB Harmony Configurator to setup the USB Audio Device, codec, and other items in order to play back the USB audio through the WM8904 Codec Module.</p>
+<p class="p">A USB Host system is connected to the micro-mini USB device connector. The application detects the cable connection, which can also supply device power; recognizes the type of connection (Full Speed); enumerates its functions with the host, isochronous audio streaming playback through device. Audio stream data is buffered in 1 ms frames for playback using the WM8904 Codec daughter board. Audio is heard through the Headphone jack (HP OUT).</p>
+<p class="p">The following figure shows the basic architecture for the demonstration.</p>
+<br /><img class="image" src="GUID-9C63C10E-8CD4-4F6A-B6F2-1FB4344C4EA1-low.png" /><br /><p class="p"><em class="ph i">Figure 1. Architecture Block Diagram</em></p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="demonstration-features"><h2 class="title topictitle2" id="ariaid-title4">Demonstration Features</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Audio playback using an WM8904 codec daughterboard on the SAM E70 xPlained Ultra (E70XULT) board.</p>
+</li>
+<li class="li"><p class="p">Audio playback using a AK4954 codec daughterboard on the PIC32 MZ EF Curiousity 2 (MZEFC2)</p>
+</li>
+<li class="li"><p class="p">USB connection to a host system using the USB Library Device Stack for a USB Speaker device using E70XULT and MZEFC2 boards</p>
+</li>
+<li class="li"><p class="p">E70XULT and MZEFC2 board button processing for volume/mute control</p>
+</li>
+<li class="li"><p class="p">USB Attach/Detach and mute status using an LED on E70XULT and MZEFC2 boards</p>
+</li>
+<li class="li"><p class="p">Utilization of the of SAM E70 I2S peripherals, E70 SSC (as slave) and I2SC (as master), on E70XULT board</p>
+</li>
+<li class="li"><p class="p">Utilization of the PIC32 I2S peripheral (as master) on the MZEFC2 board</p>
+</li>
+</ul>
+<p class="p">Note that all the calls to the WM8904 and AK4954 codec drivers use the form DRV_CODEC_xxx rather than DRV_WM8904_xxx. or DRV_AK4954_xxx This is to make the code more generic, such that another codec could be substituted for another without having to make changes to the application code except for the location of the driver�s public header file.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="tools-setup-differences"><h2 class="title topictitle2" id="ariaid-title5">Tools Setup Differences</h2><div class="body"></div>
+<div class="topic nested2" aria-labelledby="ariaid-title6" id="harmony-configuration"><h3 class="title topictitle3" id="ariaid-title6">Harmony Configuration</h3><div class="body"><p class="p">The usb_speaker demonstration uses multiples projects for multiple hardware configurations. MPLAB-X Harmony 3 projects only have one associated configuration. When each Harmony 3 project is created the MPLAB-X Harmony Configurator (MHC) code generation is guided by the processor that is selected.</p>
+<p class="p">Start MHC for the project in order to add the application code components. Both projects of the usb_speaker application use the USB Audio stack components. These can be added by selecting the Libraries/USB/Device Stack/Audio Function Driver component template under the MHC Available Components list, as shown below.</p>
+<br /><img class="image" src="GUID-2F5E90D6-DC39-4405-8CF9-5D0D3CAE2E50-low.png" /><br /><p class="p">Answer yes to all questions. This loads the USB High Speed Driver, the USB Device Layer and Audio Function Driver components.</p>
+<p class="p">The Codec component to be used depends on the hardware and peripheral configuration. This is described in the following two sections.</p>
+<p class="p">The MHC Project Graph for usb_speaker_basic is shown below for the E70XULT board.</p>
+<br /><img class="image" src="GUID-BC9AD5DE-0E61-4DCE-9402-5350C181E95E-low.png" /><br /><p class="p"><em class="ph i">Figure 2. USB Speaker Basic MHC Project Graph for the SAM E70 Xplained Ultra Board</em></p>
+<p class="p">Each block provides configuration parameters to generate the application framework code. This includes all the needed drivers, middleware, libraries. The generated framework code is placed under the firmware/src/config directory for this usb_speaker application (usb_speaker_basic_sam_e70_xult_wm8904_usb). The usb_speaker_basic application code is located in the firmware/src directory app.c and app.h files, which utilize the framework drivers, middleware and library APIs located in definitions.h (as generated by the configurator).</p>
+<p class="p">A configuration utilizing the I2SC1 peripheral as a slave is used to replace the SSC as a master in the above diagram. Also, a configuration that adds the FreeRTOS block to the above project is also given.</p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title7" id="pic32-mz-ef-curiosity-2-and-the-ak4965-daughter-board-configuration"><h3 class="title topictitle3" id="ariaid-title7">PIC32 MZ EF Curiosity 2 and the AK4965 Daughter Board Configuration</h3><div class="body"><p class="p">The MZEFC2 board configuration in similar to the prior E70XULT board configuration, but replaces the WM8904 with an AK4954 Codec, which uses a different I2S peripheral driver.</p>
+<p class="p">In the MHC, under Available Components select the BSP PIC32 MZ EF Curiosity 2.0. Under Audio&gt;Templates, double-click on AK4954 Codec Template (shown below). Answer Yes to all questions except for the one regarding FreeRTOS; answer No to that one. This loads the AK4954 Codec component along with associated I2C, I2S and timer driver components.</p>
+<br /><img class="image" src="GUID-C10C6516-5172-48ED-A581-246AC04C5F96-low.png" /><br /><p class="p">The project configuration should now look something like this:</p>
+<br /><img class="image" src="GUID-BC9AD5DE-0E61-4DCE-9402-5350C181E95E-low.png" /><br /><p class="p"><em class="ph i">Figure 3. USB Speaker Project Graph for the PIC32 MZ EF Curiosity 2 Board</em></p>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title8" id="harmony-code-configuration-options"><h2 class="title topictitle2" id="ariaid-title8">Harmony Code Configuration Options</h2><div class="body"><p class="p">Each block in the MHC Project Graph may need to be configured through parameters for the specific application. These parameters are accessed by selecting the block with the mouse, and appear in the Configuration Options window, where they can be edited. The next section describes the configuration of the USB, Math, and Codec component blocks for the USB Speaker with �Bass Boost� application.</p>
+<p class="p">USB Configuration</p>
+<p class="p">The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is set to �Full Speed�, V1.0 interface (not �High Speed�, V2.0 Interface):</p>
+<br /><img class="image" src="GUID-9868214B-95B3-49F1-91D8-548898D0E707-low.png" /><br /><p class="p">The USB Device Layer is configured by selecting Product ID Selection as �usb_speaker_demo� with an endpoint buffer size of 64 (bytes). The Product String Selection is changed to �Harmony USB Speaker w/Bass Boost Example�. This information will be used to generate the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder) that defines the enumeration of device functions with the USB Host. This structure defines the connection to the host at 48 kHz with 16 bit stereo channel data.</p>
+<br /><img class="image" src="GUID-84DA0B15-B884-4FAA-A0AE-EFD7132A920E-low.png" /><br /><p class="p">The Audio Function Driver is configured with an Audio Read Queue that matches that of the codec driver write queue for this Audio V1.0 USB Speaker interface.</p>
+<p class="p">A playback packet queue of length 64 is set with the Audio Read Queue Size configuration, which should match the Audio Write Queue Size of the WM8904/I2S. The Audio Write Queue Size is unimportant. The The maximum USB packets size is set to 48 * 2 channels/sample * 2 bytes/channel= 192 bytes, which gives a 1ms stereo sample packet size at 48Khz (the standard data frame length at this rate), thus the buffer size needs to be of the same size.</p>
+<br /><img class="image" src="GUID-2F5E90D6-DC39-4405-8CF9-5D0D3CAE2E50-low.png" /><br /></div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title9" id="the-wm8904-codec"><h2 class="title topictitle2" id="ariaid-title9">The WM8904 Codec</h2><div class="body"><p class="p">Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board:</p>
+<p class="p">The WM8904 codec uses a TWIHS (I2C) interface for configuration and control register setting and either a SSC for audio data or I2SC I2S interface. The default settings are used as shown below for SSC:</p>
+<br /><img class="image" src="GUID-5A5E7EA2-51E7-4F7E-B55F-75511EDE1F44-low.png" /><br /><p class="p">When the I2SC1 driver is used for DRV_I2S_0 the usage mode changes to �Slave�</p>
+<p class="p">The I2S configuration uses a Transfer queue size of 64, matching that that of the USB Read Queue:</p>
+<br /><img class="image" src="GUID-FF8D0815-FB95-4A51-A65D-BEEC5A515581-low.png" /><br /><p class="p">The I2SC1 automatically replaces the �PLIB Used� when it is connected to the I2S block in place of the SSC.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title10" id="pin-manager"><h2 class="title topictitle2" id="ariaid-title10">Pin Manager</h2><div class="body"><p class="p">The buttons, LED, Switch, I2S and I2C interfaces using GPIO pins via the Microchip Harmony Configurator (MHC) Pin Manager, as follows for the SSC:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e215"><span><strong class="ph b">NAME</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e218"><span><strong class="ph b">PORT</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e221"><span><strong class="ph b">E70 PIN</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e224"><span><strong class="ph b">Notes</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>SSC_TK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PB01</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>20</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>I2S BCLK</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>SSC_TF</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PB00</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>21</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>I2S LRCK</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>PMC_PCK2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PA18</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>24</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>I2S MCLK (Master Clock)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>SSC_TD</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PD26</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>53</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>I2S Data</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>SWITCH</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PA11</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>66</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>Push Button</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>LED</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PA05</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>73</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>-</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>TWIHS0_TWCK0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PA04</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>77</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>I2C</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>TWIHS0_TWD0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PA03</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>91</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>I2C</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>STDBY</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PD11</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>98</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>-</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e215 "><span>LED2/VBUS DETECT(J204)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e218 "><span>PB08</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e221 "><span>141</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e224 "><span>J204 set to VBUS DETECT for USB Device</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">When the I2SC1 is used the following pins are used:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e328"><span><strong class="ph b">NAME</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e331"><span><strong class="ph b">PORT</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e334"><span><strong class="ph b">E70 PIN</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e337"><span><strong class="ph b">Notes</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>I2SC1_WS</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PE00</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>4</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2S LRCK (Word Select)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>I2SC1_DO0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PE01</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>6</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2S DO (Data Out)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>I2SC1_DI0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PE02</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>7</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2S DI (Data In)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>I2SC1_CK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA20</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>22</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2S BCLK (Bit Clock)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>I2SC1_GCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA19</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>23</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2S MCLK (Bit Clock as used by the E70 I2SC1, I2S Master)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>PMC_PCK2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA18</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>24</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2S MCLK (Master Clock as used by the WM8904 Codec I2S Slave)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>SWITCH</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA11</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>66</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>Push Button</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>LED1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA05</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>73</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>-</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>TWIHS0_TWCK0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA04</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>77</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2C</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>TWIHS0_TWD0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PA03</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>91</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>I2C</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>STDBY</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PD11</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>98</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>-</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e328 "><span>LED2/VBUS DETECT(J204)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e331 "><span>PB08</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e334 "><span>141</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e337 "><span>J204 set to VBUS DETECT for USB Device</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title11" id="clock-manager"><h2 class="title topictitle2" id="ariaid-title11">Clock Manager</h2><div class="body"><p class="p">All clocks are generated from the 12 MHz Main Clock oscillator. From this clock is derived the following clocks:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e463"><span><strong class="ph b">Clock</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e466"><span><strong class="ph b">Value</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e469"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e463 "><span>HCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e466 "><span>300 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e469 "><span>Processor Clock</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e463 "><span>PCK2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e466 "><span>12 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e469 "><span>Peripheral Clock 2</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e463 "><span>USB FS</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e466 "><span>48 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e469 "><span>USB Full Speed Clock</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The I2S clocks are setup for 48KHz sampling rate, with stereo 16 bit samples, giving a 32 bit sample frame. The I2S clocks are generated from the WM8904 acting as I2S master using the 12.288 Mhz master clock obtained from Peripheral Clock 2 (PCK2). The I2S clocks will then be generated, as follows:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e503"><span><strong class="ph b">I2S Function</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e506"><span><strong class="ph b">Value</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e509"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e503 "><span>LRCK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e506 "><span>48.000000 K</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e509 "><span>Sample rate clock</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e503 "><span>BCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e506 "><span>3072000 Hz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e509 "><span>Bit Rate Clock</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e503 "><span>MCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e506 "><span>12.288000 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e509 "><span>Master Clock</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title12" id="mplab-harmony-configurator-toolsclock-configuration"><h2 class="title topictitle2" id="ariaid-title12">MPLAB Harmony Configurator: Tools&gt;Clock Configuration</h2><div class="body"></div>
+<div class="topic nested2" aria-labelledby="ariaid-title13" id="ssc-clock-configuration"><h3 class="title topictitle3" id="ariaid-title13">SSC Clock Configuration</h3><div class="body"><p class="p">Uncheck the Main RC Oscillator and check the �Bypass� for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.</p>
+<br /><img class="image" src="GUID-24BAE0B3-F397-427F-8446-E14C03C7B1B6-low.png" /><br /><p class="p"><em class="ph i">Figure 4. Main Clock Configuration</em></p>
+<p class="p">Enable the PCK2 output to enable the WM8904 master clock generation, to enable clocking for the SSC operating as a slave I2S:</p>
+<br /><img class="image" src="GUID-CEE0E1D1-C3D3-49D2-AB02-18ECA9934E1A-low.png" /><br /><p class="p"><em class="ph i">Figure 5. Clock Diagram&gt;Peripheral Clock Enable</em></p>
+<p class="p">Enable the peripheral clock to the SSC using the Peripheral Clock Enable of the Peripheral Clock Controller:</p>
+<br /><img class="image" src="GUID-039FF24F-5FEA-4C79-B1FE-E0E7105F55E8-low.png" /><br /><p class="p"><em class="ph i">Figure 6. Enable SSC Clock</em></p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title14" id="i2sc1-clock-configuration"><h3 class="title topictitle3" id="ariaid-title14">I2SC1 Clock Configuration</h3><div class="body"><p class="p">The I2SC1 master requires the I2SC1_GCLK generate an MCLK to approximate 12.288Mhz. This is sourced using the PLLA Clock (PLLACK), as shown below.</p>
+<br /><img class="image" src="GUID-5DAE21FD-58C2-43DC-BBB1-294C664DCC2E-low.png" /><br /><p class="p"><em class="ph i">Figure 7. PLLA Clock Generation for I2SC Peripheral</em></p>
+<br /><img class="image" src="GUID-91A907D2-1B4D-434A-BB0D-161886B011FF-low.png" /><br /><p class="p"><em class="ph i">Figure 8. Generic Clock (GCLK) Generation for the I2SC1</em></p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="harmony-code-generation"><h3 class="title topictitle3" id="ariaid-title15">Harmony Code Generation</h3><div class="body"><p class="p">All the needed drivers, middleware, libraries and application framework code can be generated from the MHC blocks (MHC components) placed in the MHC Project Graph,</p>
+<p class="p">The generated framework code is placed under the firmware/src/config directory under the name of the configuration used for the Harmony 3 project. The initial application code is located in the firmware/src directory app.c and app.h files, which utilize the framework drivers, middleware and library APIs located in definitions.h located in the config directory.</p>
+<p class="p">All Harmony applications first execute the SYS_Initialize function, located in initialization.c. This is executed from the main function to initialize various subsystems such as the clock, ports, BSP (board support package), codec, usb, timers, and interrupts. The application APP_Initialize function in app.c is executed last in the generated SYS_Initialize routine after the system initializations have completed.</p>
+<p class="p">The SYS_Tasks function (located in tasks.c) is used to update the USB subsystems, WM8904 driver, timers etc., as well as the application state machine (APP_tasks routine in app.c). This function is executed from the main polling loop. The polling loop either execute SYS_Tasks repeatably in the infinite loop to perform the updates, or it the updates occur as separate processes executed at fixed time intervals using an RTOS schedular.</p>
+<p class="p">The application utilizes a simple state machine (APP_Tasks executed from SYS_Tasks) with the following functions</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Setup the drivers and USB Library interface</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Respond to USB Host control commands (�Attach�, �Detach�, �Suspend�)</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Initiate and maintains the bidirectional data audio streaming for the "USB Playback" function.</p>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Sense Volume control button pushes and set LED status lights</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="building-the-application"><h3 class="title topictitle3" id="ariaid-title16">Building the Application</h3><div class="body"><p class="p">This section identifies the MPLAB X IDE project name and location and lists and describes the available configurations for the demonstration.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p">The parent folder for these files is audio/apps/usb_speaker. To build this project, you must open the audio/apps/usb_speaker/firmware/*.X project file in MPLAB X IDE that corresponds to your hardware configuration.</p>
+<p class="p"><strong class="ph b">MPLAB X IDE Project</strong></p>
+<p class="p">This table lists the name and location of the MPLAB X IDE project folder for the demonstration.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title17" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title17">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">This table lists and describes the supported configurations of the demonstration, which are located within ./firmware/src/config.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e631"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e634"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e637"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e631 "><span>us_basic_pic32mz_ef_c2_ ak4954</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e634 "><span>pic32_mz_ef_c2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e637 "><span>This demonstration runs on the PIC32 MZ EF Curiosity 2 board with the AK4954 Codec.</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e631 "><span>us_basic_sam_e70_xult_ wm8904_i2sc_usb</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e634 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e637 "><span>This demonstration runs on the SAM E70 Xplained Ultra board with the WM8904 daughter board using the I2SC PLIB.</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e631 "><span>us_basic_sam_e70_xult_ wm8904_ssc_usb</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e634 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e637 "><span>This demonstration runs on the SAM E70 Xplained Ultra board with the WM8904 daughter board using the SSC PLIB.</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e631 "><span>us_basic_sam_e70_xult_ wm8904_ssc_usb_freertos</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e634 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e637 "><span>This demonstration runs on the SAM E70 Xplained Ultra board with the WM8904 daughter board using the I2SC PLIB. It also uses FreeRTOS.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title18" id="configuring-the-hardware"><h3 class="title topictitle3" id="ariaid-title18">Configuring the Hardware</h3><div class="body"><p class="p">This section describes how to configure the supported hardware.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p">Using the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board configured for the I2SC1 PLIB:</p>
+<p class="p">Jumper J203, which is next to the SAM E70 Xplained Ultra logo, should be jumpered for VBUS (not LED2).</p>
+<p class="p">To connect to the I2SC1, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughterboard must be oriented toward the pink, mic in, connector.</p>
+<br /><img class="image" src="GUID-7279E689-7131-40C8-81CA-1015C2754C80-low.png" /><br /><p class="p">Attach the WM8904 Daughter Board to the X32 connector and connect headphones to the green HP OUT jack, as shown in the figure below.</p>
+<br /><img class="image" src="GUID-D6E1D565-2CFE-4749-81E3-DBBCAF0D7463-low.png" /><br /><p class="p"><em class="ph i">WM8904 Audio Codec Daughter Board on SAM E70 Xplained Ultra board. Headphone Out Jack is green. Microphone In Jack is pink. Note: the brown wire is a jumper between EXT1-13 to J601(Camera)-14 and is not used for this demo.</em></p>
+<p class="p"><img class="image" src="GUID-5763B4BD-5EB0-4C4C-8B3F-073AAA0A567E-low.png" /><br /> <strong class="ph b">Note:</strong> The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.</p>
+<p class="p">As shown, the SAM E70 will be programmed via MPLAB-X through the USB cable connected to the EDBG micro-mini connector. Program debug can also be performed over USB this connection, if required.</p>
+<p class="p">Using the PIC32 MZ EF Curiosity 2 and the AK4965 Daughter Board:</p>
+<p class="p">The PIC32 MZ EF Curiosity board and the AK4954 Audio Codec Daughter Board only requires the AK4954 Codec Daughterboard to be connected to X32 Header 2 as shown below. No jumper settings are required.</p>
+<br /><img class="image" src="GUID-416B81B1-DE1E-44E0-AEA3-0AAB0AAFF677-low.png" /><br /><p class="p"><em class="ph i">AK4954 Audio Codec Daughter Board on PIC32 MZ EF Curiosity 2 board. Headphone Out Jack is green. Microphone In Jack is pink.</em></p>
+<p class="p"><img class="image" src="GUID-5763B4BD-5EB0-4C4C-8B3F-073AAA0A567E-low.png" /><br /> <strong class="ph b">Note:</strong> The SAM E70 Xplained Ultra board does not include the AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC324954.</p>
+<p class="p">Connect headphones to the green HP OUT jack of the Codec Daughter Board (as shown in the Figure above).</p>
+<p class="p">As shown, the SAM E70 will be programmed through the USB cable connected to the PKOB4 micro-mini connector. Program debug can also be performed over USB this connection.</p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title19" id="running-the-demonstration"><h3 class="title topictitle3" id="ariaid-title19">Running the Demonstration</h3><div class="body"><p class="p">This section demonstrates how to run the demonstration.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p"><img class="image" src="GUID-1C8943D7-6A06-4320-9054-FD2C2D7F9286-low.png" /><br /> <strong class="ph b">Important!</strong> Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.</p>
+<p class="p">Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project. Refer to Building the Application for details</p>
+<p class="p">Do the following to run the demonstration:</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Configure the hardware, as described in the previous section, for the selected MPLAB-X project.</p>
+</li>
+</ol>
+<p class="p"><strong class="ph b">Important:</strong> The I2SC/SSC jumpers must be in the correct position for the configuration being run.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Connect power to the board, compile the application and program the target device. Run the device. The system will be in a waiting for USB to be connected (LED1 off).</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Connect to the USB Host via the micro-mini connector (see Configuring the Hardware).</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Allow the Host computer to acknowledge, install drivers (if needed), and enumerate the device. No special software is necessary on the Host side. LED1 will blink after enumeration. It will continue to blink until the Harmony USB Speaker is selected as the speaker device, and the audio stream is started. It will then turn a solid color.</p>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">If needed, configure the Host computer to use the usb_speaker as the selected audio recording device. For Windows, this is done in the "Recording" tab in the "Sound" dialog for Windows 7 or by selecting the �Open Sound Setting�. The sound dialog</p>
+</li>
+</ol>
+<p class="p">selection for Both Windows 10 and Windows 7 sound dialog is accessed by right clicking the loudspeaker icon in the taskbar, which will bring up a menu for the selection. This is shown in the Figure below for Windows 10. Windows 7 works in a similar fashion.</p>
+<br /><img class="image" src="GUID-65607FAF-1948-4506-9219-858009E08101-low.png" /><br /><p class="p"><em class="ph i">Figure 12. Windows 10 - Sound Dialog Showing Harmony USB Speaker Selection.</em></p>
+<p class="p"><img class="image" src="GUID-5763B4BD-5EB0-4C4C-8B3F-073AAA0A567E-low.png" /><br /> <strong class="ph b">Note:</strong> The device "Harmony USB Speaker Example" should be available along with a sound level meter indication audio when playing. If no sound level is registering or the name of the Harmony speaker is incorrect, uninstall the driver using the Windows Device Manager, since it may have incorrect configuration set by a similar connection to one of the other MPLAB-X Harmony Audio Demos.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open a playback application (such as Window Media Player) and initiate playback through the USB Speaker. LED 1 should be a solid color.</p>
+</li>
+</ol>
+<p class="p">Open a playback application (such as Window Media Player) and initiate playback through the USB Speaker</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Playback of the should demonstrate that the audio is being heard in the USB Speaker headphones.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Volume can be change by repeated press of SW1. Volume will increase to maximum. It will then mute the speaker (LED1 will fast blink during mute) and then start increasing from minimum volume to maximum after more presses of SW1. NOTE: Volume is also controlled using the PC volume control and the Windows Media Player volume control.,</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title20" id="control-description"><h2 class="title topictitle2" id="ariaid-title20">Control Description</h2><div class="body"><p class="p">Button control uses the push button function sequence given in the table below:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e796"><span><strong class="ph b">Function</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e799"><span><strong class="ph b">Press</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e796 "><span>Volume Control Level 1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e799 "><span>Low (-66 dB)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e796 "><span>Volume Control Level 2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e799 "><span>Medium (-48 dB)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e796 "><span>Volume Control Level 3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e799 "><span>High (-0 dB)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e796 "><span>Mute</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e799 "><span>Mute</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p"><strong class="ph b">Note:</strong> Mute will transition to Volume Control Level 1 on the next button push.</p>
+<p class="p">USB operational status is given by LED1, as with the other USB Audio Demos, as shown below:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e835"><span><strong class="ph b">LED1</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e838"><span><strong class="ph b">Status</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e835 "><span>OFF</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e838 "><span>USB cable detached</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e835 "><span>ON</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e838 "><span>USB cable attached</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e835 "><span>Blinking</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e838 "><span>Playback muted or USB waiting to be configured</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The PIC32MZ EF Curiosity 2 has a second LED (LED2), which indicates if the audio
+is streaming or not.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e865"><span><strong class="ph b">LED1</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10146e868"><span><strong class="ph b">Status</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e865 "><span>OFF</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e868 "><span>USB Audio not configured</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e865 "><span>ON</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e868 "><span>USB Audio is streaming</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e865 "><span>Blinking</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10146e868 "><span>Playback muted or USB Audio not streaming</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

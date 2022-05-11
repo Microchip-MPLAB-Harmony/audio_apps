@@ -191,6 +191,7 @@ extern "C" {
 
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Middleware & Other Library Configuration
@@ -207,10 +208,6 @@ extern "C" {
 
 /* EP0 size in bytes */
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
-
-
-
-
 
 
 

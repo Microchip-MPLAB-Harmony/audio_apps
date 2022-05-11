@@ -57,52 +57,44 @@
 */
 void GPIO_Initialize ( void )
 {
+
     /* PORTA Initialization */
     ODCASET = 0xc000; /* Open Drain Enable */
     ANSELACLR = 0x603; /* Digital Mode Enable */
-
     /* PORTB Initialization */
     ODCBSET = 0x380; /* Open Drain Enable */
     LATB = 0x380; /* Initial Latch Value */
     TRISBCLR = 0x380; /* Direction Control */
     ANSELBCLR = 0xffff; /* Digital Mode Enable */
-
     /* PORTC Initialization */
     ANSELCCLR = 0x1e; /* Digital Mode Enable */
-
     /* PORTD Initialization */
     ANSELDCLR = 0xc000; /* Digital Mode Enable */
-
     /* PORTE Initialization */
     ANSELECLR = 0x3f0; /* Digital Mode Enable */
-
     /* PORTF Initialization */
     ANSELFCLR = 0x3000; /* Digital Mode Enable */
-
     /* PORTG Initialization */
     ANSELGCLR = 0x83c0; /* Digital Mode Enable */
-
     /* PORTH Initialization */
     LATH = 0x8; /* Initial Latch Value */
     TRISHCLR = 0x8; /* Direction Control */
     ANSELHCLR = 0x73; /* Digital Mode Enable */
-
     /* PORTJ Initialization */
     ODCJSET = 0x88; /* Open Drain Enable */
     LATJ = 0x488; /* Initial Latch Value */
     TRISJCLR = 0x488; /* Direction Control */
     ANSELJCLR = 0xb00; /* Digital Mode Enable */
-
     /* PORTK Initialization */
     ODCKSET = 0x80; /* Open Drain Enable */
     LATK = 0x80; /* Initial Latch Value */
     TRISKCLR = 0x80; /* Direction Control */
 
-
     /* Unlock system for PPS configuration */
     SYSKEY = 0x00000000;
     SYSKEY = 0xAA996655;
     SYSKEY = 0x556699AA;
+
     CFGCONbits.IOLOCK = 0;
 
     /* PPS Input Remapping */
@@ -115,6 +107,7 @@ void GPIO_Initialize ( void )
 
     /* Lock back the system after PPS configuration */
     CFGCONbits.IOLOCK = 1;
+
     SYSKEY = 0x00000000;
 
 }

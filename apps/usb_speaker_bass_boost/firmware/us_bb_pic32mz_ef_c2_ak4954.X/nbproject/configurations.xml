@@ -345,6 +345,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_c2_ak4954/harmony-manifest-success.yml</itemPath>
+      <itemPath>us_bb_pic32mz_ef_c2_ak4954.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -360,7 +361,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -372,6 +373,7 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>../src/config/pic32mz_ef_c2_ak4954/audio/math/dsp/dsp_mips32_mz_ef_nfO3.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/pic32mz_ef_c2_ak4954/audio/math/libq/libq_mips32_mz_ef_nfO3.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

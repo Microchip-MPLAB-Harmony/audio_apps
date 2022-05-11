@@ -211,10 +211,6 @@ extern "C" {
 
 
 
-
-
-
-
 /*** USB Driver Configuration ***/
 
 /* Maximum USB driver instances */

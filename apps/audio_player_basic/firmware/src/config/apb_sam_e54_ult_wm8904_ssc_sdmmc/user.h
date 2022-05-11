@@ -43,7 +43,6 @@ extern "C" {
 #define BUTTON_DEBOUNCE 400
 #define LONG_BUTTON_PRESS 8000
 
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

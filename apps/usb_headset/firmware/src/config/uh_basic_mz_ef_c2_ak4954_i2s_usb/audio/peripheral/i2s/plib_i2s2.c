@@ -240,3 +240,4 @@ uint32_t I2S2_BaudRateSet(uint32_t bitClk, uint32_t baudRate)
     
     return t_brg;
 }
+ 

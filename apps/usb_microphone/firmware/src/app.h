@@ -66,6 +66,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
     extern "C" {
 
 #endif
+// DOM-IGNORE-END
 
 //Buttons
 #define BUTTON_DEBOUNCE 50
@@ -421,6 +422,7 @@ void APP_CODECBufferEventHandler(DRV_CODEC_BUFFER_EVENT event, DRV_CODEC_BUFFER_
 //DOM-IGNORE-END
 
 #endif /* _APP_H */
+
 /*******************************************************************************
  End of File
  */

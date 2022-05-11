@@ -444,7 +444,6 @@ void Audio_Codec_TxBufferComplete(void)
     // not used
 }
 
-
 /*******************************************************************************
  End of File
  */

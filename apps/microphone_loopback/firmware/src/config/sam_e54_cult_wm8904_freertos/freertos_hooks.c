@@ -60,7 +60,7 @@ void vApplicationStackOverflowHook( TaskHandle_t pxTask, signed char *pcTaskName
    ( void ) pxTask;
 
    /* Run time task stack overflow checking is performed if
-   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook	function is
+   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook  function is
    called if a task stack overflow is detected.  Note the system/interrupt
    stack is not checked. */
    taskDISABLE_INTERRUPTS();
@@ -165,10 +165,6 @@ void vAssertCalled( const char * pcFile, unsigned long ulLine )
 /*-----------------------------------------------------------*/
 
 
-
-
 /*******************************************************************************
  End of File
  */
-
- 

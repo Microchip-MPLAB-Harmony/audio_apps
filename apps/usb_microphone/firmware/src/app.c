@@ -33,6 +33,7 @@ Copyright (c) 2013-2019 released Microchip Technology Inc.  All rights reserved.
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+
 #include "app.h"
 
 //#include "display.h"

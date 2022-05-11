@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="audio_enc" />
+<meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="audio-enc" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>audio_enc</title>
+<meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-audio-enc" />
+<meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB® Harmony Audio Apps Help Reference A 04/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-296956BD-C385-44FC-A4BC-87E05F4DD855"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="audio-enc">
+<h1 class="title topictitle1" id="ariaid-title1">audio_enc</h1><div class="body"><p class="p">This readme file provides instructions and information about the MPLAB Harmony 3 Audio Encoder demonstration application, which is included in the MPLAB Harmony Library distribution.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html">Harmony 3 audio application examples</a></div>
+</div>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2">Description</h2><div class="body"><p class="p">The audio encoder (audio_enc) application configures the SAM E70 Xplained Ultra development board to be in USB Host Mass Storage Device (MSD) mode. The application supports read/write from/to the FAT file system. When a mass storage device is connected to the development board via its target USB port, the device is mounted. After the MSD is mounted, the application waits for a short button press (&lt; 1 sec) to start recording data from the mic input on the WM8904 Audio Codec Module. This recording will continue until another short press is detected signaling to stop recording. The recorded data is then PCM encoded and packed into a .wav container file and saved on the MSD. The app then waits to playback the last recorded file or encode another file.</p>
+<p class="p">All encodings are at 16K sample rate, stereo, and 16 bit depth. The name of the encoded file will be created according to the following (enc16K16b&lt;000-999&gt;.wav). A file will not be written over if it already exists. If a file is found to be already on the MSD, the numeric part of the file name will be incremented once until an unused file name is found. If trying to playback the last encoded file but there has been no file encoded yet, both LEDs will flash and the app will go back to waiting to start encoding a file. If there is a file available to be played, the app will read the .wav file data and write it to the codec for playback.</p>
+<p class="p">Command and control to the codec is done through an I2C driver. Data to the codec driver is sent through I2SC via I2S Driver and the output will be audible through the headphone output jack of the WM8904 Audio Codec Module connected to the SAM E70 Xplained Ultra board. The below architecture diagram depicts a representation of the application.</p>
+<p class="p">The current development board, SAM E70 Xplained Ultra, supplies one button and two LEDs for control and status feedback. LED 1 is amber and LED 2 is green. The application currently only supports PCM encoding and playback to and from a .wav file container.</p>
+<p class="p">Supported audio files are as represented in the table below.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d176e40"><span><strong class="ph b">Audio Format</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e43"><span><strong class="ph b">Sample Rate (kHz)</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e46"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e40 "><span>PCM</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e43 "><span>16</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e46 "><span>PCM (Pulse Code Modulation) is an uncompressed format. The digital data is a direct representation of the analog audio waveform. The container for the data will be a WAVE file (.wav) format. It is the native file format used by Microsoft Windows for storing digital audio data.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="architecture"><h2 class="title topictitle2" id="ariaid-title3">Architecture</h2><div class="body"><p class="p">The audio encoder (audio_enc) application uses the MPLAB Harmony Configurator to setup the USB Host, FS, Codec, and other items in order to read the music files on a USB MSD drive and play it back on the WM8904 Codec Module. It scans WAV (PCM) format files on mounted FAT USB thumb drive and streams audio through a WM8904 Audio Codec to a speaker. In the application, the number of audio output buffers can always set to be more than two to enhance the audio quality. And, the size of input buffer in this application is chosen to be able to handle all data supported. The following figure shows the architecture for the demonstration.</p>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title4" id="architecture-block-diagram"><h3 class="title topictitle3" id="ariaid-title4">Architecture Block Diagram</h3><div class="body"><br /><img class="image" src="GUID-9A426649-2362-4E2E-83EC-A410DFB4DDE5-low.png" /><br /></div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="demonstration-features"><h2 class="title topictitle2" id="ariaid-title5">Demonstration Features</h2><div class="body"><ul class="ul"><li class="li"><p class="p">USB MSD Host Client Driver (see H3 USB MSD Host Client Driver Library)</p>
+</li>
+<li class="li"><p class="p">FAT File System (see H3 File System Service Library)</p>
+</li>
+<li class="li"><p class="p">Audio real-time buffer handling</p>
+</li>
+<li class="li"><p class="p">WM8904 Codec Driver (see H3 CODEC Driver Libraries)</p>
+</li>
+<li class="li"><p class="p">I2S usage in audio system (see H3 I2S Driver Library Help)</p>
+</li>
+<li class="li"><p class="p">DMA (see H3 DMA area)</p>
+</li>
+<li class="li"><p class="p">Timer (see H3 Timer area)</p>
+</li>
+<li class="li"><p class="p">GPIO Control (see H3 GPIO area)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title6" id="harmony-configuration"><h2 class="title topictitle2" id="ariaid-title6">Harmony Configuration</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Add BSP-&gt;SAM E70 Xplained Ultra BSP</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Add Audio-&gt;Templates-&gt;WM8904 Codec</p>
+<ul class="ul"><li class="li"><p class="p">Yes to all popups</p>
+</li>
+<li class="li"><p class="p">Modify WM8904 Codec from SSC to I2SC</p>
+</li>
+<li class="li"><p class="p">Yes to all popups</p>
+</li>
+</ul>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Add Libraries-&gt;USB-&gt;Host Stack-&gt;MSD Client Driver</p>
+<ul class="ul"><li class="li"><p class="p">a. Yes to all popups</p>
+</li>
+</ul>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Add Harmony-&gt;System Services-&gt;FILE SYSTEM</p>
+</li>
+<li class="li"><span class="indent-level-default">5.</span><p class="p">Add Harmony-&gt;Audio-&gt;Decoder-&gt;AudioDecoderLibraries</p>
+</li>
+<li class="li"><span class="indent-level-default">6.</span><p class="p">Add Harmony-&gt;Audio-&gt;Encoder-&gt;AudioEncoderLibraries</p>
+</li>
+<li class="li"><span class="indent-level-default">7.</span><p class="p">Remove FreeRTOS if Bare Metal version</p>
+</li>
+<li class="li"><span class="indent-level-default">8.</span><p class="p">Connect MSD Client Driver: DRV_MEDIA to FILE SYSTEM: DRV_MEDIA After reorganization, your graph should look similar to the following:</p>
+</li>
+</ol>
+<br /><img class="image" src="GUID-BA36A822-A19A-4F45-882D-4DFD8A0631F1-low.png" /><br /><p class="p">If using FreeRTOS, your diagram will be slightly different. You will see an additional block for FreeRTOS as shown below.</p>
+<br /><img class="image" src="GUID-67026499-A17D-4B1A-AF19-78093FE7609C-low.png" /><br /></div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title7" id="tools-setup-differences"><h2 class="title topictitle2" id="ariaid-title7">Tools Setup Differences</h2><div class="body"><p class="p">The default configuration should be correct for the majority of the app. The following configurations will need to be changed for proper operations.</p>
+<p class="p">MPLAB Harmony Configurator: Tools-&gt;Clock Configuration</p>
+<p class="p">Uncheck the Main RC Oscillator and check the "Bypass" for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become unchecked.</p>
+<br /><img class="image" src="GUID-D98E0D35-DFE0-4BE9-BF3B-ECB48D2F79EA-low.png" /><br /><p class="p">Enable the PLLA Clock output.</p>
+<br /><img class="image" src="GUID-81CCDEA9-3A3E-431D-9E7E-FDB48DE63FFD-low.png" /><br /><p class="p">Enable clocking for the I2S1.</p>
+<br /><img class="image" src="GUID-C1B8D3AC-EC2B-4961-95FB-814424D486B2-low.png" /><br /><p class="p">To set the sample rate to a fixed 16KHz, set the PLLA divisor to 2 and the multiplier to 43. Also, set the I2S1 divisor to 63. Please see the two images above.</p>
+<p class="p">MPLAB Harmony Configurator: WM8904</p>
+<br /><img class="image" src="GUID-B22E7D2A-8725-4FA6-B878-A1255ADB2B6B-low.png" /><br /><p class="p">MPLAB Harmony Configurator: File System</p>
+<p class="p">The Auto Mount feature must be selected in order to expose the media type selection. The media type that is being used in this application is Mass Storage Device. This must be correctly configured, or the storage device will not mount.</p>
+<br /><img class="image" src="GUID-1A2468DB-B751-45D9-B1FC-2FF1BBF643FA-low.png" /><br /><p class="p">MPLAB Harmony Configurator: I2C Driver</p>
+<p class="p">If you are using FreeRTOS, set the driver mode back to Asynchronous.</p>
+<br /><img class="image" src="GUID-98D026BC-F14A-46FE-BB57-CB4570BCDB5F-low.png" /><br /><p class="p">MPLAB Harmony Configurator: System</p>
+<p class="p">Set the heap size in Harmony if it is not already set for the linker.</p>
+<br /><img class="image" src="GUID-355CAD9E-0D7F-4A8A-B228-38457789FC4A-low.png" /><br /><p class="p">MPLAB Harmony Configurator: EFC</p>
+<p class="p">Set the memory wait states to 6, if not already set.</p>
+<br /><img class="image" src="GUID-22165454-B373-4CAF-993D-8B941735E827-low.png" /><br /><p class="p">MPLAB Harmony Configurator: Audio Decoder Libraries Disable the ADPCM Decoder for this particular app.</p>
+<br /><img class="image" src="GUID-1620EACC-77A7-4DA9-8816-2C5B2A9DA51A-low.png" /><br /><p class="p">Save and generate code for the framework.</p>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title8" id="building-the-application"><h3 class="title topictitle3" id="ariaid-title8">Building the Application</h3><div class="body"><p class="p">This section identifies the MPLAB X IDE project name and location and lists and describes the available configurations for the demonstration.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p">The parent folder for these files is audio/apps/audio_enc. To build this project, you must open the audio/apps/audio_enc/firmware/*.X project file in MPLAB X IDE that corresponds to your hardware configuration.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title9" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title9">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">The following table lists and describes supported project configurations.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d176e217"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e220"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e223"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e217 "><span>audio_enc_sam_e70_xult_wm8904_i2sc</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e220 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e223 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board with the WM8904 Audio Codec Module attached. The project configuration is for encode/playback of an audio file to/from a USB Mass Storage Device. Data to be tx/rx to/from the Codec via I2S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master.</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e217 "><span>audio_enc_sam_e70_xult_wm8904_i2sc_freertos</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e220 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e223 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board with the WM8904 Audio Codec Module attached. The project configuration is for encode/playback of an audio file to/from a USB Mass Storage Device. Data to be tx/rx to/from the Codec via I2S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master. This demonstration also uses FreeRTOS.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title10" id="configuring-the-hardware"><h3 class="title topictitle3" id="ariaid-title10">Configuring the Hardware</h3><div class="body"><p class="p">This section describes how to configure the supported hardware.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p">This application uses the I2SC PLIB to transfer data to the WM8904 Audio Codec Daughter Board. To connect to the I2SC, the jumpers (J6, J7, J8, and J9) on the WM8904 Codec Daughter Board must be oriented towards the pink, mic in, connector. See the red outlined jumpers in the below image as reference.</p>
+<br /><img class="image" src="GUID-4F34A084-ECD0-4EEA-920A-90F4A389F8CD-low.png" /><br /><p class="p"><img class="image" src="GUID-E25116B2-1C25-4E7E-B8CD-47B33FB24372-low.png" /><br /> <strong class="ph b">Note:</strong> The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.</p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title11" id="running-the-demonstration"><h3 class="title topictitle3" id="ariaid-title11">Running the Demonstration</h3><div class="body"><p class="p">This section demonstrates how to run the demonstration.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p"><img class="image" src="GUID-CD9514C0-16BD-45FF-B17D-E0EFC9425B7A-low.png" /><br /> <strong class="ph b">Important!</strong> Prior to using this demonstration, it is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.</p>
+<p class="p">Compile and program the target device. While compiling, select the appropriate MPLAB X IDE project based. Refer to Building the Application for details.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Connect headphones to the green HP OUT jack of the WM8904 Audio Codec Daughter Board, and a microphone to the pink MIC IN jack.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Connect power to the board. The system will be in a wait state for USB to be connected (amber LED1 blinking).</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Connect a USB mass storage device (thumb drive) to the USB TARGET connector of the SAM E70 Xplained Ultra board. You will probably need a USB-A Female to Micro-B Male adapter cable to do so. The application currently can only record WAVE (.wav) format audio files.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title12" id="control-description"><h2 class="title topictitle2" id="ariaid-title12">Control Description</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Long presses of the push button cause the app to attempt to playback the last encoded file that is saved on the MSD. The two LEDs flash if there is no file that has been encoded.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Short presses of the push button cause the app to start or stop encoding.</p>
+</li>
+</ol>
+<p class="p">Button control is shown in the table below.</p>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title13" id="button-operations"><h3 class="title topictitle3" id="ariaid-title13">Button Operations</h3><div class="body">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d176e309"><span><strong class="ph b">Operation</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e312"><span><strong class="ph b">Function</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e309 "><span>Long Press (&gt; 1 sec)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e312 "><span>Play back the last encoded</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e309 "><span>Short Press (&lt; 1 sec)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e312 "><span>Start/Stop Encoding</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title14" id="status-indicator-description"><h2 class="title topictitle2" id="ariaid-title14">Status Indicator Description</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">When the application first starts running, it looks to find an attached storage device. If one is not found, LED1 will toggle on and off about every 100 ms indicating that a storage device is not attached.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">If/When a storage device is attached, LED1 will turn off.</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">LED2 will turn on when the application is ready to start encoding or playback the last encoded file. If playback is chosen without first creating an encoded file, LED1 and LED2 will toggle briefly then the app will wait for encoding to start.</p>
+</li>
+</ol>
+<p class="p">LED status indication is shown in the table below.</p>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="led-status"><h3 class="title topictitle3" id="ariaid-title15">LED Status</h3><div class="body">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d176e353"><span><strong class="ph b">Operation</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e356"><span><strong class="ph b">LED 1 Status</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d176e359"><span><strong class="ph b">LED 2 Status</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e353 "><span>No Storage Device Connected</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e356 "><span>Toggling</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e359 "><span>Off</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e353 "><span>Storage Device Connected</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e359 "><span>Don't Care</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e353 "><span>Ready to Encode/Playback</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e359 "><span>Don't Care</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e353 "><span>Not Ready to Encode/Playback</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e359 "><span>Off</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e353 "><span>Encoding</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e359 "><span>Toggling</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e353 "><span>Playback before Encoded File Created</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e356 "><span>Toggling</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d176e359 "><span>Toggling</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

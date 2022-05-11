@@ -18,8 +18,8 @@
     are defined here for convenience.
 *******************************************************************************/
 
-#ifndef APP_H
-#define APP_H
+#ifndef _APP_H
+#define _APP_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -134,13 +134,15 @@ void APP_Tasks( void );
 void APP_Tasks_sub( void );
 
 void KeyRepeatTask( void );
-
-#endif /* APP_H */
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
 #endif
 //DOM-IGNORE-END
 
+#endif /* _APP_H */
+
+/*******************************************************************************
+ End of File
+ */
 

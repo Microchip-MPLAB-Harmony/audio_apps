@@ -74,7 +74,6 @@ void SYS_Tasks ( void )
     /* Maintain system services */
     
 
-
     /* Maintain Device Drivers */
         DRV_AK4954_Tasks(sysObj.drvak4954Codec0);
 

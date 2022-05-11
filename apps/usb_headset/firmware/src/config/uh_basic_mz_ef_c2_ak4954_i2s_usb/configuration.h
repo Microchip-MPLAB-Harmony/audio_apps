@@ -207,10 +207,6 @@ extern "C" {
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 
-
-
-
-
 /* USB Device Audio Headset Descriptor macros for Audio Function driver instance 0 */ 
 #define USB_DEVICE_AUDIO_IDX0_DESCRIPTOR_CONTROL_INTERFACE_ID           0x00
 #define USB_DEVICE_AUDIO_IDX0_DESCRIPTOR_INPUT_TERMINAL_ID              0x01

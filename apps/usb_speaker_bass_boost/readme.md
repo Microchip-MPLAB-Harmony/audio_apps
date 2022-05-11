@@ -1,6 +1,6 @@
 # usb_speaker_bass_boost
 
-This topic provides instructions and information about the MPLAB Harmony 3 USB Speaker with “Bass Boost” audio enhancement demonstration application which is included in the MPLAB Harmony Library distribution.
+This topic provides instructions and information about the MPLAB Harmony 3 USB Speaker with ï¿½Bass Boostï¿½ audio enhancement demonstration application which is included in the MPLAB Harmony Library distribution.
 
 ## Description
 
@@ -19,7 +19,7 @@ The application runs on two target boards, as follows:
 *   Processor runs @ 300 MHz
 *   One push button (SW)
 *   Two LEDs (amber LED1 and green LED2). Only LED 1 can be used for a USB Device application, due to requiring VBUS sense to be selected rather than LED2.
-*   WM8904 Codec Daughter Board mounted on a X32 socket (configured as I2SC1 slave)
+*   WM8904 Codec Daughter Board mounted on a X32 socket (configured as I2SC1 Master)
 *   USB Device interface
 
 ![](graphics/note.png)  **Note:** The SAM E70 Xplained Ultra board does not include the WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as part number AC328904.
@@ -42,7 +42,7 @@ A USB Host system is connected to the micro-mini USB device connector. The appli
 
 ### Bass Boost Filter
 
-The “Bass Boost” audio enhancement is the 16 bit fixed-point implementation of a "Peak Shelving Filter", described by:
+The ï¿½Bass Boostï¿½ audio enhancement is the 16 bit fixed-point implementation of a "Peak Shelving Filter", described by:
 
 ![](graphics/usb_speaker_bb_equation.png)
 
@@ -50,7 +50,7 @@ NOTES:
 
 1.  The parameter "K" sets the transition frequency, Fc, above where the boost goes away.
 2.  The parameter "V0" sets the boost or cut value in dB
-3.  The parameter “root2” adjusts the slope of the transition (replaces square root of 2) Giving the coefficients of 2nd-order difference equation:
+3.  The parameter ï¿½root2ï¿½ adjusts the slope of the transition (replaces square root of 2) Giving the coefficients of 2nd-order difference equation:
 
 ![](graphics/usb_speaker_bb_equation2.png)
 
@@ -60,7 +60,7 @@ The Direct-Form 1 implementation (without scaling) is shown below:
 
 _Figure 1. Biquad Filter - Direct Form 1_
 
-The a0 scaling parameter can assumed to be 1, but for fixed point coefficient multiplies the right hand side coefficients should be scaled to fit into the required “Q” format. See LIBQ or CMIS-DSP library documentation for the defined Q formats for fixed point values required by the library.
+The a0 scaling parameter can assumed to be 1, but for fixed point coefficient multiplies the right hand side coefficients should be scaled to fit into the required ï¿½Qï¿½ format. See LIBQ or CMIS-DSP library documentation for the defined Q formats for fixed point values required by the library.
 
 The response of the filter for a bass boost of 6dB and a cutoff of 200Hz is shown below
 
@@ -77,7 +77,7 @@ _Figure 3. USB Speaker w/Bass Boost - Block Diagram_
 ## Demonstration Features
 
 *   Playback using an WM8904 codec daughterboard on the SAM E70 xPlained Ultra (E70XULT) board.
-*   Playback using an AK4953 codec daughterboard on the PIC32 MZ EF Curiousity 2 (MZEFC2) board
+*   Playback using an AK4954 codec daughterboard on the PIC32 MZ EF Curiousity 2 (MZEFC2) board
 *   USB connection to a host system using the USB Library Device Stack for a USB Speaker device using E70XULT or MZEFC2
 *   Button processing for volume/mute/Bass Boost control using E70XULT or MZEFC2
 *   USB Attach/Detach and mute status using an LED using E70XULT or MZEFC2
@@ -85,7 +85,7 @@ _Figure 3. USB Speaker w/Bass Boost - Block Diagram_
 *   Utilization of the I2S peripheral for the MZEFC2
 *   Utilization of the DSP Math libraries (CMSIS-DSP and LIBQ/DSP) for both the ARM and MIPS processors to implement "Bass Boost" audio enhancement filters
 
-Note that all the calls to the WM8904 and AK4954 codec drivers use the form DRV_CODEC_xxx rather than DRV_WM8904_xxx. or DRV_AK4954_xxx This is to make the code more generic, such that another codec could be substituted for another without having to make changes to the application code except for the location of the driver’s public header file.
+Note that all the calls to the WM8904 and AK4954 codec drivers use the form DRV_CODEC_xxx rather than DRV_WM8904_xxx. or DRV_AK4954_xxx This is to make the code more generic, such that another codec could be substituted for another without having to make changes to the application code except for the location of the driverï¿½s public header file.
 
 ## Tools Setup Differences
 
@@ -139,15 +139,15 @@ _Figure 5. The USB Speaker w/Bass Boost Project MHC Project Graph Showing the CM
 
 ## Harmony Code Configuration Options
 
-Each block in the MHC Project Graph may need to be configured through parameters for the specific application. These parameters are accessed by selecting the block with the mouse, and appear in the Configuration Options window, where they can be edited. The next section describes the configuration of the USB, Math, and Codec component blocks for the USB Speaker with “Bass Boost” application
+Each block in the MHC Project Graph may need to be configured through parameters for the specific application. These parameters are accessed by selecting the block with the mouse, and appear in the Configuration Options window, where they can be edited. The next section describes the configuration of the USB, Math, and Codec component blocks for the USB Speaker with ï¿½Bass Boostï¿½ application
 
 ## USB Configuration
 
-The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is set to “Full Speed”, V1.0 interface (not “High Speed”, V2.0 Interface):
+The application uses USB Library as a "Device" stack, which will connect to a "Host". The USB High Speed Driver is set to ï¿½Full Speedï¿½, V1.0 interface (not ï¿½High Speedï¿½, V2.0 Interface):
 
 ![](graphics/usb_speaker_bb_full_speed.png)
 
-The USB Device Layer is configured by selecting Product ID Selection as “usb_speaker_demo” with an endpoint buffer size of 64 (bytes). The Product String Selection is changed to “Harmony USB Speaker w/Bass Boost Example”. This information will be used to generate the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder) that defines the enumeration of device functions with the USB Host. This structure defines the connection to the host at 48 Khz with 16 bit stereo channel data.
+The USB Device Layer is configured by selecting Product ID Selection as ï¿½usb_speaker_demoï¿½ with an endpoint buffer size of 64 (bytes). The Product String Selection is changed to ï¿½Harmony USB Speaker w/Bass Boost Exampleï¿½. This information will be used to generate the fullSpeedConfigurationDescriptor array variable structure (located in initialization.c under the config folder) that defines the enumeration of device functions with the USB Host. This structure defines the connection to the host at 48 Khz with 16 bit stereo channel data.
 
 ![](graphics/usb_speaker_bb_device_config.png)
 
@@ -165,7 +165,7 @@ The WM8904 codec uses a TWIHS (I2C) interface for configuration and control regi
 
 ![](graphics/usb_speaker_bb_wm8904_config.png)
 
-When the I2SC1 driver is used for DRV_I2S_0 the usage mode changes to “Slave”
+When the I2SC1 driver is used for DRV_I2S_0 the usage mode changes to ï¿½Slaveï¿½
 
 The I2S configuration uses a Transfer queue Size of 64 and I2S Data Length of 16, matching that that of the USB Read Queue. Bidirectional DMA is set (using 2 channels) for data transfer.
 
@@ -212,7 +212,7 @@ The I2S clocks are setup for 48Khz sampling rate, with stereo 16 bit samples, gi
 
 ## MPLAB Harmony Configurator: Tools>Clock Configuration
 
-Uncheck the Main RC Oscillator and check the “Bypass” for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
+Uncheck the Main RC Oscillator and check the ï¿½Bypassï¿½ for the Main Crystal Oscillator. When the Bypass is checked, it will cause the Main Crystal Oscillator to become disabled. An external MEMS oscillator input on the XIN pin is used for Main Clock generation.
 
 ![](graphics/usb_speaker_bb_crystal.png)
 
@@ -243,7 +243,7 @@ Select the I2S driver and change the Transfer Queue Size to 64, as shown below
 
 ![](graphics/usb_speaker_bb_i2s_config.png)
 
-Select the I2C1 component and select the “Include Force Write I2C …”, This is required for the case where the AK4954 is in reset and does not respond with NACK when the I2C operation completes.
+Select the I2C1 component and select the ï¿½Include Force Write I2C ï¿½ï¿½, This is required for the case where the AK4954 is in reset and does not respond with NACK when the I2C operation completes.
 
 ### Math Library
 
@@ -274,7 +274,7 @@ The SYS_Tasks function (located in tasks.c) is used to update the USB subsystems
 The application utilizes a simple state machine (APP_Tasks executed from SYS_Tasks) with the following functions
 
 1.  Setup the drivers and USB Library interface
-2.  Respond to USB Host control commands (“Attach”, “Detach”, “Suspend”)
+2.  Respond to USB Host control commands (ï¿½Attachï¿½, ï¿½Detachï¿½, ï¿½Suspendï¿½)
 3.  Initiate and maintains the bidirectional data audio streaming for the "USB Playback" function.
 
 ### Building the Application
@@ -342,7 +342,7 @@ This section demonstrates how to run the demonstration.
 
 Configure the board as described in the previous section. Attach either the EDBG or PKOB4 USB cable from the PC Host to the board, as described in the prior section.
 
-To compile, select the appropriate MPLAB X ® IDE project configuration (see Table above). Compile and program the target device. Refer to Building the Application for details Do the following to run the demonstration:
+To compile, select the appropriate MPLAB X ï¿½ IDE project configuration (see Table above). Compile and program the target device. Refer to Building the Application for details Do the following to run the demonstration:
 
 1.  After connecting a standard USB cable from the Host PC to either the EDBG or PKOB4 of the respective board, compile the application and program the target device. Run the device. The system will be in a waiting for the USB to be connected (LED1 off). The RGB LED on the Curiosity 2 board will run red, indicating no USB connection.
 2.  Connect a standard USB cable to the USB Host via the micro-mini connector located, either:
@@ -352,7 +352,7 @@ To compile, select the appropriate MPLAB X ® IDE project configuration (see Tabl
 
 LED1 will turn on as the USB function is enumerated (it may blink if audio is not streaming over the connection). The RGB LED on the Curiosity board will turn from red to green.
 
-If needed, configure the Host computer to use the usb_speaker as the selected audio recording device. For Windows 7, this is done in the "Playback" tab in the "Sound" dialog accessed by right clicking the loudspeaker icon on the taskbar. For Windows 10, this is accessed by right clicking the loudspeaker icon on the taskbar and clicking “Open Sound Settings”. Select the “Speaker( Harmony USB Speaker w/Bass Boost Example)” as the default device. Now all sounds should be heard through the headphones
+If needed, configure the Host computer to use the usb_speaker as the selected audio recording device. For Windows 7, this is done in the "Playback" tab in the "Sound" dialog accessed by right clicking the loudspeaker icon on the taskbar. For Windows 10, this is accessed by right clicking the loudspeaker icon on the taskbar and clicking ï¿½Open Sound Settingsï¿½. Select the ï¿½Speaker( Harmony USB Speaker w/Bass Boost Example)ï¿½ as the default device. Now all sounds should be heard through the headphones
 
 ![](graphics/usb_speaker_bb_sound.png)
 
@@ -362,15 +362,15 @@ _Windows 10 Sound Setting showing USB Speaker w/Bass Boost Example selection._
 
 1.  Open a playback application (such as Window Media Player) and initiate playback, which should be heard throught the headphones.
 2.  Four volume levels are available, when pressing SWITCH 1. Initially, it is set to the lowest playback level. Pressing 2 more times will change the volume from the lowest to the highest playback level. Pressing 1 more time will mute audio and LED 1 will blink slowly. Pressing the button again will go back to the initial setting, from which the volume sequence began.
-3.  “Bass Boost” is demonstrated as follows:
+3.  ï¿½Bass Boostï¿½ is demonstrated as follows:
 
 Using the SAM E70 Xplained board and the WM8904 Daughter Board
 
-A “Long Press” of SWITCH 1 will turn on “Bass Boost”. This will enhance (boost) the lower audio frequencies heard through the headphones. You can cycle from boosted audio to normal audio by repeating the “Long Press” of SWITCH1.
+A ï¿½Long Pressï¿½ of SWITCH 1 will turn on ï¿½Bass Boostï¿½. This will enhance (boost) the lower audio frequencies heard through the headphones. You can cycle from boosted audio to normal audio by repeating the ï¿½Long Pressï¿½ of SWITCH1.
 
 Using the PIC32 MZ EF Curiosity 2 and the AK4965 Daughter Board
 
-Pressing SWITCH 2 will turn on LED 2 and the RGB LED will turn blue (indicating boost). The audio “Bass Boost” filter will be at its lowest level. Pressing SWITCH 2 repeatedly will cycle through 4 levels of “Bass Boost” (4, 6, 8, and 10 dB). A “Long” press of SWITCH 2 will turn off the “Bass Boost”, LED 2 will turn off and the RGB LED will turn green. Pressing again will turn on “Bass Boost” at the previous level.
+Pressing SWITCH 2 will turn on LED 2 and the RGB LED will turn blue (indicating boost). The audio ï¿½Bass Boostï¿½ filter will be at its lowest level. Pressing SWITCH 2 repeatedly will cycle through 4 levels of ï¿½Bass Boostï¿½ (4, 6, 8, and 10 dB). A ï¿½Longï¿½ press of SWITCH 2 will turn off the ï¿½Bass Boostï¿½, LED 2 will turn off and the RGB LED will turn green. Pressing again will turn on ï¿½Bass Boostï¿½ at the previous level.
 
 ## Control Description
 
@@ -422,6 +422,6 @@ USB operational status is given by LED, as shown below:
 | **LED2/RGB LED Status**  <td colspan="2"> **Status** |
 | OFF/Red  <td colspan="2"> USB cable detached or (USB attached & invalid enumeration) |
 | ON/Green  <td colspan="2"> USB cable attached and audio enumerated (normal audio) |
-| ON/Blue  <td colspan="2"> USB cable attached and audio enumerated (“Bass Boost” enabled) |
-| Blinking – Fast/Red  <td colspan="2"> USB cable attached (no audio) |
-| Blinking – Slow/Green or Blue  <td colspan="2"> Audio Playback muted in either normal (green) or boosted (blue) modes |
+| ON/Blue  <td colspan="2"> USB cable attached and audio enumerated (ï¿½Bass Boostï¿½ enabled) |
+| Blinking ï¿½ Fast/Red  <td colspan="2"> USB cable attached (no audio) |
+| Blinking ï¿½ Slow/Green or Blue  <td colspan="2"> Audio Playback muted in either normal (green) or boosted (blue) modes |

@@ -8,7 +8,7 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Harmony 3 Audio Application Examples V3.1.0 (December, 2021)
+## Harmony 3 Audio Application Examples V3.1.0 (May, 2022)
 
 - **Applications/Projects**
 
@@ -41,23 +41,24 @@ where:
 
 #### Software Dependencies
 
+Supports MCC.
 Before using MPLAB Harmony Audio Applications, ensure that the following are installed:
 
-- [MPLAB X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide) or later
-- [MPLAB XC32 C/C++ Compiler v3.01](https://www.microchip.com/mplab/compilers) or later
+- [MPLAB X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide) or later
+- [MPLAB XC32 C/C++ Compiler v4.00](https://www.microchip.com/mplab/compilers) or later
 - [Harmony audio application repository, 3.1.0](https://github.com/Microchip-MPLAB-Harmony/audio_apps)
 
 In order to regenerate source code for any of the applications, you will also need the following to be installed:
 
 | Tool | Version | Notes |
 | --- | --- | --- |
-| MPLAB® Harmony Configurator (MHC) plug-in | v3.8.1 | |
+| MPLAB® Harmony Code Configurator (MCC) plug-in | v5 | |
 | [Harmony 3 Audio](https://github.com/Microchip-MPLAB-Harmony/audio)| v3.6.0 | |
-| [Harmony 3 BSP](https://github.com/Microchip-MPLAB-Harmony/bsp)| v3.10.0 | |
-| [Harmony 3 CSP](https://github.com/Microchip-MPLAB-Harmony/csp)| v3.10.0 | |
+| [Harmony 3 BSP](https://github.com/Microchip-MPLAB-Harmony/bsp)| v3.11.1 | |
+| [Harmony 3 CSP](https://github.com/Microchip-MPLAB-Harmony/csp)| v3.11.0 | |
 | [Harmony 3 Core](https://github.com/Microchip-MPLAB-Harmony/core)| v3.10.0 | |
-| [Harmony 3 Dev_Packs](https://github.com/Microchip-MPLAB-Harmony/dev_packs)| v3.10.0 | |
-| [Harmony 3 USB](https://github.com/Microchip-MPLAB-Harmony/usb)| v3.8.1 |only if using USB|
+| [Harmony 3 Dev_Packs](https://github.com/Microchip-MPLAB-Harmony/dev_packs)| v3.11.12 | |
+| [Harmony 3 USB](https://github.com/Microchip-MPLAB-Harmony/usb)| v3.9.0 |only if using USB|
 | [Harmony 3 CMSIS-FreeRTOS](https://github.com/ARM-software/CMSIS-FreeRTOS)| v10.3.1 | only if using FreeRTOS |
 | [Harmony 3 MP3 Decoder Library](https://github.com/Microchip-MPLAB-Harmony/helix_mp3)| v1.1.0 |only if using MP3 decoder|
 | [Harmony 3 FLAC Decoder Library](https://github.com/Microchip-MPLAB-Harmony/xiph_flac)| v1.0.0 |only if using FLAC decoder|
