@@ -1,4 +1,4 @@
-<config configName="sam_e70_xult_wm8904_i2sc" projectName="mic_loopback_sam_e70_xult_wm8904_i2sc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_e70_xult_wm8904_i2sc" projectName="mic_loopback_sam_e70_xult_wm8904_i2sc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -10397,7 +10397,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\peripheral\efc\plib_efc.c</file>

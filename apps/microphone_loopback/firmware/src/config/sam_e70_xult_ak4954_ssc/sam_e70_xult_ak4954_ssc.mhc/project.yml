@@ -20,13 +20,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C317A5A5BC52FEB40073FAEFE1F1F47F
-- generatedChecksum: D7CB7F305208715624357B71229B20B4
+- generatedChecksum: D0F3D433D78108C56E6E2422848358FE
   logicalPath: config/sam_e70_xult_ak4954_ssc/audio/driver/codec/ak4954
   name: drv_ak4954_local.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D7CB7F305208715624357B71229B20B4
+  userChecksum: D0F3D433D78108C56E6E2422848358FE
 - generatedChecksum: 13F062B063A4F4AE0B19CE872943995B
   logicalPath: config/sam_e70_xult_ak4954_ssc/driver/i2c
   name: drv_i2c.c
@@ -391,13 +391,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CC7DFCC51CD25171A3E400E18969354F
-- generatedChecksum: C9E105A6A746DB1FCBFAC0F99F47897F
+- generatedChecksum: AF0467048DC323A7D263CB292958285E
   logicalPath: config/sam_e70_xult_ak4954_ssc/audio/driver/codec/ak4954
   name: drv_ak4954.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: HEADER
-  userChecksum: C9E105A6A746DB1FCBFAC0F99F47897F
+  userChecksum: AF0467048DC323A7D263CB292958285E
 - generatedChecksum: 3C6689B8800C6234028EC2FBE82E25CF
   logicalPath: config/sam_e70_xult_ak4954_ssc/driver/i2c
   name: drv_i2c.h

@@ -62,13 +62,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D404CF768DD3C79C96A6186A2BB30A84
-- generatedChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+- generatedChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc/audio/driver/codec/wm8904
   name: drv_wm8904_local.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+  userChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
 - generatedChecksum: 6069C4FD56993BDA3B1FC223DD5BAA4A
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc
   name: exceptions.c
@@ -96,7 +96,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: FC10376328FEE0171A5C614EFAC128FD
+  userChecksum: FC09107DBBCA31206A9A1AABFFF66DAA
 - generatedChecksum: D69E928A6851ACBDDF5F2DDA3197719F
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc
   name: interrupts.c
@@ -236,7 +236,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 84349D49AC71B759B6802398382EFE05
+  userChecksum: 62EE5CFCA52BC9FA0CC3B0E22ED8C414
 - generatedChecksum: B1BE78DA4858C586B72A7824E2410F13
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc/usb/src
   name: usb_host.c
@@ -411,7 +411,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: A4BC189C063C11A2A9382B894BCC01B5
+  userChecksum: E105C47081F3AD824F7C0FF6B794F28B
 - generatedChecksum: 948CEA542F04017255B040816F368DF8
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm7.h
@@ -439,7 +439,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 668521E17E88238D4B52D7AE644FFBC8
+  userChecksum: D41A5C73C0E8DBDAC318AAF29DBCB461
 - generatedChecksum: C679A77E2A1338BE090B760AD405B86C
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc
   name: device.h
@@ -552,13 +552,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: F4E8736C8A43D37DDC0F661D194AAF8A
-- generatedChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+- generatedChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc/audio/driver/codec/wm8904
   name: drv_wm8904.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: HEADER
-  userChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+  userChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
 - generatedChecksum: E50DD25E65E8306D05DFB89E75D07455
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: efc.h
@@ -1399,13 +1399,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6C4A6859DB16EA8C046F995C6B6C1C6F
-- generatedChecksum: F127C67A3E33E5788C0F057F648EE57C
+- generatedChecksum: 6EB8F9F4A43B9BC2C7A58585AC679650
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc/usb
   name: usb_host.h
   physicalPath: usb
   security: NON_SECURE
   type: HEADER
-  userChecksum: F127C67A3E33E5788C0F057F648EE57C
+  userChecksum: 6EB8F9F4A43B9BC2C7A58585AC679650
 - generatedChecksum: 6EBC5E4D06FC96A02ADF3B7416957DD6
   logicalPath: config/apb_sam_e70_xult_wm8904_ssc/usb
   name: usb_host_client_driver.h

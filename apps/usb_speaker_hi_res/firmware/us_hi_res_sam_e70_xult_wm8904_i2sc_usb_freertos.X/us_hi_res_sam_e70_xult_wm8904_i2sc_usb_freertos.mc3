@@ -1,4 +1,4 @@
-<config configName="us_basic_sam_e70_xult_wm8904_i2sc_usb_freertos" projectName="us_hi_res_sam_e70_xult_wm8904_i2sc_usb_freertos" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="us_basic_sam_e70_xult_wm8904_i2sc_usb_freertos" projectName="us_hi_res_sam_e70_xult_wm8904_i2sc_usb_freertos" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -882,17 +882,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;audio_codec_wm8904&gt;
   &lt;audio_codec_wm8904 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;DRV_I2C&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;DRV_I2S&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
@@ -10734,17 +10724,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c_0&gt;
   &lt;drv_i2c_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2c&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2C&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;twihs0&lt;/Value&gt;
@@ -12401,7 +12381,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb_freertos\startup_xc32.c</file>
-         <hash>95138c4aa2309de0161da12187200adad2d4bbc04de4fff36b84de63aca6317e</hash>
+         <hash>202058af5c0628efc084e2968ee652a26702ba9a6d5cafc160ebfc0e52d074d3</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb_freertos\system\dma\sys_dma.c</file>

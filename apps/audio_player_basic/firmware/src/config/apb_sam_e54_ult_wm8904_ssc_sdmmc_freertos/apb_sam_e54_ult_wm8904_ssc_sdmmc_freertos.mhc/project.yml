@@ -76,13 +76,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D404CF768DD3C79C96A6186A2BB30A84
-- generatedChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+- generatedChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
   logicalPath: config/apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos/audio/driver/codec/wm8904
   name: drv_wm8904_local.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+  userChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
 - generatedChecksum: B3B5445B14BD9B6A35F1C5B995C9BBF7
   logicalPath: FreeRTOS/Source
   name: event_groups.c
@@ -334,7 +334,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 55B53212ED4C5B2D4419EEC1C69E8017
+  userChecksum: DE4F89C92E7B15672FE6C4AF15B14573
 - generatedChecksum: F1B86F6E1527FD59A8713B67564F2898
   logicalPath: FreeRTOS/Source
   name: timers.c
@@ -692,13 +692,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 886CC42FB7BB6A6C9E8381394D4FA945
-- generatedChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+- generatedChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
   logicalPath: config/apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos/audio/driver/codec/wm8904
   name: drv_wm8904.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: HEADER
-  userChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+  userChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
 - generatedChecksum: 472A5CB8AD106CDC4FFF3D15D9E273FD
   logicalPath: packs/ATSAME54P20A_DFP/component
   name: dsu.h

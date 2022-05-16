@@ -1,4 +1,4 @@
-<config configName="us_basic_sam_e70_xult_wm8904_ssc_usb" projectName="us_basic_sam_e70_xult_wm8904_ssc_usb" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="us_basic_sam_e70_xult_wm8904_ssc_usb" projectName="us_basic_sam_e70_xult_wm8904_ssc_usb" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -856,7 +856,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;662&quot; canvasWidth=&quot;749&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;189&quot; y=&quot;61&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;18&quot; y=&quot;63&quot;/&gt;
@@ -877,7 +878,6 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;wm8904_codec&quot; x=&quot;457&quot; y=&quot;19&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;662&quot; canvasWidth=&quot;749&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -10842,7 +10842,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_ssc_usb\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_ssc_usb\usb\usb_host.h</file>
@@ -11342,7 +11342,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_ssc_usb\definitions.h</file>
-         <hash>f91ec2f0a76ed7a81283f6967d67ba29814ed0c11327272de6866759e9d887c5</hash>
+         <hash>54240fa5e1c9088b2adb398d14ba5229e96296916304c9702e52d5eed92c28b5</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_ssc_usb\peripheral\tc\plib_tc0.c</file>

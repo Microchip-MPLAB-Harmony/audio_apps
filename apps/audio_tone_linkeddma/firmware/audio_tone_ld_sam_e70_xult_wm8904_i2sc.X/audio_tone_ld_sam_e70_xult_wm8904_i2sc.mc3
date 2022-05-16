@@ -1,4 +1,4 @@
-<config configName="sam_e70_xult_wm8904_i2sc" projectName="audio_tone_ld_sam_e70_xult_wm8904_i2sc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_e70_xult_wm8904_i2sc" projectName="audio_tone_ld_sam_e70_xult_wm8904_i2sc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -10337,7 +10337,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\peripheral\efc\plib_efc.c</file>
@@ -10389,11 +10389,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\definitions.h</file>
-         <hash>058f657b381d48f349eb1f96561509acb8b42700ca9fb3e906da57b1cc7a2436</hash>
+         <hash>121be386fae5462186cd17b038c86fb459da04ad0ffd711d9845f3fd50af2513</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\configuration.h</file>
-         <hash>736a5ed633734ebad09291a0db6967bab6a243a043a250ec6d70d81789587cf6</hash>
+         <hash>2dfcb398cf155e0ac6ad6722268d242e456195f4359d53db0ad68ba23d3f1ebd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc\system\ports\sys_ports.h</file>

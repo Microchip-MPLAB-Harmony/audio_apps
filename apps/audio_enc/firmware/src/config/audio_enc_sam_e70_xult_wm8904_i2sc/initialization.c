@@ -407,11 +407,11 @@ void SYS_Initialize ( void* data )
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
 
-	/* Initialize the USB Host layer */
-    sysObj.usbHostObject0 = USB_HOST_Initialize (( SYS_MODULE_INIT *)& usbHostInitData );	
-
 	/* Initialize USB Driver */ 
     sysObj.drvUSBHSV1Object = DRV_USBHSV1_Initialize(DRV_USBHSV1_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
+
+	/* Initialize the USB Host layer */
+    sysObj.usbHostObject0 = USB_HOST_Initialize (( SYS_MODULE_INIT *)& usbHostInitData );	
 
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );

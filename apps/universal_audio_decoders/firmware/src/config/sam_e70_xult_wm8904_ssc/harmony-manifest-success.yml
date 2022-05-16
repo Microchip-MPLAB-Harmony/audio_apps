@@ -4,20 +4,21 @@
 
 
 project: universal_audio_decoders
-creation_date: 2022-04-08T14:54:31.091+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-05-12T17:50:18.100+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
-mhc_version: v3.8.4
+mhc_version: v3.8.5
 mplabx_version: NA        # if MPLAB X plugin only
 plugin_version: NA        # if MPLAB X plugin only
 compiler: xc32
 
 modules:
     - {name: "core", version: "v3.10.0"}
-    - {name: "csp", version: "v3.11.0"}
+    - {name: "csp", version: "v3.12.0"}
+    - {name: "xiph_flac", version: "v1.0.0"}
     - {name: "usb", version: "v3.9.0"}
-    - {name: "dev_packs", version: "v3.11.2"}
+    - {name: "dev_packs", version: "v3.12.0"}
     - {name: "helix_mp3", version: "v1.0.1-rc.1"}
     - {name: "audio", version: "unknown"}
-    - {name: "bsp", version: "v3.11.1"}
+    - {name: "bsp", version: "v3.12.0"}
 

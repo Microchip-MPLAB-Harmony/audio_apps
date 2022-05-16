@@ -164,13 +164,14 @@ void SYS_Tasks ( void )
         /* Create OS Thread for APP_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_Tasks,
                 "APP_Tasks",
+                //Keep the below change
                 1024*3,
                 NULL,
                 1,
                 &xAPP_Tasks);
 
 
-
+   
 
     /* Start RTOS Scheduler. */
     

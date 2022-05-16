@@ -911,7 +911,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;450&quot; y=&quot;180&quot;/&gt;
@@ -930,7 +931,6 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;wm8904_codec&quot; x=&quot;237&quot; y=&quot;64&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -10598,7 +10598,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc_freertos\configuration.h</file>
-         <hash>bbad6067e23398456c6479f252a387c557b47228860f20c4874b483276f6fefd</hash>
+         <hash>c9f11187c051bf61935855bec69cbf3adcee21ef85517c6b4d53d20dcd14fe8c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc_freertos\system\time\src\sys_time.c</file>
@@ -11098,7 +11098,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc_freertos\definitions.h</file>
-         <hash>315b940b09969e64b8d498cb9b4274d18cf3ca25f17b4c500ed15bf0d3887525</hash>
+         <hash>6d694566b2ba2f008d560a1831568fdfac3a5e22cb7e2ffc39ffe851893224ca</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\aes.h</file>
@@ -11270,7 +11270,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc_freertos\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\uart3.h</file>

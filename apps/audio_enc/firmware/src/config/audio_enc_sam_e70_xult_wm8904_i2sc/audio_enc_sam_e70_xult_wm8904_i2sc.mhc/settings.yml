@@ -5,7 +5,7 @@ frameworkPath: ../../..
 processor: ATSAME70Q21B
 projectName: ''
 settings:
-  PackageFilter: audio;audio_apps;audio_original;bsp;core;csp;dev_packs;gfx;quick_docs;touch;usb;usb_older
+  PackageFilter: audio;bsp;core;csp;Devices;dev_packs;harmony-services;quick_docs;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0

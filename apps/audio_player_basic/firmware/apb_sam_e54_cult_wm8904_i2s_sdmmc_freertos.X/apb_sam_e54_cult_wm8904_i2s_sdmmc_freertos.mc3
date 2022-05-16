@@ -1,4 +1,4 @@
-<config configName="apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos" projectName="apb_sam_e54_cult_wm8904_i2s_sdmmc_freertos" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos" projectName="apb_sam_e54_cult_wm8904_i2s_sdmmc_freertos" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -764,17 +764,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2s&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2S&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_i2s&lt;/Value&gt;
@@ -985,16 +975,6 @@
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2s&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
@@ -8210,7 +8190,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos\configuration.h</file>
-         <hash>a60aaf5613d7b20b1e8fd497e5fd58f4f645d3e5057c15916f5a6d98b712584e</hash>
+         <hash>14fc6fab3ff54cc8a55d8edb76370952b0f5afafea4373e34d66cc09b621854d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</file>
@@ -8394,7 +8374,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos\startup_xc32.c</file>
-         <hash>0ce43e39c5752474cfa7c61b1a269565c9c7d75f2c5d6d70a0ae2eca6e40ee93</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\fuses.h</file>

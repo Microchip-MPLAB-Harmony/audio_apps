@@ -1,4 +1,4 @@
-<config configName="audio_enc_sam_e70_xult_wm8904_i2sc" projectName="audio_enc_sam_e70_xult_wm8904_i2sc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="audio_enc_sam_e70_xult_wm8904_i2sc" projectName="audio_enc_sam_e70_xult_wm8904_i2sc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -11062,7 +11062,7 @@
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\audio\decoder\audio_decoders\wav\wav_dec.h</file>
@@ -11330,7 +11330,7 @@
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\tasks.c</file>
-         <hash>1e69c7c844992bd5264a181c8f04bb8379f1a9e72dc00f3e7e122d60c4992ce0</hash>
+         <hash>fea176eaa26af12e43518110baebbb664898be655432c9351c4b5a579a4ed5d6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\same70q21b.h</file>
@@ -11482,7 +11482,7 @@
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\configuration.h</file>
-         <hash>4f74f61eb160797d6b231efe1546dd27e06e49f5bb0a03d8a19fa7bc75bc34b2</hash>
+         <hash>832f590abb9fe3e9a40af27b3475ce2524e4ceadd171160fa45e7e93ecedfc6a</hash>
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\usb\usb_msd.h</file>
@@ -11562,7 +11562,7 @@
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\definitions.h</file>
-         <hash>8b7516ebc6034645d3e119951fbe0897f72829567e923ee45fa0322298fe85c1</hash>
+         <hash>38242430887b6a1500fc938f229ce8efb5fcd2feb7445021187ba3e6a537bcab</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\pioa.h</file>
@@ -11574,7 +11574,7 @@
       </entry>
       <entry>
          <file>..\src\config\audio_enc_sam_e70_xult_wm8904_i2sc\initialization.c</file>
-         <hash>77dc77e89785ee310ea099d344e28df3aab37639270421bc285ddd11b361b3fb</hash>
+         <hash>a3da23c47add43dc9e4a64172d61847da3e128c8519af99fdacfd774a3a28df1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\dacc.h</file>

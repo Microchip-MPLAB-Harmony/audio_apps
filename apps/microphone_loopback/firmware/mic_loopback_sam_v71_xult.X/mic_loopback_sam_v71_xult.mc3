@@ -1,4 +1,4 @@
-<config configName="sam_v71_xult" projectName="mic_loopback_sam_v71_xult" configVersion="1.1" device="ATSAMV71Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_v71_xult" projectName="mic_loopback_sam_v71_xult" configVersion="1.1" device="ATSAMV71Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -641,17 +641,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2s&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2S&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_ssc&lt;/Value&gt;
@@ -1206,16 +1196,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2s&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
     &lt;/Attachments&gt;
   &lt;/audio_codec_wm8904&gt;
 &lt;/audio_codec_wm8904&gt;
@@ -1295,7 +1275,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_V71_Xplained_Ultra&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;30&quot; y=&quot;69&quot;/&gt;
@@ -1313,7 +1294,6 @@
         &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;wm8904_codec&quot; x=&quot;251&quot; y=&quot;80&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -10205,7 +10185,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_v71_xult\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMV71Q21B_DFP\component\fuses.h</file>
@@ -10412,12 +10392,12 @@
          <hash>f383ce512dbac86bff27d7d642380d910cc71a3515a501f82710e9b2839bb6e6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_v71_xult\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
-      </entry>
-      <entry>
          <file>..\src\config\sam_v71_xult\driver\i2c\src\drv_i2c.c</file>
          <hash>066e757e8d736e8d60301a755a5d0a051cf38ff7c98a23bb050c66894838837c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_v71_xult\system\time\src\sys_time_local.h</file>
+         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMV71Q21B_DFP\instance\twihs2.h</file>
@@ -10601,7 +10581,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_v71_xult\definitions.h</file>
-         <hash>318e1cfe086fef4c67a71638e9e6ca29eb1e8bdb2c5e896cd979b722a9c2e9a8</hash>
+         <hash>a08419f91de7ae7fbdc266a5ff58f88a604bdcb65522e327df66c0c6ea61a06d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMV71Q21B_DFP\component\rstc.h</file>
@@ -10777,7 +10757,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_v71_xult\configuration.h</file>
-         <hash>12a560d4de5e838fee0d2fbe6e887ffe1309d27eb8e1851c0b6234e6475a0e6f</hash>
+         <hash>bd96f0680e939a4da745563d50e18b9204bdb21d418779f8f26107e5147aa4cf</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMV71Q21B_DFP\component\isi.h</file>

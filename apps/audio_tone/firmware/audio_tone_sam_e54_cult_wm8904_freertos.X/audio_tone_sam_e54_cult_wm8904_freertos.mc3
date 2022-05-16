@@ -1,4 +1,4 @@
-<config configName="sam_e54_cult_wm8904_freertos" projectName="audio_tone_sam_e54_cult_wm8904_freertos" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_e54_cult_wm8904_freertos" projectName="audio_tone_sam_e54_cult_wm8904_freertos" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -9381,7 +9381,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904_freertos\configuration.h</file>
-         <hash>97e9e227e91cdb9aa0d0cef31454ca6d4f5c346da75a8bdd14a74ee565657fb7</hash>
+         <hash>40ca1cdd54dde56d58bed42bad1717a23493647ab6d80f7539168369d2ad93a5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\port.h</file>
@@ -9817,7 +9817,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904_freertos\startup_xc32.c</file>
-         <hash>0ce43e39c5752474cfa7c61b1a269565c9c7d75f2c5d6d70a0ae2eca6e40ee93</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\semphr.h</file>

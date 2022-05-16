@@ -62,13 +62,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D404CF768DD3C79C96A6186A2BB30A84
-- generatedChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+- generatedChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
   logicalPath: config/apb_sam_e54_ult_wm8904_ssc_sdmmc/audio/driver/codec/wm8904
   name: drv_wm8904_local.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+  userChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
 - generatedChecksum: 6069C4FD56993BDA3B1FC223DD5BAA4A
   logicalPath: config/apb_sam_e54_ult_wm8904_ssc_sdmmc
   name: exceptions.c
@@ -587,13 +587,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 886CC42FB7BB6A6C9E8381394D4FA945
-- generatedChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+- generatedChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
   logicalPath: config/apb_sam_e54_ult_wm8904_ssc_sdmmc/audio/driver/codec/wm8904
   name: drv_wm8904.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: HEADER
-  userChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+  userChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
 - generatedChecksum: 472A5CB8AD106CDC4FFF3D15D9E273FD
   logicalPath: packs/ATSAME54P20A_DFP/component
   name: dsu.h

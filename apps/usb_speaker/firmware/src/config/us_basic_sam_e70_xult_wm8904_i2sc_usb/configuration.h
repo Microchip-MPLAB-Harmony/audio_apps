@@ -109,7 +109,7 @@ extern "C" {
 #define DRV_I2S_DATA_LENGTH_IDX0       16
 #define DRV_I2S_INT_SRC_IDX0           I2SC1_IRQn
 #define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_0
-#define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_0
+#define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
 #define DRV_I2C_INSTANCES_NUMBER              1

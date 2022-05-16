@@ -1,4 +1,4 @@
-<config configName="sam_e70_xult_wm8904_ssc" projectName="uad_sam_e70_xult_wm8904_ssc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_e70_xult_wm8904_ssc" projectName="uad_sam_e70_xult_wm8904_ssc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -6342,6 +6342,10 @@
          <hash>4187a10304a63b086cbd1740b55bd5e04efc097a12cad519e97416022585f651</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\cpu.c</file>
+         <hash>ff03cb145dacf50dc8c768b8b9bcd478f4d5fdb7a0e61fbbeacf5eef2b5476f4</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\peripheral\xdmac\plib_xdmac.c</file>
          <hash>6f074db8c17d2535ded423b1fffde54b68276362f1907f531f902c4cfbe05ea4</hash>
       </entry>
@@ -6368,6 +6372,10 @@
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\fixpnt\real\bitstream.c</file>
          <hash>e79160ec907daa1bba0f80ea9fe1f11f6f94e959e09744f87d7b0142c8604eac</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\FLAC\stream_decoder.h</file>
+         <hash>0b7c40c7716b4012906bd76adb2b6f418cd0a0f7782b578bc46e54e7ea45b4eb</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\fixpnt\real\hufftabs.c</file>
@@ -6402,8 +6410,16 @@
          <hash>de1b5eb9ed566527b66dc06f4ecb6a43ab6800f7dac47e87c9cb42984dca41bb</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\md5.c</file>
+         <hash>0fe3890fd897d83ce4cada61ebe284687c2b714cfa61182db1a5fd7251df17b1</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\fixpnt\real\assembly.h</file>
          <hash>6450a5ea10944d6c08393bb69fa6108acf9b73ff287f6a5f46031c52bdcde64a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\stream_decoder.c</file>
+         <hash>79a1e85dd3dae79874a3446e95a961a82ff643a565fb726f4c54edfdd0d52228</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\peripheral\xdmac\plib_xdmac.h</file>
@@ -6426,6 +6442,10 @@
          <hash>11ef16b00cabacdf60aedb73f392e3997893256e40cfbfc1aba8688d858e4a45</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\bitmath.h</file>
+         <hash>b9702af83294cb7443d0109755dd835f7d963b9fc0e14cddd8407af5f688112b</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\usb\src\usb_host_msd.c</file>
          <hash>13a40e06e4c87aadc5891e994910453879a2da7a4e9cb6a2fbc404a290e3f11b</hash>
       </entry>
@@ -6440,6 +6460,14 @@
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
          <hash>11b39b96ddc1125124762b3423a77b90dd40ea5b4582a3513830245046b24311</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\format.c</file>
+         <hash>47b5564f70edf0af793d85dea748bafa9514e8f9cf66b17b4aa86051d83bda76</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\crc.h</file>
+         <hash>dad44bd851fdf9bc47612efa46e355498b7faee1d053d327be23a805a417d3a8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\peripheral\twihs\master\plib_twihs_master_common.h</file>
@@ -6538,8 +6566,16 @@
          <hash>e1808057edf941d8e405914305f935bb3dc91ad96476db8cfc13598decbe2b7f</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\md5.h</file>
+         <hash>6862d27ea63be2a1d9c97773aa533fd324226cbe4dc8d9f190b76df3a081a272</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\peripheral\tc\plib_tc0.c</file>
          <hash>63418f2fef2125cc40864fa323b897d9371a01e2c8164154a64e622150f11aea</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\float.c</file>
+         <hash>38ee4c152ca98b5e85ca7d9f239380fccb898cd2b42e89a6ea8eb68e0e1b1388</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\i2sc0.h</file>
@@ -6550,8 +6586,20 @@
          <hash>f204e2627ad038a93b4b18683d79e006f59089bf46da907b962a2cd0e7520cf0</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\bitmath.c</file>
+         <hash>5b33e3efa8eb38a8adbae4a92ac42d8fd8f1758b3e8ad41985dd961ee17b13ce</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\float.h</file>
+         <hash>2773f35d22f28e0392084c6858baad12d604c4b6c768dda7ee7744514ecf8859</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\usb\usb_msd.h</file>
          <hash>411e51784fd839785fa33a6b5c5fd26b446947816cc1c96b6f5e9d3b3ac65559</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\protected\stream_decoder.h</file>
+         <hash>49f751637aa952fc36936c69327efe2a6c0dcb7c61cb0b3bac8c21c172ebf5f2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\usart.h</file>
@@ -6568,6 +6616,10 @@
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
          <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\lpc.c</file>
+         <hash>c7a303351c70da86f5d904638091b2af3781b25f604fd082d197ecac0380618d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\libc_syscalls.c</file>
@@ -6595,7 +6647,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\definitions.h</file>
-         <hash>e176491ef32d0f215fd85f0528d44c15ab22f21fec601ddbc5562d4f43e1227c</hash>
+         <hash>facce4bcb4207270341844ce7700a30be08fe06d86591b41b3329a252af0e31c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\fixpnt\mp3dec.c</file>
@@ -6646,6 +6698,10 @@
          <hash>73007e8c7fd5acb7bb77ea28e95ab2843d1285542b77dc8e63264d8f4e1df148</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\FLAC\format.h</file>
+         <hash>537ba953fb5477c799a00645d28a47c83d8d174ed4500c311f0f55410a659ddf</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\mcan.h</file>
          <hash>be31c5f8ec2ec48d25c6cb7ceec9f95c3f01b3f1617b44ff42163425e5a52d75</hash>
       </entry>
@@ -6654,12 +6710,24 @@
          <hash>8621969ea669a1b230ff2125a760ef66d575c48cb45e9e457f768909abcbda46</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\memory.h</file>
+         <hash>f77535bd32e727cf21f1dea041c0614432805011626e6343d5924b67d346b816</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\rswdt.h</file>
          <hash>3939c5271bd02c46c5a9aa95c102967dd8698d5579c84100b29fc534d9b0c0f6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\peripheral\twihs\master\plib_twihs0_master.c</file>
          <hash>15ae3f29a22a56b987456e8242dcc6dd9573a4b7b509e01035827771479c1129</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\share\compat.h</file>
+         <hash>6f71f1b3158638b0ed3fd1d21f8f122f793ad9352b82641eacda52be2b2c5f21</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\fixed.c</file>
+         <hash>a46d2e25b4634a70fc85a1aac84c851c8a26fe44a5599dccfb2652749849fcd1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\driver\i2s\src\drv_i2s.c</file>
@@ -6686,6 +6754,10 @@
          <hash>8548e6526dc1cf752415711e9c0b65d5b96b7a64cd091e848db85f30d0173872</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\ogg\os_types.h</file>
+         <hash>cc98f46d7d6fab0f21d03bfe48355854bd1d20bc139410872558f35bcb2c813c</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\driver\i2s\drv_i2s_local.h</file>
          <hash>4c18201f9b736e872db9f086439cf55b9a29f6c947626c9ef7a651eaf277c061</hash>
       </entry>
@@ -6706,6 +6778,10 @@
          <hash>498ec4959a7dc0139d15dee7d3ab8a8c985a7cd10920f156142f62c786d3e036</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\lpc.h</file>
+         <hash>1cbadc86ec002a3def60509c3b0dfee789aab01c668bb1fe2d1f4e8502f50e20</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\supc.h</file>
          <hash>9a07f3e88d2db69d09f16c32af00d757baca578dd655baeb5717d97bcc5a22f4</hash>
       </entry>
@@ -6716,6 +6792,10 @@
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\dma\sys_dma.c</file>
          <hash>d6d217d1e698ac5abed0d91e1e4c2d83fe3bfe7faf5d0bb9648f1d3e2b4e82c0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\flac_config.h</file>
+         <hash>9bb6f49eec4a4609171418fbb37a8c1777f662b92da170059f236760da9ae025</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\fs\src\sys_fs_media_manager_local.h</file>
@@ -6778,6 +6858,10 @@
          <hash>fcfcfefa3094452a4c5960572d97e2702e18787ab79ac73e6c194d686054b929</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\fixed.h</file>
+         <hash>4d208368d3a5d726ee200f0fb073f880cfe45848d83ae87fbfefd54a9f85bed4</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\int\src\sys_int.c</file>
          <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
       </entry>
@@ -6794,12 +6878,24 @@
          <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\FLAC\ordinals.h</file>
+         <hash>431334001626d81deb52b2fbefd3f509c1970fdad5a2ee999b24278325d41241</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\fixpnt\real\dequant.c</file>
          <hash>dfa7c920167ca4420e87a2948f29b3fe2af19c6e8f4aefb5123a7623bb851faf</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\bitreader.h</file>
+         <hash>23befc1b53455b8ee3cc389b47b49430d9b4699da8355b34b79bf7062d8ba3f7</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\tc0.h</file>
          <hash>97b84fc05b24a910218ce471fe45dc64c63ba05846e73ec550783a0cd5d4e9e2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\share\endswap.h</file>
+         <hash>f7f9269dea4fd6381d1dbf1fb6efd8aec4b49287aca96f9312f0f528ba372e4f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\trng.h</file>
@@ -6820,6 +6916,10 @@
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
          <hash>6cdb5b324f2fd1bb5b2f47298ba6e6777e735d7cad3bb8d942cd36e2c6e65328</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\ogg_decoder_aspect.h</file>
+         <hash>d9c3911e4425585a15c64384dcbbecb641e55120b50473a39f54c5463252e21f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\id3\id3.h</file>
@@ -6854,6 +6954,10 @@
          <hash>8b879741803b1927b0708cfc1cdd7ae6c08b0b4f06708429691d673990cf5920</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\FLAC\export.h</file>
+         <hash>7d045d1c9829bdfde9940a61eee07b2dc21da7ac7298a63e1c3e8d3bdb52ecf2</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\efc.h</file>
          <hash>f7b3cfc351c5e9451dd220fb6a894b3a26728513ad079987baa5621cf212dce9</hash>
       </entry>
@@ -6872,6 +6976,10 @@
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\pio\same70q21b.h</file>
          <hash>524cabbc083e6a97b0d4fa8d24892f13e9457cd60e4668198788f95f35679d1a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\share\alloc.h</file>
+         <hash>5675c8536752e6571a3f23e1824c3aabd7ef7048c3c1785770db3fd4076a25f7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_dec.c</file>
@@ -6990,6 +7098,10 @@
          <hash>ac80340ab53b6fd5882664f8a36e918a4923ab52d84df0aada1267ba5d8a41ea</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\cpu.h</file>
+         <hash>0f7f97979fdc7cdf6868fc69787a6577cbc66efe0e2e0cf1f7b3daf1b819654e</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\rtt.h</file>
          <hash>a4997ced789b59d150c1f5f5a23e12cfb54db5ab7c520115246c5c27f7a47466</hash>
       </entry>
@@ -7018,6 +7130,10 @@
          <hash>7c2cd005b5ce078fad1836494fbe571e081132933f4e48acb061e64eb37dbb04</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\format.h</file>
+         <hash>011064a8105e48b89cc816b2ca6e4f2fa04d0df5fa090ea1dcbfce84cfc67514</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\fs\fat_fs\hardware_access\diskio.c</file>
          <hash>6d15dd1dac3895d4d29d454ea90c45d4d8d9870de85d06c2795f4221a51d956d</hash>
       </entry>
@@ -7039,7 +7155,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -7086,8 +7202,16 @@
          <hash>5bb9e654098f9ac4d69b69ae3a7d5aab5f874c41caaa4e5922ade68f88fc6af8</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\memory.c</file>
+         <hash>e46a9c0844222578a46e52a7cf039bb6b4d3a52677e2b47edf6b4df255f98b47</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\fs\fat_fs\file_system\ff.h</file>
          <hash>910fa58ceb264c7e03edce224b6484fc2fba3c8d6656975e3c01cd45cdc5d4b3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\include\FLAC\assert.h</file>
+         <hash>e23c1119c7e94e8daaacc2dce8f2441a314b821459b69835543e0596d18582b9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\wav\wav_dec.c</file>
@@ -7198,6 +7322,10 @@
          <hash>3183e45972da65c3142907b44fe6ea15f8d74026b19dce9c12971e105a5ef555</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\macros.h</file>
+         <hash>95f3f2e0694bdc085de144c3700710b2b2744f3872d1b999d3dee12d96d5024c</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\matrix.h</file>
          <hash>9474cce0aebd4f06032fab8624c2a65686c739202e19fa015ff7c3cd623f52ef</hash>
       </entry>
@@ -7208,6 +7336,10 @@
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\isi.h</file>
          <hash>b93d60df2fbedea8f3dcb43a6abf8cf369ef5b2fda126b79f0e159759aad4743</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\bitreader.c</file>
+         <hash>9b3204a57630d5d89609a2f329b44f5bbc45beb3579a980c8201b8fa194c2c52</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\usb\usb_host_msd.h</file>
@@ -7244,6 +7376,10 @@
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\dacc.h</file>
          <hash>cf870c6aa6833ad2219d2956aa3dcd25858d113e549d992b6e7e3325c05e1ce4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\ogg\ogg_config_types.h</file>
+         <hash>90861fed97951d11b609d7ad3bee6e070c87a2e20908af66d588dd7951c68d65</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\fs\src\sys_fs_local.h</file>
@@ -7300,6 +7436,14 @@
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\rswdt.h</file>
          <hash>7aaa42d57396685867bc93b7e170fb077913db302e2fdaee110894216926d03a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\crc.c</file>
+         <hash>ebb450ec2272e98e2ae213634e1b5f20e1f203550890ffd0323248cce1e3422b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_master\src\libFLAC\include\private\ogg\ogg.h</file>
+         <hash>044f993a1921d2789612cb72ba003506e55181ea1bf7fee02000fc2c858926b0</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

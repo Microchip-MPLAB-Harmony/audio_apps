@@ -1,4 +1,4 @@
-<config configName="apb_sam_e70_xult_wm8904_ssc" projectName="apb_sam_e70_xult_wm8904_ssc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="apb_sam_e70_xult_wm8904_ssc" projectName="apb_sam_e70_xult_wm8904_ssc" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -10568,7 +10568,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\initialization.c</file>
-         <hash>08a87c96e04ab9ca1dfc880fce329d7fed89a12b264c5ba0a8a712d225b5a5e7</hash>
+         <hash>f8040ba4c16d01ec0715257778a0a8028844a12e840eb44d2ab8b4806247664e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -10776,7 +10776,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\tasks.c</file>
-         <hash>1e69c7c844992bd5264a181c8f04bb8379f1a9e72dc00f3e7e122d60c4992ce0</hash>
+         <hash>fea176eaa26af12e43518110baebbb664898be655432c9351c4b5a579a4ed5d6</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\usb_host_init_data.c</file>
@@ -10808,7 +10808,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\i2sc0.h</file>
@@ -10944,7 +10944,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\configuration.h</file>
-         <hash>addb545e2191cb0cf128dc8aa0554f6b4243f5320e51b5e1f9203e934ff6fd82</hash>
+         <hash>56dd9ece7cd138c4a1ee44c7e1110d8ab1debd96c964720995170726137a6630</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\icm.h</file>
@@ -11160,7 +11160,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\definitions.h</file>
-         <hash>c97847a2b62c16c89f246728d08ad7b09f5017344ce46abcf41114893f14c4a8</hash>
+         <hash>00351d3a90b440c511fb5c6c66e18df993d7cdd4ec0aa65e38dadd49ed08e70f</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc\driver\usb\usbhsv1\src\drv_usbhsv1_local.h</file>

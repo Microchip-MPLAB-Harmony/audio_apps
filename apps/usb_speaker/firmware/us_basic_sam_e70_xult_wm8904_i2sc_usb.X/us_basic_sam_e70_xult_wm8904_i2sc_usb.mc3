@@ -1,4 +1,4 @@
-<config configName="us_basic_sam_e70_xult_wm8904_i2sc_usb" projectName="us_basic_sam_e70_xult_wm8904_i2sc_usb" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="us_basic_sam_e70_xult_wm8904_i2sc_usb" projectName="us_basic_sam_e70_xult_wm8904_i2sc_usb" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -11305,7 +11305,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\definitions.h</file>
-         <hash>145d33df7e1d86a0f42f456741e04eeaf1dd5310d364fbf6151f475ffed1ec72</hash>
+         <hash>3019e990c564f8a35463f848388484814050445afe0223907fd0e80908714e70</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\spi1.h</file>
@@ -11629,7 +11629,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\configuration.h</file>
-         <hash>918dd27850f76153d27d7a422df8fee43e449e1f7717c9a0e5e48d4ea7b98296</hash>
+         <hash>838eb60a1c1441ed8077cb82811116c5f44b30c9709ad1730bf56f45d1a9d39f</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\usb\usb_chapter_9.h</file>
@@ -11709,7 +11709,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\startup_xc32.c</file>
-         <hash>4b57cb5ef7c555facd37de86fff6a751e9c5f673c5eeefca275e16de93c71d8c</hash>
+         <hash>4bc3b6de55354268ec2458e681ecd12f593814360a39a548a59beb61823a846c</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\system\debug\sys_debug.h</file>

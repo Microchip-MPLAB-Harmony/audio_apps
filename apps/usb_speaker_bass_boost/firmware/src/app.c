@@ -185,7 +185,17 @@ static __attribute__((aligned(32))) __attribute((coherent))
 static __attribute__((aligned(32)))
     APP_PLAYBACK_BUFFER_QUEUE appPlaybackBuffer;
 #endif //PIC32MZEFC2
+static int _APP_ClearCodecReturnBuffer(DRV_CODEC_BUFFER_HANDLE handle);
+static void _APP_LED_Tasks(void);
+static int     _APP_SetUSBReadBufferReady(USB_DEVICE_AUDIO_TRANSFER_HANDLE handle);
+static void    _APP_Init_PlaybackBufferQueue(void);
+static uint8_t _APP_GetNextIdx(uint8_t index);
+static bool    _APP_USBReadAllBufferReady(void);
+//static bool   _APP_CodecBufferInUse(void);
 
+void _APP_Button_Tasks(void);
+static void _APP_TimerCallback( uintptr_t context);
+void LedOnStateClear(void);
 //==============================================================================
 //BASS BOOST
 #ifdef INCLUDE_BASS_BOOST
@@ -399,17 +409,7 @@ static q15_t __attribute__((aligned(32))) __attribute((unused))
 //==============================================================================
 // Application Playback Buffer Queue
 //==============================================================================
-static int     _APP_SetUSBReadBufferReady(USB_DEVICE_AUDIO_TRANSFER_HANDLE handle);
-static void    _APP_Init_PlaybackBufferQueue(void);
-static int     _APP_ClearCodecReturnBuffer(DRV_CODEC_BUFFER_HANDLE handle);
-static uint8_t _APP_GetNextIdx(uint8_t index);
-static bool    _APP_USBReadAllBufferReady(void);
-//static bool   _APP_CodecBufferInUse(void);
 
-void _APP_Button_Tasks(void);
-void _APP_LED_Tasks(void);
-static void _APP_TimerCallback( uintptr_t context);
-void LedOnStateClear(void);
 
 static bool volatile hpInterfaceChanged = false;
 static USB_DEVICE_AUDIO_RESULT volatile audioErr1;
@@ -2103,7 +2103,7 @@ static int _APP_SetUSBReadBufferReady(USB_DEVICE_AUDIO_TRANSFER_HANDLE handle)
 // _APP_USBReadAllBufferReady()
 //    Check if USB Read Buffer Queue is Ready for CODEC Writes 
 //******************************************************************************
-static bool _APP_USBReadAllBufferReady()
+static bool _APP_USBReadAllBufferReady(void)
 {
     int i = 0;
 
@@ -2123,7 +2123,7 @@ static bool _APP_USBReadAllBufferReady()
 // _APP_Init_PlaybackBufferQueue()
 //Initialize Codec Playback Buffer Queue
 //******************************************************************************
-static void _APP_Init_PlaybackBufferQueue()
+static void _APP_Init_PlaybackBufferQueue(void)
 {
     int i=0;
     appPlaybackBuffer.codecWriteIdx = 0;
@@ -2219,7 +2219,7 @@ static void _APP_TimerCallback( uintptr_t context)
 //******************************************************************************
 //  APP_LED_Tasks() - ONE_BUTTON_VERSION
 //******************************************************************************
-void _APP_LED_Tasks()
+static void _APP_LED_Tasks(void)
 {
     //LED1 
     if(appData.blinkDelay==0)

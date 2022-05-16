@@ -5,7 +5,7 @@ frameworkPath: ../../..
 processor: ATSAME54P20A
 projectName: ''
 settings:
-  PackageFilter: audio;audio_apps;bsp;bt;core;crypto;cryptoauthlib_apps;csp;dev_packs;gfx;tflite;usb;xiph_opus;xiph_speex
+  PackageFilter: audio;bsp;core;csp;Devices;dev_packs;harmony-services;quick_docs;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0

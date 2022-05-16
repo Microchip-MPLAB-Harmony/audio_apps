@@ -1,4 +1,4 @@
-<config configName="sam_e54_cult_wm8904" projectName="audio_tone_sam_e54_cult_wm8904" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_e54_cult_wm8904" projectName="audio_tone_sam_e54_cult_wm8904" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -8930,6 +8930,10 @@
          <hash>93915ec37587d35362eeeb0fc3fa2322fb456b3c0d1d11e611df182aaea4cb9e</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_cult_wm8904\system\ports\sys_ports_mapping.h</file>
+         <hash>8a3e7ed01aa847c87f76796b56665f7f91f591fddfe6cf2e4161a03332608c3e</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
          <hash>883fc09543652fd863e9111e16084e31cb7dbad35cbff5af72270e33fbe07130</hash>
       </entry>
@@ -8939,7 +8943,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\configuration.h</file>
-         <hash>97e9e227e91cdb9aa0d0cef31454ca6d4f5c346da75a8bdd14a74ee565657fb7</hash>
+         <hash>40ca1cdd54dde56d58bed42bad1717a23493647ab6d80f7539168369d2ad93a5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
@@ -9066,12 +9070,12 @@
          <hash>eff1e6f24c35076ccb6b2b9cd920f8e387e2eb0ba31546355091782013666e66</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_cult_wm8904\audio\peripheral\i2s\plib_i2s.h</file>
-         <hash>2430c4089dea392461e4547e8bc47587f39799d5887c8ba02221b7957fe80e81</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\same54p20a.h</file>
          <hash>d1141475d45696b24b8a1c82c79108aeab1d01a8a206c73cf084e602686fbfec</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_cult_wm8904\audio\peripheral\i2s\plib_i2s.h</file>
+         <hash>2430c4089dea392461e4547e8bc47587f39799d5887c8ba02221b7957fe80e81</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
@@ -9295,7 +9299,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\definitions.h</file>
-         <hash>09704a8c4ceb133ba2f6aa54a27e07337bc2132a364399e6a0f6bd9b6392de10</hash>
+         <hash>9aa558465a76f72b85635746d4f5f2df9bf5b975983de062d379224521dd7671</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\system\time\src\sys_time.c</file>
@@ -9443,7 +9447,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\startup_xc32.c</file>
-         <hash>0ce43e39c5752474cfa7c61b1a269565c9c7d75f2c5d6d70a0ae2eca6e40ee93</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc7.h</file>
@@ -9464,6 +9468,10 @@
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\hmatrix.h</file>
          <hash>d221b32c6ac1eeaf96d66f9519dd5f47eb1fe85a08c53fe13463c6ec689ae775</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_cult_wm8904\system\ports\sys_ports.h</file>
+         <hash>c099eab3dad845f438f1a140c65b10c30a2aa3bc38aefa098ff1f4d2096a4f20</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom6.h</file>

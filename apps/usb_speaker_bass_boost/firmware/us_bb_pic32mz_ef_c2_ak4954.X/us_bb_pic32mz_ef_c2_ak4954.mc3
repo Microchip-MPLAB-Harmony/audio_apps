@@ -1,4 +1,4 @@
-<config configName="pic32mz_ef_c2_ak4954" projectName="us_bb_pic32mz_ef_c2_ak4954" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="pic32mz_ef_c2_ak4954" projectName="us_bb_pic32mz_ef_c2_ak4954" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -755,17 +755,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;audio_codec_ak4954&gt;
   &lt;audio_codec_ak4954 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;DRV_I2C&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;DRV_I2S&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
@@ -832,7 +822,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;555&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;467&quot; y=&quot;58&quot;/&gt;
@@ -851,7 +842,6 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;usb_device_audio&quot; x=&quot;389&quot; y=&quot;396&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;555&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -6501,17 +6491,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c_0&gt;
   &lt;drv_i2c_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2c&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_ak4954&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2C&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;i2c1&lt;/Value&gt;
@@ -6977,16 +6957,16 @@
          <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
-      </entry>
-      <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\driver\usb\usbhs\src\templates\usbhs_EndpointOperations_Unsupported.h</file>
          <hash>0c722643928f6ae670818b449a22cb0c70c0ba1d57c826b0eee5f83f692479a7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\driver\usb\usbhs\src\templates\usbhs_EP0Status_Default.h</file>
          <hash>d241b498c81d46baa28adcb11732c5981bd3b390d7370029ecbf23d78126dcb1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\coretimer\plib_coretimer.c</file>
+         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\audio\math\libq_c\include\XInDegrees_LUT_91.h</file>
@@ -7330,7 +7310,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\definitions.h</file>
-         <hash>666e7b29a4b9d8780b4132bf5fff5d4b5f8586cf92f34507c1b7022d6a8aa020</hash>
+         <hash>2d01a943dae09ad71cd16153e13a1e03561e9b7ce2c8b2aef31d5338fcac9802</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\usb\usb_chapter_9.h</file>
@@ -7554,7 +7534,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\initialization.c</file>
-         <hash>f7c19a84783212212dbf63d3ab1705f0e8c194ebce5a9d2b33ab77fd3c3e5f08</hash>
+         <hash>838e0820228e9e31d201b3b94efb5b07bfb2c042bd095bd5dcbe48326fc63bac</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\src\drv_i2c.c</file>

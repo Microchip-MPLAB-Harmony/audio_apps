@@ -1,4 +1,4 @@
-<config configName="us_basic_sam_e70_xult_wm8904_i2sc_usb" projectName="us_hi_res_basic_sam_e70_xult_wm8904_i2sc_usb" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="us_basic_sam_e70_xult_wm8904_i2sc_usb" projectName="us_hi_res_basic_sam_e70_xult_wm8904_i2sc_usb" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -898,8 +898,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;516&quot; canvasWidth=&quot;803&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;189&quot; y=&quot;61&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;10&quot; y=&quot;80&quot;/&gt;
@@ -920,6 +919,7 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;wm8904_codec&quot; x=&quot;457&quot; y=&quot;19&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;516&quot; canvasWidth=&quot;803&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -11818,7 +11818,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\startup_xc32.c</file>
-         <hash>95138c4aa2309de0161da12187200adad2d4bbc04de4fff36b84de63aca6317e</hash>
+         <hash>202058af5c0628efc084e2968ee652a26702ba9a6d5cafc160ebfc0e52d074d3</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\system\debug\sys_debug.h</file>

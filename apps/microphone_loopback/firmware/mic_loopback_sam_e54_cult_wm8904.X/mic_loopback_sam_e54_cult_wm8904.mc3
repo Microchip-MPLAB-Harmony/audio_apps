@@ -1,4 +1,4 @@
-<config configName="sam_e54_cult_wm8904" projectName="mic_loopback_sam_e54_cult_wm8904" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="sam_e54_cult_wm8904" projectName="mic_loopback_sam_e54_cult_wm8904" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -816,17 +816,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;audio_codec_wm8904&gt;
   &lt;audio_codec_wm8904 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;DRV_I2C&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;DRV_I2S&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
@@ -7640,17 +7630,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_i2c_0&gt;
   &lt;drv_i2c_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2c&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2C&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2c_I2C_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;sercom6&lt;/Value&gt;
@@ -8953,6 +8933,10 @@
          <hash>93915ec37587d35362eeeb0fc3fa2322fb456b3c0d1d11e611df182aaea4cb9e</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_cult_wm8904\system\ports\sys_ports_mapping.h</file>
+         <hash>8a3e7ed01aa847c87f76796b56665f7f91f591fddfe6cf2e4161a03332608c3e</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
          <hash>883fc09543652fd863e9111e16084e31cb7dbad35cbff5af72270e33fbe07130</hash>
       </entry>
@@ -9318,7 +9302,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\definitions.h</file>
-         <hash>00508c34d43b4c1c1d05b72f974bba9da35543b071c72e28900c18521027f69d</hash>
+         <hash>1f415f13b5ab95493712b1c234dd9fbebbdc213f4d644268178a766c3eaf7af5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\system\time\src\sys_time.c</file>
@@ -9466,7 +9450,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\startup_xc32.c</file>
-         <hash>0ce43e39c5752474cfa7c61b1a269565c9c7d75f2c5d6d70a0ae2eca6e40ee93</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc7.h</file>
@@ -9487,6 +9471,10 @@
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\hmatrix.h</file>
          <hash>d221b32c6ac1eeaf96d66f9519dd5f47eb1fe85a08c53fe13463c6ec689ae775</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_cult_wm8904\system\ports\sys_ports.h</file>
+         <hash>c099eab3dad845f438f1a140c65b10c30a2aa3bc38aefa098ff1f4d2096a4f20</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom6.h</file>

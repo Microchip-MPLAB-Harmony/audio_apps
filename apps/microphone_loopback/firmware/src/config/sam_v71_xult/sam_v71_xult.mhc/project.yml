@@ -41,13 +41,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D404CF768DD3C79C96A6186A2BB30A84
-- generatedChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+- generatedChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
   logicalPath: config/sam_v71_xult/audio/driver/codec/wm8904
   name: drv_wm8904_local.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9D29C13630DD4B005FE28A01D8E8B258
+  userChecksum: 1E67CB5BAAFF190D1ACC5278896B82D5
 - generatedChecksum: 6069C4FD56993BDA3B1FC223DD5BAA4A
   logicalPath: config/sam_v71_xult
   name: exceptions.c
@@ -327,7 +327,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: FAEF29481A8C6B5CD19FE49DC3AC3E46
+  userChecksum: C3979E54905AEC27F6DA9D1B39E17489
 - generatedChecksum: 948CEA542F04017255B040816F368DF8
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm7.h
@@ -355,7 +355,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: E6427E4ABBFF1DF6EB7C37505A4C0E42
+  userChecksum: 75B655CD27D696338A37AFE4A88CC429
 - generatedChecksum: E4DDC7F84738825A532EDB866BEDBA03
   logicalPath: config/sam_v71_xult
   name: device.h
@@ -426,13 +426,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: EC8C2E0CE26788EAC03D8A83CEB7FA80
-- generatedChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+- generatedChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
   logicalPath: config/sam_v71_xult/audio/driver/codec/wm8904
   name: drv_wm8904.h
   physicalPath: audio/driver/codec/wm8904
   security: NON_SECURE
   type: HEADER
-  userChecksum: C44F9DDE3DE1722A3C98917666E6A8DB
+  userChecksum: 80C73A3AAC408EB487BA0B5A6324D2AF
 - generatedChecksum: B47AFDC4BCD83F20528136ED659BF8A7
   logicalPath: packs/ATSAMV71Q21B_DFP/component
   name: efc.h

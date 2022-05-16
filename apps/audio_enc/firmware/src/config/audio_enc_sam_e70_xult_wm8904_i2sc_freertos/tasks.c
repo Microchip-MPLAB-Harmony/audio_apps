@@ -164,6 +164,7 @@ void SYS_Tasks ( void )
         /* Create OS Thread for APP_Tasks. */
     xTaskCreate((TaskFunction_t) _APP_Tasks,
                 "APP_Tasks",
+                // keep the below line
                 1024*3,
                 NULL,
                 1,

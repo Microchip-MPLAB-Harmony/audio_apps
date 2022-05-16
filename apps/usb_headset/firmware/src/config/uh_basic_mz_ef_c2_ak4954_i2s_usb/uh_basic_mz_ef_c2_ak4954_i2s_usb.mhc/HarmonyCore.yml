@@ -119,12 +119,6 @@ children:
   - type: Boolean
     attributes: {id: ENABLE_DRV_COMMON}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: readOnly}
-        children:
-        - {type: Value, value: 'false'}
     - type: Values
       children:
       - type: Dynamic
@@ -159,7 +153,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: HarmonyCore, value: 'false'}
+        attributes: {id: HarmonyCore, value: 'true'}
   - type: Boolean
     attributes: {id: ENABLE_SYS_DMA}
     children:
@@ -319,7 +313,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SYSTEM_MODULE}
     children:
@@ -328,7 +322,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SYSTEM_ROOT}
     children:
@@ -337,7 +331,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SYS_DEBUG_DEF_HEADER}
     children:
@@ -346,7 +340,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: SYS_DEBUG_HEADER}
     children:
@@ -355,7 +349,7 @@ children:
       - type: Boolean
         attributes: {id: enabled}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: TASKS_C}
     children:

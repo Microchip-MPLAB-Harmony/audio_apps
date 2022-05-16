@@ -54,10 +54,10 @@ In order to regenerate source code for any of the applications, you will also ne
 | --- | --- | --- |
 | MPLAB® Harmony Code Configurator (MCC) plug-in | v5 | |
 | [Harmony 3 Audio](https://github.com/Microchip-MPLAB-Harmony/audio)| v3.6.0 | |
-| [Harmony 3 BSP](https://github.com/Microchip-MPLAB-Harmony/bsp)| v3.11.1 | |
-| [Harmony 3 CSP](https://github.com/Microchip-MPLAB-Harmony/csp)| v3.11.0 | |
+| [Harmony 3 BSP](https://github.com/Microchip-MPLAB-Harmony/bsp)| v3.12.0 | |
+| [Harmony 3 CSP](https://github.com/Microchip-MPLAB-Harmony/csp)| v3.12.0 | |
 | [Harmony 3 Core](https://github.com/Microchip-MPLAB-Harmony/core)| v3.10.0 | |
-| [Harmony 3 Dev_Packs](https://github.com/Microchip-MPLAB-Harmony/dev_packs)| v3.11.12 | |
+| [Harmony 3 Dev_Packs](https://github.com/Microchip-MPLAB-Harmony/dev_packs)| v3.12.0 | |
 | [Harmony 3 USB](https://github.com/Microchip-MPLAB-Harmony/usb)| v3.9.0 |only if using USB|
 | [Harmony 3 CMSIS-FreeRTOS](https://github.com/ARM-software/CMSIS-FreeRTOS)| v10.3.1 | only if using FreeRTOS |
 | [Harmony 3 MP3 Decoder Library](https://github.com/Microchip-MPLAB-Harmony/helix_mp3)| v1.1.0 |only if using MP3 decoder|
@@ -104,6 +104,7 @@ The current known issues are as follows:
 	- LED operation doesn't exactly match documentation.
 * all usb_speaker demonstrations:
     - Audible artifacts may occur as a result of buffer underflow/overflow conditions for E54 and E70 projects.  Clock tuning will be added in the future to handle this. 
+* In case of Issues with MCC code regeneration, regenerate using MH3. This will be fixed in an upcoming release.
 
 ### RELEASE CONTENTS
 

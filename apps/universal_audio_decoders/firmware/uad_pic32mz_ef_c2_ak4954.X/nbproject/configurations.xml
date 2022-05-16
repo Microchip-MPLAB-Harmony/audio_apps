@@ -438,6 +438,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_c2_ak4954/harmony-manifest-success.yml</itemPath>
       <itemPath>uad_pic32mz_ef_c2_ak4954.mc3</itemPath>
+      <itemPath>../src/config/pic32mz_ef_c2_ak4954/harmony-manifest-failure.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

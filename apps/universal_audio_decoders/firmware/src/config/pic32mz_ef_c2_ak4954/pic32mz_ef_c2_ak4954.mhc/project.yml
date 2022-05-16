@@ -97,13 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 67D4726276C0BD7112B79CD9049F6113
-- generatedChecksum: D7CB7F305208715624357B71229B20B4
+- generatedChecksum: D0F3D433D78108C56E6E2422848358FE
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954_local.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D7CB7F305208715624357B71229B20B4
+  userChecksum: D0F3D433D78108C56E6E2422848358FE
 - generatedChecksum: 39534E1CE0B7BEBCA64DAF598E5024E7
   logicalPath: config/pic32mz_ef_c2_ak4954/driver/i2c
   name: drv_i2c.c
@@ -544,7 +544,7 @@ files:
   physicalPath: audio/decoder
   security: NON_SECURE
   type: HEADER
-  userChecksum: 97908855388E6C7128E8B8EEC6A8D1D5
+  userChecksum: 9DF9DE4D1F5F9A9965048FD9E380A6B3
 - generatedChecksum: 2D43F4E11CB36F55FFBF08D6CDC0BCBD
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: bitmath.h
@@ -643,13 +643,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CC7DFCC51CD25171A3E400E18969354F
-- generatedChecksum: C9E105A6A746DB1FCBFAC0F99F47897F
+- generatedChecksum: AF0467048DC323A7D263CB292958285E
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/driver/codec/ak4954
   name: drv_ak4954.h
   physicalPath: audio/driver/codec/ak4954
   security: NON_SECURE
   type: HEADER
-  userChecksum: C9E105A6A746DB1FCBFAC0F99F47897F
+  userChecksum: AF0467048DC323A7D263CB292958285E
 - generatedChecksum: 3C6689B8800C6234028EC2FBE82E25CF
   logicalPath: config/pic32mz_ef_c2_ak4954/driver/i2c
   name: drv_i2c.h
@@ -768,7 +768,7 @@ files:
   physicalPath: audio/decoder/audio_decoders/flac
   security: NON_SECURE
   type: HEADER
-  userChecksum: 2FDAA605D9A5B47048DF5CF4439860F6
+  userChecksum: 1F8F05BCDE75BD7A003FCA8E435EAB6C
 - generatedChecksum: 6CB60320A30F49ACBEC847B0CDCF6FAA
   logicalPath: config/pic32mz_ef_c2_ak4954/audio/decoder/audio_decoders/flac
   name: float.h
@@ -1203,13 +1203,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6C4A6859DB16EA8C046F995C6B6C1C6F
-- generatedChecksum: F127C67A3E33E5788C0F057F648EE57C
+- generatedChecksum: 6EB8F9F4A43B9BC2C7A58585AC679650
   logicalPath: config/pic32mz_ef_c2_ak4954/usb
   name: usb_host.h
   physicalPath: usb
   security: NON_SECURE
   type: HEADER
-  userChecksum: F127C67A3E33E5788C0F057F648EE57C
+  userChecksum: 6EB8F9F4A43B9BC2C7A58585AC679650
 - generatedChecksum: 6EBC5E4D06FC96A02ADF3B7416957DD6
   logicalPath: config/pic32mz_ef_c2_ak4954/usb
   name: usb_host_client_driver.h

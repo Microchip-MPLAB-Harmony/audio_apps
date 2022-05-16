@@ -1,4 +1,4 @@
-<config configName="apb_sam_e70_xult_wm8904_ssc_freertos" projectName="apb_sam_e70_xult_wm8904_ssc_freertos" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="apb_sam_e70_xult_wm8904_ssc_freertos" projectName="apb_sam_e70_xult_wm8904_ssc_freertos" configVersion="1.1" device="ATSAME70Q21B" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -10704,7 +10704,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\initialization.c</file>
-         <hash>f8040ba4c16d01ec0715257778a0a8028844a12e840eb44d2ab8b4806247664e</hash>
+         <hash>08a87c96e04ab9ca1dfc880fce329d7fed89a12b264c5ba0a8a712d225b5a5e7</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -10932,7 +10932,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\startup_xc32.c</file>
-         <hash>4904be089bc7a323a8f6dc585a44c677d77b05b77a4c6d78bf2f8e7f5d012d22</hash>
+         <hash>a3bf0c30f5a9d624b7f40e4344697a0090b978953aac49df3a50d17c67735c11</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\usart.h</file>
@@ -10952,7 +10952,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\definitions.h</file>
-         <hash>377c13480216a683afccbd6e396b215ad57b50734daa6f722cf6acd4b518e346</hash>
+         <hash>e80a0eeb3e012244222e4d8ae98f3b544a872484093d3094721d511cf9833377</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\uart.h</file>
@@ -11163,16 +11163,16 @@
          <hash>6cdb5b324f2fd1bb5b2f47298ba6e6777e735d7cad3bb8d942cd36e2c6e65328</hash>
       </entry>
       <entry>
-         <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\usb\usb_host_hub_interface.h</file>
-         <hash>9db9028cdb085f4ed90d06c8d0013e5b9d300be9b49f0933094c373552193645</hash>
-      </entry>
-      <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\usb_host_init_data.c</file>
          <hash>adbc95eb490141c21e08d2a739ea25850fa96a5386de9156965cb1f09b95c9c7</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\usb\src\usb_host_local.h</file>
          <hash>b88bec2e0b5ffff726f431dd161e587256256a9eb6fc3a953d5087989dcd9514</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\usb\usb_host_hub_interface.h</file>
+         <hash>9db9028cdb085f4ed90d06c8d0013e5b9d300be9b49f0933094c373552193645</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\system\dma\sys_dma_mapping.h</file>
@@ -11351,12 +11351,12 @@
          <hash>a4997ced789b59d150c1f5f5a23e12cfb54db5ab7c520115246c5c27f7a47466</hash>
       </entry>
       <entry>
-         <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\driver\usb\usbhsv1\src\drv_usbhsv1_variant_mapping.h</file>
-         <hash>3183e45972da65c3142907b44fe6ea15f8d74026b19dce9c12971e105a5ef555</hash>
-      </entry>
-      <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\usb\src\usb_external_dependencies.h</file>
          <hash>5110f718908d8f79253ce5b4b44172288cc179ff61d18e387f9e90ae9afbb1b6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\driver\usb\usbhsv1\src\drv_usbhsv1_variant_mapping.h</file>
+         <hash>3183e45972da65c3142907b44fe6ea15f8d74026b19dce9c12971e105a5ef555</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\system\cache\sys_cache.h</file>
@@ -11408,7 +11408,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\configuration.h</file>
-         <hash>58e17483a93e3b024aff8c42803e19fac868bdc93f4d3958969500ec73eb70f9</hash>
+         <hash>96995cef0d8dfd05c30b70b8b71921c1ca59d723e815fbb184a517d6b41eaac0</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\system\int\sys_int_mapping.h</file>
@@ -11448,7 +11448,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\tasks.c</file>
-         <hash>bc49ec65dfa50cd68fa2389bfee834334870cfa439b6b2b9432d0e0dcdaf80af</hash>
+         <hash>4e9aa6358e3dfa4e6b42201128e5711c0c92ad8d95e1f5745c2b4177289ca23c</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e70_xult_wm8904_ssc_freertos\system\system_common.h</file>

@@ -1,4 +1,4 @@
-<config configName="apb_sam_e54_ult_wm8904_ssc_sdmmc" projectName="apb_sam_e54_cult_wm8904_i2s_sdmmc" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="apb_sam_e54_ult_wm8904_ssc_sdmmc" projectName="apb_sam_e54_cult_wm8904_i2s_sdmmc" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -7856,7 +7856,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\configuration.h</file>
-         <hash>3a07f81e8ad2628e600d71fdf280b8bb4d5b86a019d9917bfbc9db2d78be2ad1</hash>
+         <hash>ff7d0b8c0ea6a1fdbbc89dea7e80085ebca48044576aaf899ff11b34782ac24b</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\system\fs\fat_fs\file_system\ff.c</file>
@@ -7868,7 +7868,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\startup_xc32.c</file>
-         <hash>0ce43e39c5752474cfa7c61b1a269565c9c7d75f2c5d6d70a0ae2eca6e40ee93</hash>
+         <hash>2605492040cd0f0a67581a3e23e854cc2660fd2ba4abcb0f4568af8b4371526a</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\system\debug\sys_debug.h</file>
@@ -8412,7 +8412,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\definitions.h</file>
-         <hash>a3263ae01e4f30cfe8053a9912a53fb4076754b306828baa753e090b273ec0c0</hash>
+         <hash>9efbdc1deca92479f925ccbb2bb01b215b8ee91692aa93fcc4c145061d71dcc6</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\osal\osal.h</file>

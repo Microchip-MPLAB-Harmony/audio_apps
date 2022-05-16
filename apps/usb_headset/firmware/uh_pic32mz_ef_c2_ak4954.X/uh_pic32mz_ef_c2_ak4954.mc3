@@ -1,4 +1,4 @@
-<config configName="uh_basic_mz_ef_c2_ak4954_i2s_usb" projectName="uh_pic32mz_ef_c2_ak4954" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
+<config configName="uh_basic_mz_ef_c2_ak4954_i2s_usb" projectName="uh_pic32mz_ef_c2_ak4954" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -681,17 +681,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2s&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_ak4954&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2S&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_i2s2&lt;/Value&gt;
@@ -826,16 +816,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2s&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
     &lt;/Attachments&gt;
   &lt;/audio_codec_ak4954&gt;
 &lt;/audio_codec_ak4954&gt;
@@ -893,8 +873,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;555&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;467&quot; y=&quot;58&quot;/&gt;
@@ -913,6 +892,7 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;usb_device_audio&quot; x=&quot;389&quot; y=&quot;396&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;555&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -7437,7 +7417,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\initialization.c</file>
-         <hash>7b3b08da6e629108c118b715959a6047202761e9bca243c4e1e6cd2f7cbe9e8a</hash>
+         <hash>ec287f251ad5176b67b6f00125519dfca68669e7bd13b2750770ce0b0cc198d2</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_ShiftRight_q31_i16.c</file>
@@ -7929,7 +7909,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\definitions.h</file>
-         <hash>804eca955885de3dc3ab6556d01163b5d4397d1e38e5de97f7218db4aab1bcf0</hash>
+         <hash>a32faf2da411e81e0d07df6e37f522b1c4c8845d76619a97163f752fc53ba218</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\templates\usbhs_registers.h</file>
