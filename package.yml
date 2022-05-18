@@ -1,0 +1,11 @@
+package:
+  format-version: "1.0.0"
+  name: "audio_apps"
+  version: "3.1.0"
+  type: "application"
+  status: "production"
+  
+ dependencies:
+    - name: "audio"
+      type: "package"
+      version: "3.6.0"

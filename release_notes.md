@@ -15,7 +15,7 @@ nav_order: 99
 The following table provides the list of the applications/projects:
 
 | Application | Description | MZ EF/C2 | E54 | E70 | V71 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | audio_enc | Audio encoder for WAV files |  |  | x |  |
 | audio_player_basic | Audio player for WAV files (without library) |  | x | x |  |
 | audio_tone | Sine wave audio tone generator | x | x | x | x |
