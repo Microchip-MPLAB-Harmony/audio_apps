@@ -7,3 +7,4 @@
         <Dependency name="xiph_flac" version="v1.0.0"/>
     </Dependencies>
 </Package>
+
