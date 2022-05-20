@@ -59,12 +59,12 @@
 #include "audio/driver/i2s/drv_i2s.h"
 #include "peripheral/tc/plib_tc0.h"
 #include "audio/peripheral/ssc/plib_ssc.h"
-#include "system/time/sys_time.h"
 #include "driver/i2c/drv_i2c.h"
+#include "system/time/sys_time.h"
+#include "bsp/bsp.h"
+#include "driver/usb/usbhsv1/drv_usbhsv1.h"
 #include "usb/usb_chapter_9.h"
 #include "usb/usb_host.h"
-#include "driver/usb/usbhsv1/drv_usbhsv1.h"
-#include "bsp/bsp.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -213,9 +213,9 @@ typedef struct
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
-	SYS_MODULE_OBJ  usbHostObject0;
-
 	SYS_MODULE_OBJ  drvUSBHSV1Object;
+
+	SYS_MODULE_OBJ  usbHostObject0;
 
     SYS_MODULE_OBJ drvwm8904Codec0;
 
