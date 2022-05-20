@@ -95,7 +95,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -8190,7 +8190,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos\configuration.h</file>
-         <hash>14fc6fab3ff54cc8a55d8edb76370952b0f5afafea4373e34d66cc09b621854d</hash>
+         <hash>a60aaf5613d7b20b1e8fd497e5fd58f4f645d3e5057c15916f5a6d98b712584e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</file>
@@ -8346,7 +8346,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos\definitions.h</file>
-         <hash>6f82f4f8449a6d1f81974eb24d0b2eb3028bf4e1b7ac9afbe6e5e821b44f7fa8</hash>
+         <hash>89d53004dcd895562cb72c175b25e1631177321a80a476b9d611d2822b927a76</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc_freertos\system\fs\src\sys_fs_media_manager_local.h</file>
