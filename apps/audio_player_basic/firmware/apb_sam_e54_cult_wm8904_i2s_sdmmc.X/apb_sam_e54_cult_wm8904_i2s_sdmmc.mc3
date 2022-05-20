@@ -95,7 +95,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1020,7 +1020,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;800&quot; canvasWidth=&quot;1200&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Curiosity_Ultra&quot; x=&quot;617&quot; y=&quot;14&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;28&quot; y=&quot;40&quot;/&gt;
@@ -1044,7 +1045,6 @@
         &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;wm8904_codec&quot; x=&quot;683&quot; y=&quot;53&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;800&quot; canvasWidth=&quot;1200&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -7856,7 +7856,7 @@
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\configuration.h</file>
-         <hash>ff7d0b8c0ea6a1fdbbc89dea7e80085ebca48044576aaf899ff11b34782ac24b</hash>
+         <hash>3a07f81e8ad2628e600d71fdf280b8bb4d5b86a019d9917bfbc9db2d78be2ad1</hash>
       </entry>
       <entry>
          <file>..\src\config\apb_sam_e54_ult_wm8904_ssc_sdmmc\system\fs\fat_fs\file_system\ff.c</file>
