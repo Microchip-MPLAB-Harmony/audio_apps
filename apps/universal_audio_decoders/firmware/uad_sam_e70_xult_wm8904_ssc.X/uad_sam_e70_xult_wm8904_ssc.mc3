@@ -95,7 +95,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -6507,7 +6507,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\configuration.h</file>
-         <hash>6935f0c2595361668718403481d74f8a2bf1158aa9448e7f320e9cf7730eb175</hash>
+         <hash>98ff65e2f3ea03116ac6ab5dbefa463ee8e776afaf51e334152779941fb4777a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\xdmac.h</file>
@@ -6647,7 +6647,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\definitions.h</file>
-         <hash>facce4bcb4207270341844ce7700a30be08fe06d86591b41b3329a252af0e31c</hash>
+         <hash>d5de3548ba2731901abb67005e37c9c102eddcf22b08475360f8790a9359e732</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\mp3\fixpnt\mp3dec.c</file>
@@ -6995,7 +6995,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\audio\decoder\audio_decoders\flac\flac_dec.h</file>
-         <hash>c798ea2013e236f369efd9bfd78a6a513e98c5e3cb9dbe8306e869130675b803</hash>
+         <hash>850a8023ba4b2f66bf9bf9fe6c3df8f25cecde88bdde52e6c5abb1d8801d1530</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\pio.h</file>
@@ -7331,7 +7331,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\tasks.c</file>
-         <hash>fea176eaa26af12e43518110baebbb664898be655432c9351c4b5a579a4ed5d6</hash>
+         <hash>1e69c7c844992bd5264a181c8f04bb8379f1a9e72dc00f3e7e122d60c4992ce0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\isi.h</file>
@@ -7419,7 +7419,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\initialization.c</file>
-         <hash>364a83643b73d754bab617c5e823399cce45967ab7310d591596d559ecf53a7b</hash>
+         <hash>b4a79f6614ba1ec026fb8e575c674e9fac7857531f669b56902e362c937a11db</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_ssc\system\system.h</file>
