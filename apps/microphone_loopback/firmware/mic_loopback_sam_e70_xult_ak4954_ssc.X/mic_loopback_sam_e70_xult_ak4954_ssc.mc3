@@ -63,7 +63,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1333,8 +1333,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;29&quot; y=&quot;62&quot;/&gt;
@@ -1351,6 +1350,7 @@
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;twihs0&quot; x=&quot;116&quot; y=&quot;268&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -11242,12 +11242,12 @@
          <hash>2eb822e03d8944788e46153cdd729c5ef8fd44d4f11696a760b63ffd7f79be1d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e70_xult_ak4954_ssc\audio\driver\codec\ak4954\drv_ak4954.h</file>
-         <hash>7315b95b44eb8b205aea27b551a5b5e9d8b45ef28730a88ec05bffed6900d888</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\pmc.h</file>
          <hash>4dcb91200df0e9c187ada4d05339c938a1abb16873c323681362698c730903d2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e70_xult_ak4954_ssc\audio\driver\codec\ak4954\drv_ak4954.h</file>
+         <hash>7315b95b44eb8b205aea27b551a5b5e9d8b45ef28730a88ec05bffed6900d888</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\twihs0.h</file>
