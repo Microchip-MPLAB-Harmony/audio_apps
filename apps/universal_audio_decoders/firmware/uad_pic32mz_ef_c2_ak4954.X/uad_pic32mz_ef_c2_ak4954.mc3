@@ -83,7 +83,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1883,8 +1883,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;673&quot; canvasWidth=&quot;801&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;425&quot; y=&quot;52&quot;/&gt;
@@ -1906,6 +1905,7 @@
         &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;usb_host_msd&quot; x=&quot;515&quot; y=&quot;372&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;673&quot; canvasWidth=&quot;801&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -9060,7 +9060,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\definitions.h</file>
-         <hash>9a7fb6c5253594e2796cfae957e3579685edf55e1ce59050600ed9af63c73212</hash>
+         <hash>586cd22902a7c1212a0f6342a719bc72799caf68eeb2b00e7a6ac9a8040ac379</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\audio\decoder\audio_decoders\flac\flac_master\include\share\endswap.h</file>
@@ -9152,7 +9152,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\audio\decoder\audio_decoders\flac\flac_dec.h</file>
-         <hash>c798ea2013e236f369efd9bfd78a6a513e98c5e3cb9dbe8306e869130675b803</hash>
+         <hash>850a8023ba4b2f66bf9bf9fe6c3df8f25cecde88bdde52e6c5abb1d8801d1530</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma_mapping.h</file>
