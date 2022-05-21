@@ -71,7 +71,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -964,8 +964,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;210&quot; y=&quot;60&quot;/&gt;
@@ -984,6 +983,7 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;wm8904_codec&quot; x=&quot;43&quot; y=&quot;176&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -10937,7 +10937,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc_freertos\configuration.h</file>
-         <hash>00410fe51ecb12d050ec7eacf9b1fb59386576d6ccdd73593c584182a3013ef6</hash>
+         <hash>5e021c75ee0fdc6a8703cdab6de387a4bbf8c25574ec9c51cc35548fe5994e87</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc_freertos\bsp\bsp.h</file>
@@ -11377,7 +11377,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc_freertos\definitions.h</file>
-         <hash>097d29babc51a9ebd02e662c7d1826d6130560ecccb8e0178a4e0ede80941214</hash>
+         <hash>9403c7f4f8a29a806ef84cbffc29df82ca47349b75f87c6b51ce150097d7c77b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult_wm8904_i2sc_freertos\audio\driver\i2s\drv_i2s_local.h</file>
