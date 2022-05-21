@@ -5,9 +5,9 @@ frameworkPath: ../../..
 processor: ATSAME70Q21B
 projectName: ''
 settings:
-  PackageFilter: audio;bsp;core;csp;Devices;dev_packs;harmony-services;quick_docs;usb
+  PackageFilter: audio;audio_apps;bsp;core;csp;Devices;dev_packs;dev_packs_bitbucket;dev_packs_delete;harmony-services;quick_docs;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.6.98\same70b\atdf\ATSAME70Q21B.atdf
+  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.7.108\same70b\atdf\ATSAME70Q21B.atdf
