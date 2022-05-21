@@ -67,7 +67,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -927,7 +927,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Curiosity_Ultra&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;62&quot; y=&quot;109&quot;/&gt;
@@ -945,7 +946,6 @@
         &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;tc0&quot; x=&quot;434&quot; y=&quot;118&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;400&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -9073,12 +9073,12 @@
          <hash>eff1e6f24c35076ccb6b2b9cd920f8e387e2eb0ba31546355091782013666e66</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_cult_wm8904\audio\peripheral\i2s\plib_i2s.h</file>
-         <hash>2430c4089dea392461e4547e8bc47587f39799d5887c8ba02221b7957fe80e81</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\same54p20a.h</file>
          <hash>d1141475d45696b24b8a1c82c79108aeab1d01a8a206c73cf084e602686fbfec</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_cult_wm8904\audio\peripheral\i2s\plib_i2s.h</file>
+         <hash>2430c4089dea392461e4547e8bc47587f39799d5887c8ba02221b7957fe80e81</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
