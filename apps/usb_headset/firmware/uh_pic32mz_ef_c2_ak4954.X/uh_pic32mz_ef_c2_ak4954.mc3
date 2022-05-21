@@ -75,7 +75,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -873,7 +873,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;555&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;467&quot; y=&quot;58&quot;/&gt;
@@ -892,7 +893,6 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;usb_device_audio&quot; x=&quot;389&quot; y=&quot;396&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;555&quot; canvasWidth=&quot;889&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -7365,7 +7365,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\include\XInDegrees_LUT_91.h</file>
-         <hash>87aa46b2d7722839224f675cc974215c4861da6a0b7eff0099caf70fed17e6c0</hash>
+         <hash>3d9834d9a5df998524cd6b6b4f5322df93df8cbd35ae4ddbfd0b18f81ef895d7</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\system\dma\sys_dma_mapping.h</file>
@@ -7373,7 +7373,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_ExpAvg_q15_q15_q1d15.c</file>
-         <hash>491caac3b14e50fdf3beacce13eb61a441866d83940b17fec6edce69745e9786</hash>
+         <hash>8709e108f74af824b4fd73355c2cc8b65ac262d7b623093875049b42da9a3b13</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\usb\usb_device_audio_v1_0.h</file>
@@ -7405,7 +7405,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_ShiftRightR_q31_i16.c</file>
-         <hash>ca41b0b508ed9df74933cb69c752164ab52eeed09b7cb23afc5cd976a12f42ae</hash>
+         <hash>d49ca06019338127bfde17853eb5bded68e28643a6c922fb8e283171583d402f</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\configuration.h</file>
@@ -7421,7 +7421,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_ShiftRight_q31_i16.c</file>
-         <hash>a3a2a2ac70636220644b26261de02546676216023018413bf518f9aaad10503f</hash>
+         <hash>9e16d90d39903d74a7f4488a9d0bff07b80569bd40bcbadf84b0bae41882aa7a</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\drv_usb_external_dependencies.h</file>
@@ -7449,7 +7449,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_ExtractH_q31.c</file>
-         <hash>6cf5a96ce034e589baf104e2a731b584da4bccb61f9c9079c32237daab457440</hash>
+         <hash>e8e4f6da9189dd45c3ce36fa7fa815feaca143a9ba473b593a8e0cb023648272</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\templates\usbhs_Interrupts_Default.h</file>
@@ -7461,11 +7461,11 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Multi_q15_q31.c</file>
-         <hash>ee0446449c050904c05b9c71ddf91f92419c503da9c602d5e0ec9c5c26b9dcf3</hash>
+         <hash>0891557b7b59880595f3cb62dbcb5a576396b63303419ec15be27271fb85c44d</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Negate_q31.c</file>
-         <hash>790be0aa76a637a731ffc92a57d72b65b36fcfd2f7773d7d1bfafbd824882311</hash>
+         <hash>91632220a113b27bbbb2af487f3f91a87273fa2cf9ed7da842a2c19e2d0ee965</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\stdio\xc32_monitor.c</file>
@@ -7481,7 +7481,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q1d15_Sin_q10d6.c</file>
-         <hash>e8e09167629caecc777087648713084f2001c5b65023dd854f6d157bd9de9444</hash>
+         <hash>fe9bc8d533b36007803e69180b0f23ec0b07445926af7a8e47282c63dbf324c6</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\drv_usbhs_local.h</file>
@@ -7489,7 +7489,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_DepositH_q15.c</file>
-         <hash>41b998d966aae509634f0e48149ebb4193e5b1c27a37fb166c8d24bbc48a75b0</hash>
+         <hash>3d325b44b720029884536e15349617bf3ee0e418d857c6b8405d4576bdbe1068</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\system\int\sys_int_mapping.h</file>
@@ -7501,7 +7501,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Abs_q31.c</file>
-         <hash>9f174c2d73bb3fb699d98edb99978e04470fa9f3353ca7250430a398d5355e7a</hash>
+         <hash>f9d93ef88111a697248aeab8a3d5b23b4715bba44e24a745271e25cf398cf6a3</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\templates\usbhs_SoftReset_Default.h</file>
@@ -7513,7 +7513,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_MacR_q31_q15_q15.c</file>
-         <hash>79d7972c111faf5c81ee30d2af4c154b946c97a113bdf98111ed556ae622a17c</hash>
+         <hash>71bb6b477b1bc6d4e96dec353d049b6c681d9fea23056936a4166462d04826ac</hash>
       </entry>
       <entry>
          <file>..\src\app.c</file>
@@ -7545,7 +7545,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_ShiftLeft_q31_i16.c</file>
-         <hash>d62ef27209bfbcd47b160a22b9b55a89167f0166d2e4dd92f50c02c31aa2f57b</hash>
+         <hash>c7ccaab3cdee3d1fb99c933a96e9796f6e087ccaaa737dc5fd1c9bc503383e78</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\driver\i2s\drv_i2s.h</file>
@@ -7573,7 +7573,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Msu_q31_q15_q15.c</file>
-         <hash>254ed796b4a989b96ac17b9ea4527aa470ba14c554ebe719b526125dc662a86d</hash>
+         <hash>8ee351f3bc7c04a49b21a4e25dd3ebe8b461f08950bcf2936119a916de07bea0</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\i2c\src\drv_i2c_local.h</file>
@@ -7601,7 +7601,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Mac_q31_q15_q15.c</file>
-         <hash>1bf77a06d2ebc1026fc76224c21d051f7dc2679fcf7a811f5f4e5528a7a030d8</hash>
+         <hash>cfa64dcb0dd5d6561b5651e3b0fa1247ae7182b96f06e7d63b4cbe80d05d147e</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\peripheral\i2c\master\plib_i2c1_master.c</file>
@@ -7621,7 +7621,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Add_q31_q31.c</file>
-         <hash>0acab17902cf71e0148a56502e8b386682a6b58d92b09cb1b7073973c89ff517</hash>
+         <hash>f69141ce3612864288c3382841104b9393e2d2eb5332d12a317723a0a8f26117</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\usb\usb_host.h</file>
@@ -7629,7 +7629,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_ShiftRightR_q15_i16.c</file>
-         <hash>804f5c83dae14187ed180513a569f5d12f64c10490cbe11285abfc9521353213</hash>
+         <hash>3be46a83c5d7c470ce1cd92b2295e8e92c944fb37bc8127669d8b963c383f3ce</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\system\time\sys_time.h</file>
@@ -7637,11 +7637,11 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_Abs_q15.c</file>
-         <hash>8abab08c09d77f785cbe6b32efec3684c525c9bef74da260318072d1c65a903b</hash>
+         <hash>c51a860373604e87d725685ca4dcce434f8cb18d95d68bf9710ea6ad01b64d59</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_Add_q15_q15.c</file>
-         <hash>f7f232bc9747cd9876eebbf65cb28324e983c1c780cd2ae1e038cc199610d2b3</hash>
+         <hash>dbd379fb9960ee2ed70bcd970991073d361f149b43f6c02a5d46d6c875b6fb60</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\drv_usbhs_device.c</file>
@@ -7661,15 +7661,15 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_FxNorm.c</file>
-         <hash>e1580bd42dd3f160898e8e06dcae1923f193e459ca9f137575337050af4d4d83</hash>
+         <hash>d76eb96980d9cbeaf7cd0512e27e6178ea326fa607648cdde3d645795f89f1c0</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_MultiplyR2_q15_q15.c</file>
-         <hash>537e025d93886a024115dfbdb386295e22e6b16ec7483749bdc12f1f0c49b09c</hash>
+         <hash>78271de0f75b6e41ca3b6375d001a24ca86325cf7de3ddea3d4c8bcd45d90dac</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_ShiftLeft_q15_i16.c</file>
-         <hash>84e5dce5ff673a6fb472f51cdcf8dddb00346d35f14c5416823fb48344ff28db</hash>
+         <hash>d4242f1bb7301a4bcb9f6d1c8f69e4bd8d6441698657d87dfaa14714f10f1d62</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -7733,7 +7733,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_Negate_q15.c</file>
-         <hash>ea343a5755f6a36ff57521cd6d2cc84e78d52738698be595aa0bbb94bfc808fa</hash>
+         <hash>7186fab5bf00f2376d3e99408bdd033c6e6d57be28bb01342bf8ffefaeee05ee</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\templates\usbhs_ClockResetControl_Default.h</file>
@@ -7777,7 +7777,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_MsuR_q31_q15_q15.c</file>
-         <hash>dd35661b884e49c7499ab58d07bed350448fedf8b0168e6b998d7e2d904f637d</hash>
+         <hash>4e1203af964b5d45733db2d807b366b45c743baab3c00ab4149b2c7f8cf12132</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\peripheral\gpio\plib_gpio.h</file>
@@ -7813,11 +7813,11 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\include\LUT__3Terms__nLUT_256.h</file>
-         <hash>1a53e6d147b90dc5f4d5fc75540bf446117ce548c55611efa67cc03c42adb151</hash>
+         <hash>1e90b0fb360555d785da56c73c1d30f84caa1568a93640e93bda8ea2b3327f81</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q31_Mult2_q15_q31.c</file>
-         <hash>3130801c3d10d46a3498969c59ffe3881ca38fe490ea2b68953a68ed2fa56af7</hash>
+         <hash>8c323cc29f7623c95992b5c46729973e69b37eb90fcaac276883cf5168911e82</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\usb\usb_device.h</file>
@@ -7861,11 +7861,11 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_ShiftRight_q15_i16.c</file>
-         <hash>420650659b7edf9d830de1c95bff2a8cb011ea2c04c65facdb43c320621f6150</hash>
+         <hash>760ec6b2787a770872c36d1bc03e6e360b70bd19240da382f330da7417e1a897</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_DivisionWithSaturation_q15_q15.c</file>
-         <hash>b86384d154c4a69a220c01261e7a386aa1cf97530293d7f79d816a053d5dd773</hash>
+         <hash>8b1f7cf520cce630b7600e1141ea22f16da20213c0ab86e4bae899aa6ee666c8</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\bsp\bsp.c</file>
@@ -7909,7 +7909,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\definitions.h</file>
-         <hash>a32faf2da411e81e0d07df6e37f522b1c4c8845d76619a97163f752fc53ba218</hash>
+         <hash>d5187bccd2d516edd47c4897fa84e04dd2c365dba303db86791ea85edcb396de</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\templates\usbhs_registers.h</file>
@@ -7961,7 +7961,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\include\SinX_LUT_91.h</file>
-         <hash>2013edb476604bc4577345c8b11776e1d600db88bbc6db1e4f32ebf531a977b4</hash>
+         <hash>64d8790df244a98b22b9654962a891b0629ea776dc17a3f618c033fd29fd1846</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\user.h</file>
@@ -7973,7 +7973,7 @@
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\audio\math\libq_c\src\libq_q15_RoundL_q31.c</file>
-         <hash>1e18a49a3446b43c0ec71b9c15a15eb09786e74ab940db0803d145e5f5a8d8bf</hash>
+         <hash>f03c02fa159e8dbfa3c4a682da3918a3f076d356b5609142d3cfd9c64a618e3e</hash>
       </entry>
       <entry>
          <file>..\src\config\uh_basic_mz_ef_c2_ak4954_i2s_usb\driver\usb\usbhs\src\templates\usbhs_HighSpeedSupport_Unsupported.h</file>
