@@ -351,9 +351,9 @@ void SYS_Initialize ( void* data )
     DMAC_Initialize();
 
 	BSP_Initialize();
-    CORETIMER_Initialize();
     I2C1_Initialize();
 
+    CORETIMER_Initialize();
 	UART1_Initialize();
 
 	I2S2_Initialize();

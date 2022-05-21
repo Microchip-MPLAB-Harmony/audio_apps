@@ -63,7 +63,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -788,7 +788,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;720&quot; canvasWidth=&quot;765&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;19&quot; y=&quot;72&quot;/&gt;
@@ -805,7 +806,6 @@
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;uart1&quot; x=&quot;302&quot; y=&quot;608&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;720&quot; canvasWidth=&quot;765&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -7648,7 +7648,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\definitions.h</file>
-         <hash>f2e53dc1aceddc411f4af3915708474dbe87bd5600d007a565a5b1caf27d1bad</hash>
+         <hash>9f24a5a031bc3f4d202223ed24d47cfcde895981120b0d9e129a5ca3879da0eb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954_local.h</file>
@@ -7824,7 +7824,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\initialization.c</file>
-         <hash>8b18c35cba334261a48590dcf0c1754859697ebe340b3627de8b4aa4a12eee0d</hash>
+         <hash>9cfac877908ce2284fbba27e98fe2980c4278589b674d2746a69a5fd34cd9d5f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\src\drv_i2c.c</file>
