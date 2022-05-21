@@ -71,7 +71,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -9381,7 +9381,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_cult_wm8904_freertos\configuration.h</file>
-         <hash>40ca1cdd54dde56d58bed42bad1717a23493647ab6d80f7539168369d2ad93a5</hash>
+         <hash>97e9e227e91cdb9aa0d0cef31454ca6d4f5c346da75a8bdd14a74ee565657fb7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\port.h</file>
