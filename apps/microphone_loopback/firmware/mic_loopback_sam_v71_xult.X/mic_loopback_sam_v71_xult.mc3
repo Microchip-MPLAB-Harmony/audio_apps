@@ -67,7 +67,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -641,7 +641,17 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2s&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2S&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_ssc&lt;/Value&gt;
@@ -1193,6 +1203,16 @@
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2s&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
