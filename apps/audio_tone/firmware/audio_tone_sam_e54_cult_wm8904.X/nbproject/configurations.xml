@@ -95,8 +95,8 @@
               <itemPath>../src/config/sam_e54_cult_wm8904/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
             <logicalFolder name="ports" displayName="ports" projectFiles="true">
-              <itemPath>../src/config/sam_e54_cult_wm8904/system/ports/sys_ports.h</itemPath>
               <itemPath>../src/config/sam_e54_cult_wm8904/system/ports/sys_ports_mapping.h</itemPath>
+              <itemPath>../src/config/sam_e54_cult_wm8904/system/ports/sys_ports.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="time" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904/system/time/sys_time.h</itemPath>
