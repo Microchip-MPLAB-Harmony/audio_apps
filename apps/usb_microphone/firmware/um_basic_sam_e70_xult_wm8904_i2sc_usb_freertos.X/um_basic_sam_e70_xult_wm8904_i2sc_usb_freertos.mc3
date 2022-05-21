@@ -87,7 +87,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -722,7 +722,17 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot;&gt;
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;drv_i2s&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;audio_codec_wm8904&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;DRV_I2S&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;drv_i2s_I2S_dependency&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;a_i2sc1&lt;/Value&gt;
@@ -740,85 +750,6 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>a_drv_i2s</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_PLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_PLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;I2SC1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_RX_DMA"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_RX_DMA&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_RX_DMA_CHANNEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_RX_DMA_CHANNEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;1&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_TX_DMA"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_DMA&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_TX_DMA_CHANNEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_DMA_CHANNEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;0&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_TX_RX_DMA"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_RX_DMA&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="I2S_DATA_LENGTH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;I2S_DATA_LENGTH&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;16&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2sc1" name="!@#harmonyAttachmentState"/>
@@ -856,6 +787,16 @@
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
             &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2c&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;DRV_I2S&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;a_drv_i2s_0&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;drv_i2s&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
@@ -960,8 +901,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;600&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;480&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;912&quot; y=&quot;14&quot;/&gt;
@@ -983,6 +923,7 @@
         &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;wm8904_codec&quot; x=&quot;602&quot; y=&quot;76&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;600&quot; canvasWidth=&quot;400&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -11496,7 +11437,7 @@
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\initialization.c</file>
-         <hash>8bc3ec9cef1bed3e6e83bcfc75ca558361dca51c14c3373baf69612a7b4a543b</hash>
+         <hash>40fd93bd2752f650e291327dcb195294cf79a2b96d875cc46db2b2d7885a7ff5</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\croutine.h</file>
@@ -12007,10 +11948,6 @@
          <hash>91d4d2cd6d7d5193df1371c2a6025eabdbfc1ffcec9a922775ccb64fbcff2368</hash>
       </entry>
       <entry>
-         <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\audio\driver\i2s\drv_i2s_local.h</file>
-         <hash>4c18201f9b736e872db9f086439cf55b9a29f6c947626c9ef7a651eaf277c061</hash>
-      </entry>
-      <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\list.c</file>
          <hash>e735517f308fad5dd77d03b6858c16bdbc937bb9d0754735849fc7799ebe2b59</hash>
       </entry>
@@ -12072,7 +12009,7 @@
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\tasks.c</file>
-         <hash>3e7a03c63763362a28cfd75cb879c7e484072986af43c6e4dd65f049d414c4b2</hash>
+         <hash>cbed928e65caedf5740272e20a814b12de5abf88ee75f95f43c4b67c81050508</hash>
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\interrupts.c</file>
@@ -12093,10 +12030,6 @@
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\driver\i2c\drv_i2c_definitions.h</file>
          <hash>48e93b446c00e2ff05fa909dff3eccb8aad1051467c4137e407d37afc4b40ab0</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\audio\driver\i2s\src\drv_i2s.c</file>
-         <hash>248947bc93410a525da418d403a9659693fed5a197f04b1b2890b8485d864a5f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\component\rtt.h</file>
@@ -12181,10 +12114,6 @@
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\toolchain_specifics.h</file>
          <hash>2559d185e92918f61c308a62200cb0cda72726c63111561524dd53afcc635a18</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\audio\driver\i2s\drv_i2s.h</file>
-         <hash>f78b909ecf380809821385cb6a838aa942a60af0672a6d2e02923e18226a2808</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\usart0.h</file>
@@ -12279,12 +12208,12 @@
          <hash>46692be94e8ea198c1eae3eda1c21ff9371e94078e2011831412b838d8e7fad5</hash>
       </entry>
       <entry>
-         <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\driver\driver.h</file>
-         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\isi.h</file>
          <hash>b93d60df2fbedea8f3dcb43a6abf8cf369ef5b2fda126b79f0e159759aad4743</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\driver\driver.h</file>
+         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\system\time\src\sys_time.c</file>
@@ -12304,7 +12233,7 @@
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\configuration.h</file>
-         <hash>b5cf59afa4bf40e2f1b8e842e384afe6394f68de90be1e2e032f295cbe9453a1</hash>
+         <hash>40b0a7a3327776a5f377f961513e976a71e80198e4b53e7d46c6fd8d7c17fe81</hash>
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\usb\src\usb_device_local.h</file>
@@ -12324,7 +12253,7 @@
       </entry>
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\definitions.h</file>
-         <hash>4385cfb8d7716252555fd302203180d262b72d1437e44dfb2244b3f616245895</hash>
+         <hash>54f5ae7c03b853df3b660b46c2439c7b03b52da0dc3ba9f683472a1354a31157</hash>
       </entry>
       <entry>
          <file>..\src\third_party\rtos\FreeRTOS\Source\include\event_groups.h</file>
@@ -12337,10 +12266,6 @@
       <entry>
          <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\usb\usb_chapter_9.h</file>
          <hash>86a258d763c7f0f563122ccd4ec0bbef422fd4e2f523402bb89be10568cecf3f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\basic_sam_e70_xult_wm8904_i2sc_usb_freertos\audio\driver\i2s\drv_i2s_definitions.h</file>
-         <hash>cc182690932904302a9ad3317d23a0f3f764bee8ba49d8b265ae210c8d0824e5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME70Q21B_DFP\instance\pmc.h</file>
