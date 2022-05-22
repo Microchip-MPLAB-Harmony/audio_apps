@@ -83,7 +83,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -676,97 +676,6 @@
          <value>a_drv_i2s</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_PLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_PLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;I2SC1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_QUEUE_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_QUEUE_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;128&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_RX_DMA"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_RX_DMA&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_RX_DMA_CHANNEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_RX_DMA_CHANNEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;0&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_TX_DMA"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_DMA&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_TX_DMA_CHANNEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_DMA_CHANNEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;1&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;3&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="DRV_I2S_TX_RX_DMA"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_RX_DMA&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_drv_i2s_0" name="I2S_DATA_LENGTH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_drv_i2s_0&gt;
-  &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;I2S_DATA_LENGTH&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;16&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;32&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/a_drv_i2s_0&gt;
-&lt;/a_drv_i2s_0&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="a_i2sc1" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;a_i2sc1&gt;
   &lt;a_i2sc1 dnOrder=&quot;0&quot;&gt;
@@ -898,10 +807,11 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;516&quot; canvasWidth=&quot;803&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E70_Xplained_Ultra&quot; x=&quot;189&quot; y=&quot;61&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;10&quot; y=&quot;80&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;9&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;a_drv_i2s&quot; x=&quot;213&quot; y=&quot;377&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;a_i2sc1&quot; x=&quot;50&quot; y=&quot;441&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;audio_codec_wm8904&quot; x=&quot;454&quot; y=&quot;276&quot;/&gt;
@@ -919,7 +829,6 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;wm8904_codec&quot; x=&quot;457&quot; y=&quot;19&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;516&quot; canvasWidth=&quot;803&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -11738,7 +11647,7 @@
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\configuration.h</file>
-         <hash>fd7284eb8bd2b75993d9b28ea59dfc09d8f6ff54043437ca2244a23b15e72d4f</hash>
+         <hash>80d952db3f68e98282190af846d100feac23def52b968d915bfae323da3a8ada</hash>
       </entry>
       <entry>
          <file>..\src\config\us_basic_sam_e70_xult_wm8904_i2sc_usb\usb\usb_chapter_9.h</file>
