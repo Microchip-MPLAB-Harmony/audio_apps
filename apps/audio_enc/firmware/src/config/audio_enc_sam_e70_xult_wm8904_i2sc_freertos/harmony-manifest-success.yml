@@ -4,7 +4,7 @@
 
 
 project: audio_enc
-creation_date: 2022-05-20T16:18:05.397+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-05-22T16:07:56.328+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.5
@@ -19,7 +19,7 @@ modules:
     - {name: "usb", version: "v3.9.0"}
     - {name: "dev_packs", version: "v3.12.0"}
     - {name: "helix_mp3", version: "v1.1.0"}
-    - {name: "littlefs", version: "v1.6.2"}
+    - {name: "littlefs", version: "unknown"}
     - {name: "audio", version: "v3.6.0"}
     - {name: "bsp", version: "v3.12.0"}
     - {name: "CMSIS-FreeRTOS", version: "v10.3.1"}
