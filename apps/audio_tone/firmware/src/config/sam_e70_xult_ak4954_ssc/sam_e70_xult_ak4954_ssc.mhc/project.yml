@@ -355,7 +355,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 15B5AA181E5E2B4275D73B6629CCB11F
+  userChecksum: 432F81BCE44F7785A9DCAF9097183918
 - generatedChecksum: C679A77E2A1338BE090B760AD405B86C
   logicalPath: config/sam_e70_xult_ak4954_ssc
   name: device.h
@@ -1258,7 +1258,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 5EBD2C0F705BD09380237D53AA3C9044
+  userChecksum: 5C2644B317BD7DE4D5CFB98879A0103E
 format_version: v1.0
 libraries: []
 settings:
