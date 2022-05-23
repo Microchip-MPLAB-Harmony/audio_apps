@@ -1,8 +1,3 @@
----
-title: Release notes
-nav_order: 99
----
-
 ![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
@@ -12,14 +7,14 @@ nav_order: 99
 
 - **Applications/Projects**
 
-The following table provides the list of the applications/projects:
+The following table provides the list of the applications/projects :
 
 | Application | Description | MZ EF/C2 | E54 | E70 | V71 |
 | --- | --- | --- | --- | --- | --- |
 | audio_enc | Audio encoder for WAV files |  |  | x |  |
 | audio_player_basic | Audio player for WAV files (without library) |  | x | x |  |
 | audio_tone | Sine wave audio tone generator | x | x | x | x |
-| audio_linkeddma | Audio tone generator using linked DMA | x | x | x | x |
+| audio_linkeddma | Audio tone generator using linked DMA |  |  | x |  |
 | microphone_loopback | Microphone loopback demo | x | x | x | x |
 | universal_audio_decoders | Audio player for WAV, ADPCM, FLAC and MP3 files | x |  | x |  |
 | usb_headset | USB headset demo | x |  |  |  |
@@ -52,7 +47,7 @@ In order to regenerate source code for any of the applications, you will also ne
 
 | Tool | Version | Notes |
 | --- | --- | --- |
-| MPLAB® Harmony Code Configurator (MCC) plug-in | v5 | |
+| MPLAB® Harmony Code Configurator (MCC) plug-in | v5.1.4 | |
 | [Harmony 3 Audio](https://github.com/Microchip-MPLAB-Harmony/audio)| v3.6.0 | |
 | [Harmony 3 BSP](https://github.com/Microchip-MPLAB-Harmony/bsp)| v3.12.0 | |
 | [Harmony 3 CSP](https://github.com/Microchip-MPLAB-Harmony/csp)| v3.12.0 | |
@@ -79,7 +74,7 @@ This release supports applications for the following development kits
 The current known issues are as follows:
 
 * Code is compliant to MISRA C 2012 Mandatory guidelines, except:
- - USB Speaker Bass Boost app fails Mandatory Rules 17.3 and 17.4, but these appear to be false positives as the same code passes using another tool (Coverity) 
+    - USB Speaker Bass Boost app fails Mandatory Rules 17.3 and 17.4, but these appear to be false positives as the same code passes using another tool (Coverity) 
 * The ICD4 loads the reset line of the SAM V71 Xplained Ultra board. When running demo projects using the V71, the ICD4 flex cable should be removed after programming to run the application.
 * audio_enc demonstration:
     - Audible artifacts may occur as a result of long period MSD writes.
@@ -103,8 +98,9 @@ The current known issues are as follows:
     - Muting from the PC doesn't always work
 	- LED operation doesn't exactly match documentation.
 * all usb_speaker demonstrations:
-    - Audible artifacts may occur as a result of buffer underflow/overflow conditions for E54 and E70 projects.  Clock tuning will be added in the future to handle this. 
-* In case of Issues with MCC code regeneration, regenerate using MH3. This will be fixed in an upcoming release.
+    - Audible artifacts may occur. 
+* In case of issues with MCC regeneration:
+    - Regenerate with MHC. This will be fixed in an upcoming release.
 
 ### RELEASE CONTENTS
 
