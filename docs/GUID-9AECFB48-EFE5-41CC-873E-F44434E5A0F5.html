@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="usb_headset" />
+<meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="usb-headset" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>usb_headset</title>
+<meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-usb-headset" />
+<meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB® Harmony Audio Apps Help Reference A 04/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-9AECFB48-EFE5-41CC-873E-F44434E5A0F5"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="usb-headset">
+<h1 class="title topictitle1" id="ariaid-title1">usb_headset</h1><div class="body"><p class="p">This topic provides instructions and information about the MPLAB Harmony
+3 USB Speaker Basic demonstration application, which is included in the MPLAB
+Harmony Library distribution.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html">Harmony 3 audio application examples</a></div>
+</div>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2">Description</h2><div class="body"><p class="p">This demonstration application configures the development board to implement a
+USB Headset device configured to run at 48 kHz sampling rate at 16 bit per sample.</p>
+<p class="p">The USB Device driver in Full Speed mode will interface to a USB Host (such as a
+personal computer) via the USB Device Stack using the V1.0 Audio Function Driver.
+The embedded system will enumerate with a USB audio device endpoint and enable
+the host system to input/output audio from the USB port using a standard USB
+Full-Speed implementation. The embedded system will stream USB playback audio to
+the Codec. The Codec Driver sets up the audio interface, timing, DMA channels
+and buffer queue to enable a continuous audio stream. The digital audio is
+transmitted to the codec through an I2S data module for playback and record
+through a headphone jack.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="architecture"><h2 class="title topictitle2" id="ariaid-title3">Architecture</h2><div class="body"><p class="p">The application runs on the PIC32 MZ EF Curiosity 2 (MZEFC2) demo board, as follows:</p>
+<ul class="ul"><li class="li"><p class="p">Processor runs @ 200 MHz</p>
+</li>
+<li class="li"><p class="p">4 push buttons (SW1-SW4)</p>
+</li>
+<li class="li"><p class="p">3 LEDs (all red LED1-LED3) and RGB LED (LED4).</p>
+</li>
+<li class="li"><p class="p">AK4954 Codec Daughter Board mounted on X32 socket</p>
+</li>
+<li class="li"><p class="p">USB Device interface</p>
+</li>
+</ul>
+<p class="p"><img class="image" src="GUID-F4F59342-66C5-434B-8F61-31460D012DB3-low.png" /><br /> <strong class="ph b">Note:</strong> The PIC32 MZ EF Curiosity 2 does not include the
+AK4954 Audio Codec daughterboard, which is sold separately on microchipDIRECT as
+part number AC324954.</p>
+<p class="p">The usb_headset application uses the MPLAB Harmony Configurator to setup the USB
+Audio Device, codec, and other items in order to play back the USB audio through
+the Codec Module.</p>
+<p class="p">A USB Host system is connected to the micro-mini USB device connector. The
+application detects the cable connection, which can also supply device power;
+recognizes the type of connection (Full Speed); enumerates its functions with the
+host, isochronous audio streaming playback and record through device. Audio stream data is
+buffered in 1 ms frames for playback/record using the AK4954 Codec daughter board. Audio
+is heard through the Headphone jack (HP OUT).  Audio is sent to the
+record channel from the on-board microphone</p>
+<p class="p">The following figure shows the basic architecture for the demonstration.</p>
+<p class="p"><img class="image" src="GUID-BE5EAB53-CDFD-422A-A0C2-F4212F9E7786-low.png" /><br /><em class="ph i">Figure 1. Architecture Block Diagram</em></p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="demonstration-features"><h2 class="title topictitle2" id="ariaid-title4">Demonstration Features</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Audio playback/record using a AK4954 codec daughterboard on the MZEFC2 board.</p>
+</li>
+<li class="li"><p class="p">USB connection to a host system using the USB Library Device Stack for a USB
+Headset device using the MZEFC2 boards</p>
+</li>
+<li class="li"><p class="p">MZEFC2 board button processing for volume/mute control</p>
+</li>
+<li class="li"><p class="p">USB Attach/Detach and mute status using an LED on MZEFC2 board</p>
+</li>
+<li class="li"><p class="p">Utilization of the PIC32 I2S peripheral (as master) on the MZEFC2 board</p>
+</li>
+</ul>
+<p class="p">Note that all the calls to the AK4954 codec driver uses the form
+DRV_CODEC_xxx rather than DRV_AK4954_xxx. This is to make the
+code more generic, such that another codec could be substituted for another
+without having to make changes to the application code except for the location of
+the driver's public header file.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="tools-setup-differences"><h2 class="title topictitle2" id="ariaid-title5">Tools Setup Differences</h2><div class="body"></div>
+<div class="topic nested2" aria-labelledby="ariaid-title6" id="harmony-mhc-component-blocks"><h3 class="title topictitle3" id="ariaid-title6">Harmony MHC Component Blocks</h3><div class="body"><p class="p">MPLAB-X Harmony 3 projects only have one associated
+configuration. When each Harmony 3 project is created the MPLAB-X Harmony
+Configurator (MHC) will support application driver and library code generation
+for the selected processor.</p>
+<p class="p">Additional, MHC code generation is supported by adding additional components
+to the project graph.  This includes Core peripheral support for the processor
+device, the Harmony framework, and the board support package.</p>
+<p class="p">The USB Headset application will be generated from the following MHC Project Graph
+after each block's component parameters are configured.</p>
+<p class="p"><img class="image" src="GUID-7C507F01-D0CB-41F9-8630-B753E48202D4-low.png" /><br /><em class="ph i">Figure 9. USB Speaker Project Graph for the PIC32 MZ EF Curiosity 2 Board</em></p>
+<p class="p">The creation of this Project Graph and the configuring of each components will
+be described in the following Sections.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title7" id="harmony-core-block"><h4 class="title topictitle4" id="ariaid-title7">Harmony Core Block</h4><div class="body"><p class="p">Start MHC for the project in order to add the Harmony and the application
+code components.  The Board Support Package (BSP) for the Pic32 MZ EF Curiosity
+board should be selected first from the Available Components.</p>
+<p class="p">Next,  the Harmony core is selected without FreeRTOS.
+Answer Yes to all questions except for the one regarding FreeRTOS; answer No to
+that one.</p>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title8" id="usb-audio-component-blocks"><h4 class="title topictitle4" id="ariaid-title8">USB Audio Component Blocks</h4><div class="body"><p class="p">The MHC USB Audio Stack component blocks can
+added by selecting the Libraries/USB/Device Stack/Audio Function Driver
+component template under the MHC Available Components list, as shown below.</p>
+<p class="p"><img class="image" src="GUID-DA367923-BE61-45E1-AE4D-40D375CCF947-low.png" /><br /><em class="ph i">Figure 2. USB Headset USB Audio Function Driver Selection</em></p>
+<p class="p">Answer yes to all questions. This allows the generation of the
+USB High Speed Driver, the USB Device
+Layer and Audio Function Driver components.</p>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title9" id="ak4965-daughter-board-component-blocks"><h4 class="title topictitle4" id="ariaid-title9">AK4965 Daughter Board Component Blocks</h4><div class="body"><p class="p">Under Audio\Templates, double-click on AK4954 Codec Template (shown below).
+Answer Yes to all questions.
+This loads the AK4954 Codec component along with associated I2C, I2S
+and timer driver components.</p>
+<p class="p"><img class="image" src="GUID-277089B5-92BC-4CC6-943E-FE043529B98F-low.png" /><br />
+<em class="ph i">Figure 3. USB Headset AK4954 Codec Selection</em></p>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title10" id="debug-console-output"><h4 class="title topictitle4" id="ariaid-title10">Debug Console Output</h4><div class="body"><p class="p">Debug output to the console is sent to UART6 using the PKOB4 USB connections
+as a virtual com port on the PC.  This is the same USB connection used
+to program the device.  Three components block have to be added to the
+diagram:  UART6, Console and Debug.  These can use the default configuration
+settings.</p>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title11" id="harmony-code-configuration-options"><h3 class="title topictitle3" id="ariaid-title11">Harmony Code Configuration Options</h3><div class="body"><p class="p">Each block in the MHC Project Graph may need to be configured through parameters
+for the specific application. These parameters are accessed by selecting the
+block with the mouse, and appear in the Configuration Options window, where they
+can be edited. The next section describes the configuration of the USB, Math, and
+Codec component blocks for the USB Speaker with “Bass Boost” application.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title12" id="usb-configuration"><h4 class="title topictitle4" id="ariaid-title12">USB Configuration</h4><div class="body"><p class="p">The application uses USB Library as a "Device" stack, which will connect to a
+"Host". The USB High Speed Driver is set to “Full Speed”, V1.0 interface (not
+“High Speed”, V2.0 Interface):</p>
+<p class="p"><img class="image" src="GUID-FDBFB6EA-7BE1-4899-9E4E-7B64658D01A5-low.png" /><br /><em class="ph i">Figure 5. USB Headset USB High Speed Driver Peripheral Configuration</em></p>
+<p class="p">The USB Device Layer is configured by selecting Product ID Selection as
+“usb_headset_multiple_sampling_demo” with an endpoint buffer size of 64 (bytes). The Product String
+Selection is changed to “Harmony USB Speaker w/Bass Boost Example”. This
+information will be used to generate the fullSpeedConfigurationDescriptor array
+variable structure (located in initialization.c under the config folder) that
+defines the enumeration of device functions with the USB Host. This structure
+defines the connection to the host at 48 kHz with 16 bit stereo channel data.</p>
+<p class="p"><img class="image" src="GUID-B2A00784-FFD3-4269-82E5-00AACCE12838-low.png" /><br /><em class="ph i">Figure 6. USB Headset USB Device Layer Configuration</em></p>
+<p class="p">The Audio Function Driver is configured with an Audio Read Queue that matches
+that of the codec driver write queue for this Audio V1.0 USB Speaker interface.</p>
+<p class="p">A playback packet queue of length 8 is set with the Audio Read Queue Size.
+The Audio Write Queue Size should be the same (8), which should also
+match the Audio Write Queue Size of the I2S driver.
+The The maximum USB write packets size is set to
+48 * 2 channels/sample * 2 bytes/channel= 192 bytes, which gives a 1ms
+stereo sample packet size at 48Khz (the standard data frame length at this rate),
+thus the read buffer size needs to be of the same size.
+The write buffer size should be half of this (96 bytes), since the 1ms
+write buffer only contain single channel (mono) audio data at the
+48Khz rate at the same bit resolution (16 bit).</p>
+<p class="p"><img class="image" src="GUID-6DFCA01F-3FA5-4292-88F2-57AAADA3D094-low.png" /><br /><em class="ph i">Figure 7. USB Headset USB Audio Configuration</em></p>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title13" id="the-ak4954-codec"><h4 class="title topictitle4" id="ariaid-title13">The AK4954 Codec</h4><div class="body"><p class="p">Using the MZEFC2 and the AK4954 Audio Codec Daughter Board:</p>
+<p class="p">The AK4954 codec uses a I2C interface for configuration and control
+register setting and SPI interface configured as I2S. The settings are shown
+below.</p>
+<p class="p"><img class="image" src="GUID-FF731204-B2A6-4029-ADA5-BC01CB6A76D9-low.png" /><br /><em class="ph i">Figure 8. USB Headset AK4954 Codec Configuration</em></p>
+<p class="p">The I2S Driver uses a transfer queue size of 8, which applies to both read and
+write channels, and matches that that of the USB Read/Write Queue length:</p>
+<p class="p"><img class="image" src="GUID-8C6D1A7E-71D4-4EA4-82AA-A2BA36D1EA4C-low.png" /><br /><em class="ph i">Figure 9. USB Headset I2S Driver Configuration</em></p>
+<p class="p">When the I2S2 driver is used for DRV_I2S_0 the codec usage mode automatically
+changes to “Slave”</p>
+<p class="p"><img class="image" src="GUID-42DB4207-8378-4F9B-9653-EA6C28A11EC3-low.png" /><br /><em class="ph i">Figure 8. USB Headset I2S Peripheral Driver Configuration</em></p>
+<p class="p">The I2C blocks can be used without changes to the configuration</p>
+<p class="p"><em class="ph i">Table 1. USB Headset Pic32 MZ Curiosity 2 Pin Configuration</em></p>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title14" id="clock-manager"><h4 class="title topictitle4" id="ariaid-title14">Clock Manager</h4><div class="body"></div>
+<div class="topic nested4" aria-labelledby="ariaid-title15" id="pic32-mz-ef-pll-clock"><h5 class="title topictitle5" id="ariaid-title15">PIC32 MZ EF PLL Clock</h5><div class="body"><p class="p">The CPU, Memory and Peripheral clock are generated from the 198Mhz PLL Clock, as configured below.</p>
+<p class="p">The I2S clocks are setup for 48KHz sampling rate, with stereo 16 bit samples, giving a 32 bit sample frame.  The I2S clocks will be generated, as follows:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e231"><span><strong class="ph b">I2S Function</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e234"><span><strong class="ph b">Value</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e237"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e231 "><span>LRCK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e234 "><span>48.000000 K</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e237 "><span>Stereo Sample rate clock</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e231 "><span>BCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e234 "><span>3072000 Hz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e237 "><span>Bit Rate Clock</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e231 "><span>MCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e234 "><span>12.288000 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e237 "><span>Master Clock</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The clock configuration diagram is shown using Tools/Clock Configuration menu
+selection.  The system clock is 198Mhz, generated from the System PLL, as
+configured below.</p>
+<br /><img class="image" src="GUID-AE4C9CF4-4A0E-4BC1-979A-1FF1E55D5F14-low.png" /><br /><p class="p"><em class="ph i">Figure 7. 198Mhz PLL Clock Generation for I2SC Peripheral</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="i2sc2-refclock01-configuration"><h3 class="title topictitle3" id="ariaid-title16">I2SC2 REFCLOCK01 Configuration</h3><div class="body"><p class="p">The I2S master the MCLK to approximate 12.288Mhz.
+This is sourced the Reference Clock #1 as shown below.</p>
+<p class="p"><img class="image" src="GUID-733F150C-F2A8-410C-8B59-AE32952A299C-low.png" /><br />
+<em class="ph i">Figure 7. Reference Clock Generation for I2S Master Peripheral Configuration</em></p>
+<p class="p"><img class="image" src="GUID-15BC2A95-F8ED-491F-9E5D-F29D440238FD-low.png" /><br />
+<em class="ph i">Figure 8. Peripheral Clock Generation</em></p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title17" id="harmony-code-generation"><h3 class="title topictitle3" id="ariaid-title17">Harmony Code Generation</h3><div class="body"><p class="p">All the needed drivers, middleware, libraries and application framework code can
+be generated from the MHC blocks (MHC components) placed in the MHC Project
+Graph,</p>
+<p class="p">The generated framework code is placed under the firmware/src/config directory
+under the name of the configuration used for the Harmony 3 project. The initial
+application code is located in the firmware/src directory app.c and app.h files,
+which utilize the framework drivers, middleware and library APIs located in
+definitions.h located in the config directory.</p>
+<p class="p">All Harmony applications first execute the SYS_Initialize function, located in
+initialization.c. This is executed from the main function to initialize various
+subsystems such as the clock, ports, BSP (board support package), codec, usb,
+timers, and interrupts. The application APP_Initialize function in app.c is
+executed last in the generated SYS_Initialize routine after the system
+initializations have completed.</p>
+<p class="p">The SYS_Tasks function (located in tasks.c) is used to update the USB subsystems,
+WM8904 driver, timers etc., as well as the application state machine (APP_tasks
+routine in app.c). This function is executed from the main polling loop. The
+polling loop either execute SYS_Tasks repeatably in the infinite loop to perform
+the updates, or it the updates occur as separate processes executed at fixed time
+intervals using an RTOS schedular.</p>
+<p class="p">The application utilizes a simple state machine (APP_Tasks executed from
+SYS_Tasks) with the following functions</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Setup the drivers and USB Library interface</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Respond to USB Host control commands (“Attach”, “Detach”, “Suspend”)</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Initiate and maintains the bidirectional data audio streaming for the "USB
+Playback" function.</p>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Sense Volume control button pushes and set LED status lights</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title18" id="building-the-application"><h3 class="title topictitle3" id="ariaid-title18">Building the Application</h3><div class="body"><p class="p">This section identifies the MPLAB X IDE project name and location and lists and
+describes the available configurations for the demonstration.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p">The parent folder for these files is audio/apps/usb_headset. To build this
+project, you must open the audio/apps/usb_headset/firmware/*.X project file in
+MPLAB X IDE that corresponds to your hardware configuration.</p>
+<p class="p">** MPLAB X IDE Project **</p>
+<p class="p">This table lists the name and location of the MPLAB X IDE project folder for the
+demonstration.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title19" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title19">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">This table lists and describes the supported configurations of the demonstration,
+which are located within ./firmware/src/config.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e339"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e342"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e345"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e339 "><span>uh_pic32mz_ef_c2_ ak4954</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e342 "><span>pic32_mz_ef_c2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e345 "><span>This demonstration runs on the PIC32 MZ EF Curiosity 2 board with the AK4954 Codec.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title20" id="configuring-the-hardware"><h3 class="title topictitle3" id="ariaid-title20">Configuring the Hardware</h3><div class="body"><p class="p">This section describes how to configure the supported hardware.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title21" id="using-the-pic32-mz-ef-curiosity-2-and-the-ak4965-daughter-board"><h4 class="title topictitle4" id="ariaid-title21">Using the PIC32 MZ EF Curiosity 2 and the AK4965 Daughter Board:</h4><div class="body"><p class="p">The PIC32 MZ EF Curiosity board and the AK4954 Audio Codec Daughter Board only
+requires the AK4954 Codec Daughterboard to be connected to X32 Header 2 as shown
+below. No jumper settings are required.</p>
+<br /><img class="image" src="GUID-903D4D6D-56F8-497A-AFA9-8FE84F8416A5-low.png" /><br /><p class="p"><em class="ph i">Figure 9. PIC32 MZ EF Curiosity 2 Board Setup</em></p>
+<p class="p">AK4954 Audio Codec Daughter Board on PIC32 MZ EF Curiosity 2 board setup.
+Headphone Out Jack is green. Microphone In Jack is pink._</p>
+<p class="p">Connect headphones to the green HP OUT jack of the Codec Daughter Board (as shown
+in the Figure above).  The onboard microphone (AK4954 Daughterboard) will be
+used for the audio input.</p>
+<p class="p">As shown, the PIC32 MZ EF Curiosity will be programmed through the USB cable
+connected to the PKOB4 micro-mini connector.
+Program debug can also be performed over USB this connection.</p>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title22" id="running-the-demonstration"><h3 class="title topictitle3" id="ariaid-title22">Running the Demonstration</h3><div class="body"><p class="p">This section demonstrates how to run the demonstration.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title23" id="description-1"><h4 class="title topictitle4" id="ariaid-title23">Description</h4><div class="body"><p class="p"><img class="image" src="GUID-BA727019-1BDE-40C9-9EFB-12844515B1F9-low.png" /><br /> <strong class="ph b">Important!</strong> Prior to using this demonstration, it
+is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.</p>
+<p class="p">Compile and program the target device. While compiling, select the appropriate
+MPLAB X IDE project. Refer to Building the Application for details</p>
+<p class="p">Do the following to run the demonstration:</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Configure the hardware, as described in the previous section, for the
+selected MPLAB-X project.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Connect power to the board, compile the application and program the target
+device. Run the device. The system will be in a waiting for USB to be connected
+(LED1 off).</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Connect to the USB Host via the micro-mini connector (see Configuring the
+Hardware).</p>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Allow the Host computer to acknowledge, install drivers (if needed), and
+enumerate the device. No special software is necessary on the Host side. LED1
+will blink after enumeration. It will continue to blink until the Harmony USB
+Speaker is selected as the speaker device, and the audio stream is started.
+It will then turn a solid color.</p>
+</li>
+<li class="li"><span class="indent-level-default">5.</span><p class="p">If needed, configure the Host computer to use the usb_headset as the selected
+audio recording device. For Windows, this is done in the "Recording" tab in
+and the "Playback" tab of the "Sound" dialog"</p>
+</li>
+</ol>
+<p class="p"><img class="image" src="GUID-F4F59342-66C5-434B-8F61-31460D012DB3-low.png" /><br /> <strong class="ph b">Note:</strong> selection for Both Windows 10 and Windows 7 sound dialog is accessed by right
+clicking the loudspeaker icon in the taskbar, which will bring up a menu for the
+selection. This is shown in the Figure below for selecting the playback device.
+The record device selected from the "Recording" tab in the same way.</p>
+<br /><img class="image" src="GUID-C50F2444-57EC-42D9-92A4-615505B69780-low.png" /><br /><p class="p"><em class="ph i">Figure 12. Windows 10 - Sound Dialog Showing Harmony USB Headset Selection.</em></p>
+<p class="p"><img class="image" src="GUID-F4F59342-66C5-434B-8F61-31460D012DB3-low.png" /><br /> <strong class="ph b">Note:</strong> The device "Harmony USB Headset PIC32MZEF
+Example" should be available along with a sound level meter indication audio
+when playing. If no sound level is registering or the name of the Harmony speaker
+is incorrect, uninstall the driver using the Windows Device Manager,
+since it may have incorrect configuration set by a similar connection to one
+of the other MPLAB-X Harmony Audio Demos.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open a playback/record application (such as Skype, or Audacity) and initiate
+playback and record through the USB Headset. LED 2 should be a solid color.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Playback of audio should demonstrate that the audio is being heard in the USB
+Headset headphones.</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Volume can be change by repeated press of SW1. Volume will increase to
+maximum. It will then mute the speaker (LED1 will fast blink during mute) and
+then start increasing from minimum volume to maximum after more presses of
+SW1. NOTE: Volume is also controlled using the PC volume control and the
+Windows Media Player volume control.,</p>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Recording should also take place through the AK4954 on-board microphone.
+This should be seen when speaking on the "Sound Dialog"/Recording sound
+level meter of the USB Headset device.  Actual audio can be recorded via the
+recording function of Audacity or the Connection Test feature of Skype.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title24" id="control-description"><h2 class="title topictitle2" id="ariaid-title24">Control Description</h2><div class="body"><p class="p">Button control uses the push button function sequence given in the table below:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e455"><span><strong class="ph b">Function</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e458"><span><strong class="ph b">Press</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e455 "><span>Volume Control Level 1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e458 "><span>Low (-66 dB)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e455 "><span>Volume Control Level 2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e458 "><span>Medium (-48 dB)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e455 "><span>Volume Control Level 3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e458 "><span>High (-0 dB)</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e455 "><span>Mute</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e458 "><span>Mute</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p"><strong class="ph b">Note:</strong> Mute will transition to Volume Control Level 1 on the next button push.</p>
+<p class="p">USB operational status is given by LED1, as shown below:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e494"><span><strong class="ph b">LED1</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e497"><span><strong class="ph b">Status</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e494 "><span>OFF</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e497 "><span>USB cable detached</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e494 "><span>ON</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e497 "><span>USB cable attached</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e494 "><span>Blinking</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e497 "><span>Playback muted or USB waiting to be configured</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The PIC32MZ EF Curiosity 2 has a second LED (LED2), which indicates if the audio
+is streaming or not.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e524"><span><strong class="ph b">LED2</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d19948e527"><span><strong class="ph b">Status</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e524 "><span>OFF</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e527 "><span>USB Audio not configured</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e524 "><span>ON</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e527 "><span>USB Audio is streaming</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e524 "><span>Blinking</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d19948e527 "><span>Playback muted or USB Audio not streaming</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
