@@ -40,7 +40,7 @@ Supports MCC.
 Before using MPLAB Harmony Audio Applications, ensure that the following are installed:
 
 - [MPLAB X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide) or later
-- [MPLAB XC32 C/C++ Compiler v4.00](https://www.microchip.com/mplab/compilers) or later
+- [MPLAB XC32 C/C++ Compiler v4.10](https://www.microchip.com/mplab/compilers) or later
 - [Harmony audio application repository, 3.1.0](https://github.com/Microchip-MPLAB-Harmony/audio_apps)
 
 In order to regenerate source code for any of the applications, you will also need the following to be installed:
@@ -53,7 +53,7 @@ In order to regenerate source code for any of the applications, you will also ne
 | [Harmony 3 CSP](https://github.com/Microchip-MPLAB-Harmony/csp)| v3.12.0 | |
 | [Harmony 3 Core](https://github.com/Microchip-MPLAB-Harmony/core)| v3.10.0 | |
 | [Harmony 3 Dev_Packs](https://github.com/Microchip-MPLAB-Harmony/dev_packs)| v3.12.0 | |
-| [Harmony 3 USB](https://github.com/Microchip-MPLAB-Harmony/usb)| v3.9.0 |only if using USB|
+| [Harmony 3 USB](https://github.com/Microchip-MPLAB-Harmony/usb)| v3.9.0 | only if using USB |
 | [Harmony 3 CMSIS-FreeRTOS](https://github.com/ARM-software/CMSIS-FreeRTOS)| v10.3.1 | only if using FreeRTOS |
 | [Harmony 3 MP3 Decoder Library](https://github.com/Microchip-MPLAB-Harmony/helix_mp3)| v1.1.0 |only if using MP3 decoder|
 | [Harmony 3 FLAC Decoder Library](https://github.com/Microchip-MPLAB-Harmony/xiph_flac)| v1.0.0 |only if using FLAC decoder|
@@ -98,9 +98,12 @@ The current known issues are as follows:
     - Muting from the PC doesn't always work
 	- LED operation doesn't exactly match documentation.
 * all usb_speaker demonstrations:
-    - Audible artifacts may occur. 
-* In case of issues with MCC regeneration:
-    - Regenerate with MHC. This will be fixed in an upcoming release.
+    - Audible artifacts may occur 
+* USB Speaker E70 I2SC demonstration: 
+    - Button press of SW1 to change volume might not work.
+* USB Speaker Hi-Res demonstration: 
+    - If there is no audio, then the Windows driver of the audio device needs to be uninstalled, and device should be plugged in back (so that the driver gets properly installed)
+* In case of build error after a regeneration via MCC, then take the original codes in the release and do a regeneration with MHC first.
 
 ### RELEASE CONTENTS
 
