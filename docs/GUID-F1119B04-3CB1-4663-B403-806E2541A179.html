@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="simple_tone_generator" />
+<meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="simple-tone-generator" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<title>simple_tone_generator</title>
+<meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-simple-tone-generator" />
+<meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB® Harmony Audio Apps Help Reference A 04/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+         
+         function copyContent(content, button) {
+         
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+               console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-F1119B04-3CB1-4663-B403-806E2541A179"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
+<body id="simple-tone-generator">
+<h1 class="title topictitle1" id="ariaid-title1">simple_tone_generator</h1><div class="body"><p class="p">This topic provides instructions and information about the MPLAB Harmony3
+Simple Tone Generation Demonstration application, which is included in the MPLAB
+Harmony Library distribution.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html">Harmony 3 audio application examples</a></div>
+</div>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="overview"><h2 class="title topictitle2" id="ariaid-title2">Overview</h2><div class="body"><p class="p">This demonstration application configures the development board to implement a
+Tone Generator that outputs a 1 kHz Sine Tone, configured to run at 48 kHz sampling rate
+at 16 bit per sample.</p>
+<p class="p">The Sine Tone Audio is output through a WM8904 Codec Daughter Board mounted on X32 socket.
+The Audio can be heard at a speaker connected to the HP_OUT line
+of the Daughter board.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="description"><h2 class="title topictitle2" id="ariaid-title3">Description</h2><div class="body"><p class="p">The application runs on the ARM processor ATSAMG55J19
+on the SAM G55 Curiosity Audio (G55Audio) board.</p>
+<ul class="ul"><li class="li"><p class="p">Processor runs @ 100 MHz</p>
+</li>
+<li class="li"><p class="p">2 push buttons (SW1-SW3)</p>
+</li>
+<li class="li"><p class="p">2 LEDs (LED1-LED2)</p>
+</li>
+<li class="li"><p class="p">WM8904 Codec Daughter Board mounted on X32 socket</p>
+</li>
+</ul>
+<p class="p"><img class="image" src="GUID-047E20C7-8912-404E-B50B-8B3064E7E0BC-low.png" /><br /> <strong class="ph b">Note:</strong> The SAM G55 Curiosity Audio board does not include the
+WM8904 Audio Codec daughterboard, which is sold separately on microchipDIRECT as
+part number AC328904.</p>
+<p class="p">The application uses the MPLAB Code Configurator to setup the
+Audio Device, codec, and other items in order to play the tone through
+the Codec Module.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="demonstration-features"><h2 class="title topictitle2" id="ariaid-title4">Demonstration Features</h2><div class="body"><ul class="ul"><li class="li"><p class="p">1  KHz Tone playback using a WM8904 codec daughterboard on the
+G55 Curiosity Audio board.</p>
+</li>
+<li class="li"><p class="p">Utilization of the SAM G55 I2SC peripheral (as slave) to transfer
+48Khz/16 Bit stereo tone.</p>
+</li>
+<li class="li"><p class="p">Uses the Codec Driver Library to write audio samples to the WM8904</p>
+</li>
+</ul>
+<p class="p">Note that this sample just illustrates the G55's Audio capablity.
+This demonstration makes direct invocations of the registers from application.
+One can refer to other demonstartions to see the proper architectural layering
+required by Harmony Audio Architecture.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="harmony-mcc-component-blocks"><h2 class="title topictitle2" id="ariaid-title5">Harmony MCC Component Blocks</h2><div class="body"><p class="p">MPLAB-X Harmony 3 projects only have one associated
+configuration. When each Harmony 3 project is created the MPLAB Code
+Configurator (MCC) will support application driver and library code generation
+for the selected processor.</p>
+<p class="p">MCC code generation is supported by adding additional components
+to the project graph.  This includes Core peripheral support for the processor
+device, the Harmony framework, and the board support package.</p>
+<p class="p"><img class="image" src="GUID-3946249C-3AE2-4945-919A-38F3A76F54D4-low.png" /><br /><em class="ph i">Figure 1. Simple Tone Generator Project Graph for the G55Audio Board</em></p>
+<p class="p">Note that in this basic example, the I2SC component of the SAM G55
+does not use a Harmony 3 DMA driver, neither does it use SAM G55
+Peripheral DMA Controller (PDC).</p>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title6" id="harmony-core-block"><h3 class="title topictitle3" id="ariaid-title6">Harmony Core Block</h3><div class="body"><p class="p">Start MCC for the project in order to add the Harmony and the application
+code components.  The Board Support Package (BSP) for the G55 Curiosity
+board should be selected first from the Available Components.</p>
+<p class="p">Next,  the Harmony core is selected without FreeRTOS.
+Answer Yes to all questions except for the one regarding FreeRTOS; answer No to
+that one.</p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title7" id="audio-codec-component-blocks"><h3 class="title topictitle3" id="ariaid-title7">Audio Codec Component Blocks</h3><div class="body"></div>
+<div class="topic nested3" aria-labelledby="ariaid-title8" id="g55audio-wm8904-daughter-board-component-block"><h4 class="title topictitle4" id="ariaid-title8">G55Audio WM8904 Daughter Board Component Block</h4><div class="body"><p class="p">Under Audio\Templates, double-click on WM8904 Codec Template.
+Answer Yes to all questions.
+This loads the WM8904 Codec component along with associated I2C and I2S
+driver components.</p>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title9" id="harmony-code-configuration-options"><h3 class="title topictitle3" id="ariaid-title9">Harmony Code Configuration Options</h3><div class="body"><p class="p">Each block in the MCC Project Graph may need to be configured through parameters
+for the specific application. These parameters are accessed by selecting the
+block with the mouse, and appear in the Configuration Options window, where they
+can be edited.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title10" id="audio-codec-configuration"><h4 class="title topictitle4" id="ariaid-title10">Audio Codec Configuration</h4><div class="body"></div>
+<div class="topic nested4" aria-labelledby="ariaid-title11" id="the-g55audio-wm8904-codec-configuration"><h5 class="title topictitle5" id="ariaid-title11">The G55Audio WM8904 Codec Configuration</h5><div class="body"><p class="p">Using the G55Audio and the WM8904 Audio Codec Daughter Board:</p>
+<p class="p"><img class="image" src="GUID-82ACE2D2-CA50-43F4-A96B-4606DDEB84B8-low.png" /><br /><em class="ph i">Figure 2. WM8904 Codec Configuration</em></p>
+<p class="p">The WM8904 codec uses a I2C interface for configuration and control
+register setting and I2SC interface. The settings are unchanged from
+the generated values.</p>
+<p class="p">The I2SC0 peripheral driver is used to transfer 16 Bit Stereo
+data.</p>
+<p class="p"><img class="image" src="GUID-24FECEC0-C78E-47F1-8AE1-8CC34744776E-low.png" /><br /><em class="ph i">Figure 3. USB Headset G55 Audio I2SC0 Peripheral Driver Configuration</em></p>
+<p class="p">The I2C blocks can be used without changes to the configuration</p>
+</div>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title12" id="pin-configurations"><h4 class="title topictitle4" id="ariaid-title12">Pin Configurations</h4><div class="body"></div>
+<div class="topic nested4" aria-labelledby="ariaid-title13" id="g55audio-pin-configuration"><h5 class="title topictitle5" id="ariaid-title13">G55Audio Pin Configuration</h5><div class="body"><p class="p"><img class="image" src="GUID-F6DBB111-97A3-466E-A29B-73CB4BE7EE97-low.png" /><br /><em class="ph i">Table 1. SAM G55 Audio Curiosity Pin Configuration</em></p>
+</div>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title14" id="clock-manager"><h4 class="title topictitle4" id="ariaid-title14">Clock Manager</h4><div class="body"><p class="p">The clock configuration diagram is shown using Tools/Clock Configuration menu</p>
+<p class="p">The I2S clocks are setup for 48KHz sampling rate, with stereo 16 bit
+samples, giving a 32 bit sample frame.</p>
+</div>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title15" id="g55-audio-clock-generation"><h4 class="title topictitle4" id="ariaid-title15">G55 Audio Clock Generation</h4><div class="body"><p class="p">The clock configuration diagram is shown using Tools/Clock Configuration menu
+selection.</p>
+<p class="p"><img class="image" src="GUID-8A9D4B29-1B24-4BEB-8A84-972C1C1E8723-low.png" /><br /><em class="ph i">Figure 4. SAM G55 Main Clock Generation</em></p>
+<p class="p"><img class="image" src="GUID-4F6C701F-DA19-4C1B-912B-122782D7D36F-low.png" /><br /><em class="ph i">Figure 5. SAM G55 PLLA (I2SC, MCK, HCLK, SysTick) Clock Generation</em></p>
+<p class="p"><img class="image" src="GUID-DEB4B34A-10E5-48A9-8941-4740846E1BDD-low.png" /><br /><em class="ph i">Figure 6. SAM G55 PBCK4 (MCLK) I2SC0 Clock Generation</em></p>
+<p class="p">PLLA is used for the peripheral clocks, including I2SC.</p>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="harmony-code-generation"><h3 class="title topictitle3" id="ariaid-title16">Harmony Code Generation</h3><div class="body"><p class="p">All the needed drivers, middleware, libraries and application framework code can
+be generated from the MHC blocks (MHC components) placed in the MHC Project
+Graph,</p>
+<p class="p">The generated framework code is placed under the firmware/src/config directory
+under the name of the configuration used for the Harmony 3 project. The initial
+application code is located in the firmware/src directory app.c and app.h files,
+which utilize the framework drivers, middleware and library APIs located in
+definitions.h located in the config directory.</p>
+<p class="p">All Harmony applications first execute the SYS_Initialize function, located in
+initialization.c. This is executed from the main function to initialize various
+subsystems such as the clock, ports, BSP (board support package), codec,
+timers, and interrupts. The application APP_Initialize function in app.c is
+executed last in the generated SYS_Initialize routine after the system
+initializations have completed.</p>
+<p class="p">The SYS_Tasks function (located in tasks.c) is used to update the
+WM8904 driver, timers etc., as well as the application state machine (APP_tasks
+routine in app.c). This function is executed from the main polling loop. The
+polling loop executes SYS_Tasks repeatably in an infinite loop to perform
+the updates.</p>
+<p class="p">The application utilizes a simple state machine (APP_Tasks executed from
+SYS_Tasks) with the following functions</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Opens the WM8904 codec for configuration.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Repeatedly writes the Sine Tone Wave values over I2SC0</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title17" id="building-the-application"><h3 class="title topictitle3" id="ariaid-title17">Building the Application</h3><div class="body"><p class="p">This section identifies the MPLAB X IDE project name and location and lists and
+describes the available configurations for the demonstration.</p>
+<p class="p"><strong class="ph b">Description</strong></p>
+<p class="p">The parent folder for these files is audio_apps/apps/simple_tone_generator/. To build this
+project, you must open the audio_apps/apps/simple_tone_generator/firmware/sam_g55_audio.X project file in
+MPLAB X IDE.</p>
+<p class="p">** MPLAB X IDE Project **</p>
+<p class="p">This table lists the name and location of the MPLAB X IDE project folder for the
+demonstration.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title18" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title18">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">This table lists and describes the supported configurations of the demonstration,
+which are located within ./firmware/src/config.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6505e228"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6505e231"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6505e234"><span><strong class="ph b">Description</strong></span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6505e228 "><span>sam_g55_audio.X</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6505e231 "><span>sam_g55_audio_wm8904</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6505e234 "><span>This demonstration runs on the SAM G55 Curiosity Audio board with the Wm8904 Codec.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title19" id="configuring-the-hardware"><h3 class="title topictitle3" id="ariaid-title19">Configuring the Hardware</h3><div class="body"><p class="p">This section describes how to configure the supported hardware.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title20" id="using-the-sam-g55-curiosity-audio-and-the-wm8904-daughter-board"><h4 class="title topictitle4" id="ariaid-title20">Using the SAM G55 Curiosity Audio and the WM8904 Daughter Board:</h4><div class="body"><p class="p">The G55Audio board and the WM8904 Audio Codec Daughter Board only
+requires the daughterboard to be connected to the X32 Header as shown
+below. The I2S Jumpers should all be set as shown, with jumpers placed
+toward the blue Line-In jack, not the pink Microphone-In jack.</p>
+<p class="p">Jumper J305 on the G55Audio board shall select PA18.</p>
+<p class="p"><img class="image" src="GUID-1D4D7F6F-F56A-46EC-81E9-98980AEB90F0-low.png" /><br /><em class="ph i">Figure 7. SAM G55 Curiosity Audio Board Setup</em></p>
+<p class="p">Connect headphones to the green HP_OUT jack of the Codec Daughter Board (as shown
+in the Figure above).</p>
+<p class="p">As shown, the G55 Audio Curiosity will be programmed through the USB cable
+connected to the EDBG micro-mini connector.
+Program debug can also be performed over USB this connection.</p>
+</div>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title21" id="running-the-demonstration"><h3 class="title topictitle3" id="ariaid-title21">Running the Demonstration</h3><div class="body"><p class="p">This section demonstrates how to run the demonstration.</p>
+</div>
+<div class="topic nested3" aria-labelledby="ariaid-title22" id="description-1"><h4 class="title topictitle4" id="ariaid-title22">Description</h4><div class="body"><p class="p"><img class="image" src="GUID-16239AED-C047-45CC-B2AF-FCFE5CC01989-low.png" /><br /> <strong class="ph b">Important!</strong> Prior to using this demonstration, it
+is recommended to review the MPLAB Harmony 3 Release Notes for any known issues.</p>
+<p class="p">Compile and program the target device. While compiling, select the appropriate
+MPLAB X IDE project. Refer to Building the Application for details</p>
+<p class="p">Do the following to run the demonstration:</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Configure the hardware, as described in the previous section, for the
+selected MPLAB-X project.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Connect power to the board, compile the application and program the target
+device. Run the device.</p>
+</li>
+</ol>
+<p class="p">The speaker connected to HP_OUT will emit a continuous 1 kHz Tone.
+Note: Neither the volume, nor the frequencies are configurable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title23" id="control-description"><h2 class="title topictitle2" id="ariaid-title23">Control Description</h2><div class="body"><p class="p">None</p>
+</div>
+</div>
+</body>
+</html>

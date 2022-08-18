@@ -20,7 +20,7 @@ This repository contains the MPLAB® Harmony 3 audio solutions and example appli
 -   MPLAB® Harmony License
 
 
-To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/audio_apps) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
+To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/audio_apps) and then click **Clone** button to clone this repository or download as zip file.<br />This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
 -   **[audio\_enc](GUID-296956BD-C385-44FC-A4BC-87E05F4DD855.md)**  
 
@@ -29,6 +29,8 @@ To clone or download these applications from Github, go to the [main page of thi
 -   **[audio\_tone](GUID-3CE5661D-A17C-4ED4-8F6B-85D06B6A2745.md)**  
 
 -   **[audio\_tone\_linkeddma](GUID-C0F1A462-D7AD-4584-A60B-E8B363C87E96.md)**  
+
+-   **[simple\_tone\_generator](GUID-F1119B04-3CB1-4663-B403-806E2541A179.md)**  
 
 -   **[microphone\_loopback](GUID-9868F88F-53EE-443C-8987-C22CEBDCA6B2.md)**  
 

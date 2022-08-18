@@ -12,6 +12,7 @@
 <meta name="DC.relation" scheme="URI" content="GUID-6519369E-505B-4BAB-9E2D-3E25E5275D1F.html" />
 <meta name="DC.relation" scheme="URI" content="GUID-3CE5661D-A17C-4ED4-8F6B-85D06B6A2745.html" />
 <meta name="DC.relation" scheme="URI" content="GUID-C0F1A462-D7AD-4584-A60B-E8B363C87E96.html" />
+<meta name="DC.relation" scheme="URI" content="GUID-F1119B04-3CB1-4663-B403-806E2541A179.html" />
 <meta name="DC.relation" scheme="URI" content="GUID-9868F88F-53EE-443C-8987-C22CEBDCA6B2.html" />
 <meta name="DC.relation" scheme="URI" content="GUID-158E2C2E-4630-480F-A883-E73F8DF2E8E2.html" />
 <meta name="DC.relation" scheme="URI" content="GUID-9AECFB48-EFE5-41CC-873E-F44434E5A0F5.html" />
@@ -21,9 +22,8 @@
 <meta name="DC.relation" scheme="URI" content="GUID-BC3096AD-26D9-4501-9E18-E8746EEEDF35.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="harmony-3-audio-application-examples" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Harmony 3 audio application examples</title>
+<title>Harmony 3 audio application examples</title>
 <meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-harmony-3-audio-application-examples" />
 <meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
@@ -72,10 +72,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -99,7 +98,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -113,16 +111,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -161,7 +192,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -203,7 +234,7 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="harmony-3-audio-application-examples">
 <h1 class="title topictitle1" id="ariaid-title1">Harmony 3 audio application examples</h1><div class="body"><p class="p">MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.  Refer to the following links for more information.  Refer to the following links for more information:</p>
 <ul class="ul"><li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/design-centers/32-bit" target="_blank">Microchip 32-bit MCUs</a></p>
@@ -236,6 +267,8 @@ This content can also be downloaded using content manager by following these <a 
 </li>
 <li class="link ulchildlink"><strong><a href="GUID-C0F1A462-D7AD-4584-A60B-E8B363C87E96.html">audio_tone_linkeddma</a></strong><br />
 </li>
+<li class="link ulchildlink"><strong><a href="GUID-F1119B04-3CB1-4663-B403-806E2541A179.html">simple_tone_generator</a></strong><br />
+</li>
 <li class="link ulchildlink"><strong><a href="GUID-9868F88F-53EE-443C-8987-C22CEBDCA6B2.html">microphone_loopback</a></strong><br />
 </li>
 <li class="link ulchildlink"><strong><a href="GUID-158E2C2E-4630-480F-A883-E73F8DF2E8E2.html">universal_audio_decoders</a></strong><br />
@@ -252,12 +285,12 @@ This content can also be downloaded using content manager by following these <a 
 </li>
 </ul>
 </div><div class="topic nested1" aria-labelledby="ariaid-title2" id="contents-summary"><h2 class="title topictitle2" id="ariaid-title2">Contents Summary</h2><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d12416e128"><span>Folder</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d12416e130"><span>Description</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d13271e134"><span>Folder</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d13271e136"><span>Description</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e128 "><span>apps</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e130 "><span>Contains audio example applications</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e134 "><span>apps</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e136 "><span>Contains audio example applications</span></td>
 </tr>
 </tbody>
 </table>
@@ -266,42 +299,42 @@ This content can also be downloaded using content manager by following these <a 
 </div>
 <div class="topic nested1" aria-labelledby="ariaid-title3" id="code-examples"><h2 class="title topictitle2" id="ariaid-title3">Code Examples</h2><div class="body"><p class="p">The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d12416e150"><span>Name</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d12416e152"><span>Description</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d13271e156"><span>Name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d13271e158"><span>Description</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>audio_enc</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>Audio encoder for WAV files</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>audio_enc</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>Audio encoder for WAV files</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>audio_player_basic</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>Audio player for WAV files</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>audio_player_basic</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>Audio player for WAV files</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>audio_tone</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>Audio tone generator</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>audio_tone</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>Audio tone generator</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>audio_tone_linkeddma</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>Audio tone generator using linked DMA</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>audio_tone_linkeddma</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>Audio tone generator using linked DMA</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>microphone_loopback</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>Microphone loopback demo</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>microphone_loopback</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>Microphone loopback demo</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>universal_audio_decoders</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>Audio player for WAV, ADPCM, FLAC and MP3 files</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>universal_audio_decoders</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>Audio player for WAV, ADPCM, FLAC and MP3 files</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>usb_headset</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>USB headset demo</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>usb_headset</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>USB headset demo</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>usb_microphone</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>USB Microphone Demo</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>usb_microphone</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>USB Microphone Demo</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>usb_speaker</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>USB speaker demo</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>usb_speaker</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>USB speaker demo</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>usb_speaker_bass_boost</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>USB speaker w/ bass boost</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>usb_speaker_bass_boost</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>USB speaker w/ bass boost</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e150 "><span>usb_speaker_hi_res</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d12416e152 "><span>USB speaker hi res (96 kHz/24-bits)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e156 "><span>usb_speaker_hi_res</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13271e158 "><span>USB speaker hi res (96 kHz/24-bits)</span></td>
 </tr>
 </tbody>
 </table>

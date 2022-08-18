@@ -11,9 +11,8 @@
 <meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="audio-tone-linkeddma" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>audio_tone_linkeddma</title>
+<title>audio_tone_linkeddma</title>
 <meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-audio-tone-linkeddma" />
 <meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,7 +223,7 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="audio-tone-linkeddma">
 <h1 class="title topictitle1" id="ariaid-title1">audio_tone_linkeddma</h1><div class="body"><p class="p">This topic provides instructions and information about the MPLAB Harmony 3 Audio Tone using Linked DMA demonstration application, which is included in the MPLAB Harmony Library distribution.</p>
 </div>
@@ -271,108 +301,108 @@
 <p class="p">The following tables show suggested settings for various sample rates in the Clock Diagram when using the I2SC Peripheral in Master mode. Make sure <strong class="ph b">PLLA Clock</strong> checkbox is checked, and fill in the values for the PLLA Multiplier and Divider boxes. Select the I2S1 tab under <strong class="ph b">Generic Clock Controller</strong>, set GCLKCSS to PLLACK, fill in the Divider value as shown, and check the checkbox next to it.</p>
 <br /><img class="image" src="GUID-4D06DE5D-2AF2-49CA-A338-1B705308BB20-low.png" /><br /><p class="p">The values in the first table give the lowest error rate, but have varying PLLACK values so it is best to use the UPPCLKDIV selection for CSS under <strong class="ph b">Master Clock Controller</strong>, for a Processor Clock of 240 MHz.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e231"><span><strong class="ph b">Desired Sample Rate</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e234"><span><strong class="ph b">PLLA Multipler</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e237"><span><strong class="ph b">PLLA Divider</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e240"><span><strong class="ph b">PLLACK</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e243"><span><strong class="ph b">I2SC Generic Clock Divider</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e246"><span><strong class="ph b">Calculated Sample Rate</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e249"><span><strong class="ph b">Error</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e231"><span><strong class="ph b">Desired Sample Rate</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e234"><span><strong class="ph b">PLLA Multipler</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e237"><span><strong class="ph b">PLLA Divider</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e240"><span><strong class="ph b">PLLACK</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e243"><span><strong class="ph b">I2SC Generic Clock Divider</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e246"><span><strong class="ph b">Calculated Sample Rate</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e249"><span><strong class="ph b">Error</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e231 "><span>8000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e234 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e237 "><span>43</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e240 "><span>258 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e243 "><span>126</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e246 "><span>7998</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e249 "><span>-0.025%</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e231 "><span>8000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e234 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e237 "><span>43</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e240 "><span>258 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e243 "><span>126</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e246 "><span>7998</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e249 "><span>-0.025%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e231 "><span>16000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e234 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e237 "><span>43</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e240 "><span>258 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e243 "><span>63</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e246 "><span>15997</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e249 "><span>-0.0187%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e231 "><span>16000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e234 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e237 "><span>43</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e240 "><span>258 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e243 "><span>63</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e246 "><span>15997</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e249 "><span>-0.0187%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e231 "><span>44100</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e234 "><span>1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e237 "><span>16</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e240 "><span>192 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e243 "><span>17</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e246 "><span>41117</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e249 "><span>0.0385%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e231 "><span>44100</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e234 "><span>1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e237 "><span>16</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e240 "><span>192 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e243 "><span>17</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e246 "><span>41117</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e249 "><span>0.0385%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e231 "><span>48000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e234 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e237 "><span>43</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e240 "><span>258 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e243 "><span>21</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e246 "><span>47991</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e249 "><span>-0.0187%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e231 "><span>48000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e234 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e237 "><span>43</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e240 "><span>258 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e243 "><span>21</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e246 "><span>47991</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e249 "><span>-0.0187%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e231 "><span>96000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e234 "><span>3</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e237 "><span>43</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e240 "><span>172 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e243 "><span>7</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e246 "><span>95982</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e249 "><span>-0.0187%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e231 "><span>96000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e234 "><span>3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e237 "><span>43</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e240 "><span>172 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e243 "><span>7</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e246 "><span>95982</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e249 "><span>-0.0187%</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p class="p">The values in the second table have somewhat higher error rates, but use a PLLACK value of 294 MHz which is suitable to be used as a Processor Clock (using the PLLACK selection for CSS) which is closer to the maximum of 300 MHz.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e341"><span><strong class="ph b">Desired Sample Rate</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e344"><span><strong class="ph b">PLLA Multipler</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e347"><span><strong class="ph b">PLLA Divider</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e350"><span><strong class="ph b">PLLACK</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e353"><span><strong class="ph b">I2SC Generic Clock Divider</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e356"><span><strong class="ph b">Calculated Sample Rate</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e359"><span><strong class="ph b">Error</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e341"><span><strong class="ph b">Desired Sample Rate</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e344"><span><strong class="ph b">PLLA Multipler</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e347"><span><strong class="ph b">PLLA Divider</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e350"><span><strong class="ph b">PLLACK</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e353"><span><strong class="ph b">I2SC Generic Clock Divider</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e356"><span><strong class="ph b">Calculated Sample Rate</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e359"><span><strong class="ph b">Error</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e341 "><span>8000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e344 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e347 "><span>49</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e350 "><span>294 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e353 "><span>144</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e356 "><span>7975</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e359 "><span>-0.3125%</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e341 "><span>8000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e344 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e347 "><span>49</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e350 "><span>294 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e353 "><span>144</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e356 "><span>7975</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e359 "><span>-0.3125%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e341 "><span>16000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e344 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e347 "><span>49</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e350 "><span>294 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e353 "><span>72</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e356 "><span>15950</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e359 "><span>-0.3125%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e341 "><span>16000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e344 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e347 "><span>49</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e350 "><span>294 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e353 "><span>72</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e356 "><span>15950</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e359 "><span>-0.3125%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e341 "><span>44100</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e344 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e347 "><span>49</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e350 "><span>294 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e353 "><span>26</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e356 "><span>41170</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e359 "><span>0.1587%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e341 "><span>44100</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e344 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e347 "><span>49</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e350 "><span>294 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e353 "><span>26</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e356 "><span>41170</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e359 "><span>0.1587%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e341 "><span>48000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e344 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e347 "><span>49</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e350 "><span>294 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e353 "><span>24</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e356 "><span>47851</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e359 "><span>-0.3104%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e341 "><span>48000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e344 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e347 "><span>49</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e350 "><span>294 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e353 "><span>24</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e356 "><span>47851</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e359 "><span>-0.3104%</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e341 "><span>96000</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e344 "><span>3</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e347 "><span>49</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e350 "><span>294 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e353 "><span>12</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e356 "><span>95703</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e359 "><span>-0.3094%</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e341 "><span>96000</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e344 "><span>3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e347 "><span>49</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e350 "><span>294 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e353 "><span>12</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e356 "><span>95703</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e359 "><span>-0.3094%</span></td>
 </tr>
 </tbody>
 </table>
@@ -385,18 +415,18 @@
 </div>
 <div class="topic nested3" aria-labelledby="ariaid-title7" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title7">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">The following table lists and describes supported configurations.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e464"><span><strong class="ph b">Project Name</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e467"><span><strong class="ph b">BSP Used</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e470"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e464"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e467"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e470"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e464 "><span>audio_tone_ld_sam_e70_xult_wm8904_ssc</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e467 "><span>sam_e70_xult</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e470 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, using linked DMA. The project configuration is for a sine tone with 16-bit data width, 48000 Hz sampling frequency, and I<sup class="ph sup">2</sup>S audio protocol using the SSC PLIB. The WM8904 codec is configured as the master, and the SSC peripheral as the slave.</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e464 "><span>audio_tone_ld_sam_e70_xult_wm8904_ssc</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e467 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e470 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, using linked DMA. The project configuration is for a sine tone with 16-bit data width, 48000 Hz sampling frequency, and I<sup class="ph sup">2</sup>S audio protocol using the SSC PLIB. The WM8904 codec is configured as the master, and the SSC peripheral as the slave.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e464 "><span>audio_tone_ld_sam_e70_xult_wm8904_i2sc</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e467 "><span>sam_e70_xult</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e470 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, using linked DMA. The project configuration is for a sine tone with 16-bit data width, 48000 Hz sampling frequency, and I<sup class="ph sup">2</sup>S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e464 "><span>audio_tone_ld_sam_e70_xult_wm8904_i2sc</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e467 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e470 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board and the WM8904 Audio Codec Daughter Board, using linked DMA. The project configuration is for a sine tone with 16-bit data width, 48000 Hz sampling frequency, and I<sup class="ph sup">2</sup>S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master.</span></td>
 </tr>
 </tbody>
 </table>
@@ -436,15 +466,15 @@
 </div>
 <div class="topic nested1" aria-labelledby="ariaid-title10" id="control-descriptions"><h2 class="title topictitle2" id="ariaid-title10">Control Descriptions</h2><div class="body"></div>
 <div class="topic nested2" aria-labelledby="ariaid-title11" id="table-1-button-controls-for-sam-e70-xplained-ultra-board"><h3 class="title topictitle3" id="ariaid-title11">Table 1: Button Controls for SAM E70 Xplained Ultra board</h3><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e586"><span><strong class="ph b">Control</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d1319e589"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e586"><span><strong class="ph b">Control</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d1342e589"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e586 "><span>SW1 short press</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e589 "><span>If LED1 if off, SW1 cycles through four volume levels (one muted). If LED1 is on, SW1 cycles through four frequencies of sine tone.</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e586 "><span>SW1 short press</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e589 "><span>If LED1 if off, SW1 cycles through four volume levels (one muted). If LED1 is on, SW1 cycles through four frequencies of sine tone.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e586 "><span>SW1 long press (&gt; 1 second)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1319e589 "><span>Alternates between modes (LED1 on or off).</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e586 "><span>SW1 long press (&gt; 1 second)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d1342e589 "><span>Alternates between modes (LED1 on or off).</span></td>
 </tr>
 </tbody>
 </table>

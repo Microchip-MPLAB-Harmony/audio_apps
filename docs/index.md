@@ -5,6 +5,7 @@
     -   [audio\_player\_basic](GUID-6519369E-505B-4BAB-9E2D-3E25E5275D1F.md)
     -   [audio\_tone](GUID-3CE5661D-A17C-4ED4-8F6B-85D06B6A2745.md)
     -   [audio\_tone\_linkeddma](GUID-C0F1A462-D7AD-4584-A60B-E8B363C87E96.md)
+    -   [simple\_tone\_generator](GUID-F1119B04-3CB1-4663-B403-806E2541A179.md)
     -   [microphone\_loopback](GUID-9868F88F-53EE-443C-8987-C22CEBDCA6B2.md)
     -   [universal\_audio\_decoders](GUID-158E2C2E-4630-480F-A883-E73F8DF2E8E2.md)
     -   [usb\_headset](GUID-9AECFB48-EFE5-41CC-873E-F44434E5A0F5.md)

@@ -11,9 +11,8 @@
 <meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="audio-enc" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>audio_enc</title>
+<title>audio_enc</title>
 <meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-audio-enc" />
 <meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,7 +223,7 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="audio-enc">
 <h1 class="title topictitle1" id="ariaid-title1">audio_enc</h1><div class="body"><p class="p">This readme file provides instructions and information about the MPLAB Harmony 3 Audio Encoder demonstration application, which is included in the MPLAB Harmony Library distribution.</p>
 </div>
@@ -207,14 +237,14 @@
 <p class="p">The current development board, SAM E70 Xplained Ultra, supplies one button and two LEDs for control and status feedback. LED 1 is amber and LED 2 is green. The application currently only supports PCM encoding and playback to and from a .wav file container.</p>
 <p class="p">Supported audio files are as represented in the table below.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d170e40"><span><strong class="ph b">Audio Format</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e43"><span><strong class="ph b">Sample Rate (kHz)</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e46"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d194e40"><span><strong class="ph b">Audio Format</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e43"><span><strong class="ph b">Sample Rate (kHz)</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e46"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e40 "><span>PCM</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e43 "><span>16</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e46 "><span>PCM (Pulse Code Modulation) is an uncompressed format. The digital data is a direct representation of the analog audio waveform. The container for the data will be a WAVE file (.wav) format. It is the native file format used by Microsoft Windows for storing digital audio data.</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e40 "><span>PCM</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e43 "><span>16</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e46 "><span>PCM (Pulse Code Modulation) is an uncompressed format. The digital data is a direct representation of the analog audio waveform. The container for the data will be a WAVE file (.wav) format. It is the native file format used by Microsoft Windows for storing digital audio data.</span></td>
 </tr>
 </tbody>
 </table>
@@ -299,18 +329,18 @@
 </div>
 <div class="topic nested3" aria-labelledby="ariaid-title9" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title9">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">The following table lists and describes supported project configurations.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d170e217"><span><strong class="ph b">Project Name</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e220"><span><strong class="ph b">BSP Used</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e223"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d194e217"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e220"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e223"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e217 "><span>audio_enc_sam_e70_xult_wm8904_i2sc</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e220 "><span>sam_e70_xult</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e223 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board with the WM8904 Audio Codec Module attached. The project configuration is for encode/playback of an audio file to/from a USB Mass Storage Device. Data to be tx/rx to/from the Codec via I2S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master.</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e217 "><span>audio_enc_sam_e70_xult_wm8904_i2sc</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e220 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e223 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board with the WM8904 Audio Codec Module attached. The project configuration is for encode/playback of an audio file to/from a USB Mass Storage Device. Data to be tx/rx to/from the Codec via I2S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e217 "><span>audio_enc_sam_e70_xult_wm8904_i2sc_freertos</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e220 "><span>sam_e70_xult</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e223 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board with the WM8904 Audio Codec Module attached. The project configuration is for encode/playback of an audio file to/from a USB Mass Storage Device. Data to be tx/rx to/from the Codec via I2S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master. This demonstration also uses FreeRTOS.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e217 "><span>audio_enc_sam_e70_xult_wm8904_i2sc_freertos</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e220 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e223 "><span>This demonstration runs on the ATSAME70Q21B processor on the SAM E70 Xplained Ultra board with the WM8904 Audio Codec Module attached. The project configuration is for encode/playback of an audio file to/from a USB Mass Storage Device. Data to be tx/rx to/from the Codec via I2S audio protocol using the I2SC PLIB. The WM8904 codec is configured as the slave, and the I2SC peripheral as the master. This demonstration also uses FreeRTOS.</span></td>
 </tr>
 </tbody>
 </table>
@@ -346,15 +376,15 @@
 <p class="p">Button control is shown in the table below.</p>
 </div>
 <div class="topic nested2" aria-labelledby="ariaid-title13" id="button-operations"><h3 class="title topictitle3" id="ariaid-title13">Button Operations</h3><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d170e309"><span><strong class="ph b">Operation</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e312"><span><strong class="ph b">Function</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d194e309"><span><strong class="ph b">Operation</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e312"><span><strong class="ph b">Function</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e309 "><span>Long Press (&gt; 1 sec)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e312 "><span>Play back the last encoded</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e309 "><span>Long Press (&gt; 1 sec)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e312 "><span>Play back the last encoded</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e309 "><span>Short Press (&lt; 1 sec)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e312 "><span>Start/Stop Encoding</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e309 "><span>Short Press (&lt; 1 sec)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e312 "><span>Start/Stop Encoding</span></td>
 </tr>
 </tbody>
 </table>
@@ -372,34 +402,34 @@
 <p class="p">LED status indication is shown in the table below.</p>
 </div>
 <div class="topic nested2" aria-labelledby="ariaid-title15" id="led-status"><h3 class="title topictitle3" id="ariaid-title15">LED Status</h3><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d170e353"><span><strong class="ph b">Operation</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e356"><span><strong class="ph b">LED 1 Status</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d170e359"><span><strong class="ph b">LED 2 Status</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d194e353"><span><strong class="ph b">Operation</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e356"><span><strong class="ph b">LED 1 Status</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d194e359"><span><strong class="ph b">LED 2 Status</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e353 "><span>No Storage Device Connected</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e356 "><span>Toggling</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e359 "><span>Off</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e353 "><span>No Storage Device Connected</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e356 "><span>Toggling</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e359 "><span>Off</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e353 "><span>Storage Device Connected</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e356 "><span>Off</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e359 "><span>Don't Care</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e353 "><span>Storage Device Connected</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e359 "><span>Don't Care</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e353 "><span>Ready to Encode/Playback</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e356 "><span>Off</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e359 "><span>Don't Care</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e353 "><span>Ready to Encode/Playback</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e359 "><span>Don't Care</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e353 "><span>Not Ready to Encode/Playback</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e356 "><span>Off</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e359 "><span>Off</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e353 "><span>Not Ready to Encode/Playback</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e359 "><span>Off</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e353 "><span>Encoding</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e356 "><span>Off</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e359 "><span>Toggling</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e353 "><span>Encoding</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e356 "><span>Off</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e359 "><span>Toggling</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e353 "><span>Playback before Encoded File Created</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e356 "><span>Toggling</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d170e359 "><span>Toggling</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e353 "><span>Playback before Encoded File Created</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e356 "><span>Toggling</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d194e359 "><span>Toggling</span></td>
 </tr>
 </tbody>
 </table>

@@ -11,9 +11,8 @@
 <meta name="DC.relation" scheme="URI" content="GUID-408D6777-0172-406B-8442-B97FD5287AC8.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="usb-speaker-hi-res" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>usb_speaker_hi_res</title>
+<title>usb_speaker_hi_res</title>
 <meta name="Microsoft.Help.Id" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7-usb-speaker-hi-res" />
 <meta name="Microsoft.Help.TocParent" content="GUID-32F3914E-5B2E-4D3C-898B-3A4760B287C7" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,7 +223,7 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="usb-speaker-hi-res">
 <h1 class="title topictitle1" id="ariaid-title1">usb_speaker_hi_res</h1><div class="body"><p class="p">This topic provides instructions and information about the MPLAB Harmony 3 USB Speaker Hi-Res demonstration application, which is included in the MPLAB Harmony Library distribution.</p>
 </div>
@@ -268,71 +298,71 @@
 </div>
 <div class="topic nested2" aria-labelledby="ariaid-title10" id="pin-manager"><h3 class="title topictitle3" id="ariaid-title10">Pin Manager</h3><div class="body"><p class="p">The buttons, LED, Switch, I2S and I2C interfaces using GPIO pins via the Microchip Harmony Configurator (MHC) Pin Manager, as follows for the I2SC1:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e165"><span><strong class="ph b">NAME</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e168"><span><strong class="ph b">PORT</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e171"><span><strong class="ph b">E70 PIN</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e174"><span><strong class="ph b">Notes</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e165"><span><strong class="ph b">NAME</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e168"><span><strong class="ph b">PORT</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e171"><span><strong class="ph b">E70 PIN</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e174"><span><strong class="ph b">Notes</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>I2SC1_WS</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PE00</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>4</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2S LRCK (Word Select)</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>I2SC1_WS</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PE00</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>4</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2S LRCK (Word Select)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>I2SC1_DO0</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PE01</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>6</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2S DO (Data Out)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>I2SC1_DO0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PE01</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>6</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2S DO (Data Out)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>I2SC1_DI0</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PE02</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>7</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2S DI (Data In)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>I2SC1_DI0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PE02</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>7</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2S DI (Data In)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>I2SC1_CK</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA20</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>22</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2S BCLK (Bit Clock)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>I2SC1_CK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA20</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>22</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2S BCLK (Bit Clock)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>I2SC1_GCLK</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA19</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>23</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2S MCLK (Bit Clock as used by the E70 I2SC1, I2S Master)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>I2SC1_GCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA19</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>23</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2S MCLK (Bit Clock as used by the E70 I2SC1, I2S Master)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>PMC_PCK2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA18</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>24</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2S MCLK (Master Clock as used by the WM8904 Codec I2S Slave)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>PMC_PCK2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA18</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>24</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2S MCLK (Master Clock as used by the WM8904 Codec I2S Slave)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>SWITCH</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA11</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>66</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>Push Button</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>SWITCH</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA11</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>66</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>Push Button</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>LED1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA05</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>73</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>-</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>LED1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA05</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>73</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>-</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>TWIHS0_TWCK0</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA04</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>77</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2C</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>TWIHS0_TWCK0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA04</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>77</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2C</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>TWIHS0_TWD0</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PA03</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>91</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>I2C</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>TWIHS0_TWD0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PA03</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>91</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>I2C</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>STDBY</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PD11</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>98</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>-</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>STDBY</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PD11</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>98</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>-</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e165 "><span>LED2/VBUS DETECT(J204)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e168 "><span>PB08</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e171 "><span>141</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e174 "><span>J204 set to VBUS DETECT for USB Device</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e165 "><span>LED2/VBUS DETECT(J204)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e168 "><span>PB08</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e171 "><span>141</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e174 "><span>J204 set to VBUS DETECT for USB Device</span></td>
 </tr>
 </tbody>
 </table>
@@ -341,44 +371,44 @@
 </div>
 <div class="topic nested2" aria-labelledby="ariaid-title11" id="clock-manager"><h3 class="title topictitle3" id="ariaid-title11">Clock Manager</h3><div class="body"><p class="p">All clocks are generated from the 12 MHz Main Clock oscillator. From this clock is derived the following clocks:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e300"><span><strong class="ph b">Clock</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e303"><span><strong class="ph b">Value</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e306"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e300"><span><strong class="ph b">Clock</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e303"><span><strong class="ph b">Value</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e306"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e300 "><span>HCLK</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e303 "><span>300 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e306 "><span>Processor Clock</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e300 "><span>HCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e303 "><span>300 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e306 "><span>Processor Clock</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e300 "><span>PCK2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e303 "><span>12 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e306 "><span>Peripheral Clock 2</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e300 "><span>PCK2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e303 "><span>12 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e306 "><span>Peripheral Clock 2</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e300 "><span>USB FS</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e303 "><span>48 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e306 "><span>USB Full Speed Clock</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e300 "><span>USB FS</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e303 "><span>48 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e306 "><span>USB Full Speed Clock</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p class="p">The I2S clocks are setup for 48Khz sampling rate, with stereo 32 bit samples, giving a 64 bit stereo sample frame. The I2S clocks are generated from the WM8904 acting as I2S master using the 24.576 Mhz master clock obtained from I2SC1_GCLK. The I2S clocks will then be generated from the MCLK value below to approximate the following clock rates:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e340"><span><strong class="ph b">I2S Function</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e343"><span><strong class="ph b">Value</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e346"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e340"><span><strong class="ph b">I2S Function</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e343"><span><strong class="ph b">Value</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e346"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e340 "><span>LRCK</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e343 "><span>96.000000 K</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e346 "><span>Sample rate clock</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e340 "><span>LRCK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e343 "><span>96.000000 K</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e346 "><span>Sample rate clock</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e340 "><span>BCLK</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e343 "><span>6114000 Hz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e346 "><span>Bit Rate Clock</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e340 "><span>BCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e343 "><span>6114000 Hz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e346 "><span>Bit Rate Clock</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e340 "><span>MCLK</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e343 "><span>24.576000 MHz</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e346 "><span>Master Clock</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e340 "><span>MCLK</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e343 "><span>24.576000 MHz</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e346 "><span>Master Clock</span></td>
 </tr>
 </tbody>
 </table>
@@ -404,14 +434,14 @@
 </div>
 <div class="topic nested3" aria-labelledby="ariaid-title15" id="mplab-x-ide-project-configurations"><h4 class="title topictitle4" id="ariaid-title15">MPLAB X IDE Project Configurations</h4><div class="body"><p class="p">This table lists and describes the supported configurations of the demonstration, which are located within ./firmware/src/config.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e430"><span><strong class="ph b">Project Name</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e433"><span><strong class="ph b">BSP Used</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e436"><span><strong class="ph b">Description</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e430"><span><strong class="ph b">Project Name</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e433"><span><strong class="ph b">BSP Used</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e436"><span><strong class="ph b">Description</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e430 "><span>us_hi_res_basic_sam_e70_xult_ wm8904_i2sc_usb.X</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e433 "><span>sam_e70_xult</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e436 "><span>This demonstration runs on the SAM E70 Xplained Ultra board with the WM8904 daughter board using the I2SC PLIB.</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e430 "><span>us_hi_res_basic_sam_e70_xult_ wm8904_i2sc_usb.X</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e433 "><span>sam_e70_xult</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e436 "><span>This demonstration runs on the SAM E70 Xplained Ultra board with the WM8904 daughter board using the I2SC PLIB.</span></td>
 </tr>
 </tbody>
 </table>
@@ -460,21 +490,21 @@
 </div>
 <div class="topic nested1" aria-labelledby="ariaid-title18" id="control-description"><h2 class="title topictitle2" id="ariaid-title18">Control Description</h2><div class="body"><p class="p">Button control uses the push button function sequence given in the table below:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e551"><span><strong class="ph b">Function</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e554"><span><strong class="ph b">Press</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e551"><span><strong class="ph b">Function</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e554"><span><strong class="ph b">Press</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e551 "><span>Volume Control Level 1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e554 "><span>Low (-66 dB)</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e551 "><span>Volume Control Level 1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e554 "><span>Low (-66 dB)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e551 "><span>Volume Control Level 2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e554 "><span>Medium (-48 dB)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e551 "><span>Volume Control Level 2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e554 "><span>Medium (-48 dB)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e551 "><span>Volume Control Level 3</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e554 "><span>High (-0 dB)</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e551 "><span>Volume Control Level 3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e554 "><span>High (-0 dB)</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e551 "><span>Mute</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e554 "><span>Mute</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e551 "><span>Mute</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e554 "><span>Mute</span></td>
 </tr>
 </tbody>
 </table>
@@ -482,18 +512,18 @@
 <p class="p"><strong class="ph b">Note:</strong> Mute will transition to Volume Control Level 1 on the next button push.</p>
 <p class="p">USB operational status is given by LED, as shown below:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e590"><span><strong class="ph b">LED Status</strong></span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d4836e593"><span><strong class="ph b">Status</strong></span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e590"><span><strong class="ph b">LED Status</strong></span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d4855e593"><span><strong class="ph b">Status</strong></span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e590 "><span>OFF</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e593 "><span>USB cable detached</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e590 "><span>OFF</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e593 "><span>USB cable detached</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e590 "><span>ON</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e593 "><span>USB cable attached</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e590 "><span>ON</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e593 "><span>USB cable attached</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e590 "><span>Blinking</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4836e593 "><span>Playback muted</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e590 "><span>Blinking</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d4855e593 "><span>Playback muted</span></td>
 </tr>
 </tbody>
 </table>
