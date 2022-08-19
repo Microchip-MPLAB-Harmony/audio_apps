@@ -3,6 +3,90 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Harmony 3 Audio Application Examples V3.2.0 (August, 2022)
+
+The goal of this release is to provide support to SAM G55 Curiosity Audio Board.
+A new demo app is added, and the release is done.
+
+- **Applications/Projects**
+
+The set of applications remains the same as the previous release of v3.1.0, except that a new G55 Demo application has been added.
+The "G55" here means SAM G55 Curiosity Audio Board. This new application is simple_tone_generator.
+
+The following table provides the list of the applications/projects :
+
+| Application | Description | MZ EF/C2 | E54 | E70 | V71 | G55 |
+| --- | --- | --- | --- | --- | --- | -- |
+| audio_enc | Audio encoder for WAV files |  |  | x |  |  |
+| audio_player_basic | Audio player for WAV files (without library) |  | x | x |  |  |
+| audio_tone | Sine wave audio tone generator | x | x | x | x |  |
+| audio_linkeddma | Audio tone generator using linked DMA |  |  | x |  |  |
+| microphone_loopback | Microphone loopback demo | x | x | x | x |  |
+| simple_tone_generator | Simple Audio Tone Generator |  |  |  |  | x |
+| universal_audio_decoders | Audio player for WAV, ADPCM, FLAC and MP3 files | x |  | x |  |  |
+| usb_headset | USB headset demo | x |  |  |  |  |
+| usb_microphone | USB microphone demo |  |  | x |  |  |
+| usb_speaker | USB speaker demo | x |  | x |  |  |
+| usb_speaker_bass_boost | USB speaker, with variable bass boost | x |  | x |  |  |
+| usb_speaker_hi_res | USB speaker, hi-res (96 kHz/24-bit) |  |  | x |  |  |
+
+where:
+
+| |  Development Kit |
+| --- | --- | 
+|**MZ EF/C2**| [Curiosity PIC32MZEF Dev Board 2.0](https://www.microchip.com/developmenttools/ProductDetails/PartNO/DM320209) |
+|**E54**| [SAM E54 Curiosity Ultra Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/PartNO/DM320210) |
+|**E70**| [SAM E70 Xplained Ultra Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/PartNO/DM320113) |
+|**V71**| [SAM V71 Xplained Ultra Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/PartNO/ATSAMV71-XULT) |
+|**G55**| [SAM G55 Curiosity Audio Board](https://www.microchip.com/development-tool/ProductDetails/EV78Y10A) |
+
+### TESTED WITH:
+
+#### Software Dependencies
+
+Remains same as previous release v3.6.0.
+Please refer release note of v3.6.0, appended towards the end of this document.
+
+#### Development Kit Support
+
+In addition to the boards supported in the previous release v3.6.0, the support for SAMG55 Curiosity Audio Board is added.
+Please refer release note of v3.6.0, appended towards the end of this document.
+
+| Name |  Development Kit |
+| --- | --- | 
+|**G55**| [SAMG55 Curiosity Audio Board](https://www.microchip.com/development-tool/ProductDetails/EV78Y10A) |
+
+### KNOWN ISSUES
+
+Remains same as previous release v3.6.0. No new known issues.
+Please refer release note of v3.6.0, appended towards the end of this document.
+
+### RELEASE CONTENTS
+
+This topic lists the contents of this release and identifies each module.
+
+#### Description
+
+This table lists the contents of this release, including a brief description, and the release type (Alpha, Beta, Production, or Vendor).
+
+| Folder | Description | Release Type |
+| --- | --- | --- |
+| audio\apps\audio_enc | audio encoder application | Production |
+| audio\apps\audio_player_basic | audio_player_basic application | Production |
+| audio\apps\audio_tone  | audio tone application | Production |
+| audio\apps\audio_tone_linkeddma | audio tone using linked dma application | Production |
+| audio\apps\microphone_loopback | microphone loopback application | Production |
+| audio\apps\simple_tone_generator | simple audio tone generation application | Alpha |
+| audio\apps\universal_audio_decoders | universal audio decoders application | Production |
+| audio\apps\usb_headset | USB headset application | Beta |
+| audio\apps\usb_microphone | USB microphone application | Production |
+| audio\apps\usb_speaker | USB speaker application | Production |
+| audio\apps\usb_speaker_bass_boost | USB speaker bass boost application | Production |
+| audio\apps\usb_speaker_hi_res | USB speaker application (hi-res) | Production |
+
+
+# Microchip MPLAB® Harmony 3 Release Notes of the Previous Release
+
 ## Harmony 3 Audio Application Examples V3.1.0 (May, 2022)
 
 - **Applications/Projects**
