@@ -3,7 +3,7 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Harmony 3 Audio Application Examples V3.2.0 (August, 2022)
+## Harmony 3 Audio Application Examples v3.2.0 (August, 2022)
 
 The goal of this release is to provide support to SAM G55 Curiosity Audio Board.
 A new demo app is added, and the release is done.
@@ -67,22 +67,22 @@ This topic lists the contents of this release and identifies each module.
 
 #### Description
 
-This table lists the contents of this release, including a brief description, and the release type (Alpha, Beta, Production, or Vendor).
+This table lists the contents of this release, including a brief description.
 
-| Folder | Description | Release Type |
-| --- | --- | --- |
-| audio\apps\audio_enc | audio encoder application | Production |
-| audio\apps\audio_player_basic | audio_player_basic application | Production |
-| audio\apps\audio_tone  | audio tone application | Production |
-| audio\apps\audio_tone_linkeddma | audio tone using linked dma application | Production |
-| audio\apps\microphone_loopback | microphone loopback application | Production |
-| audio\apps\simple_tone_generator | simple audio tone generation application | Alpha |
-| audio\apps\universal_audio_decoders | universal audio decoders application | Production |
-| audio\apps\usb_headset | USB headset application | Beta |
-| audio\apps\usb_microphone | USB microphone application | Production |
-| audio\apps\usb_speaker | USB speaker application | Production |
-| audio\apps\usb_speaker_bass_boost | USB speaker bass boost application | Production |
-| audio\apps\usb_speaker_hi_res | USB speaker application (hi-res) | Production |
+| Folder | Description | 
+| --- | --- | 
+| audio\apps\audio_enc | audio encoder application | 
+| audio\apps\audio_player_basic | audio_player_basic application | 
+| audio\apps\audio_tone  | audio tone application | 
+| audio\apps\audio_tone_linkeddma | audio tone using linked dma application | 
+| audio\apps\microphone_loopback | microphone loopback application | 
+| audio\apps\simple_tone_generator | simple audio tone generation application | 
+| audio\apps\universal_audio_decoders | universal audio decoders application | 
+| audio\apps\usb_headset | USB headset application | 
+| audio\apps\usb_microphone | USB microphone application | 
+| audio\apps\usb_speaker | USB speaker application | 
+| audio\apps\usb_speaker_bass_boost | USB speaker bass boost application | 
+| audio\apps\usb_speaker_hi_res | USB speaker application (hi-res) | 
 
 
 # Microchip MPLAB® Harmony 3 Release Notes of the Previous Release
