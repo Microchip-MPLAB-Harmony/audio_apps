@@ -8,7 +8,7 @@
 The goal of this release is to provide support to SAM G55 Curiosity Audio Board.
 A new demo app is added, and the release is done.
 
-- **Applications/Projects**
+**Applications/Projects**
 
 The set of applications remains the same as the previous release of v3.1.0, except that a new G55 Demo application has been added.
 The "G55" here means SAM G55 Curiosity Audio Board. This new application is simple_tone_generator.
