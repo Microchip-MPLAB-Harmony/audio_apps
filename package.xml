@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Package name="audio_apps">
     <Dependencies>
-        <Dependency name="audio" version="v3.6.0"/>	
-        <Dependency name="CMSIS-FreeRTOS" version="v10.3.1"/>
+        <Dependency name="audio" version="v3.6.1"/>
         <Dependency name="helix_mp3" version="v1.1.0"/>
         <Dependency name="xiph_flac" version="v1.0.0"/>
     </Dependencies>

@@ -1,20 +1,17 @@
 package:
   format-version: "1.0.0"
   name: "audio_apps"
-  version: "3.2.0"
+  version: "v3.2.1"
   type: "application"
   status: "production"
-  
+
  dependencies:
     - name: "audio"
       type: "package"
-      version: "3.6.0"
-    - name: "CMSIS-FreeRTOS"
-      type: "package"
-      version: "10.3.1"
+      version: "v3.6.1"
     - name: "helix_mp3"
       type: "package"
-      version: "1.1.0"
+      version: "v1.1.0"
     - name: "xiph_flac"
       type: "package"
-      version: "1.0.0"
+      version: "v1.0.0"
