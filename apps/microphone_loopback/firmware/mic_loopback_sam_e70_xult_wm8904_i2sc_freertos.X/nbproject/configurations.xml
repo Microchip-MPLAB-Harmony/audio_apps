@@ -115,6 +115,7 @@
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/user.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -136,6 +137,7 @@
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="portable" projectFiles="true">
             <logicalFolder name="f1" displayName="GCC" projectFiles="true">
@@ -173,7 +175,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/spi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/ssc.h</itemPath>
@@ -220,7 +221,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi0.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi1.h</itemPath>
@@ -273,6 +273,35 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="sam_e70_xult_wm8904_i2sc_freertos.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/a_i2sc1.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/wm8904_codec.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/harmony-manifest-success.yml</itemPath>
+      <itemPath>mic_loopback_sam_e70_xult_wm8904_i2sc_freertos.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -387,6 +416,7 @@
                   <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/CM7/port.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
+              <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/GCC/Common/mpu_wrappers_v2.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="MemMang" projectFiles="true">
               <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c</itemPath>
@@ -403,35 +433,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="sam_e70_xult_wm8904_i2sc_freertos.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/a_i2sc1.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/sam_e70_xult_wm8904_i2sc_freertos.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/harmony-manifest-success.yml</itemPath>
-      <itemPath>mic_loopback_sam_e70_xult_wm8904_i2sc_freertos.mc3</itemPath>
+      <itemPath>../src/config/sam_e70_xult_wm8904_i2sc_freertos/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -446,14 +448,14 @@
         <targetDevice>ATSAME70Q21B</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.10.248"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -660,6 +662,9 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -680,8 +685,10 @@
         <property key="memories.instruction.ram.ranges"
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0x400000-0x5fffff"/>
+        <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/microphone_loopback/firmware/mic_loopback_sam_e70_xult_wm8904_i2sc_freertos.X/debug/sam_e70_xult_wm8904_i2sc_freertos/mic_loopback_sam_e70_xult_wm8904_i2sc_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -694,6 +701,7 @@
         <property key="programoptions.programuserotp" value="false"/>
         <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="1"/>
+        <property key="script.reset_by_pin" value="false"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
@@ -1218,6 +1226,9 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -1238,7 +1249,7 @@
         <property key="memories.instruction.ram.ranges"
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0x400000-0x5fffff"/>
+        <property key="memories.programmemory.ranges" value="400000-5fffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
@@ -1255,6 +1266,7 @@
         <property key="programoptions.programuserotp" value="false"/>
         <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="1"/>
+        <property key="script.reset_by_pin" value="false"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
