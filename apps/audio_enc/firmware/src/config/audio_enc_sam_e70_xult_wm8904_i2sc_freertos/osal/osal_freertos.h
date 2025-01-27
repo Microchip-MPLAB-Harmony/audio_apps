@@ -39,8 +39,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _OSAL_FREERTOS_H
-#define _OSAL_FREERTOS_H
+#ifndef OSAL_FREERTOS_H
+#define OSAL_FREERTOS_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -68,8 +68,11 @@ extern "C" {
 typedef SemaphoreHandle_t              OSAL_SEM_HANDLE_TYPE;
 typedef SemaphoreHandle_t              OSAL_MUTEX_HANDLE_TYPE;
 typedef BaseType_t                     OSAL_CRITSECT_DATA_TYPE;
+typedef TickType_t                     OSAL_TICK_TYPE;
+typedef UBaseType_t                    OSAL_SEM_COUNT_TYPE;
 
-#define OSAL_WAIT_FOREVER               (uint16_t)0xFFFF
+#define OSAL_WAIT_FOREVER               (OSAL_TICK_TYPE)portMAX_DELAY
+#define OSAL_NO_WAIT                    (OSAL_TICK_TYPE)0
 #define OSAL_SEM_DECLARE(semID)         OSAL_SEM_HANDLE_TYPE   semID
 #define OSAL_MUTEX_DECLARE(mutexID)     OSAL_MUTEX_HANDLE_TYPE mutexID
 
@@ -104,7 +107,9 @@ typedef enum OSAL_RESULT
 {
   OSAL_RESULT_NOT_IMPLEMENTED = -1,
   OSAL_RESULT_FALSE = 0,
-  OSAL_RESULT_TRUE = 1
+  OSAL_RESULT_FAIL = 0,
+  OSAL_RESULT_TRUE = 1,
+  OSAL_RESULT_SUCCESS = 1,
 } OSAL_RESULT;
 
 // *****************************************************************************
@@ -112,19 +117,19 @@ typedef enum OSAL_RESULT
 // Section: Section: Interface Routines Group
 // *****************************************************************************
 // *****************************************************************************
-OSAL_RESULT OSAL_SEM_Create(OSAL_SEM_HANDLE_TYPE* semID, OSAL_SEM_TYPE type, uint8_t maxCount, uint8_t initialCount);
+OSAL_RESULT OSAL_SEM_Create(OSAL_SEM_HANDLE_TYPE* semID, OSAL_SEM_TYPE type, OSAL_SEM_COUNT_TYPE maxCount, OSAL_SEM_COUNT_TYPE initialCount);
 OSAL_RESULT OSAL_SEM_Delete(OSAL_SEM_HANDLE_TYPE* semID);
-OSAL_RESULT OSAL_SEM_Pend(OSAL_SEM_HANDLE_TYPE* semID, uint16_t waitMS);
+OSAL_RESULT OSAL_SEM_Pend(OSAL_SEM_HANDLE_TYPE* semID, OSAL_TICK_TYPE waitMS);
 OSAL_RESULT OSAL_SEM_Post(OSAL_SEM_HANDLE_TYPE* semID);
 OSAL_RESULT OSAL_SEM_PostISR(OSAL_SEM_HANDLE_TYPE* semID);
-uint8_t OSAL_SEM_GetCount(OSAL_SEM_HANDLE_TYPE* semID);
+OSAL_SEM_COUNT_TYPE OSAL_SEM_GetCount(OSAL_SEM_HANDLE_TYPE* semID);
 
 OSAL_CRITSECT_DATA_TYPE OSAL_CRIT_Enter(OSAL_CRIT_TYPE severity);
 void  OSAL_CRIT_Leave(OSAL_CRIT_TYPE severity, OSAL_CRITSECT_DATA_TYPE status);
 
 OSAL_RESULT OSAL_MUTEX_Create(OSAL_MUTEX_HANDLE_TYPE* mutexID);
 OSAL_RESULT OSAL_MUTEX_Delete(OSAL_MUTEX_HANDLE_TYPE* mutexID);
-OSAL_RESULT OSAL_MUTEX_Lock(OSAL_MUTEX_HANDLE_TYPE* mutexID, uint16_t waitMS);
+OSAL_RESULT OSAL_MUTEX_Lock(OSAL_MUTEX_HANDLE_TYPE* mutexID, OSAL_TICK_TYPE waitMS);
 OSAL_RESULT OSAL_MUTEX_Unlock(OSAL_MUTEX_HANDLE_TYPE* mutexID);
 
 void* OSAL_Malloc(size_t size);
@@ -153,7 +158,6 @@ OSAL_RESULT OSAL_Initialize(void);
 
   Example:
     <code>
-    // get the RTOS name
     const char* sName;
 
     sName = OSAL_Name();
@@ -184,7 +188,7 @@ __STATIC_INLINE __attribute__((always_inline)) const char* OSAL_Name (void)
 }
 #endif
 
-#endif // _OSAL_FREERTOS_H
+#endif // OSAL_FREERTOS_H
 
 /*******************************************************************************
  End of File
