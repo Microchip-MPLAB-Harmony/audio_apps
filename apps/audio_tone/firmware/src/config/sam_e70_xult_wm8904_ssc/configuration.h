@@ -112,11 +112,8 @@ extern "C" {
 #define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
-
-/* I2S Driver Common Configuration Options */
-#define DRV_I2S_INSTANCES_NUMBER              1
 
 /*** Codec Driver Configuration ***/
 
@@ -188,6 +185,9 @@ extern "C" {
 #define DRV_CODEC_MicMuteOff                                DRV_WM8904_MicMuteOff
 #define DRV_CODEC_GetI2SDriver                              DRV_WM8904_GetI2SDriver
 #define DRV_CODEC_LRCLK_Sync                                DRV_WM8904_LRCLK_Sync 
+
+/* I2S Driver Common Configuration Options */
+#define DRV_I2S_INSTANCES_NUMBER              1
 
 
 
