@@ -246,7 +246,7 @@ void APP_Set_FileExt( void )
 /* Get a fileName for the first non-existent file */
 bool APP_Set_FileName( void )
 {
-    char strFn[30];
+    char strFn[50];
     bool retStat = false;
     APP_Set_FileExt();
     APP_Set_BitDepth();

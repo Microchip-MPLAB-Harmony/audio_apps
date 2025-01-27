@@ -24,10 +24,10 @@
                   <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/codec/wm8904/drv_wm8904.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="i2s" projectFiles="true">
-                <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s.h</itemPath>
+              <logicalFolder name="i2s" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s_definitions.h</itemPath>
                 <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s_local.h</itemPath>
+                <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/i2s/drv_i2s.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f3" displayName="encoder" projectFiles="true">
@@ -173,6 +173,7 @@
           <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/device.h</itemPath>
           <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/user.h</itemPath>
           <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/configuration.h</itemPath>
+          <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -200,7 +201,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/spi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/ssc.h</itemPath>
@@ -247,7 +247,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi0.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi1.h</itemPath>
@@ -301,6 +300,40 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="audio_enc_sam_e70_xult_wm8904_i2sc.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/audio_decoders.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/audio_encoders.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/a_i2sc1.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/core.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/project.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/usb_host.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/usb_host_msd.yml</itemPath>
+        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/wm8904_codec.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/harmony-manifest-success.yml</itemPath>
+      <itemPath>audio_enc_sam_e70_xult_wm8904_i2sc.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -334,7 +367,7 @@
                   <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/codec/wm8904/drv_wm8904_local.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="i2s" projectFiles="true">
+              <logicalFolder name="i2s" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio/driver/i2s/src/drv_i2s.c</itemPath>
               </logicalFolder>
             </logicalFolder>
@@ -441,40 +474,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="audio_enc_sam_e70_xult_wm8904_i2sc.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/audio_decoders.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/audio_encoders.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/a_i2sc1.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/core.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/project.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/usb_host.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/usb_host_msd.yml</itemPath>
-        <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/harmony-manifest-success.yml</itemPath>
-      <itemPath>audio_enc_sam_e70_xult_wm8904_i2sc.mc3</itemPath>
+      <itemPath>../src/config/audio_enc_sam_e70_xult_wm8904_i2sc/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -488,14 +488,14 @@
         <targetDevice>ATSAME70Q21B</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.10.248"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -627,7 +627,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="5000"/>
+        <property key="heap-size" value="512"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -694,16 +694,25 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface" value="jtag"/>
-        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -717,8 +726,9 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/audio_enc/firmware/audio_enc_sam_e70_xult_wm8904_i2sc.X/debug/audio_enc_sam_e70_xult_wm8904_i2sc/audio_enc_sam_e70_xult_wm8904_i2sc_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -729,6 +739,11 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_by_pin" value="false"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
@@ -1243,16 +1258,25 @@
       </Simulator>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface" value="jtag"/>
-        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1280,6 +1304,11 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_by_pin" value="false"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

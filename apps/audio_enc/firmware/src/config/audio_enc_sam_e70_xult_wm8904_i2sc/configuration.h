@@ -91,25 +91,26 @@ extern "C" {
 
 /* File System Service Configuration */
 
-#define SYS_FS_MEDIA_NUMBER               1
-#define SYS_FS_VOLUME_NUMBER              1
+#define SYS_FS_MEDIA_NUMBER               (1U)
+#define SYS_FS_VOLUME_NUMBER              (1U)
 
 #define SYS_FS_AUTOMOUNT_ENABLE           true
-#define SYS_FS_CLIENT_NUMBER              1
-#define SYS_FS_MAX_FILES                  2
-#define SYS_FS_MAX_FILE_SYSTEM_TYPE       1
-#define SYS_FS_MEDIA_MAX_BLOCK_SIZE       512
-#define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  2048
-#define SYS_FS_USE_LFN                    1
-#define SYS_FS_FILE_NAME_LEN              255
-#define SYS_FS_CWD_STRING_LEN             1024
+#define SYS_FS_CLIENT_NUMBER              1U
+#define SYS_FS_MAX_FILES                  (2U)
+#define SYS_FS_MAX_FILE_SYSTEM_TYPE       (1U)
+#define SYS_FS_MEDIA_MAX_BLOCK_SIZE       (512U)
+#define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  (2048U)
+#define SYS_FS_USE_LFN                    (1)
+#define SYS_FS_FILE_NAME_LEN              (255U)
+#define SYS_FS_CWD_STRING_LEN             (1024)
 
 
-#define SYS_FS_FAT_VERSION                "v0.14a"
+#define SYS_FS_FAT_VERSION                "v0.15"
 #define SYS_FS_FAT_READONLY               false
 #define SYS_FS_FAT_CODE_PAGE              437
 #define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
 #define SYS_FS_FAT_ALIGNED_BUFFER_LEN     512
+
 
 
 
@@ -145,7 +146,7 @@ extern "C" {
 #define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
 
 /* I2S Driver Common Configuration Options */
@@ -237,17 +238,43 @@ extern "C" {
 #define USB_HOST_MSD_LUN_NUMBERS              1
 
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: USB Host Layer Configuration
+// *****************************************************************************
+// **************************************************************************
+
+/* Number of Endpoints used */
+#define DRV_USBHSV1_ENDPOINTS_NUMBER                        1U
+
+/* Total number of devices to be supported */
+#define USB_HOST_DEVICES_NUMBER                             1U
+
+/* Target peripheral list entries */
+#define  USB_HOST_TPL_ENTRIES                               1 
+
+/* Maximum number of configurations supported per device */
+#define USB_HOST_DEVICE_INTERFACES_NUMBER                   5    
+
+#define USB_HOST_CONTROLLERS_NUMBER                         1U
+
+#define USB_HOST_TRANSFERS_NUMBER                           10U
+
+/* Provides Host pipes number */
+#define USB_HOST_PIPES_NUMBER                               10U
+
+
 /*** USB Driver Configuration ***/
 
 /* Maximum USB driver instances */
-#define DRV_USBHSV1_INSTANCES_NUMBER                        1
+#define DRV_USBHSV1_INSTANCES_NUMBER                        1U
 
 /* Interrupt mode enabled */
 #define DRV_USBHSV1_INTERRUPT_MODE                          true
 
 /* Disable Device Support */
 #define DRV_USBHSV1_DEVICE_SUPPORT                          false
-	
+    
 /* Enable Host Support */
 #define DRV_USBHSV1_HOST_SUPPORT                            true
 
@@ -255,7 +282,7 @@ extern "C" {
 #define DRV_USBHSV1_HOST_NAK_LIMIT                          2000 
 
 /* Maximum Number of pipes */
-#define DRV_USBHSV1_HOST_PIPES_NUMBER                       10  
+#define DRV_USBHSV1_HOST_PIPES_NUMBER                       10   
 
 /* Attach Debounce duration in milli Seconds */ 
 #define DRV_USBHSV1_HOST_ATTACH_DEBOUNCE_DURATION           500
@@ -265,32 +292,6 @@ extern "C" {
 
 /* Alignment for buffers that are submitted to USB Driver*/ 
 #define USB_ALIGN  CACHE_ALIGN
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: USB Host Layer Configuration
-// *****************************************************************************
-// **************************************************************************
-
-/* Number of Endpoints used */
-#define DRV_USBHSV1_ENDPOINTS_NUMBER                        1
-
-/* Total number of devices to be supported */
-#define USB_HOST_DEVICES_NUMBER                             1
-
-/* Target peripheral list entries */
-#define  USB_HOST_TPL_ENTRIES                               1 
-
-/* Maximum number of configurations supported per device */
-#define USB_HOST_DEVICE_INTERFACES_NUMBER                   5    
-
-#define USB_HOST_CONTROLLERS_NUMBER                         1
-
-#define USB_HOST_TRANSFERS_NUMBER                           10
-
-/* Provides Host pipes number */
-#define USB_HOST_PIPES_NUMBER                               10
-
 
 
 
