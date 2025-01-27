@@ -107,6 +107,7 @@
           <itemPath>../src/config/sam_e70_xult_wm8904_ssc/device.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_ssc/user.h</itemPath>
           <itemPath>../src/config/sam_e70_xult_wm8904_ssc/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -134,7 +135,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/spi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/ssc.h</itemPath>
@@ -181,7 +181,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi0.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi1.h</itemPath>
@@ -235,6 +234,34 @@
       </logicalFolder>
       <itemPath>../src/app_tone_lookup_table.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="sam_e70_xult_wm8904_ssc.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/a_ssc.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/wm8904_codec.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e70_xult_wm8904_ssc/harmony-manifest-success.yml</itemPath>
+      <itemPath>audio_tone_ld_sam_e70_xult_wm8904_ssc.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -334,34 +361,7 @@
       <itemPath>../src/app_tone_lookup_table.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="sam_e70_xult_wm8904_ssc.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/a_ssc.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_wm8904_ssc/sam_e70_xult_wm8904_ssc.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e70_xult_wm8904_ssc/harmony-manifest-success.yml</itemPath>
-      <itemPath>audio_tone_ld_sam_e70_xult_wm8904_ssc.mc3</itemPath>
+      <itemPath>../src/config/sam_e70_xult_wm8904_ssc/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -375,14 +375,14 @@
         <targetDevice>ATSAME70Q21B</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.10.248"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
