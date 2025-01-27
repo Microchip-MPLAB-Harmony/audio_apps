@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 // *****************************************************************************
@@ -59,12 +60,15 @@
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
+
 /* Handle for the APP_Tasks. */
 TaskHandle_t xAPP_Tasks;
 
-void _APP_Tasks(  void *pvParameters  )
+
+
+static void lAPP_Tasks(  void *pvParameters  )
 {
-    while(1)
+    while(true)
     {
         // KEEP THESE LINES
         /* Maintain Device Drivers */
@@ -96,12 +100,14 @@ void SYS_Tasks ( void )
     // DON'T COPY LINES FROM LEFT SIDE HERE -- will update driver in _APP_Tasks
     //
     /* Maintain the application's state machine. */
+    
         /* Create OS Thread for APP_Tasks. */
-    xTaskCreate((TaskFunction_t) _APP_Tasks,
+    (void) xTaskCreate(
+           (TaskFunction_t) lAPP_Tasks,
                 "APP_Tasks",
                 1024,
                 NULL,
-                1,
+           1U ,
                 &xAPP_Tasks);
 
 
