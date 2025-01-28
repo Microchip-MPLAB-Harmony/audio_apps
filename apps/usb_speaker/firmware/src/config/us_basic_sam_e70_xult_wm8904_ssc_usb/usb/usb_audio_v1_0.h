@@ -39,8 +39,8 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _USB_AUDIO_H_
-#define _USB_AUDIO_H_
+#ifndef USB_AUDIO_H_
+#define USB_AUDIO_H_
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -74,7 +74,7 @@
   Remarks:
     None.
 */
-#define  USB_AUDIO_CLASS_CODE 0x01
+#define  USB_AUDIO_CLASS_CODE 0x01U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -183,6 +183,8 @@ typedef enum
 USB_AUDIO_V1_ENTITY_TYPE; 
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 5.2 deviate:26 , and 6.1 deviate:7. Deviation record ID -  
+    H3_USB_MISRAC_2012_R_5_2_DR_1, H3_USB_MISRAC_2012_R_6_1_DR_1 */
 /* Audio Class Specific Terminal Types. 
 
   Summary:
@@ -665,18 +667,18 @@ typedef union __attribute__((packed))
 
 typedef struct __attribute__ ((packed))
 {
-	/* Size of this descriptor */
+    /* Size of this descriptor */
     uint8_t bLength;
-	
-	/* Interface descriptor type */
+    
+    /* Interface descriptor type */
     uint8_t bDescriptorType;
-	
-	/* Interface Descriptor Subtype */
+    
+    /* Interface Descriptor Subtype */
     uint8_t bDescriptorSubtype;
-	
-    /* Audio Device Class Specification Release Number in BCD format*/	
+    
+    /* Audio Device Class Specification Release Number in BCD format*/    
     uint16_t bcdADC;
-	
+    
     /* Total number of bytes returned for the class-specific AudioControl
        interface descriptor. Includes the combined length of this descriptor
        header and all Unit and Terminal descriptors */
@@ -1304,7 +1306,7 @@ typedef struct
 
 typedef struct
 {
-    /* Number of logical output channels in the Mixer’s output audio channel
+    /* Number of logical output channels in the Mixer?s output audio channel
        cluster */
     uint8_t bNrChannels;
 
@@ -1466,7 +1468,7 @@ typedef struct __attribute__((packed))
 
   Description:
     This type identifies the type of the USB Audio Cluster Channel Configuration.
-	This structure is as per section 3.7.2.3 
+    This structure is as per section 3.7.2.3 
     of the USB Device Class Definition for Audio Device v1.0 document. 
 
   Remarks:
@@ -1475,24 +1477,24 @@ typedef struct __attribute__((packed))
 typedef union  __attribute__((packed))
 {
     /* Value */
-	uint16_t value; 
-	
-	struct 
-	{
-		unsigned leftFront:1; 
-		unsigned rightFront:1; 
-		unsigned centerFront:1; 	
-		unsigned LFE:1; 
-		unsigned leftSurround:1; 
-		unsigned rightSurround:1; 
-		unsigned leftOfCenter:1; 
-		unsigned rightOfCenter:1; 
-		unsigned surround:1; 
-		unsigned sideLeft:1; 
-		unsigned sideRight:1; 
-		unsigned top:1; 
-		unsigned :4; 
-	};
+    uint16_t value; 
+    
+    struct 
+    {
+        unsigned leftFront:1; 
+        unsigned rightFront:1; 
+        unsigned centerFront:1;     
+        unsigned LFE:1; 
+        unsigned leftSurround:1; 
+        unsigned rightSurround:1; 
+        unsigned leftOfCenter:1; 
+        unsigned rightOfCenter:1; 
+        unsigned surround:1; 
+        unsigned sideLeft:1; 
+        unsigned sideRight:1; 
+        unsigned top:1; 
+        unsigned :4; 
+    };
 
 } USB_AUDIO_CHANNEL_CONFIG; 
 
@@ -1504,24 +1506,26 @@ typedef union  __attribute__((packed))
 
   Description:
     This type identifies the type of the USB Audio Volume Control Range.
-	This structure includes three fields for Minimum, Maximum and Resolution 
-	volume control. 
+    This structure includes three fields for Minimum, Maximum and Resolution 
+    volume control. 
 
   Remarks:
     Always needs to be packed.
 */
 typedef struct __attribute__((packed))
 {
-	/* Minimum Setting */ 
-	uint16_t wMIN; 
-	
-	/* Maximum Setting */ 
-	uint16_t wMAX; 
-	
-	/* Resolution */ 
-	uint16_t wRES; 
-	
+    /* Minimum Setting */ 
+    uint16_t wMIN; 
+    
+    /* Maximum Setting */ 
+    uint16_t wMAX; 
+    
+    /* Resolution */ 
+    uint16_t wRES; 
+    
 } USB_AUDIO_VOLUME_CONTROL_RANGE; 
+
+/* MISRAC 2012 deviation block end */
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
