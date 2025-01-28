@@ -136,6 +136,7 @@
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/device.h</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/user.h</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/configuration.h</itemPath>
+          <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -163,7 +164,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/spi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/ssc.h</itemPath>
@@ -210,7 +210,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi0.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi1.h</itemPath>
@@ -263,6 +262,61 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f2"
+                     displayName="us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/a_i2sc1.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/core.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/project.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/usb_device.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/usb_device_audio.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/wm8904_codec.yml</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1"
+                     displayName="us_basic_sam_e70_xult_wm8904_ssc_usb.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/a_ssc.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/core.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/project.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/usb_device.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/usb_device_audio.yml</itemPath>
+        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/wm8904_codec.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/harmony-manifest-success.yml</itemPath>
+      <itemPath>us_basic_sam_e70_xult_wm8904_i2sc_usb.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -369,7 +423,6 @@
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/initialization.c</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/interrupts.c</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/exceptions.c</itemPath>
-          <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/exceptionsHandler.S</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/startup_xc32.c</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/libc_syscalls.c</itemPath>
           <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/usb_device_init_data.c</itemPath>
@@ -378,61 +431,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f2"
-                     displayName="us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/a_i2sc1.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/core.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/project.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/usb_device_audio.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/us_basic_sam_e70_xult_wm8904_i2sc_usb.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1"
-                     displayName="us_basic_sam_e70_xult_wm8904_ssc_usb.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/a_ssc.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/core.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/project.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/usb_device_audio.yml</itemPath>
-        <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_ssc_usb/us_basic_sam_e70_xult_wm8904_ssc_usb.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/harmony-manifest-success.yml</itemPath>
-      <itemPath>us_basic_sam_e70_xult_wm8904_i2sc_usb.mc3</itemPath>
+      <itemPath>../src/config/us_basic_sam_e70_xult_wm8904_i2sc_usb/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -447,14 +446,14 @@
         <targetDevice>ATSAME70Q21B</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.10.248"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

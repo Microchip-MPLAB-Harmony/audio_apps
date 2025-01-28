@@ -117,13 +117,13 @@ USB_DEVICE_AUDIO_IRP_DATA gUSBDeviceAudioIrpData [USB_DEVICE_AUDIO_QUEUE_DEPTH_C
     Private to the USB Audio Function Driver.
  */
 
-uint32_t gUSBDeviceAudioUniqueBufferID = 0;
+static uint32_t gUSBDeviceAudioUniqueBufferID = 0;
 
 /* ******************************************************************************
   Function:
     USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_EventHandlerSet
     (
-        USB_DEVICE_AUDIO_INDEX instance ,
+        USB_DEVICE_AUDIO_INDEX instanceIndex ,
         USB_DEVICE_AUDIO_EVENT_HANDLER eventHandler ,
         uintptr_t context
     );
@@ -138,17 +138,17 @@ uint32_t gUSBDeviceAudioUniqueBufferID = 0;
   */ 
 USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_EventHandlerSet
 (
-    USB_DEVICE_AUDIO_INDEX iAudio ,
+    USB_DEVICE_AUDIO_INDEX instanceIndex  ,
     USB_DEVICE_AUDIO_EVENT_HANDLER eventHandler ,
-    uintptr_t userData
+    uintptr_t context
 )
 {
     USB_DEVICE_AUDIO_RESULT error = USB_DEVICE_AUDIO_RESULT_ERROR_PARAMETER_INVALID;
 
     if(eventHandler != NULL)
     {
-        gUsbDeviceAudioInstance[iAudio].appEventCallBack = eventHandler;
-        gUsbDeviceAudioInstance[iAudio].userData = userData;
+        gUsbDeviceAudioInstance[instanceIndex ].appEventCallBack = eventHandler;
+        gUsbDeviceAudioInstance[instanceIndex ].userData = context;
         error = USB_DEVICE_AUDIO_RESULT_OK;
     }
     return error;
@@ -187,16 +187,16 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_EventHandlerSet
 
 USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Read
 (
-    USB_DEVICE_AUDIO_INDEX iAudio ,
+    USB_DEVICE_AUDIO_INDEX instanceIndex ,
     USB_DEVICE_AUDIO_TRANSFER_HANDLE* transferHandle,
-    uint8_t interfaceNum ,
+    uint8_t interfaceNumber ,
     void * data ,
     size_t size
 )
 {
         USB_DEVICE_AUDIO_RESULT audioResult;
         USB_DEVICE_AUDIO_INSTANCE * thisAudioDevice;
-        thisAudioDevice = &gUsbDeviceAudioInstance[iAudio];
+        thisAudioDevice = &gUsbDeviceAudioInstance[instanceIndex];
 
          /* Make sure that we are with in the queue size for this instance */
         if(thisAudioDevice->currentQSizeRead >= thisAudioDevice->queueSizeRead)
@@ -204,7 +204,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Read
             SYS_ASSERT(false, "Read Queue is full");
             return(USB_DEVICE_AUDIO_RESULT_ERROR_TRANSFER_QUEUE_FULL);
         }
-    audioResult =   _USB_DEVICE_AUDIO_Transfer(iAudio, transferHandle, interfaceNum, data, size, USB_DEVICE_AUDIO_READ );
+    audioResult =   F_USB_DEVICE_AUDIO_Transfer(instanceIndex, transferHandle, interfaceNumber, data, size, USB_DEVICE_AUDIO_READ );
         return audioResult; 
 }
 
@@ -214,7 +214,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Read
 // *****************************************************************************
 // *****************************************************************************
 /* Function:
-    USB_ERROR USB_DEVICE_AUDIO_Write ( USB_DEVICE_AUDIO_INDEX iAudio ,
+    USB_ERROR USB_DEVICE_AUDIO_Write ( USB_DEVICE_AUDIO_INDEX instanceIndex ,
                                          uint8_t interfaceNum ,
                                          USB_DEVICE_AUDIO_DATA_BUFFER_OBJECT* bufferObj )
 
@@ -228,7 +228,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Read
 
  *
   Parameters:
-    USB_DEVICE_AUDIO_INDEX iAudio    - Audio function driver Index number
+    USB_DEVICE_AUDIO_INDEX instanceIndex    - Audio function driver Index number
  *
  *  uint8_t interfaceNum    - Audio streaming or Control Interface number
  *
@@ -245,16 +245,16 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Read
 
 USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Write
 (
-    USB_DEVICE_AUDIO_INDEX iAudio ,
+    USB_DEVICE_AUDIO_INDEX instanceIndex ,
     USB_DEVICE_AUDIO_TRANSFER_HANDLE* transferHandle,
-    uint8_t interfaceNum ,
+    uint8_t interfaceNumber ,
     void * data ,
     size_t size
 )
 {
         USB_DEVICE_AUDIO_RESULT audioResult;
         USB_DEVICE_AUDIO_INSTANCE * thisAudioDevice;
-        thisAudioDevice = &gUsbDeviceAudioInstance[iAudio];
+        thisAudioDevice = &gUsbDeviceAudioInstance[instanceIndex];
 
         /* Make sure that we are with in the queue size for this instance */
         if(thisAudioDevice->currentQSizeWrite >= thisAudioDevice->queueSizeWrite)
@@ -262,12 +262,13 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_Write
             SYS_ASSERT(false, "Write Queue is full");
             return(USB_DEVICE_AUDIO_RESULT_ERROR_TRANSFER_QUEUE_FULL);
         }
-     audioResult =   _USB_DEVICE_AUDIO_Transfer(iAudio, transferHandle, interfaceNum, data, size, USB_DEVICE_AUDIO_WRITE );
+     audioResult =   F_USB_DEVICE_AUDIO_Transfer(instanceIndex, transferHandle, interfaceNumber, data, size, USB_DEVICE_AUDIO_WRITE );
         return audioResult;
 }
 
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 10.4 False Positive:6 Deviation record ID -  H3_USB_MISRAC_2012_R_10_4_DR_1 */
 /* Function:
     USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend 
     (
@@ -301,10 +302,10 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
 (
     USB_DEVICE_AUDIO_INDEX instanceIndex,
     USB_DEVICE_AUDIO_TRANSFER_HANDLE* transferHandle,
-    USB_AUDIO_INTERRUPT_STATUS_WORD* data
+    USB_AUDIO_INTERRUPT_STATUS_WORD* status
 )
 {
-    int cnt;
+    uint32_t cnt;
     USB_DEVICE_IRP *irp;
     USB_DEVICE_AUDIO_IRP_DATA *audioIrpData;
     USB_DEVICE_AUDIO_INSTANCE *thisAudioInstance = NULL; 
@@ -317,7 +318,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
     USB_DEVICE_AUDIO_RESULT audioResult = USB_DEVICE_AUDIO_RESULT_OK;
     
     /* Check the validity of the function driver index */
-    if ( USB_DEVICE_AUDIO_INSTANCES_NUMBER <= instanceIndex )
+    if ((uint32_t)USB_DEVICE_AUDIO_INSTANCES_NUMBER <= instanceIndex )
     {
         /* Invalid handle */
         SYS_DEBUG_MESSAGE(SYS_ERROR_INFO, "\r\nUSB Device Audio v1.0 : Invalid Audio Index");
@@ -329,14 +330,14 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
         thisAudioInstance = &gUsbDeviceAudioInstance[instanceIndex];
         * transferHandle = USB_DEVICE_AUDIO_TRANSFER_HANDLE_INVALID;
         
-		/* Get pointer to the Status Interrupt Endpoint */ 
+        /* Get pointer to the Status Interrupt Endpoint */ 
         endpoint = &thisAudioInstance->infCollection.intEp;
         
         if ((thisAudioInstance->infCollection.isIntEpExists != true)
             || (endpoint->status != true))
         
         {
-			/* This means status interrupt endpoint does not exists in the descriptors */ 
+            /* This means status interrupt endpoint does not exists in the descriptors */ 
             SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\r\nUSB Device Audio v1.0 : Instance %d: Instance not configured", instanceIndex);
             audioResult = USB_DEVICE_AUDIO_RESULT_ERROR_INSTANCE_NOT_CONFIGURED; 
         }
@@ -349,12 +350,16 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
         }
     
         /* Check if user passed valid buffer */
-        else if ( data == NULL )
+        else if ( status == NULL )
         {
             /* Status data should not be null. It should point to valid data location
                return error */
             SYS_DEBUG_PRINT(SYS_ERROR_INFO, "\r\nUSB Device Audio v1.0 : Instance %d: invalid buffer", instanceIndex);
             audioResult = USB_DEVICE_AUDIO_RESULT_ERROR_INVALID_BUFFER;
+        }
+        else
+        {
+            /* Do Nothing */
         }
     }
     if (audioResult == USB_DEVICE_AUDIO_RESULT_OK)
@@ -364,7 +369,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
         if(osalError == OSAL_RESULT_TRUE)
         {
             /* Loop and find a free IRP in the Q */
-            for ( cnt = 0; cnt < USB_DEVICE_AUDIO_QUEUE_DEPTH_COMBINED; cnt++ )
+            for ( cnt = 0; cnt < (uint32_t)USB_DEVICE_AUDIO_QUEUE_DEPTH_COMBINED; cnt++ )
             {
                 /* get the IRP status */
                 if(gUSBDeviceAudioIRP[cnt].status <
@@ -380,14 +385,14 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
                     unique buffer handle with a invalid buffer handle. */
 
                     gUSBDeviceAudioUniqueBufferID ++;
-                    gUSBDeviceAudioUniqueBufferID = (gUSBDeviceAudioUniqueBufferID == 0xFFFF) ? 0 : gUSBDeviceAudioUniqueBufferID ;
+                    gUSBDeviceAudioUniqueBufferID = (gUSBDeviceAudioUniqueBufferID == 0xFFFFU) ? 0U : gUSBDeviceAudioUniqueBufferID ;
 
                     /* Retrieve endpoint address */ 
                     epStruct = endpoint->epAddr;
 
                     /* Fill IRP object with the pointer to the data that is to 
                        be transferred to the Host*/
-                    irp->data = data;
+                    irp->data = status;
 
                     /* Fill IRP object with size of the data that is to be 
                        transferred to the USB host*/
@@ -398,7 +403,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
 
                     /* Provide function address to call back when IRP is 
                        complete */
-                    irp->callback = _USB_DEVICE_AUDIO_StatusSendIRPCallBack;
+                    irp->callback = F_USB_DEVICE_AUDIO_StatusSendIRPCallBack;
                     
                     /* Request driver to complete the transfer */
                     irp->flags = USB_DEVICE_IRP_FLAG_DATA_PENDING; 
@@ -442,7 +447,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
                     osalError = OSAL_MUTEX_Unlock(&gUSBDeviceAudioCommonDataObj.mutexAUDIOIRP);
                     if(osalError == OSAL_RESULT_TRUE)
                     {
-                        audioResult = irpErr; 
+                        audioResult = (USB_DEVICE_AUDIO_RESULT)irpErr; 
                     }
                     else
                     {
@@ -490,7 +495,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
 
 /* ******************************************************************************
   Function:
-    USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
+    USB_DEVICE_AUDIO_RESULT F_USB_DEVICE_AUDIO_Transfer
     (
         USB_DEVICE_AUDIO_INDEX iAudio,
         USB_DEVICE_AUDIO_TRANSFER_HANDLE *transferHandle,
@@ -506,7 +511,7 @@ USB_DEVICE_AUDIO_RESULT USB_DEVICE_AUDIO_StatusSend
 
   */ 
 // *****************************************************************************
-USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
+USB_DEVICE_AUDIO_RESULT F_USB_DEVICE_AUDIO_Transfer
 (
     USB_DEVICE_AUDIO_INDEX iAudio,
     USB_DEVICE_AUDIO_TRANSFER_HANDLE *transferHandle,
@@ -552,7 +557,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
     *transferHandle = USB_DEVICE_AUDIO_TRANSFER_HANDLE_INVALID;
 
     /* check the validity of the function driver index */
-    if ( USB_DEVICE_AUDIO_INSTANCES_NUMBER <= iAudio )
+    if ( (uint32_t)USB_DEVICE_AUDIO_INSTANCES_NUMBER <= iAudio )
     {
         /* invalid handle */
         return USB_DEVICE_AUDIO_RESULT_ERROR_INSTANCE_INVALID;
@@ -571,7 +576,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
     audioControlIntrfcID = thisAudioInstance->infCollection.bControlInterfaceNum;
 
     /*Find out the array streaming interface */
-    streamInfIndex = interfaceNum - audioControlIntrfcID- 1;
+    streamInfIndex = interfaceNum - audioControlIntrfcID- 1U;
 
     /*Retrieve the active alternate setting of the interface from Audio Instance object */
     activeAlternateSetting = thisAudioInstance->infCollection.streamInf[streamInfIndex].activeSetting;
@@ -581,7 +586,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
     syncEndpoint =
             thisAudioInstance->infCollection.streamInf[streamInfIndex].alterntSetting[activeAlternateSetting].isoSyncEp.epAddr;
 
-    if (activeAlternateSetting == 0)
+    if (activeAlternateSetting == 0U)
     {
         SYS_ASSERT ( false , "alternate setting 0 does not allow Data Payload" );
         return USB_DEVICE_AUDIO_RESULT_ERROR_INSTANCE_NOT_CONFIGURED; 
@@ -597,31 +602,39 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
     /* Checking the direction of the transfer and if the write transfer is for the data endpoint */
     if (direction == USB_DEVICE_AUDIO_WRITE) 
     {
-        if ((syncEndpoint & 0x0F) && (syncEndpoint & (uint8_t )0x80))
+        if (((syncEndpoint & 0x0FU) != 0U) && ((syncEndpoint & (uint8_t )0x80U)!=0U))
         {
             tempEndpointInstance = 
                 &(thisAudioInstance->infCollection.streamInf[streamInfIndex].alterntSetting[activeAlternateSetting].isoSyncEp);
         }
         
-        else if ((dataEndpoint & 0x0F) && (dataEndpoint & (uint8_t )0x80))
+        else if (((dataEndpoint & 0x0FU) != 0U) && ((dataEndpoint & (uint8_t )0x80U) != 0U))
         {
             tempEndpointInstance = 
                 &(thisAudioInstance->infCollection.streamInf[streamInfIndex].alterntSetting[activeAlternateSetting].isoDataEp);
+        }
+        else
+        {
+            /* Do Nothing */
         }
     }
     
     else 
     {
-        if((syncEndpoint & 0x0F) && (!(syncEndpoint & (uint8_t )0x80)))
+        if(((syncEndpoint & 0x0FU) != 0U) && ((syncEndpoint & (uint8_t )0x80U) == 0U))
         {
             tempEndpointInstance = 
                 &(thisAudioInstance->infCollection.streamInf[streamInfIndex].alterntSetting[activeAlternateSetting].isoSyncEp);
         }
 
-        else if ((dataEndpoint & 0x0F) && (!(dataEndpoint & (uint8_t )0x80)))
+        else if (((dataEndpoint & 0x0FU) != 0U) && ((dataEndpoint & (uint8_t )0x80U) == 0U))
         {
             tempEndpointInstance = 
                 &(thisAudioInstance->infCollection.streamInf[streamInfIndex].alterntSetting[activeAlternateSetting].isoDataEp);
+        }
+        else
+        {
+            /* Do Nothing */
         }
     }
 
@@ -634,7 +647,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
     }
 
     /* Loop and find a free IRP in the Q */
-    for ( cnt = 0; cnt < USB_DEVICE_AUDIO_QUEUE_DEPTH_COMBINED; cnt ++ )
+    for ( cnt = 0; cnt < (uint32_t)USB_DEVICE_AUDIO_QUEUE_DEPTH_COMBINED; cnt ++ )
     {
         /* get the IRP status */
         if(gUSBDeviceAudioIRP[cnt].status <
@@ -648,7 +661,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
             unique buffer handle with a invalid buffer handle. */
 
             gUSBDeviceAudioUniqueBufferID ++;
-            gUSBDeviceAudioUniqueBufferID = (gUSBDeviceAudioUniqueBufferID == 0xFFFF) ? 0 : gUSBDeviceAudioUniqueBufferID ;
+            gUSBDeviceAudioUniqueBufferID = (gUSBDeviceAudioUniqueBufferID == 0xFFFFU) ? 0U : gUSBDeviceAudioUniqueBufferID ;
 
         
         /* Retrieve endpoint address */ 
@@ -670,7 +683,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
         audioIrpData->iAudio = iAudio;
 
         /* Provide function address to call back when IRP is complete */
-        irp->callback = _USB_DEVICE_AUDIO_TransferIRPCallBack;
+        irp->callback = F_USB_DEVICE_AUDIO_TransferIRPCallBack;
 
         /* Save array index. We will need this to retrieve data when we get IRP call back */
         irp->userData = (gUSBDeviceAudioUniqueBufferID << 16) | cnt;
@@ -731,7 +744,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
                 return (USB_DEVICE_AUDIO_RESULT_ERROR);
             }
 
-            return(irpErr);
+            return((USB_DEVICE_AUDIO_RESULT)irpErr);
         }
     }
 
@@ -748,6 +761,7 @@ USB_DEVICE_AUDIO_RESULT _USB_DEVICE_AUDIO_Transfer
     return(USB_DEVICE_AUDIO_RESULT_ERROR_TRANSFER_QUEUE_FULL);   
 }
 
+/* MISRAC 2012 deviation block end */
 /*******************************************************************************
  End of File
  */
