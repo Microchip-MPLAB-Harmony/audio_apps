@@ -61,8 +61,8 @@
 #include "usb/usb_audio_v1_0.h"
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
-#include "bsp/bsp.h"
 #include "driver/usb/usbhsv1/drv_usbhsv1.h"
+#include "bsp/bsp.h"
 #include "peripheral/twihs/master/plib_twihs0_master.h"
 #include "audio/peripheral/i2sc/plib_i2sc1.h"
 #include "FreeRTOS.h"
@@ -86,8 +86,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "ATSAME70Q21B"
+#define DEVICE_ARCH          "CORTEX-M7"
+#define DEVICE_FAMILY        "SAME"
+#define DEVICE_SERIES        "SAME70"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 240000000
+#define CPU_CLOCK_FREQUENCY 240000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -202,13 +208,13 @@ typedef struct
     /* I2C0 Driver Object */
     SYS_MODULE_OBJ drvI2C0;
 
-	SYS_MODULE_OBJ  usbDevObject0;
+    SYS_MODULE_OBJ  usbDevObject0;
 
     /* I2S0 Driver Object */
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
-	SYS_MODULE_OBJ  drvUSBHSV1Object;
+    SYS_MODULE_OBJ  drvUSBHSV1Object;
 
     SYS_MODULE_OBJ drvwm8904Codec0;
 
