@@ -57,8 +57,8 @@
 #include "peripheral/tc/plib_tc0.h"
 #include "bsp/bsp.h"
 #include "audio/peripheral/ssc/plib_ssc.h"
-#include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
+#include "driver/i2c/drv_i2c.h"
 #include "peripheral/twihs/master/plib_twihs0_master.h"
 #include "audio/driver/codec/wm8904/drv_wm8904.h"
 #include "system/int/sys_int.h"
@@ -79,8 +79,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "ATSAMV71Q21B"
+#define DEVICE_ARCH          "CORTEX-M7"
+#define DEVICE_FAMILY        "SAMV"
+#define DEVICE_SERIES        "SAMV71"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 300000000
+#define CPU_CLOCK_FREQUENCY 300000000U
 
 // *****************************************************************************
 // *****************************************************************************
