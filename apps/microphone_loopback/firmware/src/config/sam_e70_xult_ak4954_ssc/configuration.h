@@ -112,7 +112,7 @@ extern "C" {
 #define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_0
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
 
 /*** Codec Driver Configuration ***/
