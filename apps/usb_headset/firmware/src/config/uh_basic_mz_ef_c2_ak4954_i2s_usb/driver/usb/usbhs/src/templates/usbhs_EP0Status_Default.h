@@ -48,8 +48,8 @@
 
 //DOM-IGNORE-END
 
-#ifndef _USBHS_EP0STATUS_DEFAULT_H
-#define _USBHS_EP0STATUS_DEFAULT_H
+#ifndef USBHS_EP0STATUS_DEFAULT_H
+#define USBHS_EP0STATUS_DEFAULT_H
 
 #include "usbhs_registers.h"
 
@@ -359,7 +359,8 @@ PLIB_TEMPLATE bool USBHS_ExistsEP0Status_Default( USBHS_MODULE_ID index )
 }
 
 
-#endif /*_USBHS_EP0STATUS_DEFAULT_H*/
+
+#endif /*USBHS_EP0STATUS_DEFAULT_H*/
 
 /******************************************************************************
  End of File

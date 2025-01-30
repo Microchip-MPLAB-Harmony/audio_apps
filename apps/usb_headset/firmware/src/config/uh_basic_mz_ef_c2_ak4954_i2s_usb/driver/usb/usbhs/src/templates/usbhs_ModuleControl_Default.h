@@ -56,11 +56,17 @@
 
 //DOM-IGNORE-END
 
-#ifndef _USBHS_MODULECONTROL_DEFAULT_H
-#define _USBHS_MODULECONTROL_DEFAULT_H
+#ifndef USBHS_MODULECONTROL_DEFAULT_H
+#define USBHS_MODULECONTROL_DEFAULT_H
 
 #include "usbhs_registers.h"
 
+
+/* MISRA C-2012 Rule 10.3, Rule 21.1 and Rule 21.2. 
+    Deviation record ID -  
+    H3_USB_MISRAC_2012_R_10_3_DR_1, 
+    H3_USB_MISRAC_2012_R_21_2_DR_1 
+    and H3_USB_MISRAC_2012_R_21_1_DR_1 */
 //******************************************************************************
 /* Function :  USBHS_ResumeEnable_Default
 
@@ -150,9 +156,12 @@ PLIB_TEMPLATE void USBHS_SuspendDisable_Default( USBHS_MODULE_ID index )
 
 PLIB_TEMPLATE USBHS_VBUS_LEVEL USBHS_VBUSLevelGet_Default( USBHS_MODULE_ID index )
 {
+    USBHS_VBUS_LEVEL vbusLevel = USBHS_VBUS_SESSION_END; 
+    
     /* Function returns the current VBUS level */
     volatile usbhs_registers_t * usbhs = (usbhs_registers_t *)(index);
-    return((USBHS_VBUS_LEVEL)((usbhs->DEVCTLbits.w) & 0x18));
+    vbusLevel = usbhs->DEVCTLbits.w & 0x18U;
+    return vbusLevel;
 }
 
 //******************************************************************************
@@ -343,8 +352,9 @@ PLIB_TEMPLATE bool USBHS_ExistsModuleControl_Default( USBHS_MODULE_ID index )
     return true;
 }
 
+/* MISRAC 2012 deviation block end */
 
-#endif /*_USBHS_MODULECONTROL_DEFAULT_H*/
+#endif /*USBHS_MODULECONTROL_DEFAULT_H*/
 
 /******************************************************************************
  End of File

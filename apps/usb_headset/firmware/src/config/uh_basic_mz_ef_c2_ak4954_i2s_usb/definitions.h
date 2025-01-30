@@ -60,8 +60,8 @@
 #include "usb/usb_audio_v1_0.h"
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
-#include "peripheral/coretimer/plib_coretimer.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
+#include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "audio/math/libq_c/libq_c.h"
 #include "audio/driver/codec/ak4954/drv_ak4954.h"
@@ -83,8 +83,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "PIC32MZ2048EFM144"
+#define DEVICE_ARCH          "MIPS"
+#define DEVICE_FAMILY        "PIC32MZEF"
+#define DEVICE_SERIES        "PIC32MZ"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 198000000
+#define CPU_CLOCK_FREQUENCY 198000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -199,13 +205,13 @@ typedef struct
     /* I2C0 Driver Object */
     SYS_MODULE_OBJ drvI2C0;
 
-	SYS_MODULE_OBJ  usbDevObject0;
+    SYS_MODULE_OBJ  usbDevObject0;
 
     /* I2S0 Driver Object */
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
-	SYS_MODULE_OBJ  drvUSBHSObject;
+    SYS_MODULE_OBJ  drvUSBHSObject;
 
     SYS_MODULE_OBJ drvak4954Codec0;
 

@@ -120,6 +120,7 @@
                 <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/master/plib_i2c1_master.h</itemPath>
                 <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/master/plib_i2c_master_common.h</itemPath>
               </logicalFolder>
+              <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/plib_i2c_smbus_common.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f6" displayName="system" projectFiles="true">
@@ -171,6 +172,7 @@
           <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/configuration.h</itemPath>
           <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/interrupts.h</itemPath>
           <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/device.h</itemPath>
+          <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="osal" projectFiles="true">
@@ -186,6 +188,36 @@
       <itemPath>../src/app_globals.h</itemPath>
       <itemPath>../src/user_assert.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/audio_codec_ak4954.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/a_i2s2.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/core.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/i2c1.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/Math.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/project.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/usb_device.yml</itemPath>
+        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/usb_device_audio.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/harmony-manifest-success.yml</itemPath>
+      <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/harmony-manifest-failure.yml</itemPath>
+      <itemPath>uh_pic32mz_ef_c2_ak4954.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -292,6 +324,7 @@
               <logicalFolder name="f1" displayName="master" projectFiles="true">
                 <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/master/plib_i2c1_master.c</itemPath>
               </logicalFolder>
+              <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/peripheral/i2c/plib_i2c_smbus_common.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="stdio" projectFiles="true">
@@ -327,36 +360,6 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/audio_codec_ak4954.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/a_i2s2.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/core.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/i2c1.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/Math.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/project.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/usb_device_audio.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/harmony-manifest-success.yml</itemPath>
-      <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/harmony-manifest-failure.yml</itemPath>
-      <itemPath>uh_pic32mz_ef_c2_ak4954.mc3</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -369,13 +372,13 @@
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.3.58"/>
+        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.4.168"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
