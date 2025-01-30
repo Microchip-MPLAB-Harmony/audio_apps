@@ -48,10 +48,10 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "configuration.h"
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -61,48 +61,57 @@
 // *****************************************************************************
 
 
-void CORE_TIMER_InterruptHandler( void );
-void I2C1_BUS_InterruptHandler( void );
-void I2C1_MASTER_InterruptHandler( void );
-void DRV_USBHS_InterruptHandler( void );
-void DRV_USBHS_DMAInterruptHandler( void );
-void DMA0_InterruptHandler( void );
-void DMA1_InterruptHandler( void );
-
-
-
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector declarations
+// *****************************************************************************
+// *****************************************************************************
+void CORE_TIMER_Handler (void);
+void I2C1_BUS_Handler (void);
+void I2C1_MASTER_Handler (void);
+void USB_Handler (void);
+void USB_DMA_Handler (void);
+void DMA0_Handler (void);
+void DMA1_Handler (void);
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector definitions
+// *****************************************************************************
+// *****************************************************************************
+void __attribute__((used)) __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
 
-void __ISR(_I2C1_BUS_VECTOR, ipl1SRS) I2C1_BUS_Handler (void)
+void __attribute__((used)) __ISR(_I2C1_BUS_VECTOR, ipl1SRS) I2C1_BUS_Handler (void)
 {
     I2C1_BUS_InterruptHandler();
 }
 
-void __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
+void __attribute__((used)) __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
 {
     I2C1_MASTER_InterruptHandler();
 }
 
-void __ISR(_USB_VECTOR, ipl1SRS) USB_Handler (void)
+void __attribute__((used)) __ISR(_USB_VECTOR, ipl1SRS) USB_Handler (void)
 {
     DRV_USBHS_InterruptHandler();
 }
 
-void __ISR(_USB_DMA_VECTOR, ipl1SRS) USB_DMA_Handler (void)
+void __attribute__((used)) __ISR(_USB_DMA_VECTOR, ipl1SRS) USB_DMA_Handler (void)
 {
     DRV_USBHS_DMAInterruptHandler();
 }
 
-void __ISR(_DMA0_VECTOR, ipl1SRS) DMA0_Handler (void)
+void __attribute__((used)) __ISR(_DMA0_VECTOR, ipl1SRS) DMA0_Handler (void)
 {
     DMA0_InterruptHandler();
 }
 
-void __ISR(_DMA1_VECTOR, ipl1SRS) DMA1_Handler (void)
+void __attribute__((used)) __ISR(_DMA1_VECTOR, ipl1SRS) DMA1_Handler (void)
 {
     DMA1_InterruptHandler();
 }
