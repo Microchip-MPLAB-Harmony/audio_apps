@@ -45,11 +45,13 @@
 
 //DOM-IGNORE-END
 
-#ifndef _USBHS_TXEPSTATUS_DEFAULT_H
-#define _USBHS_TXEPSTATUS_DEFAULT_H
+#ifndef USBHS_TXEPSTATUS_DEFAULT_H
+#define USBHS_TXEPSTATUS_DEFAULT_H
 
 #include "usbhs_registers.h"
 
+/* MISRA C-2012 Rule 21.1 and Rule 21.2 Deviation record ID -  
+    H3_USB_MISRAC_2012_R_21_1_DR_1 and H3_USB_MISRAC_2012_R_21_2_DR_1*/
 //******************************************************************************
 /* Function :  USBHS_TxEPStatusGet_Default
 
@@ -113,8 +115,9 @@ PLIB_TEMPLATE bool USBHS_ExistsTxEPStatus_Default( USBHS_MODULE_ID index )
     return true;
 }
 
+/* MISRAC 2012 deviation block end */
 
-#endif /*_USBHS_TXEPSTATUS_DEFAULT_H*/
+#endif /*USBHS_TXEPSTATUS_DEFAULT_H*/
 
 /******************************************************************************
  End of File

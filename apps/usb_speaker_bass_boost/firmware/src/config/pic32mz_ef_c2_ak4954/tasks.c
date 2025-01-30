@@ -51,11 +51,8 @@
 // *****************************************************************************
 
 #include "configuration.h"
-//#include "definitions.h"
-//KEEP THIS - removed from definitions.h so definitions can be used in app.h
-//            to prevent having to duplication all the definitions.h definitions.
-//            in app.h
-#include "app.h"
+#include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -84,7 +81,7 @@ void SYS_Tasks ( void )
 
 
     /* Maintain Middleware & Other Libraries */
-    	/* USB Device layer tasks routine */ 
+        /* USB Device layer tasks routine */ 
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
 
     /* USBHS Driver Task Routine */ 

@@ -44,8 +44,9 @@
 
 //DOM-IGNORE-END
 
-#ifndef _USBHS_CLOCKRESETCONTROL_DEFAULT_H
-#define _USBHS_CLOCKRESETCONTROL_DEFAULT_H
+#ifndef USBHS_CLOCKRESETCONTROL_DEFAULT_H
+#define USBHS_CLOCKRESETCONTROL_DEFAULT_H
+
 
 //******************************************************************************
 /* Function :  USBHS_ExistsClockResetControl_Default
@@ -102,7 +103,8 @@ PLIB_TEMPLATE void USBHS_GlobalInterruptDisable_Default( USBHS_MODULE_ID index )
     usbcrcon->USBIE = 0;
 }
 
-#endif /*_USBHS_CLOCKRESETCONTROL_DEFAULT_H*/
+
+#endif /*USBHS_CLOCKRESETCONTROL_DEFAULT_H*/
 
 /******************************************************************************
  End of File
