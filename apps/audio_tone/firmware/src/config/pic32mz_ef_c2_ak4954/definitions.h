@@ -56,8 +56,8 @@
 #include "audio/driver/i2s/drv_i2s.h"
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
-#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "peripheral/coretimer/plib_coretimer.h"
+#include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "audio/driver/codec/ak4954/drv_ak4954.h"
 #include "audio/peripheral/i2s/plib_i2s2.h"
 #include "system/int/sys_int.h"
@@ -77,8 +77,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "PIC32MZ2048EFM144"
+#define DEVICE_ARCH          "MIPS"
+#define DEVICE_FAMILY        "PIC32MZEF"
+#define DEVICE_SERIES        "PIC32MZ"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 198000000
+#define CPU_CLOCK_FREQUENCY 198000000U
 
 // *****************************************************************************
 // *****************************************************************************

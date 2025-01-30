@@ -1,27 +1,25 @@
 /*******************************************************************************
- System Tasks File
+  Inter-Integrated Circuit (I2C) Library
+  Header File
+
+  Company:
+    Microchip Technology Inc.
 
   File Name:
-    tasks.c
+    plib_i2c_smbus_common.h
 
   Summary:
-    This file contains source code necessary to maintain system's polled tasks.
+    I2C SMBUS PLIB Common Implementation file
 
   Description:
-    This file contains source code necessary to maintain system's polled tasks.
-    It implements the "SYS_Tasks" function that calls the individual "Tasks"
-    functions for all polled MPLAB Harmony modules in the system.
+    This file defines the interface to the I2C peripheral library.
+    This library provides access to and control of the associated peripheral
+    instance.
 
-  Remarks:
-    This file requires access to the systemObjects global data structure that
-    contains the object handles to all MPLAB Harmony module objects executing
-    polled in the system.  These handles are passed into the individual module
-    "Tasks" functions to identify the instance of the module to maintain.
- *******************************************************************************/
-
+*******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018-2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -41,7 +39,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
+*******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
@@ -50,49 +48,38 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "configuration.h"
-#include "definitions.h"
-#include "sys_tasks.h"
+#ifndef PLIB_I2C_SMBUS_COMMON_H
+#define PLIB_I2C_SMBUS_COMMON_H
 
-
-
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: System "Tasks" Routine
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
-/*******************************************************************************
-  Function:
-    void SYS_Tasks ( void )
-
-  Remarks:
-    See prototype in system/common/sys_module.h.
+/* This section lists the other files that are included in this file.
 */
-void SYS_Tasks ( void )
-{
-    /* Maintain system services */
-    
 
-    /* Maintain Device Drivers */
-        DRV_AK4954_Tasks(sysObj.drvak4954Codec0);
+uint8_t SMBUSCRC8Byte(uint8_t initCRC, uint8_t data);
+uint8_t SMBUSCRC8Buffer(uint8_t initCRC, void* pData, uint32_t size);
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus // Provide C++ Compatibility
 
+    extern "C" {
 
-    /* Maintain Middleware & Other Libraries */
-    
-
-    /* Maintain the application's state machine. */
-        /* Call Application task APP. */
-    APP_Tasks();
+#endif
+// DOM-IGNORE-END
 
 
 
-
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
 }
+#endif
+// DOM-IGNORE-END
 
-/*******************************************************************************
- End of File
- */
-
+#endif /* PLIB_I2C_SMBUS_COMMON_H */

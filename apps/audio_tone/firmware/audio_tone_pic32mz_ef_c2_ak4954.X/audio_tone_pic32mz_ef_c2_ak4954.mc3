@@ -642,6 +642,7 @@
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_RX_DMA&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/a_drv_i2s_0&gt;
 &lt;/a_drv_i2s_0&gt;
@@ -653,6 +654,7 @@
   &lt;a_drv_i2s_0 dnOrder=&quot;0&quot; id=&quot;DRV_I2S_TX_DMA&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;a_drv_i2s_0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/a_drv_i2s_0&gt;
 &lt;/a_drv_i2s_0&gt;
@@ -798,7 +800,10 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
     &lt;GraphSettings canvasHeight=&quot;518&quot; canvasWidth=&quot;835&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
+      &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
+    &lt;/PowerProfiles&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_EF_Curiosity_2.0&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;467&quot; y=&quot;58&quot;/&gt;
@@ -6313,54 +6318,34 @@
 </value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.HashMap">
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\tasks.c</file>
-         <hash>1f71e3804edc6668b4d747a5eb473ff783d3dfda928090f06c311addd04aafe4</hash>
+         <file>..\src\app.c</file>
+         <hash>632c78c323cb9f8c6359f20337440c08f8461eb4b0304552b6a3cfd5c4052620</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>f096f5ae99cc8afed55a3b680a734cb07fae84f016eaf39a06e4d76cee50c6a4</hash>
+         <file>..\src\app.h</file>
+         <hash>8e35d8509552a4d1d6e6f123ad75694cf784a707f7dac592ed33b55121aa8e28</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954.c</file>
+         <hash>875eef4fc24491f28fbd83a22f3f5614e7fea5958a95671af83d43e3344b38b6</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\stdio\xc32_monitor.c</file>
-         <hash>26e5749db654ed433fd94f6c732ef8600d0cbf5196493374cf111877c02b694e</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954.h</file>
+         <hash>7315b95b44eb8b205aea27b551a5b5e9d8b45ef28730a88ec05bffed6900d888</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\dmac\plib_dmac.h</file>
-         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954_local.h</file>
+         <hash>eeefe98fd85d5ff67335635a321fa57492a55f5b87e0d88d41bf0b29524b45f2</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\i2s\drv_i2s.h</file>
+         <hash>71403974afcba76f5af909519c7a332a6cabe0dda393318ff15e05c4275cc92c</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma.h</file>
-         <hash>557896cd9ba1256276537379aa5f3cb06e1129a660db4a566e747a0ce6c63ec5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\clk\plib_clk.c</file>
-         <hash>fdb0d8baa748236601acbec18e37c2a47e9d674bf8ea3f330d3e53d529adc4e4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\clk\plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma.c</file>
-         <hash>dd7bc0bf3cfac8d8555d693f3503902d52c159e67f0b0ece6fb63b87102a433f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\int\sys_int.h</file>
-         <hash>c6ec8fc3c7ad1fa570998b9f65cb37fba4364ab07c3869f2d6cb30612a8a91e8</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\i2s\drv_i2s_definitions.h</file>
+         <hash>c9665316bf4cdf44af0e4e312bdc54341ae07f19b7cabd08d8f45cd09fae2231</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\i2s\drv_i2s_local.h</file>
@@ -6371,150 +6356,6 @@
          <hash>57e31c362cde38fd5642c091174359586b20346c278b2ba78652f0a55af15d7b</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\dmac\plib_dmac.c</file>
-         <hash>7f1123beefc17dd11a542e9dcaac596549906bed3c2d4c0cc9c91d9f6f6dcb0b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\definitions.h</file>
-         <hash>139ca73cc21fe8d6d7cc42c3f0834f1c635befc76627a7f9f809ba78f2c404be</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954_local.h</file>
-         <hash>eeefe98fd85d5ff67335635a321fa57492a55f5b87e0d88d41bf0b29524b45f2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\master\plib_i2c_master_common.h</file>
-         <hash>d575964edd097b1032012b5588ebc83cc5bb8a6cfd2d4a9a6449ba4508252dda</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\gpio\plib_gpio.h</file>
-         <hash>f2bad0d3ef50ccdf5f05dddae0863b65f11766e88fc53284efd5451c0e0f0920</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\gpio\plib_gpio.c</file>
-         <hash>a461f5dbab2d924fc641c0dcdb37830a8b04bc5d5c9d801eaec17d0ea8b83101</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\debug\sys_debug.h</file>
-         <hash>970de73fb9806906b5429168c66ab403309d8a9cad46febab875a5e6d071525e</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\int\src\sys_int.c</file>
-         <hash>ff706bb4bde7b62a65b603efea8bab8b5a7d9a1a2c1cb2a9e981d68bbf20f764</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
-      </entry>
-      <entry>
-         <file>..\src\app.h</file>
-         <hash>8e35d8509552a4d1d6e6f123ad75694cf784a707f7dac592ed33b55121aa8e28</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\src\sys_time.c</file>
-         <hash>ddec1a83e32b63552ae72f884dc849e376b60d411669554f7ec492fff180662f</hash>
-      </entry>
-      <entry>
-         <file>..\src\app.c</file>
-         <hash>632c78c323cb9f8c6359f20337440c08f8461eb4b0304552b6a3cfd5c4052620</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\interrupts.c</file>
-         <hash>639e7f6e01a63c63bffe5834308782cfefe8f4bf5046c3a51490ef02a9974904</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954.h</file>
-         <hash>7315b95b44eb8b205aea27b551a5b5e9d8b45ef28730a88ec05bffed6900d888</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\toolchain_specifics.h</file>
-         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\master\plib_i2c1_master.c</file>
-         <hash>d29b1395ef3f3b101944d32b0626e559612ef552b3ec34e899a303c4f485946f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\system.h</file>
-         <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\master\plib_i2c1_master.h</file>
-         <hash>fda7d0f697c63ad350ca2616871456fa1ec59a4a65fd41e6d7283a1589cb8039</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\codec\ak4954\drv_ak4954.c</file>
-         <hash>875eef4fc24491f28fbd83a22f3f5614e7fea5958a95671af83d43e3344b38b6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\user.h</file>
-         <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\ports\sys_ports_mapping.h</file>
-         <hash>97195d4a7a99942def4f84b563b6590ee56ecb79c39f0defdc163c548e8f85ab</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\bsp\bsp.c</file>
-         <hash>865aa42848dfc8f4be84e69f42ec6a59117bedb2a7219705ec7d8c9c68c877cc</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\driver.h</file>
-         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\drv_i2c.h</file>
-         <hash>c17a0a4f6904f2226706c71821a1dac31171a701181677c9bb512049e20b71a2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\evic\plib_evic.c</file>
-         <hash>fb81252e2ad100287f27d25c3ddc7e6bce4ed70b842f131c9b4a1d747a51a295</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\bsp\bsp.h</file>
-         <hash>d2251d229b7e68c9ab8fa5b7fba76eff357cbc73a984ee676a1b50558b612969</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\exceptions.c</file>
-         <hash>c7f83f167acb4cd93e430dd7eb6a3d13194218fdad1d75c129783ede94db1723</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\evic\plib_evic.h</file>
-         <hash>8b7673c73f8d03aa75093884824ba31d5b4af59a88890b86d8fedf8fe2a0a3e5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\configuration.h</file>
-         <hash>9fe469cd14cb2bea3082f275e539112d67d8bf7ddf59bfa8edcdfd09b29e7d90</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\device.h</file>
-         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma_mapping.h</file>
-         <hash>1f5b7e03acbc3e423c4849c62fe53eb8c6b0ab5b3f9119f2281eda6152420773</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\p32MZ2048EFM144.ld</file>
-         <hash>845668fce00fbcce2a16b1f325acfa0a1cbca5916ae3207f3e77699d2ca6272f</hash>
-      </entry>
-      <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\audio\peripheral\i2s\plib_i2s2.c</file>
          <hash>32f0e818d38bf7f05bc61ed0b72a593546c9392c0172f1e0cec82dcca2258ff9</hash>
       </entry>
@@ -6523,52 +6364,228 @@
          <hash>ff84b9f58e0b01e1b4cd6371443dd67c9718bf39782f4719b704b323f952bac1</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\int\sys_int_mapping.h</file>
-         <hash>771b853250bfb05ceac0f525749007ca1d4478e660c13f6a7b7e8fe28eefcf75</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\bsp\bsp.c</file>
+         <hash>865aa42848dfc8f4be84e69f42ec6a59117bedb2a7219705ec7d8c9c68c877cc</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\src\drv_i2c_local.h</file>
-         <hash>f82fd4270a023c7d3281752352a98a33d139a03992f8cf32e6ad04adaf8fcf5f</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\bsp\bsp.h</file>
+         <hash>a46f4db5c955b4b3eaf038e5b14c9b997ef5e89dfb6b28d031f15cdba493c3ad</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\i2s\drv_i2s_definitions.h</file>
-         <hash>c9665316bf4cdf44af0e4e312bdc54341ae07f19b7cabd08d8f45cd09fae2231</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\configuration.h</file>
+         <hash>98ab563576e64a13d6fa1661e09a990fc51341e3fb2fc699c124ec6b4a8d7404</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\ports\sys_ports.h</file>
-         <hash>30eb82378e87ab0b3f42953466081abd7d406e07efac3a1999035c3d1135c3f0</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\definitions.h</file>
+         <hash>415eba7a60b4cc30a7d39efc9c7e0d401d53c9f83f958d64707c62407e1b451b</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\audio\driver\i2s\drv_i2s.h</file>
-         <hash>71403974afcba76f5af909519c7a332a6cabe0dda393318ff15e05c4275cc92c</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\device.h</file>
+         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\initialization.c</file>
-         <hash>11c271d9cdc121e3161aa0606ab10d4aa62158b906a496e43075c936aace41cd</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\src\drv_i2c.c</file>
-         <hash>69e18b04ea0f05b333f7af47e995f05837b64ae0ecb9ae820998ce5f88552cb9</hash>
-      </entry>
-      <entry>
-         <file>..\src\main.c</file>
-         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\driver.h</file>
+         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\driver\driver_common.h</file>
          <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\drv_i2c.h</file>
+         <hash>098d38bbc9c9d42befb9e601cfaf7f342ce8c670b788c961ef84df6db1ecbf82</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\drv_i2c_definitions.h</file>
-         <hash>0ab603b6bb5203774c4772ff7966aae847baaed517036066e4caf1004fa007c5</hash>
+         <hash>71a2b8fc43aaaeb6a3a82954c94ef244c1fc93def1c8589d72982cc0795c9e3d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\src\drv_i2c.c</file>
+         <hash>c25527b996b4976ae46d22b521a155a1d58a10c201d80a704aa8a48008944dfd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\driver\i2c\src\drv_i2c_local.h</file>
+         <hash>efe3b598a6fc3492f7f448c0077edcce4378d2029b5a26d304e0293e0d4711f7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\exceptions.c</file>
+         <hash>8c1843dacd6aec28ef12be3d763763a268e0facd02d4f1e7d67e21a8d73061d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\initialization.c</file>
+         <hash>15ad1a3df33f536869ee2e00127d3dbf9dac667cf79928d222c493e4a36a8b6c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\interrupts.c</file>
+         <hash>6bb270676944c8539691af7f213ba0b6eb74380d078087a70a4fa2af701c415f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\interrupts.h</file>
+         <hash>122dcd8870763b491458787d17efdf549c7347f22759fdd5822fa795baa6da69</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\osal\osal.h</file>
+         <hash>1cfe3b61d9693b2369922041eef33fe16b3c1ccd9c85d4ded808b805f90a869c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\osal\osal_definitions.h</file>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\osal\osal_impl_basic.h</file>
+         <hash>65e68edbc0320d0407399f65e6d06ff7e6d3d7697231cf1fe0a1fdf1d65f0463</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\p32MZ2048EFM144.ld</file>
+         <hash>46672b0a06fb42db5538d8da4ec36d5fcc0498ab85defe9a284be2853972bf25</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\clk\plib_clk.c</file>
+         <hash>dcf3d0fc459e0d11b609cbda3e19e635313453e005e875606149213a9f1deec4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\clk\plib_clk.h</file>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\coretimer\plib_coretimer.c</file>
+         <hash>2f636a8a90403a73ce55b8397c9ea548bb1e4ef7c022796ec2b3dffe7f97e96c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\coretimer\plib_coretimer.h</file>
+         <hash>42a58df73ac0549c487c2058d8c07ac7f42f89e04423c0c0193169a7fc05544a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\dmac\plib_dmac.c</file>
+         <hash>3ca9adb15a0d497927b22ca4814b9706ea9eaf02d63bb4aebf9bd94f35eb8753</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\dmac\plib_dmac.h</file>
+         <hash>78b9533671371600d12031eb6280ef51c292677cc636c809bb1b16ab772a4f8d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\evic\plib_evic.c</file>
+         <hash>26f011a77236bb7f3e3de8874a1fddc5bd01c26f1d0bdf4fa113b088427efb96</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\evic\plib_evic.h</file>
+         <hash>8d23fbec497272607e866c677642a16f99b84018980cee72d0df73db1f696194</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\gpio\plib_gpio.c</file>
+         <hash>84cb8f28ac1e39570ce8908631044d64e9ccc1e595e32fede1191877e61a9974</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\gpio\plib_gpio.h</file>
+         <hash>ce2ff0f3eb3ec0c648ea4c6c4119a02d5e4d2673b24696043ac78d94ec19feae</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\master\plib_i2c1_master.c</file>
+         <hash>0d6d7c1e0ead519196136befccd7b52406af241cdec50e589936ecfd630abb39</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\master\plib_i2c1_master.h</file>
+         <hash>082ceb37abffa9deec101f8cdfe8d3f5e1b7c9f576458bf464dd1d4c7de6ee33</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\master\plib_i2c_master_common.h</file>
+         <hash>e8e91fe4308eb9028f18cdb9ac7db5b82b0c3869c0911f884b9359940eedb411</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\plib_i2c_smbus_common.c</file>
+         <hash>026121a1d5fae1028604b3031f89253ed36f588d037beb3722351261ce514dd2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\peripheral\i2c\plib_i2c_smbus_common.h</file>
+         <hash>585f8d40c9fcaa072abdf3039cbc4b26ee3fbcb902171dd7e79a682e3973f995</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\stdio\xc32_monitor.c</file>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\debug\sys_debug.h</file>
+         <hash>aa94da8f32cbcb40672145542d149d077ff8f4b25c08d47d53e3d206d1c6bb83</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma.c</file>
+         <hash>6697075e2dd0c93e8af4afb996ae9c70dd8fac27d592a671130f32a9b8649b0b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma.h</file>
+         <hash>696ee09354ceb3954ef5ca0be1fc9dc45cb6955beff13ff6ebdf92a923b62890</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\dma\sys_dma_mapping.h</file>
+         <hash>834d16463a4ad2643f1b3c521a9ef3a854d9f10895a4197392047f8e582e2f73</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\int\src\sys_int.c</file>
+         <hash>30ac5e334ca90204f545f1ab769ae26f421b910b3fb3be99354b364febceee64</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\int\sys_int.h</file>
+         <hash>2c878ab7ff41ae56b5c0c3c94929ad66eb87b8660bf9a439177d049e8ad8f8c8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\int\sys_int_mapping.h</file>
+         <hash>a2dcf05575becc98aa212af1d220eda07487bd645d82c4d7a980aa3a22384cf3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\ports\sys_ports.h</file>
+         <hash>30eb82378e87ab0b3f42953466081abd7d406e07efac3a1999035c3d1135c3f0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\ports\sys_ports_mapping.h</file>
+         <hash>97195d4a7a99942def4f84b563b6590ee56ecb79c39f0defdc163c548e8f85ab</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\system.h</file>
+         <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\system_common.h</file>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\system_module.h</file>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\src\sys_time.c</file>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\src\sys_time_local.h</file>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\sys_time.h</file>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_c2_ak4954\system\time\sys_time_definitions.h</file>
-         <hash>904195d4340ba6b97cf19c25b9695d2a9f37ed67cf6abdf8ee1ee839506e2801</hash>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\tasks.c</file>
+         <hash>a900d4053a34f6dbcaa58508278dd8d78e617433702dc33a19287300c2fa0f40</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\toolchain_specifics.h</file>
+         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_c2_ak4954\user.h</file>
+         <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
+      </entry>
+      <entry>
+         <file>..\src\main.c</file>
+         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
