@@ -41,8 +41,8 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _USB_DEVICE_AUDIO_H
-#define _USB_DEVICE_AUDIO_H
+#ifndef USB_DEVICE_AUDIO_H
+#define USB_DEVICE_AUDIO_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -74,6 +74,9 @@
 // *****************************************************************************
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 3.1 deviate:6, 5.2 deviate:25, 5.5 deviate:2 and 8.6 deviate:1. 
+   Deviation record ID - H3_USB_MISRAC_2012_R_3_1_DR_1, H3_USB_MISRAC_2012_R_5_2_DR_1, 
+   H3_USB_MISRAC_2012_R_5_5_DR_1, H3_USB_MISRAC_2012_R_8_6_DR_1   */
 /* USB Device Audio Function Driver Index
 
   Summary:
@@ -1310,6 +1313,8 @@ typedef struct
     size_t queueSizeStatusSend;    
 
 } USB_DEVICE_AUDIO_INIT;
+
+/* MISRAC 2012 deviation block end */
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
