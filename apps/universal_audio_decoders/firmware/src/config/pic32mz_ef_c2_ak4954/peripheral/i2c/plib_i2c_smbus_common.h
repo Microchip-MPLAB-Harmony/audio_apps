@@ -1,24 +1,25 @@
 /*******************************************************************************
-  Interrupt System Service Mapping File
+  Inter-Integrated Circuit (I2C) Library
+  Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    sys_int_mapping.h
+    plib_i2c_smbus_common.h
 
   Summary:
-    Interrupt System Service mapping file.
+    I2C SMBUS PLIB Common Implementation file
 
   Description:
-    This header file contains the mapping of the APIs defined in the API header
-    to either the function implementations or macro implementation or the
-    specific variant implementation.
-*******************************************************************************/
+    This file defines the interface to the I2C peripheral library.
+    This library provides access to and control of the associated peripheral
+    instance.
 
-//DOM-IGNORE-BEGIN
-/******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*******************************************************************************/
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2018-2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,26 +40,46 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-//DOM-IGNORE-END
-
-#ifndef SYS_INT_MAPPING_H
-#define SYS_INT_MAPPING_H
+// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interrupt System Service Mapping
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-/* MISRA C-2012 Rule 5.8 deviated:6 Deviation record ID -  H3_MISRAC_2012_R_5_8_DR_1 */
+#ifndef PLIB_I2C_SMBUS_COMMON_H
+#define PLIB_I2C_SMBUS_COMMON_H
 
-#define SYS_INT_IsEnabled()                 ((bool)(_CP0_GET_STATUS() & 0x01))
-#define SYS_INT_SourceEnable( source )      EVIC_SourceEnable( source )
-#define SYS_INT_SourceIsEnabled( source )   EVIC_SourceIsEnabled( source )
-#define SYS_INT_SourceStatusGet( source )   EVIC_SourceStatusGet( source )
-#define SYS_INT_SourceStatusSet( source )   EVIC_SourceStatusSet( source )
-#define SYS_INT_SourceStatusClear( source ) EVIC_SourceStatusClear( source )
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
-/* MISRAC 2012 deviation block end */
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+/* This section lists the other files that are included in this file.
+*/
 
-#endif // SYS_INT_MAPPING_H
+uint8_t SMBUSCRC8Byte(uint8_t initCRC, uint8_t data);
+uint8_t SMBUSCRC8Buffer(uint8_t initCRC, void* pData, uint32_t size);
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
+
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+}
+#endif
+// DOM-IGNORE-END
+
+#endif /* PLIB_I2C_SMBUS_COMMON_H */

@@ -24,6 +24,8 @@
 /* Created by plibgen $Revision: 1.31 $ */
 
 
+#ifndef PLIB_USBHS_HEADER_H_INCLUDED__
+#define  PLIB_USBHS_HEADER_H_INCLUDED__
 //* Section 1 - Enumerate instances, define constants, VREGs */
 
 #include <xc.h>
@@ -39,21 +41,24 @@
     #define PLIB_INLINE static inline 
 #endif
 
-#ifndef _PLIB_UNSUPPORTED
-    #define _PLIB_UNSUPPORTED 
+#ifndef M_PLIB_UNSUPPORTED
+    #define M_PLIB_UNSUPPORTED 
 #endif
 
 #ifndef PLIB_ASSERT
     #define PLIB_ASSERT
 #endif 
 
+/* MISRA C-2012 Rule 5.2, Rule 5.5, Rule 10.3, 
+   Rule 21.1, and Rule 21.2. Deviation record ID -  
+    H3_USB_MISRAC_2012_R_5_2_DR_1, H3_USB_MISRAC_2012_R_21_2_DR_1,
+    H3_USB_MISRAC_2012_R_5_5_DR_1, H3_USB_MISRAC_2012_R_10_3_DR_1 and
+    H3_USB_MISRAC_2012_R_21_1_DR_1  */
 
-typedef enum {
 
-    USBHS_ID_0 = _USB_BASE_ADDRESS,
-    USBHS_NUMBER_OF_MODULES = 1
-
-} USBHS_MODULE_ID;
+typedef uint32_t USBHS_MODULE_ID;
+#define USBHS_ID_0 _USB_BASE_ADDRESS
+#define USBHS_NUMBER_OF_MODULES 1U
 
 typedef enum {
 
@@ -675,3 +680,5 @@ PLIB_INLINE_API bool PLIB_USBHS_ExistsEndpointOperations(USBHS_MODULE_ID index)
      return USBHS_ExistsEndpointOperations_Default(index);
 }
 
+/* MISRAC 2012 deviation block end */
+#endif

@@ -59,14 +59,14 @@
 #include "peripheral/dmac/plib_dmac.h"
 #include "bsp/bsp.h"
 #include "audio/driver/i2s/drv_i2s.h"
-#include "peripheral/uart/plib_uart6.h"
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
+#include "peripheral/uart/plib_uart6.h"
+#include "usb/usb_chapter_9.h"
+#include "usb/usb_host.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
 #include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "peripheral/coretimer/plib_coretimer.h"
-#include "usb/usb_chapter_9.h"
-#include "usb/usb_host.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -92,8 +92,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "PIC32MZ2048EFM144"
+#define DEVICE_ARCH          "MIPS"
+#define DEVICE_FAMILY        "PIC32MZEF"
+#define DEVICE_SERIES        "PIC32MZ"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 198000000
+#define CPU_CLOCK_FREQUENCY 198000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -212,9 +218,9 @@ typedef struct
     SYS_MODULE_OBJ drvI2S0;
 
     SYS_MODULE_OBJ  sysTime;
-	SYS_MODULE_OBJ  drvUSBHSObject;
+    SYS_MODULE_OBJ  usbHostObject0;
 
-	SYS_MODULE_OBJ  usbHostObject0;
+    SYS_MODULE_OBJ  drvUSBHSObject;
 
     SYS_MODULE_OBJ drvak4954Codec0;
 

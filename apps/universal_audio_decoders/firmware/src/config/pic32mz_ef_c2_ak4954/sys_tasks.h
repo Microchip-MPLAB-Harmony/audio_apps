@@ -1,19 +1,23 @@
- /*******************************************************************************
-  USB Host Initialization File
+/*******************************************************************************
+ System Tasks Header File
 
   File Name:
-    usb_host_init_data.c
+    sys_tasks.h
 
   Summary:
-    This file contains source code necessary to initialize USB Host Stack.
+    This file contains declarations for task handles.
 
   Description:
-    This file contains source code necessary to initialize USB Host Stack.
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
+
+  Remarks:
+    None
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -35,42 +39,18 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
  *******************************************************************************/
 // DOM-IGNORE-END
+
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+
 #include "configuration.h"
-#include "definitions.h" 
-
-/* MISRA C-2012 Rule 11.8 deviated:2 and 20.7 devaited:4 deviated below. Deviation record ID -  
-    H3_USB_MISRAC_2012_R_11_8_DR_1, H3_USB_MISRAC_2012_R_20_7_DR_1 */
-
-static const USB_HOST_TPL_ENTRY USBTPList[1] = 
-{
-    TPL_INTERFACE_CLASS_SUBCLASS_PROTOCOL
-    (
-        USB_MSD_CLASS_CODE, 
-        USB_MSD_SUBCLASS_CODE_SCSI_TRANSPARENT_COMMAND_SET, 
-        USB_MSD_PROTOCOL, 
-        NULL,  
-        USB_HOST_MSD_INTERFACE
-    ),
+#include "definitions.h"
 
 
-};
-
-static const USB_HOST_HCD hcdTable = 
-{
-    /* Index of the USB Driver used by the Host Layer */
-    .drvIndex = DRV_USBHS_INDEX_0,
-
-    /* Pointer to the USB Driver Functions. */
-    .hcdInterface = DRV_USBHS_HOST_INTERFACE,
-
-};
-
-const USB_HOST_INIT usbHostInitData = 
-{
-    .nTPLEntries = 1 ,
-    .tplList = (USB_HOST_TPL_ENTRY *)USBTPList,
-    .hostControllerDrivers = (USB_HOST_HCD *)&hcdTable    
-};
-/* MISRAC 2012 deviation block end */
-
-// </editor-fold>
+#endif //SYS_TASKS_H

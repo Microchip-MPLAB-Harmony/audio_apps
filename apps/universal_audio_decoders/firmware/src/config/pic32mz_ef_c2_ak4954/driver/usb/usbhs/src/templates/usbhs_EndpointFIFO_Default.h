@@ -45,11 +45,15 @@
 
 //DOM-IGNORE-END
 
-#ifndef _USBHS_ENDPOINTFIFO_DEFAULT_H
-#define _USBHS_ENDPOINTFIFO_DEFAULT_H
+#ifndef USBHS_ENDPOINTFIFO_DEFAULT_H
+#define USBHS_ENDPOINTFIFO_DEFAULT_H
 
 #include "usbhs_registers.h"
 
+/* MISRA C-2012 Rule 10.3, Rule 11.3,
+   Rule 11.8. Deviation record ID -  
+    H3_USB_MISRAC_2012_R_10_3_DR_1, H3_USB_MISRAC_2012_R_11_3_DR_1,
+    H3_USB_MISRAC_2012_R_11_8_DR_1 */
 
 //******************************************************************************
 /* Function :  USBHS_EndpointFIFOLoad_Default
@@ -154,7 +158,7 @@ int PLIB_TEMPLATE USBHS_EndpointFIFOUnload_Default
 
     volatile usbhs_registers_t * usbhs = (usbhs_registers_t *)(index);
     volatile uint8_t * fifo, * data;
-    volatile unsigned int count;
+    unsigned int count;
     size_t i;
 
     /* Get the pointer to endpoint specific FIFO and control registers. The
@@ -212,7 +216,7 @@ int PLIB_TEMPLATE USBHS_DeviceEPFIFOUnload_Default
 
     volatile usbhs_registers_t * usbhs = (usbhs_registers_t *)(index);
     volatile uint8_t * fifo, * data;
-    volatile unsigned int count;
+    unsigned int count;
     size_t i;
 
     /* Get the pointer to endpoint specific FIFO and control registers. The
@@ -336,9 +340,17 @@ void PLIB_TEMPLATE USBHS_Endpoint0FIFOFlush_Default( USBHS_MODULE_ID index )
     /* Check if transmit packet ready or if the receive packet ready is set. If
      * so then clear the flush */
     
-    if((usbhs->EPCSR[0].CSR0L_DEVICEbits.TXPKTRDY) || (usbhs->EPCSR[0].CSR0L_DEVICEbits.RXPKTRDY))
+    if((usbhs->EPCSR[0].CSR0L_DEVICEbits.TXPKTRDY) == 1U)
     {
         usbhs->EPCSR[0].CSR0H_DEVICEbits.FLSHFIFO = 1;
+    }
+    else if((usbhs->EPCSR[0].CSR0L_DEVICEbits.RXPKTRDY) == 1U)
+    {
+        usbhs->EPCSR[0].CSR0H_DEVICEbits.FLSHFIFO = 1;
+    }
+    else
+    {
+        /*Do nothing*/
     }
 }
 
@@ -362,7 +374,7 @@ void PLIB_TEMPLATE USBHS_EndpointTxFIFOFlush_Default
     /* This function will clear the FIFO for a non-zero endpoint */
    
     volatile usbhs_registers_t * usbhs = (usbhs_registers_t *)(index);
-    if(usbhs->EPCSR[endpoint].TXCSRL_DEVICEbits.TXPKTRDY)
+    if(usbhs->EPCSR[endpoint].TXCSRL_DEVICEbits.TXPKTRDY == 1U)
     {
         usbhs->EPCSR[endpoint].TXCSRL_DEVICEbits.FLUSH = 1;
     }
@@ -411,8 +423,9 @@ bool PLIB_TEMPLATE USBHS_ExistsEndpointFIFO_Default( USBHS_MODULE_ID index )
     return true;
 }
 
+/* MISRAC 2012 deviation block end */
 
-#endif /*_USBHS_ENDPOINTFIFO_DEFAULT_H*/
+#endif /*USBHS_ENDPOINTFIFO_DEFAULT_H*/
 
 /******************************************************************************
  End of File
