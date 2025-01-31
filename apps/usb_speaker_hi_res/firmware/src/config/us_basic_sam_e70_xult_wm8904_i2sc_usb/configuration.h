@@ -109,15 +109,12 @@ extern "C" {
 #define DRV_I2S_QUEUE_SIZE_IDX0        128
 #define DRV_I2S_DATA_LENGTH_IDX0       32
 #define DRV_I2S_INT_SRC_IDX0           I2SC1_IRQn
-#define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_3
+#define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_1
 #define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_0
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
-
-/* I2S Driver Common Configuration Options */
-#define DRV_I2S_INSTANCES_NUMBER              1
 
 /*** Codec Driver Configuration ***/
 
@@ -190,6 +187,9 @@ extern "C" {
 #define DRV_CODEC_GetI2SDriver                              DRV_WM8904_GetI2SDriver
 #define DRV_CODEC_LRCLK_Sync                                DRV_WM8904_LRCLK_Sync 
 
+/* I2S Driver Common Configuration Options */
+#define DRV_I2S_INSTANCES_NUMBER              1
+
 
 
 // *****************************************************************************
@@ -198,23 +198,23 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* Number of Endpoints used */
-#define DRV_USBHSV1_ENDPOINTS_NUMBER                        3
+#define DRV_USBHSV1_ENDPOINTS_NUMBER                        3U
 
 /* The USB Device Layer will not initialize the USB Driver */
 #define USB_DEVICE_DRIVER_INITIALIZE_EXPLICIT
 
 /* Maximum device layer instances */
-#define USB_DEVICE_INSTANCES_NUMBER                         1
+#define USB_DEVICE_INSTANCES_NUMBER                         1U
 
 /* EP0 size in bytes */
-#define USB_DEVICE_EP0_BUFFER_SIZE                          64
+#define USB_DEVICE_EP0_BUFFER_SIZE                          64U
 
 
 
 /*** USB Driver Configuration ***/
 
 /* Maximum USB driver instances */
-#define DRV_USBHSV1_INSTANCES_NUMBER                        1
+#define DRV_USBHSV1_INSTANCES_NUMBER                        1U
 
 /* Interrupt mode enabled */
 #define DRV_USBHSV1_INTERRUPT_MODE                          true
@@ -229,16 +229,16 @@ extern "C" {
 #define USB_ALIGN  CACHE_ALIGN
 
 /* Maximum instances of Audio function driver */
-#define USB_DEVICE_AUDIO_INSTANCES_NUMBER    1 
+#define USB_DEVICE_AUDIO_INSTANCES_NUMBER    1U 
 
 
 /* Audio Transfer Queue Size for both read and
    write. Applicable to all instances of the
    function driver */
-#define USB_DEVICE_AUDIO_QUEUE_DEPTH_COMBINED 130
+#define USB_DEVICE_AUDIO_QUEUE_DEPTH_COMBINED 130U
 
 /* No of Audio streaming interfaces */
-#define USB_DEVICE_AUDIO_MAX_STREAMING_INTERFACES   1
+#define USB_DEVICE_AUDIO_MAX_STREAMING_INTERFACES   1U
 
 /* No of alternate settings */
 #define USB_DEVICE_AUDIO_MAX_ALTERNATE_SETTING      2

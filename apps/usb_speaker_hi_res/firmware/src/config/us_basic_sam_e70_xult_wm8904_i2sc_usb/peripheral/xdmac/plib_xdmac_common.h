@@ -55,6 +55,7 @@
 */
 
 #include <stddef.h>
+#include "toolchain_specifics.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -133,6 +134,8 @@ typedef uint32_t XDMAC_CHANNEL_CONFIG;
     device data sheet to determine availability.
 */
 
+/* MISRA C-2012 Rule 6.1 deviated 6 times. Deviation record ID -  H3_MISRAC_2012_R_6_1_DR_1 */
+
 typedef union
 {
     struct
@@ -204,7 +207,8 @@ typedef struct {
 */
 
 /* View 0 */
-typedef struct {
+typedef struct
+{
 
     /* Next Descriptor Address number. */
     uint32_t mbr_nda;
@@ -215,10 +219,12 @@ typedef struct {
     /* Destination Address Member. */
     uint32_t mbr_da;
 
+
 } XDMAC_DESCRIPTOR_VIEW_0;
 
 /* View 1 */
-typedef struct {
+typedef struct
+{
 
     /* Next Descriptor Address number. */
     uint32_t mbr_nda;
@@ -232,10 +238,12 @@ typedef struct {
     /* Destination Address Member. */
     uint32_t mbr_da;
 
+
 } XDMAC_DESCRIPTOR_VIEW_1;
 
 /* View 2 */
-typedef struct {
+typedef struct
+{
 
     /* Next Descriptor Address number. */
     uint32_t mbr_nda;
@@ -253,10 +261,12 @@ typedef struct {
     /* TODO: Redefine type to XDMAC_CC white updating to N type */
     uint32_t mbr_cfg;
 
+
 } XDMAC_DESCRIPTOR_VIEW_2;
 
 /* View 3 */
-typedef struct {
+typedef struct
+{
 
     /* Next Descriptor Address number. */
     uint32_t mbr_nda;
@@ -284,6 +294,7 @@ typedef struct {
 
     /* Destination Micro-block Stride Member. */
     uint32_t mbr_dus;
+
 
 } XDMAC_DESCRIPTOR_VIEW_3;
 
