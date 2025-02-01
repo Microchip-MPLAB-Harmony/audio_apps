@@ -98,10 +98,6 @@
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="ports" displayName="ports" projectFiles="true">
-              <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/ports/sys_ports_mapping.h</itemPath>
-              <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/ports/sys_ports.h</itemPath>
-            </logicalFolder>
             <logicalFolder name="f1" displayName="time" projectFiles="true">
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/time/sys_time.h</itemPath>
               <itemPath>../src/config/sam_e54_cult_wm8904_freertos/system/time/sys_time_definitions.h</itemPath>
@@ -120,6 +116,7 @@
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/user.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -141,6 +138,7 @@
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="portable" projectFiles="true">
             <logicalFolder name="f1" displayName="GCC" projectFiles="true">
@@ -285,6 +283,35 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="sam_e54_cult_wm8904_freertos.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sercom6.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/tc0.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/harmony-manifest-success.yml</itemPath>
+      <itemPath>mic_loopback_sam_e54_cult_wm8904_freertos.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -420,35 +447,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="sam_e54_cult_wm8904_freertos.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sercom6.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/tc0.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/harmony-manifest-success.yml</itemPath>
-      <itemPath>mic_loopback_sam_e54_cult_wm8904_freertos.mc3</itemPath>
+      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -462,14 +461,14 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.7.122"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.8.234"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
