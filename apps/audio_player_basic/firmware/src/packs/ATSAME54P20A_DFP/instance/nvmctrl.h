@@ -1,43 +1,40 @@
-/**
- * \brief Instance header file for ATSAME54P20A
+/*
+ * Instance header file for ATSAME54P20A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2021-04-16T09:25:23Z */
+/* file generated from device description file (ATDF) version 2023-03-17T09:50:08Z */
 #ifndef _SAME54_NVMCTRL_INSTANCE_
 #define _SAME54_NVMCTRL_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for NVMCTRL peripheral ========== */
-#define NVMCTRL_BLOCK_SIZE                       _UL_(8192) /* Size Of Block (Bytes, Smallest Granularity for Erase Operation) */
-#define NVMCTRL_FLASH_SIZE                       _UL_(1048576) 
-#define NVMCTRL_PAGES                            _UL_(2048) 
-#define NVMCTRL_PAGES_PR_REGION                  _UL_(128)  
-#define NVMCTRL_PSM_0_FRMFW_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_PSM_0_FRMLP_FWS_0_MAX_FREQ       _UL_(18000000) 
-#define NVMCTRL_PSM_0_FRMLP_FWS_1_MAX_FREQ       _UL_(36000000) 
-#define NVMCTRL_PSM_0_FRMHS_FWS_0_MAX_FREQ       _UL_(25000000) 
-#define NVMCTRL_PSM_0_FRMHS_FWS_1_MAX_FREQ       _UL_(50000000) 
-#define NVMCTRL_PSM_1_FRMFW_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_PSM_1_FRMLP_FWS_0_MAX_FREQ       _UL_(8000000) 
-#define NVMCTRL_PSM_1_FRMLP_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_INSTANCE_ID                      _UL_(34)   /* Instance index for NVMCTRL */
+#define NVMCTRL_BLOCK_SIZE                       (8192)     /* Size Of Block (Bytes, Smallest Granularity for Erase Operation) */
+#define NVMCTRL_FLASH_SIZE                       (1048576)  
+#define NVMCTRL_INSTANCE_ID                      (34)       /* Instance index for NVMCTRL */
+#define NVMCTRL_PAGES                            (2048)     
+#define NVMCTRL_PAGES_PR_REGION                  (128)      
+#define NVMCTRL_PSM_0_FRMFW_FWS_1_MAX_FREQ       (12000000) 
+#define NVMCTRL_PSM_0_FRMHS_FWS_0_MAX_FREQ       (25000000) 
+#define NVMCTRL_PSM_0_FRMHS_FWS_1_MAX_FREQ       (50000000) 
+#define NVMCTRL_PSM_0_FRMLP_FWS_0_MAX_FREQ       (18000000) 
+#define NVMCTRL_PSM_0_FRMLP_FWS_1_MAX_FREQ       (36000000) 
+#define NVMCTRL_PSM_1_FRMFW_FWS_1_MAX_FREQ       (12000000) 
+#define NVMCTRL_PSM_1_FRMLP_FWS_0_MAX_FREQ       (8000000)  
+#define NVMCTRL_PSM_1_FRMLP_FWS_1_MAX_FREQ       (12000000) 
 
 #endif /* _SAME54_NVMCTRL_INSTANCE_ */

@@ -127,15 +127,12 @@ typedef uint16_t USART_ERROR;
 
 typedef enum
 {
-    USART_DATA_5_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_5_BIT,
-
+        USART_DATA_5_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_5_BIT,
     USART_DATA_6_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_6_BIT,
-
     USART_DATA_7_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_7_BIT,
-
     USART_DATA_8_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_8_BIT,
-
     USART_DATA_9_BIT = SERCOM_USART_INT_CTRLB_CHSIZE_9_BIT,
+
 
     /* Force the compiler to reserve 32-bit memory for each enum */
     USART_DATA_INVALID = 0xFFFFFFFFU
@@ -188,9 +185,9 @@ typedef enum
 
 typedef enum
 {
-    USART_STOP_1_BIT = SERCOM_USART_INT_CTRLB_SBMODE_1_BIT,
+        USART_STOP_0_BIT = SERCOM_USART_INT_CTRLB_SBMODE_1_BIT,
+    USART_STOP_1_BIT = SERCOM_USART_INT_CTRLB_SBMODE_2_BIT,
 
-    USART_STOP_2_BIT = SERCOM_USART_INT_CTRLB_SBMODE_2_BIT,
 
     /* Force the compiler to reserve 32-bit memory for each enum */
     USART_STOP_INVALID = 0xFFFFFFFFU
@@ -279,31 +276,31 @@ typedef void (*SERCOM_USART_CALLBACK)( uintptr_t context );
 
 typedef struct
 {
-    uint8_t *                   txBuffer;
+    void *                              txBuffer;
 
-    size_t                               txSize;
+    size_t                              txSize;
 
-    volatile size_t                      txProcessedSize;
+    size_t                              txProcessedSize;
 
-    SERCOM_USART_CALLBACK                txCallback;
+    SERCOM_USART_CALLBACK               txCallback;
 
-    volatile uintptr_t                   txContext;
+    uintptr_t                           txContext;
 
-    volatile bool                        txBusyStatus;
+    bool                                txBusyStatus;
 
-    uint8_t *                   rxBuffer;
+    void *                              rxBuffer;
 
-    size_t                               rxSize;
+    size_t                              rxSize;
 
-    volatile size_t                      rxProcessedSize;
+    size_t                              rxProcessedSize;
 
-    SERCOM_USART_CALLBACK                rxCallback;
+    SERCOM_USART_CALLBACK               rxCallback;
 
-    volatile uintptr_t                   rxContext;
+    uintptr_t                           rxContext;
 
-    volatile bool                        rxBusyStatus;
+    bool                                rxBusyStatus;
 
-    volatile USART_ERROR                 errorStatus;
+    USART_ERROR                         errorStatus;
 
 } SERCOM_USART_OBJECT;
 
@@ -316,7 +313,7 @@ typedef enum
     /* Receive ring buffer is full. Application must read the data out to avoid missing data on the next RX interrupt. */
     SERCOM_USART_EVENT_READ_BUFFER_FULL,
 
-    /* USART error. Application must call the USARTx_ErrorGet API to get the type of error and clear the error. */
+    /* USART error. Application must call the SERCOMx_USART_ErrorGet API to get the type of error and clear the error. */
     SERCOM_USART_EVENT_READ_ERROR,
 
     /* Threshold number of free space is available in the transmit ring buffer */
@@ -364,9 +361,9 @@ typedef struct
 
     uintptr_t                                           wrContext;
 
-    volatile uint32_t                                   wrInIndex;
+    uint32_t                                            wrInIndex;
 
-    volatile uint32_t                                   wrOutIndex;
+    uint32_t                                            wrOutIndex;
 
     uint32_t                                            wrBufferSize;
 
@@ -380,9 +377,9 @@ typedef struct
 
     uintptr_t                                           rdContext;
 
-    volatile uint32_t                                   rdInIndex;
+    uint32_t                                            rdInIndex;
 
-    volatile uint32_t                                   rdOutIndex;
+    uint32_t                                            rdOutIndex;
 
     uint32_t                                            rdBufferSize;
 
@@ -392,11 +389,11 @@ typedef struct
 
     bool                                                isRdNotifyPersistently;
 
-    volatile USART_ERROR                                errorStatus;
+    USART_ERROR                                         errorStatus;
 
 } SERCOM_USART_RING_BUFFER_OBJECT;
 
-
+// *****************************************************************************
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

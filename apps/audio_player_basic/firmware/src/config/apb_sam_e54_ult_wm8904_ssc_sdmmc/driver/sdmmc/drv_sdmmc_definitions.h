@@ -40,8 +40,8 @@
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _DRV_SDMMC_DEFINITIONS_H
-#define _DRV_SDMMC_DEFINITIONS_H
+#ifndef DRV_SDMMC_DEFINITIONS_H
+#define DRV_SDMMC_DEFINITIONS_H
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -120,10 +120,22 @@ typedef enum
 typedef enum
 {
     /* SD card transfer is read from the card */
-    DRV_SDMMC_OPERATION_TYPE_WRITE = 0,
+    DRV_SDMMC_OP_TYP_SD_MEM_WRITE = 0,
 
    /* SD card transfer is write to the card */
-    DRV_SDMMC_OPERATION_TYPE_READ,
+    DRV_SDMMC_OP_TYP_SD_MEM_READ,
+    
+    DRV_SDMMC_OP_TYP_SDIO_WR_BLK,
+    
+    DRV_SDMMC_OP_TYP_SDIO_RD_BLK,
+    
+    DRV_SDMMC_OP_TYP_SDIO_WR_BYTES,
+    
+    DRV_SDMMC_OP_TYP_SDIO_RD_BYTES,
+    
+    DRV_SDMMC_OP_TYP_SDIO_WR_DIR,
+    
+    DRV_SDMMC_OP_TYP_SDIO_RD_DIR,
 
 }DRV_SDMMC_OPERATION_TYPE;
 
@@ -131,6 +143,9 @@ typedef enum
 {
     DRV_SDMMC_DATA_TRANSFER_TYPE_SINGLE = 0,
     DRV_SDMMC_DATA_TRANSFER_TYPE_MULTI,
+    DRV_SDMMC_DATA_TRANSFER_TYPE_MMC_STREAM,
+    DRV_SDMMC_DATA_TRANSFER_TYPE_BYTE_SDIO,
+    DRV_SDMMC_DATA_TRANSFER_TYPE_BLOCK_SDIO
 }DRV_SDMMC_DATA_TRANSFER_TYPE;
 
 typedef enum
@@ -229,7 +244,7 @@ typedef struct
     None.
 */
 
-typedef struct _DRV_SDMMC_INIT
+typedef struct DRV_SDMMC_INIT_T
 {
     /* PLIB API set used by the driver to access the peripheral */
     const DRV_SDMMC_PLIB_API*    sdmmcPlib;
@@ -281,4 +296,4 @@ typedef struct _DRV_SDMMC_INIT
 #endif
 //DOM-IGNORE-END
 
-#endif      // #ifndef _DRV_SDMMC_DEFINITIONS_H
+#endif      // #ifndef DRV_SDMMC_DEFINITIONS_H
