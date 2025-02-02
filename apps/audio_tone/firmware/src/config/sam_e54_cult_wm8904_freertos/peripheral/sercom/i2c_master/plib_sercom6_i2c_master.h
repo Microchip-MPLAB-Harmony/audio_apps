@@ -90,6 +90,10 @@ void SERCOM6_I2C_CallbackRegister(SERCOM_I2C_CALLBACK callback, uintptr_t contex
 bool SERCOM6_I2C_TransferSetup(SERCOM_I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq );
 
 
+void SERCOM6_I2C_TransferAbort( void );
+
+bool SERCOM6_I2C_BusScan(uint16_t start_addr, uint16_t end_addr, void* pDevicesList, uint8_t* nDevicesFound);
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

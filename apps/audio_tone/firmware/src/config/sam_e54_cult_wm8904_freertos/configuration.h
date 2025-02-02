@@ -85,8 +85,8 @@ extern "C" {
 #define SYS_TIME_HW_COUNTER_WIDTH                   (16)
 #define SYS_TIME_HW_COUNTER_PERIOD                  (0xFFFFU)
 #define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
-#define SYS_TIME_CPU_CLOCK_FREQUENCY                (48000000)
-#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (188)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (120000000)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (232)
 
 
 
@@ -104,19 +104,16 @@ extern "C" {
 /* I2S Driver Instance 0 Configuration Options */
 #define DRV_I2S_INDEX_0                0
 #define DRV_I2S_CLIENTS_NUMBER_IDX0    1
-#define DRV_I2S_QUEUE_DEPTH_COMBINED                 (2*16)
-#define DRV_I2S_QUEUE_SIZE_IDX0        16
-#define DRV_I2S_DATA_LENGTH_IDX0       0
+#define DRV_I2S_QUEUE_DEPTH_COMBINED                 (2*8)
+#define DRV_I2S_QUEUE_SIZE_IDX0        8
+#define DRV_I2S_DATA_LENGTH_IDX0       16
 #define DRV_I2S_INT_SRC_IDX0           I2S_IRQn
 #define DRV_I2S_XMIT_DMA_CH_IDX0       SYS_DMA_CHANNEL_0
 #define DRV_I2S_RCV_DMA_CH_IDX0        SYS_DMA_CHANNEL_1
 
 /* I2C Driver Common Configuration Options */
-#define DRV_I2C_INSTANCES_NUMBER              1
+#define DRV_I2C_INSTANCES_NUMBER              (1U)
 
-
-/* I2S Driver Common Configuration Options */
-#define DRV_I2S_INSTANCES_NUMBER              1
 
 /*** Codec Driver Configuration ***/
 
@@ -188,6 +185,9 @@ extern "C" {
 #define DRV_CODEC_MicMuteOff                                DRV_WM8904_MicMuteOff
 #define DRV_CODEC_GetI2SDriver                              DRV_WM8904_GetI2SDriver
 #define DRV_CODEC_LRCLK_Sync                                DRV_WM8904_LRCLK_Sync 
+
+/* I2S Driver Common Configuration Options */
+#define DRV_I2S_INSTANCES_NUMBER              1
 
 
 

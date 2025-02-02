@@ -20,7 +20,7 @@
                   <itemPath>../src/config/sam_e54_cult_wm8904_freertos/audio/driver/codec/wm8904/drv_wm8904.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="i2s" projectFiles="true">
+              <logicalFolder name="i2s" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/audio/driver/i2s/drv_i2s.h</itemPath>
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/audio/driver/i2s/drv_i2s_definitions.h</itemPath>
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/audio/driver/i2s/drv_i2s_local.h</itemPath>
@@ -114,6 +114,7 @@
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/user.h</itemPath>
           <itemPath>../src/config/sam_e54_cult_wm8904_freertos/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -151,6 +152,7 @@
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/Include/deprecated_definitions.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/Include/mpu_wrappers.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/Include/semphr.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/Include/mpu_syscall_numbers.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="portable" projectFiles="true">
             <logicalFolder name="f1" displayName="GCC" projectFiles="true">
@@ -296,6 +298,35 @@
       <itemPath>../src/app_tone_lookup_table.h</itemPath>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="sam_e54_cult_wm8904_freertos.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/audio_codec_wm8904.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_drv_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_i2s.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sercom6.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/tc0.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/harmony-manifest-success.yml</itemPath>
+      <itemPath>audio_tone_sam_e54_cult_wm8904_freertos.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -322,7 +353,7 @@
                   <itemPath>../src/config/sam_e54_cult_wm8904_freertos/audio/driver/codec/wm8904/drv_wm8904_local.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="i2s" projectFiles="true">
+              <logicalFolder name="i2s" displayName="i2s" projectFiles="true">
                 <itemPath>../src/config/sam_e54_cult_wm8904_freertos/audio/driver/i2s/src/drv_i2s.c</itemPath>
               </logicalFolder>
             </logicalFolder>
@@ -427,35 +458,7 @@
       <itemPath>../src/app_tone_lookup_table.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="sam_e54_cult_wm8904_freertos.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sercom6.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/tc0.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/harmony-manifest-success.yml</itemPath>
-      <itemPath>audio_tone_sam_e54_cult_wm8904_freertos.mc3</itemPath>
+      <itemPath>../src/config/sam_e54_cult_wm8904_freertos/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -469,14 +472,14 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.7.122"/>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.8.234"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -675,16 +678,25 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -698,8 +710,9 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/microchip/harmony/h3/audio/apps/audio_tone/firmware/audio_tone_sam_e54_cult_wm8904_freertos.X/debug/sam_e54_cult_wm8904_freertos/audio_tone_sam_e54_cult_wm8904_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -710,6 +723,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
@@ -1224,16 +1241,25 @@
       </Simulator>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1261,6 +1287,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

@@ -43,21 +43,21 @@
 
 static void OSCCTRL_Initialize(void)
 {
-    /****************** XOSC0 Initialization   ********************************/
+
+    /****************** XOSC1 Initialization   ********************************/
 
     /* Configure External Oscillator */
-    OSCCTRL_REGS->OSCCTRL_XOSCCTRL[0] = OSCCTRL_XOSCCTRL_STARTUP(0) | OSCCTRL_XOSCCTRL_IMULT(4) | OSCCTRL_XOSCCTRL_IPTAT(3) | OSCCTRL_XOSCCTRL_XTALEN_Msk | OSCCTRL_XOSCCTRL_ENABLE_Msk;
-    while((OSCCTRL_REGS->OSCCTRL_STATUS & OSCCTRL_STATUS_XOSCRDY0_Msk) != OSCCTRL_STATUS_XOSCRDY0_Msk)
+    OSCCTRL_REGS->OSCCTRL_XOSCCTRL[1] = OSCCTRL_XOSCCTRL_STARTUP(0U) | OSCCTRL_XOSCCTRL_IMULT(4U) | OSCCTRL_XOSCCTRL_IPTAT(3U) | OSCCTRL_XOSCCTRL_ENABLE_Msk;
+    while((OSCCTRL_REGS->OSCCTRL_STATUS & OSCCTRL_STATUS_XOSCRDY1_Msk) != OSCCTRL_STATUS_XOSCRDY1_Msk)
     {
         /* Waiting for the XOSC Ready state */
     }
-
 }
 
 static void OSC32KCTRL_Initialize(void)
 {
 
-    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
+    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0U);
 }
 
 static void FDPLL0_Initialize(void)
@@ -66,10 +66,10 @@ static void FDPLL0_Initialize(void)
     /****************** DPLL0 Initialization  *********************************/
 
     /* Configure DPLL    */
-    OSCCTRL_REGS->DPLL[0].OSCCTRL_DPLLCTRLB = OSCCTRL_DPLLCTRLB_FILTER(0) | OSCCTRL_DPLLCTRLB_LTIME(0x0)| OSCCTRL_DPLLCTRLB_REFCLK(2) | OSCCTRL_DPLLCTRLB_DIV(2);
+    OSCCTRL_REGS->DPLL[0].OSCCTRL_DPLLCTRLB = OSCCTRL_DPLLCTRLB_FILTER(0U) | OSCCTRL_DPLLCTRLB_LTIME(0x0U)| OSCCTRL_DPLLCTRLB_REFCLK(3U) | OSCCTRL_DPLLCTRLB_DIV(5U);
 
 
-    OSCCTRL_REGS->DPLL[0].OSCCTRL_DPLLRATIO = OSCCTRL_DPLLRATIO_LDRFRAC(2) | OSCCTRL_DPLLRATIO_LDR(48);
+    OSCCTRL_REGS->DPLL[0].OSCCTRL_DPLLRATIO = OSCCTRL_DPLLRATIO_LDRFRAC(0U) | OSCCTRL_DPLLRATIO_LDR(119U);
 
     while((OSCCTRL_REGS->DPLL[0].OSCCTRL_DPLLSYNCBUSY & OSCCTRL_DPLLSYNCBUSY_DPLLRATIO_Msk) == OSCCTRL_DPLLSYNCBUSY_DPLLRATIO_Msk)
     {
@@ -99,15 +99,15 @@ static void DFLL_Initialize(void)
 
 static void GCLK0_Initialize(void)
 {
-    
+
     /* selection of the CPU clock Division */
-    MCLK_REGS->MCLK_CPUDIV = MCLK_CPUDIV_DIV(0x01);
+    MCLK_REGS->MCLK_CPUDIV = MCLK_CPUDIV_DIV(0x01U);
 
     while((MCLK_REGS->MCLK_INTFLAG & MCLK_INTFLAG_CKRDY_Msk) != MCLK_INTFLAG_CKRDY_Msk)
     {
         /* Wait for the Main Clock to be Ready */
     }
-    GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(1) | GCLK_GENCTRL_SRC(6) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
+    GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(1U) | GCLK_GENCTRL_SRC(7U) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL_GCLK0) == GCLK_SYNCBUSY_GENCTRL_GCLK0)
     {
@@ -117,7 +117,7 @@ static void GCLK0_Initialize(void)
 
 static void GCLK1_Initialize(void)
 {
-    GCLK_REGS->GCLK_GENCTRL[1] = GCLK_GENCTRL_DIV(1) | GCLK_GENCTRL_SRC(0) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
+    GCLK_REGS->GCLK_GENCTRL[1] = GCLK_GENCTRL_DIV(1U) | GCLK_GENCTRL_SRC(1U) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL_GCLK1) == GCLK_SYNCBUSY_GENCTRL_GCLK1)
     {
@@ -127,7 +127,7 @@ static void GCLK1_Initialize(void)
 
 static void GCLK3_Initialize(void)
 {
-    GCLK_REGS->GCLK_GENCTRL[3] = GCLK_GENCTRL_DIV(4) | GCLK_GENCTRL_SRC(6) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
+    GCLK_REGS->GCLK_GENCTRL[3] = GCLK_GENCTRL_DIV(1U) | GCLK_GENCTRL_SRC(1U) | GCLK_GENCTRL_OE_Msk | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL_GCLK3) == GCLK_SYNCBUSY_GENCTRL_GCLK3)
     {
@@ -137,6 +137,9 @@ static void GCLK3_Initialize(void)
 
 void CLOCK_Initialize (void)
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID - H3_MISRAC_2012_R_2_2_DR_2 */
+
     /* Function to Initialize the Oscillators */
     OSCCTRL_Initialize();
 
@@ -144,22 +147,22 @@ void CLOCK_Initialize (void)
     OSC32KCTRL_Initialize();
 
     FDPLL0_Initialize();
+    GCLK3_Initialize();
     DFLL_Initialize();
     GCLK1_Initialize();
     GCLK0_Initialize();
-    GCLK3_Initialize();
 
-
+    /* MISRAC 2012 deviation block end */
 
     /* Selection of the Generator and write Lock for TC0 TC1 */
-    GCLK_REGS->GCLK_PCHCTRL[9] = GCLK_PCHCTRL_GEN(0x1)  | GCLK_PCHCTRL_CHEN_Msk;
+    GCLK_REGS->GCLK_PCHCTRL[9] = GCLK_PCHCTRL_GEN(0x1U)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[9] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
         /* Wait for synchronization */
     }
     /* Selection of the Generator and write Lock for SERCOM6_CORE */
-    GCLK_REGS->GCLK_PCHCTRL[36] = GCLK_PCHCTRL_GEN(0x1)  | GCLK_PCHCTRL_CHEN_Msk;
+    GCLK_REGS->GCLK_PCHCTRL[36] = GCLK_PCHCTRL_GEN(0x1U)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[36] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
@@ -167,13 +170,20 @@ void CLOCK_Initialize (void)
     }
 
     /* Configure the AHB Bridge Clocks */
-    MCLK_REGS->MCLK_AHBMASK = 0xffffff;
+    MCLK_REGS->MCLK_AHBMASK = 0xffffffU;
 
     /* Configure the APBA Bridge Clocks */
-    MCLK_REGS->MCLK_APBAMASK = 0x47ff;
+    MCLK_REGS->MCLK_APBAMASK = 0x47ffU;
 
     /* Configure the APBD Bridge Clocks */
-    MCLK_REGS->MCLK_APBDMASK = 0x4;
+    MCLK_REGS->MCLK_APBDMASK = 0x4U;
 
 
+
+    /* Disable DFLL */
+    OSCCTRL_REGS->OSCCTRL_DFLLCTRLA &= ~(OSCCTRL_DFLLCTRLA_ENABLE_Msk);
+    while((OSCCTRL_REGS->OSCCTRL_DFLLSYNC & OSCCTRL_DFLLSYNC_ENABLE_Msk) == OSCCTRL_DFLLSYNC_ENABLE_Msk )
+    {
+        /* Waiting for the DPLL enable synchronization */
+    }
 }
