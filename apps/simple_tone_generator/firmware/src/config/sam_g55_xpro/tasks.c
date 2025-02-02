@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -73,7 +74,6 @@ void SYS_Tasks ( void )
 {
     /* Maintain system services */
     
-
 
     /* Maintain Device Drivers */
         DRV_WM8904_Tasks(sysObj.drvwm8904Codec0);

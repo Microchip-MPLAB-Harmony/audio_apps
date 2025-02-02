@@ -105,6 +105,7 @@
           <itemPath>../src/config/sam_g55_xpro/configuration.h</itemPath>
           <itemPath>../src/config/sam_g55_xpro/interrupts.h</itemPath>
           <itemPath>../src/config/sam_g55_xpro/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_g55_xpro/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -344,6 +345,7 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/config/sam_g55_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -359,7 +361,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

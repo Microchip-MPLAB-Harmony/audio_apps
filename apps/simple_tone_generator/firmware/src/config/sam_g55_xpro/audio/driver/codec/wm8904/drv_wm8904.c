@@ -281,6 +281,7 @@ SYS_MODULE_OBJ  DRV_WM8904_Initialize
     drvObj->numClients                      = 0;
     drvObj->masterMode                      = wm8904Init->masterMode;
     drvObj->i2sDriverModuleIndex            = wm8904Init->i2sDriverModuleIndex;
+    drvObj->i2cDriverModuleIndex            = wm8904Init->i2cDriverModuleIndex;
     drvObj->samplingRate                    = wm8904Init->samplingRate;
     drvObj->audioDataFormat                 = wm8904Init->audioDataFormat;
     drvObj->enableMicInput                  = wm8904Init->enableMicInput;
@@ -426,6 +427,38 @@ void DRV_WM8904_Deinitialize( SYS_MODULE_OBJ object)
     drvObj->numClients = 0;
     drvObj->status = SYS_STATUS_UNINITIALIZED;
 }
+
+// *****************************************************************************
+/* Function:
+    bool DRV_WM8904_ClientReady(iClient)
+
+  Summary:
+    Returns true if the WM8904 driver is ready for client operations
+
+  Description:
+    Returns true if the WM8904 driver is ready for client operations
+
+  Precondition:
+    Function DRV_WM8904_Initialize/DRV_WM8904_Open should have been called 
+    before calling this function.
+
+  Parameters:
+    object          - Driver object handle, returned from the
+                      DRV_WM8904_Initialize routine
+  Returns:
+   true - Driver is open for client operations
+   false - driver is not ready for client operations
+*/
+bool DRV_WM8904_ClientReady(uint32_t iClient)
+{
+    DRV_WM8904_CLIENT_OBJ *hClient;
+
+    hClient = (DRV_WM8904_CLIENT_OBJ *)&gDrvwm8904ClientObj[iClient];
+
+    /* Return the readiness of the driver client*/
+    return hClient->inUse;
+
+} /* DRV_WM8904_Ready*/
 
 
 // *****************************************************************************
@@ -2097,12 +2130,18 @@ uint8_t DRV_WM8904_StereoMicSelect(DRV_HANDLE handle, DRV_WM8904_MIC mic)
         case MIC1:
             WM8904_I2C_Commands[0].value = 0x0000; 
             WM8904_I2C_Commands[1].value = 0x0000;
+            break;
+
         case MIC2:
             WM8904_I2C_Commands[0].value = 0x0010; 
             WM8904_I2C_Commands[1].value = 0x0010;
+            break;
+
         case MIC3:
             WM8904_I2C_Commands[0].value = 0x0020; 
             WM8904_I2C_Commands[1].value = 0x0020;
+            break;
+
         case MIC_NONE:
         default:
             return 0;
@@ -2469,15 +2508,9 @@ static const WM8904_I2C_COMMAND_BUFFER WM8904_I2C_InitializationCommands7[] =
     None
 */
 
-DRV_WM8904_STATE lastState = DRV_WM8904_STATE_ERROR;
-
 static void _DRV_WM8904_ControlTasks (DRV_WM8904_OBJ *drvObj)
 {
-    if (lastState != drvObj->currentState)
-    {
-        printf("WM8904 state: %d\r\n",(int)drvObj->currentState);
-        lastState = drvObj->currentState;
-    }
+    /* Check the application's current state. */
     switch ( drvObj->currentState )
     {
         /* Application's initial state. */
@@ -2500,7 +2533,7 @@ static void _DRV_WM8904_ControlTasks (DRV_WM8904_OBJ *drvObj)
         case DRV_WM8904_STATE_OPEN:
         {
             /* Open the I2C Driver */
-            drvObj->drvI2CHandle = DRV_I2C_Open( DRV_I2C_INDEX_0,
+            drvObj->drvI2CHandle = DRV_I2C_Open(drvObj->i2cDriverModuleIndex,
                     DRV_IO_INTENT_READWRITE );
             
             if ( DRV_HANDLE_INVALID == drvObj->drvI2CHandle )

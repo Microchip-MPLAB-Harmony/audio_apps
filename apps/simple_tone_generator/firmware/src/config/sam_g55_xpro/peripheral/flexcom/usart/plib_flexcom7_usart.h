@@ -78,20 +78,20 @@ FLEXCOM_USART_ERROR FLEXCOM7_USART_ErrorGet( void );
 
 bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
 
-bool FLEXCOM7_USART_Write( void *buffer, const size_t size );
+bool FLEXCOM7_USART_Write( void *pBuffer, const size_t size );
 
-bool FLEXCOM7_USART_Read( void *buffer, const size_t size );
+bool FLEXCOM7_USART_Read( void *pBuffer, const size_t size );
 
 uint8_t FLEXCOM7_USART_ReadByte( void );
 
 void FLEXCOM7_USART_WriteByte( uint8_t data );
 
-bool FLEXCOM7_USART_TransmitComplete( void );
-
 bool FLEXCOM7_USART_TransmitterIsReady( void );
 
 bool FLEXCOM7_USART_ReceiverIsReady( void );
 
+
+bool FLEXCOM7_USART_TransmitComplete( void );
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

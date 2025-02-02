@@ -55,14 +55,11 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/efc/plib_efc.h"
-// KEEP FOLLOWING LINE FOR WM8904 (for definitions like DRV_I2S_BUFFER_HANDLE))
-#include "audio/driver/i2s/drv_i2s.h"
-#include "peripheral/flexcom/twi/master/plib_flexcom6_twi_master.h"
 #include "peripheral/tc/plib_tc0.h"
-#include "driver/i2c/drv_i2c.h"
+#include "peripheral/flexcom/twi/master/plib_flexcom6_twi_master.h"
 #include "system/time/sys_time.h"
+#include "driver/i2c/drv_i2c.h"
 #include "audio/peripheral/i2sc/plib_i2sc0.h"
-#include "bsp/bsp.h"
 #include "audio/driver/codec/wm8904/drv_wm8904.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
@@ -71,6 +68,8 @@
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
 #include "app.h"
+// KEEP FOLLOWING LINE FOR WM8904 (for definitions like DRV_I2S_BUFFER_HANDLE))
+#include "audio/driver/i2s/drv_i2s.h"
 
 
 
@@ -82,8 +81,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "ATSAMG55J19"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "SAMG"
+#define DEVICE_SERIES        "SAMG55"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 98304000
+#define CPU_CLOCK_FREQUENCY 98304000U
 
 // *****************************************************************************
 // *****************************************************************************
