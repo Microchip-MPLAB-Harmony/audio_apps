@@ -1,14 +1,14 @@
 package:
   format-version: "1.0.0"
   name: "audio_apps"
-  version: "v3.2.1"
+  version: "v3.2.3"
   type: "application"
   status: "production"
 
   dependencies:
     - name: "audio"
       type: "package"
-      version: "v3.6.1"
+      version: "v3.6.2"
     - name: "helix_mp3"
       type: "package"
       version: "v1.1.0"

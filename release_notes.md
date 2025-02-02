@@ -3,6 +3,28 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+
+## Harmony 3 Audio Application Examples v3.2.3
+
+Regenerated and retested with audio v3.6.2
+
+### New Features
+
+- None
+
+### Known Issues
+
+- Simple Tone Generator example (sam_g55_audio.X) needs to be used as is and the demo should not be regenerated with MCC.
+- USB Speaker bass boost example (us_bb_sam_e70_xult_wm8904_i2sc_usb.X) includes prebuilt DSP library from src folder.
+
+### Development Tools
+
+- [MPLAB® X IDE 6.20](https://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB® X IDE plug-ins:
+  - MPLAB® Code Configurator (MCC) 5.5.1
+- [MPLAB® XC32 C/C++ Compiler 4.5](https://www.microchip.com/mplab/compilers)
+
+
 ## Harmony 3 Audio Application Examples v3.2.0 (August, 2022)
 
 The goal of this release is to provide support to SAM G55 Curiosity Audio Board.
