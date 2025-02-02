@@ -1,21 +1,23 @@
-/*******************************************************************************
-  Interface definition of CMCC PLIB.
+/******************************************************************************
+  SDMMC Driver File System Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_cmcc.h
+    drv_sdmmc_file_system.h
 
   Summary:
-    Interface definition of the CMCC(Cortex M Cache Controller) Peripheral Library
+    SDMMC Driver File System Interface Implementation
 
   Description:
-    This file defines the interface for the CMCC Plib.
+    This file registers the SDMMC Driver capabilities with the file system
+    interface.
 *******************************************************************************/
 
+//DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -36,39 +38,40 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
-#ifndef PLIB_CMCC_H    // Guards against multiple inclusion
-#define PLIB_CMCC_H
-
-
-#ifdef __cplusplus // Provide C++ Compatibility
-	extern "C" {
-#endif
-
-
+//DOM-IGNORE-END
+#ifndef DRV_SDMMC_FILE_SYSTEM_H
+#define DRV_SDMMC_FILE_SYSTEM_H
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface
+// Section: Include Files
 // *****************************************************************************
 // *****************************************************************************
 
-#define CMCC_NO_OF_WAYS     (4U)
-#define CMCC_LINE_PER_WAY   (64U)
-#define CMCC_LINE_SIZE      (16U)
-#define CMCC_WAY_SIZE       (1024U)
+#include "driver/sdmmc/drv_sdmmc.h"
+#include "system/fs/sys_fs_media_manager.h"
 
-/***************************** CMCC API *******************************/
-void CMCC_Disable (void );
-void CMCC_EnableDCache (void );
-void CMCC_DisableDCache (void );
-
-void CMCC_EnableICache (void );
-void CMCC_DisableICache (void );
-
-void CMCC_InvalidateAll (void );
-
+// DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
-    }
+    extern "C" {
+#endif
+// DOM-IGNORE-END
+// *****************************************************************************
+// *****************************************************************************
+// Section: Global objects
+// *****************************************************************************
+// *****************************************************************************
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: SDMMC Driver File system interface Routines
+// *****************************************************************************
+// *****************************************************************************
+
+void DRV_SDMMC_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex);
+
+#ifdef __cplusplus
+}
 #endif
 
-#endif
+#endif //#ifndef DRV_SDMMC_FILE_SYSTEM_H

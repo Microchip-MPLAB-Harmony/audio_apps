@@ -62,7 +62,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static TC_TIMER_CALLBACK_OBJ TC0_CallbackObject;
+volatile static TC_TIMER_CALLBACK_OBJ TC0_CallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -83,13 +83,13 @@ void TC0_TimerInitialize( void )
     }
 
     /* Configure counter mode & prescaler */
-    TC0_REGS->COUNT16.TC_CTRLA = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_PRESCALER_DIV1 | TC_CTRLA_PRESCSYNC_PRESC ;
+    TC0_REGS->COUNT16.TC_CTRLA = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_PRESCALER_DIV8 | TC_CTRLA_PRESCSYNC_PRESC ;
 
     /* Configure in Match Frequency Mode */
     TC0_REGS->COUNT16.TC_WAVE = (uint8_t)TC_WAVE_WAVEGEN_MPWM;
 
     /* Configure timer period */
-    TC0_REGS->COUNT16.TC_CC[0U] = 6000U;
+    TC0_REGS->COUNT16.TC_CC[0U] = 749U;
 
     /* Clear all interrupt flags */
     TC0_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
@@ -127,7 +127,7 @@ void TC0_TimerStop( void )
 
 uint32_t TC0_TimerFrequencyGet( void )
 {
-    return (uint32_t)(6000000U);
+    return (uint32_t)(750000U);
 }
 
 void TC0_TimerCommandSet(TC_COMMAND command)
@@ -136,7 +136,7 @@ void TC0_TimerCommandSet(TC_COMMAND command)
     while((TC0_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current timer counter value */
@@ -205,7 +205,7 @@ void TC0_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context )
 }
 
 /* Timer Interrupt handler */
-void TC0_TimerInterruptHandler( void )
+void __attribute__((used)) TC0_TimerInterruptHandler( void )
 {
     if (TC0_REGS->COUNT16.TC_INTENSET != 0U)
     {
@@ -213,9 +213,10 @@ void TC0_TimerInterruptHandler( void )
         status = (TC_TIMER_STATUS) TC0_REGS->COUNT16.TC_INTFLAG;
         /* Clear interrupt flags */
         TC0_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
-        if((status != TC_TIMER_STATUS_NONE) && (TC0_CallbackObject.callback != NULL))
+        if((TC0_CallbackObject.callback != NULL) && (status != TC_TIMER_STATUS_NONE))
         {
-            TC0_CallbackObject.callback(status, TC0_CallbackObject.context);
+            uintptr_t context = TC0_CallbackObject.context;
+            TC0_CallbackObject.callback(status, context);
         }
     }
 }

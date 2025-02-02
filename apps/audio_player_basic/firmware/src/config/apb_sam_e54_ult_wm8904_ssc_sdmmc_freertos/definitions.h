@@ -63,8 +63,8 @@
 #include "audio/driver/i2s/drv_i2s.h"
 #include "peripheral/tc/plib_tc0.h"
 #include "peripheral/sdhc/plib_sdhc1.h"
-#include "system/time/sys_time.h"
 #include "driver/i2c/drv_i2c.h"
+#include "system/time/sys_time.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -93,8 +93,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "ATSAME54P20A"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "SAME"
+#define DEVICE_SERIES        "SAME54"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 48000000
+#define CPU_CLOCK_FREQUENCY 120000000U
 
 // *****************************************************************************
 // *****************************************************************************
