@@ -283,33 +283,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/a_i2s.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/core.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/drv_sdmmc.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/project.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/sdhc1.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/sercom1.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/sercom6.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/harmony-manifest-success.yml</itemPath>
       <itemPath>apb_sam_e54_cult_wm8904_i2s_sdmmc.mc3</itemPath>

@@ -319,32 +319,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="apb_sam_e70_xult_wm8904_ssc_freertos.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/a_ssc.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/core.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/project.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/usb_host.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/usb_host_msd.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/apb_sam_e70_xult_wm8904_ssc_freertos.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc_freertos/harmony-manifest-success.yml</itemPath>
       <itemPath>apb_sam_e70_xult_wm8904_ssc_freertos.mc3</itemPath>

@@ -301,28 +301,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="sam_e54_cult_wm8904_freertos.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/a_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/BSP_SAM_E54_Curiosity_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sercom6.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_cult_wm8904_freertos/sam_e54_cult_wm8904_freertos.mhc/tc0.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e54_cult_wm8904_freertos/harmony-manifest-success.yml</itemPath>
       <itemPath>audio_tone_sam_e54_cult_wm8904_freertos.mc3</itemPath>

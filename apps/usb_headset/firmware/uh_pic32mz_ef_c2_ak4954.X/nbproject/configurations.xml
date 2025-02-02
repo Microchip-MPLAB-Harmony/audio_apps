@@ -192,31 +192,8 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/audio_codec_ak4954.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/a_i2s2.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/core.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/i2c1.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/Math.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/project.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/uh_basic_mz_ef_c2_ak4954_i2s_usb.mhc/usb_device_audio.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/harmony-manifest-success.yml</itemPath>
-      <itemPath>../src/config/uh_basic_mz_ef_c2_ak4954_i2s_usb/harmony-manifest-failure.yml</itemPath>
       <itemPath>uh_pic32mz_ef_c2_ak4954.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"

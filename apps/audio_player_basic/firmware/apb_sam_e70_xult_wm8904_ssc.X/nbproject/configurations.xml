@@ -313,31 +313,6 @@
         <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/tc0.yml</itemPath>
         <itemPath>../src/config/apb_sam_e54_ult_wm8904_ssc_sdmmc/apb_sam_e54_ult_wm8904_ssc_sdmmc.mhc/wm8904_codec.yml</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2"
-                     displayName="apb_sam_e70_xult_wm8904_ssc.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/audio_codec_wm8904.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/a_ssc.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/core.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/drv_usbhs_v1.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/project.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/twihs0.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/usb_host.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/usb_host_msd.yml</itemPath>
-        <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/apb_sam_e70_xult_wm8904_ssc.mhc/wm8904_codec.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/apb_sam_e70_xult_wm8904_ssc/harmony-manifest-success.yml</itemPath>
       <itemPath>apb_sam_e70_xult_wm8904_ssc.mc3</itemPath>

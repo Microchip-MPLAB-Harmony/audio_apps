@@ -243,26 +243,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="sam_e70_xult_ak4954_ssc.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/audio_codec_ak4954.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/a_drv_i2s.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/a_ssc.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/tc0.yml</itemPath>
-        <itemPath>../src/config/sam_e70_xult_ak4954_ssc/sam_e70_xult_ak4954_ssc.mhc/twihs0.yml</itemPath>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e70_xult_ak4954_ssc/harmony-manifest-success.yml</itemPath>
       <itemPath>audio_tone_sam_e70_xult_ak4954_ssc.mc3</itemPath>
@@ -603,7 +583,7 @@
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/H3_Apps/audio_apps/apps/audio_tone/firmware/audio_tone_sam_e70_xult_ak4954_ssc.X/debug/sam_e70_xult_ak4954_ssc/audio_tone_sam_e70_xult_ak4954_ssc_ptg"/>
+                  value="C:/microchip/harmony/h3/audio/apps/audio_tone/firmware/audio_tone_sam_e70_xult_ak4954_ssc.X/debug/sam_e70_xult_ak4954_ssc/audio_tone_sam_e70_xult_ak4954_ssc_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
